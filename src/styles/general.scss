@@ -1,0 +1,36 @@
+@import "./colors.scss";
+
+:root {
+	font-size: 62.5%;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  // @TODO
+  font-family: sans-serif;
+  // font-family: $font-family-primary, sans-serif;
+  // font-weight: $font-weight-base;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  // color: $color-text-primary;
+  // background-color: $color-background-primary;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+  
+  a {
+    outline: 0;
+    text-decoration: none;
+  }
+}
+
+::selection {
+  // @TODO
+  // background-color: rgba($color-brand-secondary, 0.33);
+}
