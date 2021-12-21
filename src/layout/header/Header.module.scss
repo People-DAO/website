@@ -1,0 +1,18 @@
+:global(.headroom-wrapper) {
+  position: relative;
+  height: 0 !important;
+  z-index: 1000;
+}
+
+:global(.headroom) {
+  overflow-x: hidden;
+}
+
+.header {
+  display: block;
+  background: #000000;
+
+//   .container {
+//     @include wrapper;
+//   }
+}

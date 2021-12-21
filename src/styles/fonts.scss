@@ -1,0 +1,64 @@
+$font-family-primary: "Brown";
+
+@font-face {
+    font-family: $font-family-primary;
+    src: url('../../static/fonts/BrownLight.eot');
+    src: url('../../static/fonts/BrownLight.eot?#iefix') format('embedded-opentype'),
+        url('../../static/fonts/BrownLight.woff2') format('woff2'),
+        url('../../static/fonts/BrownLight.woff') format('woff'),
+        url('../../static/fonts/BrownLight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+// @TODO: 400
+
+@font-face {
+    font-family: $font-family-primary;
+    src: url('../../static/fonts/BrownMedium.eot');
+    src: url('../../static/fonts/BrownMedium.eot?#iefix') format('embedded-opentype'),
+        url('../../static/fonts/BrownMedium.woff2') format('woff2'),
+        url('../../static/fonts/BrownMedium.woff') format('woff'),
+        url('../../static/fonts/BrownMedium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $font-family-primary;
+    src: url('../../static/fonts/BrownBold.eot');
+    src: url('../../static/fonts/BrownBold.eot?#iefix') format('embedded-opentype'),
+        url('../../static/fonts/BrownBold.woff2') format('woff2'),
+        url('../../static/fonts/BrownBold.woff') format('woff'),
+        url('../../static/fonts/BrownBold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $font-family-primary;
+    src: url('../../static/fonts/BrownExtraBold.eot');
+    src: url('../../static/fonts/BrownExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('../../static/fonts/BrownExtraBold.woff2') format('woff2'),
+        url('../../static/fonts/BrownExtraBold.woff') format('woff'),
+        url('../../static/fonts/BrownExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: $font-family-primary;
+    src: url('../../static/fonts/BrownHeavy.eot');
+    src: url('../../static/fonts/BrownHeavy.eot?#iefix') format('embedded-opentype'),
+        url('../../static/fonts/BrownHeavy.woff2') format('woff2'),
+        url('../../static/fonts/BrownHeavy.woff') format('woff'),
+        url('../../static/fonts/BrownHeavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}

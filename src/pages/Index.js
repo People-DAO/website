@@ -1,8 +1,4 @@
-import React from "react"
+import Index from './_index/Index'
+// @NOTE: Has to be in underscored folder, otherwise Gatsby will build /index page from it
 
-const IndexPage = () => (
-  <span>@TODO: Index page</span>
-)
-
-
-export default IndexPage
+export default Index
