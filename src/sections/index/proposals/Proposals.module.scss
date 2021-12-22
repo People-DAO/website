@@ -17,31 +17,36 @@
       font-weight: 700;
       color: $color-text-secondary;
       text-transform: uppercase;
-      // @TODO
     }
   }
 
-  .list {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    @include fluid(column-gap, 36, 36);
-
-    .item {
-      // @TODO
-      display: block;
-      height: 24rem;
-      background: white;
-      border-radius: 5px;
-    }
-  }
-
-  .action {
+  .content {
     display: flex;
-    justify-content: center;
-    margin-top: 13.7rem;
-
-    .button {
-      background: $color-background-secondary;
+    flex-direction: column;
+    
+    .list {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      @include fluid(column-gap, 36, 36);
+  
+      .item {
+        // @TODO
+        display: block;
+        height: 24rem;
+        background: white;
+        border-radius: 5px;
+      }
+    }
+  
+    .action {
+      display: flex;
+      justify-content: center;
+      margin-top: 13.7rem;
+  
+      .button {
+        background: $color-background-secondary;
+      }
     }
   }
+
 }

@@ -1,3 +1,7 @@
+@import "../../styles/colors.scss";
+@import "../../styles/transitions.scss";
+@import "../../styles/wrapper.scss";
+
 :global(.headroom-wrapper) {
   position: relative;
   height: 0 !important;
@@ -8,11 +12,69 @@
   overflow-x: hidden;
 }
 
+:global(.headroom--unfixed) {
+  .header {
+    background: transparent;
+  }
+}
+
 .header {
   display: block;
-  background: #000000;
+  background: $color-background-secondary;
+  @include transition(primary, background);
 
-//   .container {
-//     @include wrapper;
-//   }
+  .container {
+    @include wrapper;
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      cursor: pointer;
+
+      svg {
+        height: 6.4rem;
+        width: auto;
+        fill: $color-text-secondary;
+      }
+    }
+
+    .navigation {
+      display: flex;
+
+      a {
+        color: $color-text-secondary;
+        text-transform: uppercase;
+        padding: 1rem;
+        margin-right: 4rem;
+        cursor: pointer;
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+
+        &.action {
+          position: relative;
+          font-weight: 700;
+          letter-spacing: 0.1em;
+          color: $color-text-primary;
+          background: $color-background-primary;
+          padding-left: 2.4rem;
+          padding-right: 2.4rem;
+
+          &:after {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            right: 0;
+            left: 0;
+            background: $color-background-primary;
+            height: 10rem;
+          }
+        }
+      }
+    }
+  }
 }
