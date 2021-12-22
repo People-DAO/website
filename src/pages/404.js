@@ -1,5 +1,7 @@
-import NotFound from './not-found/NotFound'
+import React from "react"
 
-// @NOTE: Keep; required Gatsby page file
+const NotFoundPage = () => (
+  <span>@TODO: 404 page</span>
+)
 
-export default NotFound
+export default NotFoundPage
