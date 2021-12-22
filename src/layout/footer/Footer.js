@@ -3,6 +3,8 @@ import {Link} from "gatsby"
 import Fade from "react-reveal/Fade"
 import SVG from "react-inlinesvg"
 
+import Button from "../../components/button/Button"
+
 import * as footerStyle from "./Footer.module.scss"
 
 import socials from "../../../configuration/socials.yml"
@@ -27,7 +29,13 @@ const Footer = () => (
           </div>
         </div>
         <div className={footerStyle.group}>
-          <span>@TODO: Button</span>
+          <Button
+            className={footerStyle.action}
+            href="@TODO"
+            target="_blank"
+          >
+            <span>Join the movement</span>
+          </Button>
         </div>
         <div className={footerStyle.group}>
           <div className={footerStyle.socials}>

@@ -1,6 +1,7 @@
 import React from "react"
 
 import Layout from "../../layout/Layout"
+import Button from "../../components/button/Button"
 
 import * as indexStyle from "./Index.module.scss"
 
@@ -18,7 +19,14 @@ const IndexPage = () => (
           <div className={indexStyle.item} />
         </div>
         <div className={indexStyle.action}>
-          <span>@TODO: Button</span>
+          <Button
+            type="secondary"
+            className={indexStyle.button}
+            href="@TODO"
+            target="_blank"
+          >
+            <span>Download proposal template</span>
+          </Button>
         </div>
       </div>
     </section>

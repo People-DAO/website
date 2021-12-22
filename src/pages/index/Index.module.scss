@@ -43,6 +43,10 @@
       display: flex;
       justify-content: center;
       margin-top: 13.7rem;
+
+      .button {
+        background: $color-background-secondary;
+      }
     }
   }
 }

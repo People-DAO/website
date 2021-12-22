@@ -47,6 +47,13 @@
         }
       }
 
+      .action {
+        color: $color-text-primary;
+        background: $color-background-primary;
+        padding-left: 6.7rem;
+        padding-right: 6.7rem;
+      }
+
       .socials {
         display: flex;
         align-items: center;
