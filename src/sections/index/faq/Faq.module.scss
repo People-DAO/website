@@ -1,31 +1,29 @@
 @import "../../../styles/colors.scss";
 .faq {
-  // @TODO
-  height: 93.733333rem;
-  width: 100%;
-  background-color: $color-text-secondary;
+  padding: 10rem;
+
   .wrapper {
-    margin-top: 16.466667rem;
-    position: relative;
-    display: flex;
-    .title {
-      flex:1;
-      h1 {
-        font-size: 6rem;
-        line-height: 1;
-        margin-bottom: 3rem;
-      }
-    }
     .content {
-      flex:2;
-      .item {
-        border: .266667rem solid $color-text-primary;
-        padding: 3.466667rem 3.466667rem 3.6rem 2.533333rem;
-        margin-left: 6.8rem;
-        font-size: 2.4rem;
-        margin-bottom: 5.866667rem;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      column-gap: 4rem;
+
+      .title {
+        h3 {
+          font-size: 6.4rem;
+          font-weight: 700;
+        }
+
+        span {
+          font-size: 1.8rem;
+        }
+      }
+
+      .list {
+        .item {
+          margin-bottom: 4.4rem;
+        }
       }
     }
-    
   }
 }
