@@ -1,0 +1,60 @@
+@import "../../../styles/colors.scss";
+@import "../../../styles/fluid.scss";
+
+.projects {
+  @include fluid(padding-top, 128, 128);
+  @include fluid(padding-bottom, 128, 128);
+
+  .wrapper {
+    .content {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-template-rows: 1fr 1fr;
+      column-gap: 4rem;
+      row-gap: 4rem;
+
+      .title {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        margin-top: auto;
+  
+        h3 {
+          font-size: 4.8rem;
+          line-height: 1;
+  
+          strong {
+            font-weight: 700;
+            text-transform: uppercase;
+          }
+        }
+      }
+  
+      .actions {
+        grid-column: 1/2;
+        grid-row: 2/3;
+  
+        .button {
+          background: $color-brand-purple;
+        }
+      }
+  
+      .list {
+        grid-column: 2/3;
+        grid-row: 1/3;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        column-gap: 3rem;
+        row-gap: 4.2rem;
+  
+        .item {
+          // @TODO
+          display: block;
+          height: 30rem;
+          background: #f4ecdc;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}

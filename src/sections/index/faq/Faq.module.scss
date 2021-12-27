@@ -1,0 +1,29 @@
+@import "../../../styles/colors.scss";
+.faq {
+  padding: 10rem;
+
+  .wrapper {
+    .content {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      column-gap: 4rem;
+
+      .title {
+        h3 {
+          font-size: 6.4rem;
+          font-weight: 700;
+        }
+
+        span {
+          font-size: 1.8rem;
+        }
+      }
+
+      .list {
+        .item {
+          margin-bottom: 4.4rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+@import "./colors.scss";
+@import "./fonts.scss";
+
+:root {
+	font-size: 62.5%;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: $font-family-primary, sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: $color-text-primary;
+  background-color: $color-background-primary;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+  
+  a {
+    outline: 0;
+    text-decoration: none;
+  }
+}
+
+::selection {
+  background: rgba($color-brand-purple, 0.2);
+}

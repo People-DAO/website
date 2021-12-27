@@ -1,0 +1,50 @@
+@import "../../../styles/colors.scss";
+
+.about {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: -5rem;
+  
+  .wrapper {
+    position: relative;
+    top: -5rem;
+    max-width: 57rem;
+    color: $color-text-secondary;
+    background: $color-background-secondary;
+    padding: 6.5rem 4.5rem;
+    border: 10px solid $color-background-primary;
+    border-bottom: none;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      
+      .text {
+        text-align: center;
+
+        p {
+          font-size: 1.4rem;
+          line-height: 2.8rem;
+          margin-bottom: 2rem;
+    
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      .action {
+        display: flex;
+        justify-content: center;
+        margin-top: 2.8rem;
+
+        .button {
+          color: $color-text-primary;
+          background: $color-background-primary;
+        }
+      }
+    }
+  }
+}
