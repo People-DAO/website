@@ -1,3 +1,33 @@
+@import "../../../styles/colors.scss";
+
 .support {
-  // @TODO
+  background: $color-background-secondary;
+
+  .wrapper {
+    padding: 8rem;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .title {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 6rem;
+
+        h3 {
+          font-size: 3.6rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          color: $color-text-secondary;
+        }
+      }
+
+      span {
+        color: $color-text-secondary;
+        background: red;
+      }
+    }
+  }
 }

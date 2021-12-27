@@ -8,6 +8,8 @@ import * as headerStyle from './Header.module.scss'
 
 import socials from "../../../configuration/socials.yml"
 
+import PeopledaoIcon from "../../../static/assets/icons/peopledao/logo.svg";
+
 const Header = () => (
   <Headroom>
     <Fade top>
@@ -15,7 +17,7 @@ const Header = () => (
         <div className={headerStyle.container}>
           <div className={headerStyle.logo}>
             <ScrollLink to="top" smooth>
-              <SVG src="/assets/icons/peopledao/logo.svg" />
+              <SVG src={PeopledaoIcon} />
             </ScrollLink>
           </div>
           <nav className={headerStyle.navigation}>

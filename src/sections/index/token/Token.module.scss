@@ -1,3 +1,86 @@
+@import "../../../styles/colors.scss";
+
 .token {
-  // @TODO
+  background: $color-background-secondary;
+
+  .wrapper {
+    padding: 8rem 0;
+    
+    .content {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      column-gap: 8rem;
+
+      .header {
+        display: flex;
+        flex-direction: column;
+        margin-right: 5rem;
+  
+        .governance {
+          font-size: 2.4rem;
+          line-height: 2.7rem;
+          color: $color-text-secondary;
+        }
+  
+        .title {
+          font-size: 6.4rem;
+          line-height: 7.4rem;
+          color: $color-text-secondary;
+  
+          strong {
+            font-weight: 700;
+          }
+        }
+  
+        .price {
+          display: flex;
+          align-items: center;
+          margin-top: 0.5rem;
+  
+          .label {
+            font-size: 1.8rem;
+            color: $color-text-secondary;
+            background: linear-gradient(to right, $color-brand-purple, $color-brand-pink);
+            padding: 0.7rem 2rem;
+            border-radius: 8px;
+            margin-right: 1.4rem;
+          }
+  
+          .value {
+            font-size: 2.4rem;
+            color: $color-text-secondary;
+          }
+        }
+      }
+    }
+  
+    .values {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  
+      .item {
+        display: flex;
+        flex-direction: column;
+        margin-right: 4rem;
+  
+        &:last-of-type {
+          margin-right: 0;
+        }
+  
+        .label {
+          font-size: 2.2rem;
+          line-height: 3.2rem;
+          text-transform: capitalize;
+          color: #9ea5b1;
+        }
+  
+        .value {
+          font-size: 6.4rem;
+          line-height: 7.4rem;
+          color: $color-text-secondary;
+        }
+      }
+    }
+  }
 }

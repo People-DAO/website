@@ -10,6 +10,9 @@ import * as heroStyle from "./Hero.module.scss"
 import content from "../../../../content/index/hero.yml"
 import socials from "../../../../configuration/socials.yml"
 
+import EthereumIcon from "../../../../static/assets/icons/cryptocurrencies/ethereum.svg"
+import CopyIcon from "../../../../static/assets/icons/general/copy.svg"
+
 const handleCopy = () => {
   navigator?.clipboard?.writeText(content.contractAddress)
 }
@@ -31,7 +34,7 @@ const HeroSection = () => (
             </Button>
             <div className={heroStyle.contract}>
               <div className={heroStyle.network}>
-                <SVG src="/assets/icons/cryptocurrencies/ethereum.svg" />
+                <SVG src={EthereumIcon} />
                 <span>ETH</span>
               </div>
               <div className={heroStyle.address}>
@@ -41,7 +44,7 @@ const HeroSection = () => (
                 className={heroStyle.copy}
                 onClick={() => handleCopy()}
               >
-                <SVG src="/assets/icons/general/copy.svg" />
+                <SVG src={CopyIcon} />
               </div>
               {/* @TODO: Add "click to copy" and "copied" tooltip */}
             </div>

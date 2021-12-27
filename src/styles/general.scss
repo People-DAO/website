@@ -11,9 +11,8 @@ body {
 }
 
 body {
-  // @TODO
   font-family: $font-family-primary, sans-serif;
-  // font-weight: $font-weight-base;
+  font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.5;
   color: $color-text-primary;
@@ -31,6 +30,5 @@ body {
 }
 
 ::selection {
-  // @TODO
-  // background-color: rgba($color-brand-secondary, 0.33);
+  background: rgba($color-brand-purple, 0.2);
 }

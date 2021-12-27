@@ -23,6 +23,7 @@ const Button = ({to, href, onClick, target, type, className, children, ...props}
       to={to}
       href={href}
       target={target}
+      rel={href && target == "_blank" ? "noopener noreferrer" : null}
       onClick={onClick}
       className={`${linkStyle.button} ${buttonType} ${className || ""}`}
       {...props}

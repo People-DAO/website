@@ -11,7 +11,7 @@
   .container {
     @include wrapper;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 3fr 2fr 3fr;
 
     .group {
       display: flex;
@@ -26,6 +26,7 @@
       }
 
       .logo {
+        cursor: pointer;
         margin-right: 7.6rem;
 
         svg {
