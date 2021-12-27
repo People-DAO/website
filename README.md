@@ -1,54 +1,48 @@
 <p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
+  <a href="https://people-dao.com" target="_blank"><img height="96" src="static/assets/icons/peopledao/logo.svg" alt="PeopleDAO logo" /></a>
 </p>
 <h1 align="center">
-  Gatsby minimal starter
+  PeopleDAO Website
 </h1>
 
-## 🚀 Quick start
+<p align="center">
+The official <a href="https://people-dao.com" target="_blank">PeopleDAO</a> website built with <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby</a>
+</p>
 
-1.  **Create a Gatsby site.**
+## Requirements
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+- [Node.js](https://nodejs.org/en/)
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+## Development
 
-2.  **Start developing.**
+#### Project initialization
 
-    Navigate into your new site’s directory and start it up.
+1. Install project dependencies:
+   ```sh
+   yarn
+   ```
 
-    ```shell
-    cd my-gatsby-site/
+#### Local server
+
+To start developing or managing content on local machine:
+1. Start up the application in development environment:
+    ```sh
     npm run develop
     ```
+2. The site will be running at `http://localhost:8000` with hot-reloading enabled.
+   
+## Deployment
 
-3.  **Open the code and start customizing!**
+1. If not done during development, install project dependencies:
+   ```sh
+   yarn
+   ```
+2. Generate an optimalized production build:
+   ```sh
+   npm run build
+   ```
+3. Using the web server of your preference, host the contents of the generated `public` directory.
 
-    Your site is now running at http://localhost:8000!
+## Resources
 
-    Edit `src/pages/index.js` to see your site update in real-time!
-
-4.  **Learn more**
-
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+- [Gatsby documentation](https://www.gatsbyjs.com/docs)
