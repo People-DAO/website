@@ -6,7 +6,22 @@ import * as faqStyle from "./Faq.module.scss"
 
 const FaqSection = () => (
   <Section name="faq" className={faqStyle.faq}>
-    <span>FAQ section</span>
+    <div>
+      <div className={faqStyle.wrapper}>
+        <div className={faqStyle.title}>
+          <h1>FAQ section</h1>
+          <span>frequently asked questions</span>
+          </div>
+        <div className={faqStyle.content}>
+          <div className={faqStyle.item}>What is PeopleDAO?</div>
+          <div className={faqStyle.item}>What is PeopleDAO?</div>
+          <div className={faqStyle.item}>What is PeopleDAO?</div>
+          <div className={faqStyle.item}>What is PeopleDAO?</div>
+          <div className={faqStyle.item}>What is PeopleDAO?</div>
+        </div>
+      </div>
+    </div>
+    {/* <span>FAQ section</span> */}
   </Section>
 )
 
