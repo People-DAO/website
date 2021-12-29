@@ -1,3 +1,4 @@
+@import "../../../styles/breakpoints.scss";
 @import "../../../styles/colors.scss";
 @import "../../../styles/fluid.scss";
 
@@ -8,6 +9,12 @@
   .wrapper {
     display: grid;
     grid-template-columns: 3fr 2fr;
+
+    @include breakpoint(mobile) {
+      grid-template-columns: 1fr;
+      padding-top: 12rem;
+      padding-bottom: 5rem;
+    }
 
     .content {
       grid-column: 1/2;
@@ -25,38 +32,62 @@
           strong {
             font-weight: 700;
           }
+
+          @include breakpoint(mobile) {
+            text-align: center;
+          }
         }
   
         p {
-          font-size: 3.6rem;
-          line-height: 1.5;
+          @include fluid(font-size, 18, 36);
+          @include fluid(line-height, 27, 54);
+
+          @include breakpoint(mobile) {
+            text-align: center;
+          }
         }
   
       .actions {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        margin-top: 7rem;
+        @include fluid(margin-top, 58, 70);
+
+        @include breakpoint(mobile) {
+            align-items: center;
+          }
   
         .button {
           background: $color-background-secondary;
         }
 
         .contract {
+          position: relative;
           display: grid;
           grid-template-columns: auto 1fr auto;
           background: rgba($color-background-primary, 0.12);
           border: 2px solid $color-text-secondary;
           border-radius: 27px;
-          margin-top: 2.2rem;
+          @include fluid(margin-top, 54, 22);
 
           .network {
             display: flex;
             align-items: center;
-            padding: 1rem 1.4rem;
+            @include fluid(padding-top, 5, 10);
+            @include fluid(padding-bottom, 5, 10);
+            @include fluid(padding-left, 12, 14);
+            @include fluid(padding-right, 12, 14);
             background: $color-background-primary;
             border-radius: 21px;
             margin: 0.2rem 1.4rem 0.2rem 0.4rem;
+
+            @include breakpoint(mobile) {
+              position: absolute;
+              top: -55%;
+              left: 50%;
+              transform: translateX(-50%);
+              margin: 0;
+            }
 
             svg {
               height: 2rem;
@@ -75,12 +106,21 @@
             span {
               color: $color-text-secondary;
             }
+
+            @include breakpoint(mobile) {
+              font-size: 1.4rem;
+              padding: 1.4rem 2.5rem;
+            }
           }
 
           .copy {
             padding: 0.6rem;
             margin: auto 2rem auto 4rem;
             cursor: pointer;
+
+            @include breakpoint(mobile) {
+              display: none;
+            }
 
             svg {
               fill: $color-text-secondary;
@@ -94,6 +134,10 @@
       grid-column: 2/3;
       overflow: hidden;
       z-index: 10;
+
+      @include breakpoint(mobile) {
+        display: none;
+      }
 
       img {
         display: block;

@@ -20,6 +20,7 @@ const FaqSection = () => (
           <div className={faqStyle.list}>
             {content?.length && content.map((item, index) => (
               <Accordion
+                key={item?.question}
                 title={item?.question}
                 className={faqStyle.item}
                 open={!index}

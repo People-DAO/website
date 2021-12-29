@@ -1,16 +1,8 @@
-@import "./breakpoints.scss";
 @import "./fluid.scss";
 
-
-
-/* Wrapper */
 @mixin wrapper {
   max-width: 134rem;
   margin: 0 auto;
   @include fluid(padding-left, 20, 60);
   @include fluid(padding-right, 20, 60);
-
-  // @include breakpoint(tablet) {
-  //   @TODO
-  // }
 }

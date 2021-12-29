@@ -1,3 +1,4 @@
+@import "../../../styles/breakpoints.scss";
 @import "../../../styles/colors.scss";
 @import "../../../styles/fluid.scss";
 
@@ -5,8 +6,8 @@
   background: linear-gradient($color-brand-pink, $color-brand-purple);
   
   .wrapper {
-    @include fluid(padding-top, 128, 128);
-    @include fluid(padding-bottom, 128, 128);
+    @include fluid(padding-top, 112, 128);
+    @include fluid(padding-bottom, 112, 128);
 
     .content {
       .title {
@@ -19,6 +20,11 @@
           font-weight: 700;
           color: $color-text-secondary;
           text-transform: uppercase;
+
+          @include breakpoint(mobile) {
+            font-size: 2.4rem;
+            text-align: center;
+          }
         }
       }
     
@@ -29,7 +35,15 @@
         .list {
           display: grid;
           grid-template-columns: 1fr 1fr 1fr 1fr;
-          @include fluid(column-gap, 36, 36);
+          column-gap: 3.6rem;
+
+          @include breakpoint(mobile) {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            row-gap: 8rem;
+            max-width: 28rem;
+            margin: 0 auto
+          }
       
           .item {
             // @TODO
@@ -37,13 +51,17 @@
             height: 24rem;
             background: white;
             border-radius: 5px;
+
+            @include breakpoint(mobile) {
+              width: 28rem;
+            }
           }
         }
       
         .action {
           display: flex;
           justify-content: center;
-          margin-top: 13.7rem;
+          @include fluid(margin-top, 99, 137);
       
           .button {
             background: $color-background-secondary;

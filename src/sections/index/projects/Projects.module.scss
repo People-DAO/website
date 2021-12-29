@@ -1,17 +1,22 @@
+@import "../../../styles/breakpoints.scss";
 @import "../../../styles/colors.scss";
 @import "../../../styles/fluid.scss";
 
 .projects {
-  @include fluid(padding-top, 128, 128);
-  @include fluid(padding-bottom, 128, 128);
-
   .wrapper {
+    padding: 12.8rem 0;
+
     .content {
       display: grid;
       grid-template-columns: auto 1fr;
       grid-template-rows: 1fr 1fr;
       column-gap: 4rem;
       row-gap: 4rem;
+
+      @include breakpoint(mobile) {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto;
+      }
 
       .title {
         grid-column: 1/2;
@@ -21,6 +26,11 @@
         h3 {
           font-size: 4.8rem;
           line-height: 1;
+
+          @include breakpoint(mobile) {
+            font-size: 2.4rem;
+            text-align: center;
+          }
   
           strong {
             font-weight: 700;
@@ -32,6 +42,13 @@
       .actions {
         grid-column: 1/2;
         grid-row: 2/3;
+
+        @include breakpoint(mobile) {
+          grid-row: 3/4;
+          display: flex;
+          justify-content: center;
+          margin-top: 8rem;
+        }
   
         .button {
           background: $color-brand-purple;
@@ -46,6 +63,14 @@
         grid-template-rows: 1fr 1fr;
         column-gap: 3rem;
         row-gap: 4.2rem;
+
+        @include breakpoint(mobile) {
+          grid-column: 1/2;
+          grid-row: 2/3;
+          grid-template-columns: 1fr;
+          grid-template-rows: 1fr 1fr 1fr 1fr;
+          margin: 0 auto;
+        }
   
         .item {
           // @TODO
@@ -53,6 +78,10 @@
           height: 30rem;
           background: #f4ecdc;
           border-radius: 5px;
+
+          @include breakpoint(mobile) {
+            width: 28rem;
+          }
         }
       }
     }

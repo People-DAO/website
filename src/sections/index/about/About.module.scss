@@ -1,10 +1,17 @@
+@import "../../../styles/breakpoints.scss";
 @import "../../../styles/colors.scss";
+@import "../../../styles/fluid.scss";
 
 .about {
   position: relative;
   display: flex;
   justify-content: center;
   margin-bottom: -5rem;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 0;
+    background: $color-background-secondary;
+  }
   
   .wrapper {
     position: relative;
@@ -16,6 +23,14 @@
     border: 10px solid $color-background-primary;
     border-bottom: none;
 
+    @include breakpoint(mobile) {
+      top: auto;
+      max-width: 100%;
+      border: none;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
     .content {
       display: flex;
       flex-direction: column;
@@ -25,7 +40,7 @@
         text-align: center;
 
         p {
-          font-size: 1.4rem;
+          @include fluid(font-size, 12, 14);
           line-height: 2.8rem;
           margin-bottom: 2rem;
     

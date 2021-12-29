@@ -1,3 +1,4 @@
+@import "../../styles/breakpoints.scss";
 @import "../../styles/colors.scss";
 @import "../../styles/fluid.scss";
 @import "../../styles/wrapper.scss";
@@ -5,29 +6,38 @@
 .footer {
   color: $color-text-secondary;
   background: $color-background-secondary;
-  @include fluid(padding-top, 30, 160);
-  @include fluid(padding-bottom, 30, 160);
+  @include fluid(padding-top, 50, 160);
+  @include fluid(padding-bottom, 50, 160);
 
   .container {
     @include wrapper;
     display: grid;
     grid-template-columns: 3fr 2fr 3fr;
 
-    .group {
+    @include breakpoint(mobile) {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto;
+      row-gap: 6rem;
+    }
+
+    .links {
+      grid-column: 1/2;
       display: flex;
+      justify-content: flex-start;
       align-items: center;
 
-      &:nth-of-type(2) {
+      @include breakpoint(mobile) {
+        grid-row: 3/4;
         justify-content: center;
-      }
-
-      &:nth-of-type(3) {
-        justify-content: flex-end;
       }
 
       .logo {
         cursor: pointer;
         margin-right: 7.6rem;
+
+        @include breakpoint(mobile) {
+          display: none;
+        }
 
         svg {
           height: 6.1rem;
@@ -36,7 +46,7 @@
         }
       }
 
-      .links {
+      .items {
         a {
           font-size: 1.8rem;
           color: $color-text-secondary;
@@ -47,6 +57,18 @@
           }
         }
       }
+    }
+
+    .actions {
+      grid-column: 2/3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @include breakpoint(mobile) {
+        grid-column: 1/2;
+        grid-row: 1/2;
+      }
 
       .action {
         color: $color-text-primary;
@@ -54,24 +76,32 @@
         padding-left: 6.7rem;
         padding-right: 6.7rem;
       }
+    }
 
-      .socials {
+    .socials {
+      grid-column: 3/4;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      @include breakpoint(mobile) {
+        grid-column: 1/2;
+        grid-row: 2/3;
+        justify-content: center;
+      }
+
+      a {
         display: flex;
-        align-items: center;
+        margin-right: 3.4rem;
 
-        a {
-          display: flex;
-          margin-right: 3.4rem;
+        &:last-of-type {
+          margin-right: 0
+        }
 
-          &:last-of-type {
-            margin-right: 0
-          }
-
-          svg {
-            height: 2.9rem;
-            width: auto;
-            fill: $color-text-secondary;
-          }
+        svg {
+          height: 2.9rem;
+          width: auto;
+          fill: $color-text-secondary;
         }
       }
     }

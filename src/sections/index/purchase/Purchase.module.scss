@@ -1,3 +1,4 @@
+@import "../../../styles/breakpoints.scss";
 @import "../../../styles/colors.scss";
 
 .purchase {
@@ -6,6 +7,10 @@
   justify-content: center;
   margin-bottom: -2.5rem;
 
+  @include breakpoint(mobile) {
+    margin-bottom: 0;
+  }
+
   .wrapper {
     position: relative;
     top: -2.5rem;
@@ -13,6 +18,14 @@
     background: $color-background-primary;
     padding: 3.5rem 4.5rem;
     border: 2px solid $color-brand-pink;
+
+    @include breakpoint(mobile) {
+      top: auto;
+      max-width: 100%;
+      border: none;
+      padding-left: 0;
+      padding-right: 0;
+    }
 
     .content {
       display: flex;

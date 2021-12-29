@@ -46,3 +46,4 @@ To start developing or managing content on local machine:
 ## Resources
 
 - [Gatsby documentation](https://www.gatsbyjs.com/docs)
+- [Figma design](https://www.figma.com/file/hEjM8xRQchHZHcqRpkjtE6/Website)

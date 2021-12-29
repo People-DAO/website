@@ -1,4 +1,6 @@
+@import "../../../styles/breakpoints.scss";
 @import "../../../styles/colors.scss";
+@import "../../../styles/fluid.scss";
 
 .token {
   background: $color-background-secondary;
@@ -11,24 +13,39 @@
       grid-template-columns: auto 1fr;
       column-gap: 8rem;
 
+      @include breakpoint(mobile) {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        row-gap: 8rem;
+      }
+
       .header {
         display: flex;
         flex-direction: column;
         margin-right: 5rem;
-  
-        .governance {
-          font-size: 2.4rem;
-          line-height: 2.7rem;
-          color: $color-text-secondary;
+        
+        @include breakpoint(mobile) {
+          text-align: center;
+          margin-right: 0;
         }
   
-        .title {
-          font-size: 6.4rem;
-          line-height: 7.4rem;
+        .governance {
+          @include fluid(font-size, 14, 24);
+          @include fluid(line-height, 16, 27);
           color: $color-text-secondary;
-  
+        }
+        
+        .title {
+          @include fluid(font-size, 24, 64);
+          @include fluid(line-height, 27, 74);
+          color: $color-text-secondary;
+          
           strong {
             font-weight: 700;
+          }
+          
+          @include breakpoint(mobile) {
+            margin: 1.5rem 0;
           }
         }
   
@@ -36,18 +53,24 @@
           display: flex;
           align-items: center;
           margin-top: 0.5rem;
+
+          @include breakpoint(mobile) {
+            justify-content: center;
+          }
   
           .label {
-            font-size: 1.8rem;
+            @include fluid(font-size, 12, 28);
             color: $color-text-secondary;
             background: linear-gradient(to right, $color-brand-purple, $color-brand-pink);
-            padding: 0.7rem 2rem;
+            padding: 0.7rem 0;
+            @include fluid(padding-left, 9, 20);
+            @include fluid(padding-right, 9, 20);
             border-radius: 8px;
             margin-right: 1.4rem;
           }
   
           .value {
-            font-size: 2.4rem;
+            @include fluid(font-size, 14, 24);
             color: $color-text-secondary;
           }
         }
@@ -58,14 +81,29 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+
+      @include breakpoint(mobile) {
+        flex-direction: column;
+        align-items: center;
+      }
   
       .item {
         display: flex;
         flex-direction: column;
         margin-right: 4rem;
-  
+        
         &:last-of-type {
           margin-right: 0;
+        }
+
+        @include breakpoint(mobile) {
+          margin-right: 0;
+          margin-bottom: 3.6rem;
+          text-align: center;
+
+          &:last-of-type {
+            margin-bottom: 0;
+          }
         }
   
         .label {

@@ -1,4 +1,5 @@
 @import "../../../styles/colors.scss";
+@import "../../../styles/fluid.scss";
 
 .timeline {
   display: flex;
@@ -20,14 +21,17 @@
           grid-template-rows: auto 1fr;
           row-gap: 1.2rem;
           column-gap: 2rem;
+          @include fluid(column-gap, 10, 20);
           margin-bottom: 6rem;
   
           .date {
             grid-column: 1/2;
             grid-row: 2/3;
+            display: flex;
+            justify-content: flex-end;
   
             span {
-              font-size: 2.4rem;
+              @include fluid(font-size, 20, 24);
               font-weight: 700;
             }
           }
@@ -71,7 +75,7 @@
             grid-row: 1/2;
   
             span {
-              font-size: 1.8rem;
+              @include fluid(font-size, 16, 18);
               text-transform: capitalize;
               color: #707175;
             }
@@ -82,8 +86,8 @@
             grid-row: 2/3;
   
             p {
-              font-size: 1.8rem;
-              line-height: 2.3rem;
+              @include fluid(font-size, 12, 16);
+              @include fluid(line-height, 15, 23);
             }
           }
         }

@@ -19,7 +19,7 @@ const Accordion = ({title, children, open = false, className, ...props}) => {
         <span>{title}</span>
       </div>
       <div className={accordionStyle.content}>
-        {isOpen && (<p>{children}</p>)}
+        {isOpen && children}
       </div>
     </div>
   )

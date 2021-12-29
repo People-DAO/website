@@ -22,19 +22,19 @@ const Footer = () => (
   <footer className={footerStyle.footer}>
     <Fade>
       <div className={footerStyle.container}>
-        <div className={footerStyle.group}>
+        <div className={footerStyle.links}>
           <div className={footerStyle.logo}>
             <ScrollLink to="top" smooth>
               <SVG src={PeopledaoIcon} />
             </ScrollLink>
           </div>
-          <div className={footerStyle.links}>
+          <div className={footerStyle.items}>
             <Link to="/@TODO">Privacy</Link>
             <Link to="/@TODO">Terms</Link>
             <a href={meta.repository} target="_blank" rel="noreferrer noopener">Open source</a>
           </div>
         </div>
-        <div className={footerStyle.group}>
+        <div className={footerStyle.actions}>
           <Button
             className={footerStyle.action}
             href={socials.discordUrl}
@@ -43,24 +43,22 @@ const Footer = () => (
             <span>Join the movement</span>
           </Button>
         </div>
-        <div className={footerStyle.group}>
-          <div className={footerStyle.socials}>
-            <a href={socials.twitterUrl} target="_blank">
-              <SVG src={TwitterIcon} />
-            </a>
-            <a href={socials.discordUrl} target="_blank">
-              <SVG src={DiscordIcon} />
-            </a>
-            <a href={socials.githubUrl} target="_blank">
-              <SVG src={GithubIcon} />
-            </a>
-            <a href={socials.coinmarketcapUrl} target="_blank">
-              <SVG src={CoinmarketcapIcon} />
-            </a>
-            <a href={socials.etherscanUrl} target="_blank">
-              <SVG src={EtherscanIcon} />
-            </a>
-          </div>
+        <div className={footerStyle.socials}>
+          <a href={socials.twitterUrl} target="_blank">
+            <SVG src={TwitterIcon} />
+          </a>
+          <a href={socials.discordUrl} target="_blank">
+            <SVG src={DiscordIcon} />
+          </a>
+          <a href={socials.githubUrl} target="_blank">
+            <SVG src={GithubIcon} />
+          </a>
+          <a href={socials.coinmarketcapUrl} target="_blank">
+            <SVG src={CoinmarketcapIcon} />
+          </a>
+          <a href={socials.etherscanUrl} target="_blank">
+            <SVG src={EtherscanIcon} />
+          </a>
         </div>
       </div>
     </Fade>

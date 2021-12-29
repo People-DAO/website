@@ -1,3 +1,4 @@
+@import "../../styles/breakpoints.scss";
 @import "../../styles/colors.scss";
 @import "../../styles/transitions.scss";
 @import "../../styles/wrapper.scss";
@@ -43,6 +44,11 @@
 
     .navigation {
       display: flex;
+
+      @include breakpoint(mobile) {
+        // @TODO
+        display: none;
+      }
 
       a {
         color: $color-text-secondary;

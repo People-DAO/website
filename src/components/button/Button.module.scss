@@ -1,4 +1,5 @@
 @import "../../styles/colors.scss";
+@import "../../styles/fluid.scss";
 
 .button {
   display: inline-block;
@@ -19,6 +20,7 @@
 
   &.secondary {
     font-size: 1.8rem;
+    @include fluid(font-size, 14, 18);
     padding: 2.5rem 2.9rem;
     border-radius: 5px;
   }
