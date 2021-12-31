@@ -37,6 +37,12 @@
           grid-template-columns: 1fr 1fr 1fr 1fr;
           column-gap: 3.6rem;
 
+          @include breakpoint(tablet) {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            row-gap: 8rem;
+          }
+
           @include breakpoint(mobile) {
             grid-template-columns: 1fr;
             grid-template-rows: 1fr 1fr 1fr 1fr;

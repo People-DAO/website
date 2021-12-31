@@ -12,11 +12,12 @@
       display: grid;
       grid-template-columns: auto 1fr;
       column-gap: 8rem;
+      @include fluid(column-gap, 25, 80);
 
       @include breakpoint(mobile) {
         grid-template-columns: 1fr;
         grid-template-rows: auto auto;
-        row-gap: 8rem;
+        @include fluid(row-gap, 60, 80);
       }
 
       .header {
@@ -91,6 +92,7 @@
         display: flex;
         flex-direction: column;
         margin-right: 4rem;
+        @include fluid(margin-right, 15, 40);
         
         &:last-of-type {
           margin-right: 0;
@@ -108,15 +110,25 @@
   
         .label {
           font-size: 2.2rem;
+          @include fluid(font-size, 16, 22);
           line-height: 3.2rem;
           text-transform: capitalize;
           color: #9ea5b1;
+
+          @include breakpoint(mobile) {
+            @include fluid(font-size, 20, 22);
+          }
         }
   
         .value {
           font-size: 6.4rem;
+          @include fluid(font-size, 26, 64);
           line-height: 7.4rem;
           color: $color-text-secondary;
+
+          @include breakpoint(mobile) {
+            @include fluid(font-size, 50, 64);
+          }
         }
       }
     }

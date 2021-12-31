@@ -13,7 +13,7 @@
       column-gap: 4rem;
       row-gap: 4rem;
 
-      @include breakpoint(mobile) {
+      @include breakpoint(tablet) {
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr auto;
       }
@@ -27,7 +27,7 @@
           font-size: 4.8rem;
           line-height: 1;
 
-          @include breakpoint(mobile) {
+          @include breakpoint(tablet) {
             font-size: 2.4rem;
             text-align: center;
           }
@@ -43,7 +43,7 @@
         grid-column: 1/2;
         grid-row: 2/3;
 
-        @include breakpoint(mobile) {
+        @include breakpoint(tablet) {
           grid-row: 3/4;
           display: flex;
           justify-content: center;
@@ -63,6 +63,13 @@
         grid-template-rows: 1fr 1fr;
         column-gap: 3rem;
         row-gap: 4.2rem;
+
+        @include breakpoint(tablet) {
+          grid-column: 1/2;
+          grid-row: 2/3;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr 1fr;
+        }
 
         @include breakpoint(mobile) {
           grid-column: 1/2;
