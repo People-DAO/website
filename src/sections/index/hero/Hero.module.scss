@@ -12,7 +12,7 @@
 
     @include breakpoint(mobile) {
       grid-template-columns: 1fr;
-      padding-top: 12rem;
+      padding-top: 5rem;
       padding-bottom: 5rem;
     }
 
@@ -23,6 +23,22 @@
       justify-content: center;
       color: #f4ecdc;
       z-index: 20;
+
+        .logo {
+          display: none;
+
+          @include breakpoint(mobile) {
+            display: flex;
+            justify-content: center;
+            @include fluid(margin-bottom, 40, 80);
+
+            svg {
+              height: 6rem;
+              width: auto;
+              fill: $color-text-secondary;
+            }
+          }
+        }
   
         h1 {
           font-size: 1.8rem;

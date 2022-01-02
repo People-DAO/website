@@ -10,6 +10,7 @@ import * as heroStyle from "./Hero.module.scss"
 import content from "../../../../content/index/hero.yml"
 import socials from "../../../../configuration/socials.yml"
 
+import PeopledaoIcon from "../../../../static/assets/icons/peopledao/logo.svg"
 import EthereumIcon from "../../../../static/assets/icons/cryptocurrencies/ethereum.svg"
 import CopyIcon from "../../../../static/assets/icons/general/copy.svg"
 
@@ -22,6 +23,9 @@ const HeroSection = () => (
     <div className={heroStyle.wrapper}>
       <Fade distance="25%">
         <div className={heroStyle.content}>
+          <div className={heroStyle.logo}>
+            <SVG src={PeopledaoIcon} />
+          </div>
           <h1>People<strong>DAO</strong></h1>
           <p dangerouslySetInnerHTML={{__html: content.title}} />
           <div className={heroStyle.actions}>

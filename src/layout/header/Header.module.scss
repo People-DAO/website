@@ -1,5 +1,6 @@
 @import "../../styles/breakpoints.scss";
 @import "../../styles/colors.scss";
+@import "../../styles/fluid.scss";
 @import "../../styles/transitions.scss";
 @import "../../styles/wrapper.scss";
 
@@ -24,6 +25,10 @@
   background: $color-background-secondary;
   @include transition(primary, background);
 
+  @include breakpoint(mobile) {
+    display: none;
+  } 
+
   .container {
     @include wrapper;
     padding-top: 1.2rem;
@@ -45,16 +50,11 @@
     .navigation {
       display: flex;
 
-      @include breakpoint(mobile) {
-        // @TODO
-        display: none;
-      }
-
       a {
         color: $color-text-secondary;
         text-transform: uppercase;
         padding: 1rem;
-        margin-right: 4rem;
+        @include fluid(margin-right, 20, 40);
         cursor: pointer;
 
         &:last-of-type {
