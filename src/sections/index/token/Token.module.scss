@@ -9,6 +9,7 @@
   background-repeat: no-repeat;
 
   @include breakpoint(mobile) {
+    background-image: url('/assets/images/night-sky-mobile.png');
     background-size: cover;
   }
 
