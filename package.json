@@ -23,6 +23,7 @@
     "gatsby-plugin-react-helmet": "^5.4.0",
     "gatsby-plugin-sass": "^5.4.0",
     "gatsby-plugin-sitemap": "^5.4.0",
+    "n": "^8.0.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-countup": "4.3.3",
@@ -33,7 +34,8 @@
     "react-reveal": "^1.2.2",
     "react-scroll": "^1.8.4",
     "react-scrolllock": "^5.0.1",
-    "sass": "^1.45.1"
+    "sass": "^1.45.1",
+    "stable": "^0.1.8"
   },
   "devDependencies": {
     "eslint-config-airbnb": "^19.0.2",

@@ -23,46 +23,29 @@
       justify-content: center;
       color: #f4ecdc;
       z-index: 20;
+      h1 {
+        font-size: 1.8rem;
+        line-height: 1;
+        @include fluid(margin-bottom, 15, 30);
 
-        .logo {
-          display: none;
-
-          @include breakpoint(mobile) {
-            display: flex;
-            justify-content: center;
-            @include fluid(margin-bottom, 40, 80);
-
-            svg {
-              height: 6rem;
-              width: auto;
-              fill: $color-text-secondary;
-            }
-          }
+        strong {
+          font-weight: 700;
         }
-  
-        h1 {
-          font-size: 1.8rem;
-          line-height: 1;
-          @include fluid(margin-bottom, 15, 30);
-  
-          strong {
-            font-weight: 700;
-          }
 
-          @include breakpoint(mobile) {
-            text-align: center;
-          }
+        @include breakpoint(mobile) {
+          text-align: center;
         }
-  
-        p {
-          @include fluid(font-size, 18, 36);
-          @include fluid(line-height, 27, 54);
+      }
 
-          @include breakpoint(mobile) {
-            text-align: center;
-          }
+      p {
+        @include fluid(font-size, 18, 36);
+        @include fluid(line-height, 27, 54);
+
+        @include breakpoint(mobile) {
+          text-align: center;
         }
-  
+      }
+
       .actions {
         display: flex;
         flex-direction: column;
@@ -73,7 +56,7 @@
           align-items: center;
           @include fluid(margin-top, 58, 70);
         }
-  
+
         .button {
           background: $color-background-secondary;
         }
@@ -100,7 +83,7 @@
             @include fluid(padding-right, 12, 14);
             background: $color-background-primary;
             border-radius: 21px;
-            margin: 0.2rem 1.4rem 0.2rem 0.4rem;
+            margin: 0.4rem 1.4rem 0.4rem 0.4rem;
 
             @include breakpoint(mobile) {
               position: absolute;
@@ -113,7 +96,7 @@
             svg {
               height: 2rem;
               width: auto;
-              margin-right: 1rem;
+              margin-right: 0.875rem;
             }
 
             span {
