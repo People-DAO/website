@@ -1,5 +1,6 @@
 @import "../../styles/colors.scss";
 @import "../../styles/fluid.scss";
+@import "../../styles/transitions.scss";
 
 .button {
   display: inline-block;
@@ -11,6 +12,7 @@
   color: $color-text-secondary;
   background: $color-brand-pink;
   cursor: pointer;
+  @include transition(primary, transform, box-shadow);
 
   &.primary {
     font-size: 1.4rem;
@@ -23,5 +25,10 @@
     @include fluid(font-size, 14, 18);
     padding: 2.5rem 2.9rem;
     border-radius: 5px;
+  }
+
+  &:hover {
+    transform: translateY(-0.1em);
+    box-shadow:  0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   }
 }

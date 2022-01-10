@@ -7,6 +7,7 @@ import Button from "../../../components/button/Button"
 import * as projectsStyle from "./Projects.module.scss"
 
 import socials from "../../../../configuration/socials.yml"
+const comingSoon = '/assets/images/coming_soon.jpeg';
 
 const ProjectsSection = () => (
   <Section name="projects" className={projectsStyle.projects}>

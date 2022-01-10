@@ -10,6 +10,7 @@ import * as heroStyle from "./Hero.module.scss";
 import content from "../../../../content/index/hero.yml";
 import socials from "../../../../configuration/socials.yml";
 
+
 import EthereumIcon from "../../../../static/assets/icons/cryptocurrencies/ethereum.svg";
 import CopyIcon from "../../../../static/assets/icons/general/copy.svg";
 

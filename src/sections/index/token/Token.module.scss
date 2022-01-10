@@ -4,6 +4,14 @@
 
 .token {
   background: $color-background-secondary;
+  background-image: url('/assets/images/night-sky.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include breakpoint(mobile) {
+    background-image: url('/assets/images/night-sky-mobile.png');
+    background-size: cover;
+  }
 
   .wrapper {
     padding: 8rem 0;

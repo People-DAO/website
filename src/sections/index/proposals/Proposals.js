@@ -8,6 +8,8 @@ import * as proposalsStyle from "./Proposals.module.scss"
 
 import socials from "../../../../configuration/socials.yml"
 
+const comingSoon = '/assets/images/coming_soon.jpeg';
+
 const ProposalsSection = () => (
   <Section name="proposals" className={proposalsStyle.proposals}>
     <div className={proposalsStyle.wrapper}>
@@ -21,7 +23,7 @@ const ProposalsSection = () => (
               <div className={proposalsStyle.item} />
               <div className={proposalsStyle.item} />
               <div className={proposalsStyle.item} />
-              <div className={proposalsStyle.item} />
+              <div className={proposalsStyle.item}  />
             </div>
             <div className={proposalsStyle.action}>
               <Button

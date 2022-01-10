@@ -47,9 +47,48 @@
       }
 
       .list {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 1rem 0;
         // @TODO
-        span {
-          background: red;
+        // span {
+        //   background: red;
+        // }
+        .item {
+          // @TODO
+          width: 9.1333rem;
+          height: 3.6667rem;
+          border-radius: 5px;
+          text-align: center;
+          line-height: 3.6667rem;
+          font-size: 700;
+          border: .1333rem solid #FD72AD;
+          background: #FFFFFF;
+          color: black;
+
+          @include breakpoint(mobile) {
+            width: 4rem;
+            font-size: 400;
+          }
+        }
+
+        .itemred {
+          // @TODO
+          width: 9.1333rem;
+          height: 3.6667rem;
+          border-radius: 5px;
+          text-align: center;
+          line-height: 3.6667rem;
+          font-size: 700;
+          border: .1333rem solid #FD72AD;
+          background: #FD72AD;
+
+          @include breakpoint(mobile) {
+            width: 4rem;
+            font-size: 400;
+          }
         }
       }
 

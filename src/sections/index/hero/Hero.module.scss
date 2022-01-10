@@ -12,7 +12,7 @@
 
     @include breakpoint(mobile) {
       grid-template-columns: 1fr;
-      padding-top: 12rem;
+      padding-top: 5rem;
       padding-bottom: 5rem;
     }
 
@@ -23,7 +23,6 @@
       justify-content: center;
       color: #f4ecdc;
       z-index: 20;
-
       h1 {
         font-size: 1.8rem;
         line-height: 1;
@@ -88,7 +87,7 @@
 
             @include breakpoint(mobile) {
               position: absolute;
-              top: -55%;
+              top: -75%;
               left: 50%;
               transform: translateX(-50%);
               margin: 0;
@@ -114,7 +113,10 @@
 
             @include breakpoint(mobile) {
               font-size: 1.4rem;
-              padding: 1.4rem 2.5rem;
+              @include fluid(padding-top, 7, 14);
+              @include fluid(padding-bottom, 7, 14);
+              @include fluid(padding-left, 6, 25);
+              @include fluid(padding-right, 6, 25);
             }
           }
 

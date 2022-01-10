@@ -55,7 +55,8 @@
             // @TODO
             display: block;
             height: 24rem;
-            background: white;
+            background: url('/assets/images/coming_soon.jpeg') center center;
+            background-size: cover;
             border-radius: 5px;
 
             @include breakpoint(mobile) {

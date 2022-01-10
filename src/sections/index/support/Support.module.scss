@@ -7,12 +7,9 @@
 
   .wrapper {
     @include fluid(padding-top, 50, 80);
-    @include fluid(padding-bottom, 50, 80);
+    // @include fluid(padding-bottom, 50, 80);
 
     .content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
 
       .title {
         display: flex;
@@ -26,6 +23,83 @@
           text-align: center;
           color: $color-text-secondary;
         }
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        
+        .list {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          column-gap: 1.0667rem;
+
+          @include breakpoint(tablet) {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            row-gap: 8rem;
+          }
+
+          @include breakpoint(mobile) {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            row-gap: 8rem;
+            max-width: 28rem;
+            margin: 0 auto
+          }
+      
+          .item {
+            display: flex;
+            height: 24rem;
+            border-radius: 5px;
+            margin-top: 1.0667rem;
+
+            @include breakpoint(mobile) {
+              width: 28rem;
+            }
+
+            .left{
+              display: flex;
+              flex-direction: column;
+              flex: 1;
+
+              .left1 {
+                flex: 1;
+                border: 2px solid;
+                border-image: linear-gradient(to top, #FD72AD, #A561FF) 1;
+                clip-path: inset(0 round 3px);
+              }
+              .left2 {
+                flex: 2;
+                margin-top: 1.0667rem;
+                border: 2px solid;
+                border-image: linear-gradient(to top, #FD72AD, #A561FF) 1;
+                clip-path: inset(0 round 3px);
+              }
+            }
+            .right {
+              display: flex;
+              flex-direction: column;
+              flex: 1.3;
+              margin-left: 1.0667rem;
+
+              .right1 {
+                flex: 1.3;
+                border: 2px solid;
+                border-image: linear-gradient(to top, #FD72AD, #A561FF) 1;
+                clip-path: inset(0 round 3px);
+              }
+              .right2 {
+                flex: 1;
+                margin-top: 1.0667rem;
+                border: 2px solid;
+                border-image: linear-gradient(to top, #FD72AD, #A561FF) 1;
+                clip-path: inset(0 round 3px);
+              }
+            }
+          }
+        }
+      
       }
 
       span {
