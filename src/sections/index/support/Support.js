@@ -8,7 +8,6 @@ import support from "../../../../configuration/support.yml"
 
 import * as supportStyle from "./Support.module.scss"
 import { element } from "prop-types"
-const uri = '/assets/images/1.png';
 
 const SupportSection = () => (
 
