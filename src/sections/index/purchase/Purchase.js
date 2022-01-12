@@ -8,7 +8,9 @@ import * as purchaseStyle from "./Purchase.module.scss"
 import content from "../../../../content/index/purchase.yml"
 import Button from "../../../components/button/Button"
 import socials from "../../../../configuration/socials.yml"
+import { fetchMarketData } from "../../../util/api/dune"
 
+fetchMarketData()
 const PurchaseSection = () => (
   <Section name="purchase" className={purchaseStyle.purchase}>
     <div className={purchaseStyle.wrapper}>
@@ -22,7 +24,7 @@ const PurchaseSection = () => (
             <Button className={purchaseStyle.item} 
             href={socials.uniUrl}
             target="_blank"
-            >UINSWAP</Button>
+            >UNISWAP</Button>
             <Button className={purchaseStyle.itemred}
             href={socials.ftxUrl}
             target="_blank"

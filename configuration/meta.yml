@@ -1,9 +1,9 @@
 title: PeopleDAO
-description: "@TODO"
+description: "PeopleDAO"
 url: "https://people-dao.com"
 repository: "https://github.com/People-DAO/website"
 
-version: "@TODO" # Generate random string when updating meta assets
+version: "1.0" # Generate random string when updating meta assets
 ogImageWidth: 1000
 ogImageHeight: 1000
 msAppColor: "@TODO"

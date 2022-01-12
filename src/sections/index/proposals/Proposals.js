@@ -7,6 +7,7 @@ import Button from "../../../components/button/Button"
 import * as proposalsStyle from "./Proposals.module.scss"
 
 import socials from "../../../../configuration/socials.yml"
+import proposal from "../../../../configuration/proposal.yml"
 
 const comingSoon = '/assets/images/coming_soon.jpeg';
 
@@ -20,19 +21,28 @@ const ProposalsSection = () => (
           </div>
           <div className={proposalsStyle.content}>
             <div className={proposalsStyle.list}>
-              <div className={proposalsStyle.item} />
-              <div className={proposalsStyle.item} />
-              <div className={proposalsStyle.item} />
-              <div className={proposalsStyle.item}  />
+              <a href={proposal.PIP0Url} 
+              target="_blank">
+                <div className={proposalsStyle.item}> <span>PIP0 -- PeopleDAO, a meta DAO governed by PEOPLE token.</span> </div> 
+              </a>
+              <a href={proposal.PIP1Url} 
+              target="_blank">
+                <div className={proposalsStyle.item}> <span>Core Proposal PIP1 - Founding Voter POAP.</span> </div> 
+              </a>
+              <a href={proposal.PIP2Url} 
+              target="_blank">
+                <div className={proposalsStyle.item}> <span>Core Proposal PIP2 – Cross-chain Bridges.</span> </div> 
+              </a>
+              <div className={proposalsStyle.item}> <span>Coming Soon...</span> </div> 
             </div>
             <div className={proposalsStyle.action}>
               <Button
                 type="secondary"
                 className={proposalsStyle.button}
-                href={socials.discordUrl}
+                href={proposal.peopleShapshot}
                 target="_blank"
               >
-                <span>Download proposal template</span>
+                <span>Check All PROPOSALS</span>
               </Button>
             </div>
           </div>

@@ -11,19 +11,23 @@ import ProjectsSection from "../sections/index/projects/Projects"
 import ProposalsSection from "../sections/index/proposals/Proposals"
 import FaqSection from "../sections/index/faq/Faq"
 import SupportSection from "../sections/index/support/Support"
+import { Provider } from 'react-redux';
+import store from '../store/index';
 
 const IndexPage = () => (
-  <Layout>
-    <HeroSection />
-    <AboutSection />
-    <TimelineSection />
-    <TokenSection />
-    <PurchaseSection />
-    <ProjectsSection />
-    <ProposalsSection />
-    <FaqSection />
-    <SupportSection />
-  </Layout>
+  <Provider store={store}>
+    <Layout>
+      <HeroSection />
+      <AboutSection />
+      <TimelineSection />
+      <TokenSection />
+      <PurchaseSection />
+      <ProjectsSection />
+      <ProposalsSection />
+      <FaqSection />
+      <SupportSection />
+    </Layout>
+  </Provider>
 )
 
 export default IndexPage

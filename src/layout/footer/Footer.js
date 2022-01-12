@@ -29,8 +29,8 @@ const Footer = () => (
             </ScrollLink>
           </div>
           <div className={footerStyle.items}>
-            <Link to="/@TODO">Privacy</Link>
-            <Link to="/@TODO">Terms</Link>
+            {/* <Link to="/@TODO">Privacy</Link>
+            <Link to="/@TODO">Terms</Link> */}
             <a href={meta.repository} target="_blank" rel="noreferrer noopener">Open source</a>
           </div>
         </div>

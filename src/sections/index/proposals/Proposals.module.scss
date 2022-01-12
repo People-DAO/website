@@ -50,17 +50,30 @@
             max-width: 28rem;
             margin: 0 auto
           }
+          a {
+            text-decoration:none;
+            color:#333;
+          }
       
           .item {
             // @TODO
-            display: block;
+            display:table;
             height: 24rem;
-            background: url('/assets/images/coming_soon.jpeg') center center;
-            background-size: cover;
+            // background: url('/assets/images/coming_soon.jpeg') center center;
+            // background-size: cover;
+            background: white;
+            text-align: center;
             border-radius: 5px;
+            font-size: 2.8rem;
+            font-weight: 700;
 
             @include breakpoint(mobile) {
               width: 28rem;
+            }
+
+            span {
+              display:table-cell;
+              vertical-align:middle;
             }
           }
         }

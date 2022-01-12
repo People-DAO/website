@@ -7,15 +7,19 @@ import Section from "../../../components/section/Section"
 import * as tokenStyle from "./Token.module.scss"
 
 import parseCountupValue from "../../../helpers/parseCountupValue"
+import { fetchMarketData } from "../../../util/api/dune"
+import { connect } from 'react-redux';
 
-const TokenSection = () => {
+const TokenSection = (props) => {
   const [countupReady, setCountupReady] = useState(false)
 
   // @TODO: Dynamic values
 
+  const { last_price, market_cap, total_circulating } = props;
+
   const rank = parseCountupValue({value: 2324, reverse: true})
-  const cap = parseCountupValue({value: 940})
-  const volume = parseCountupValue({value: 8.9, decimals: 2})
+  const cap = parseCountupValue({value: market_cap})
+  const volume = parseCountupValue({value:total_circulating})
 
   return (
     <Section name="token" className={tokenStyle.token}>
@@ -27,11 +31,11 @@ const TokenSection = () => {
               <span className={tokenStyle.title}>Constitution<strong>DAO</strong></span>
               <div className={tokenStyle.price}>
                 <div className={tokenStyle.label}>$PEOPLE</div>
-                <div className={tokenStyle.value}>$0.145 USD</div>
+                <div className={tokenStyle.value}>${last_price} USD</div>
               </div>
             </div>
             <div className={tokenStyle.values}>
-              <div className={tokenStyle.item}>
+              {/* <div className={tokenStyle.item}>
                 <span className={tokenStyle.label}>Rank</span>
                 <span className={tokenStyle.value}>
                   {countupReady && (
@@ -43,9 +47,9 @@ const TokenSection = () => {
                     />
                   )}
                 </span>
-              </div>
+              </div> */}
               <div className={tokenStyle.item}>
-                <span className={tokenStyle.label}>Market cap</span>
+                <span className={tokenStyle.label}>Market cap </span>
                 <span className={tokenStyle.value}>
                   {"$"}
                   {countupReady && (
@@ -60,7 +64,7 @@ const TokenSection = () => {
                 </span>
               </div>
               <div className={tokenStyle.item}>
-                <span className={tokenStyle.label}>24h volume</span>
+                <span className={tokenStyle.label}>Total Circulating</span>
                 <span className={tokenStyle.value}>
                   {"$"}
                   {countupReady && (
@@ -81,4 +85,16 @@ const TokenSection = () => {
     </Section>
   )
 }
-export default TokenSection
+
+const mapStateToProps = (state) => {
+  return {
+
+    last_price: state.last_price,
+    market_cap: state.market_cap,
+    total_circulating: state.total_circulating,
+    
+  }
+}
+
+export default connect(mapStateToProps, null)(TokenSection);
+// export default TokenSection

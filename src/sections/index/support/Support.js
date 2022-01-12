@@ -4,10 +4,10 @@ import Fade from "react-reveal/Fade"
 import Section from "../../../components/section/Section"
 import Button from "../../../components/button/Button"
 import socials from "../../../../configuration/socials.yml"
-import support from "../../../../configuration/support.yml"
 
 import * as supportStyle from "./Support.module.scss"
 import { element } from "prop-types"
+import support from "../../../../configuration/support.yml"
 
 const SupportSection = () => (
 
@@ -26,12 +26,12 @@ const SupportSection = () => (
                   return (
                   <div className={supportStyle.item} >
                     <div className={supportStyle.left}>
-                      <div className={supportStyle.left1} style={{ background: `url('${support.supports[index * 4]}') center center /cover` }} />
-                      <div className={supportStyle.left2} style={{ background: `url('${support.supports[index * 4 + 1]}') center center /cover` }} />
+                      <div className={supportStyle.left1} style={{ background: `url("/assets/images/people${index * 4 + 1}.png") center center /cover` }} />
+                      <div className={supportStyle.left2} style={{ background: `url("/assets/images/people${index * 4 + 2}.png") center center /cover` }} />
                     </div>
                     <div className={supportStyle.right}>
-                      <div className={supportStyle.right1} style={{ background: `url('${support.supports[index * 4 + 2]}') center center /cover` }} />
-                      <div className={supportStyle.right2} style={{ background: `url('${support.supports[index * 4 + 3]}') center center /cover` }} />
+                      <div className={supportStyle.right1} style={{ background: `url("/assets/images/people${index * 4 + 3}.png") center center /cover` }} />
+                      <div className={supportStyle.right2} style={{ background: `url("/assets/images/people${index * 4 + 4}.png") center center /cover` }} />
                     </div>
                   </div>)
                 })
