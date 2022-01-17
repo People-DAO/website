@@ -1,0 +1,111 @@
+@import "../../../styles/breakpoints.scss";
+@import "../../../styles/colors.scss";
+@import "../../../styles/fluid.scss";
+
+.donation {
+  .wrapper {
+    padding: 12.8rem 0;
+
+    .content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      column-gap: 4rem;
+      row-gap: 4rem;
+
+      .title {
+        flex: 50%;
+
+        @include breakpoint(mobile) {
+          flex: 100%
+        }
+  
+        h3 {
+          font-size: 4.8rem;
+          line-height: 1;
+          margin-bottom: 2rem;
+
+          @include breakpoint(tablet) {
+            font-size: 2.4rem;
+            text-align: center;
+          }
+  
+          strong {
+            font-weight: 700;
+            text-transform: uppercase;
+          }
+        }
+      }
+  
+      .actions {
+        text-align: center;
+        margin-top: 3rem;
+
+        @include breakpoint(tablet) {
+          grid-row: 3/4;
+          display: flex;
+          justify-content: center;
+          margin-top: 5rem;
+        }
+  
+        .button {
+          // background: $color-brand-purple;
+          background: $color-background-secondary;
+        }
+      }
+  
+      .form {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 10%;
+
+        @include breakpoint(mobile) {
+          flex: 100%;
+        }
+
+        padding: 2.5rem 2.5rem;
+        border: 2px solid #fd72ad;
+
+        .row {
+          display: flex;
+          justify-content: space-between;
+          padding: 1rem;
+          height: 3rem;
+        }
+
+        .select {
+          border: none;
+          border-bottom: 2px solid #fd72ad;
+          text-align: right;
+          font-family: inherit;
+        }
+        
+        .select:focus{
+          outline: none;
+        }
+
+        .input {
+          width: 50%;
+          border: none;
+          border-bottom: 2px solid #fd72ad;
+          text-align: right;
+          font-family: inherit;
+        }
+
+        .input:focus{
+          outline: none;
+        }
+
+        .small {
+          margin-top: 2rem;
+          font-size: 1.2rem;
+          font-family: inherit;
+          color: dimgray;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
