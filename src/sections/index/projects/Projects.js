@@ -28,10 +28,18 @@ const ProjectsSection = () => (
             </Button>
           </div>
           <div className={projectsStyle.list}>
-            <div className={projectsStyle.item} />
-            <div className={projectsStyle.item} />
-            <div className={projectsStyle.item} />
-            <div className={projectsStyle.item} />
+            <div className={projectsStyle.item}>
+              <span className={projectsStyle.text}>Applying for Harmony Grant</span>
+            </div>
+            <div className={projectsStyle.item}>
+              <span className={projectsStyle.text}>Writing DAO Consitution</span>
+            </div>
+            <div className={projectsStyle.item}>
+              <span className={projectsStyle.text}>DAO-DAO Collaboration</span>
+            </div>
+            <div className={projectsStyle.item}>
+              <span className={projectsStyle.text}>Coordinape Integration</span>
+            </div>
           </div>
         </div>
       </Fade>

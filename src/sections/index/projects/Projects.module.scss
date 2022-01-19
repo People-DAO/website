@@ -81,14 +81,27 @@
   
         .item {
           // @TODO
+          position: relative;
           display: block;
           height: 30rem;
           border-radius: 5px;
-          background: url('/assets/images/coming_soon.jpeg') center center;
+          // background: url('/assets/images/coming_soon.jpeg') center center;
+          background-color: $color-text-primary;
           background-size: cover;
+          color: white;
+          text-align: center;
 
           @include breakpoint(mobile) {
             width: 28rem;
+          }
+
+          .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: 0;
+            font-size: 3rem;
           }
         }
       }
