@@ -1,0 +1,172 @@
+@import "../../../styles/breakpoints.scss";
+@import "../../../styles/colors.scss";
+@import "../../../styles/fluid.scss";
+
+.donation {
+  .wrapper {
+    padding: 12.8rem 0;
+
+    .content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      column-gap: 4rem;
+      row-gap: 4rem;
+
+      .donationPrompt {
+        // flex: 50%;
+        flex: 2;
+
+        @include breakpoint(mobile) {
+          flex: 100%
+        }
+  
+        h3 {
+          font-size: 4.8rem;
+          line-height: 1;
+          margin-bottom: 2rem;
+
+          @include breakpoint(tablet) {
+            font-size: 2.4rem;
+            text-align: center;
+          }
+  
+          strong {
+            font-weight: 700;
+            text-transform: uppercase;
+          }
+        }
+      }
+  
+      .actions {
+        text-align: center;
+        margin-top: 3rem;
+
+        @include breakpoint(tablet) {
+          grid-row: 3/4;
+          display: flex;
+          justify-content: center;
+          margin-top: 5rem;
+          
+        }
+  
+        .button {
+          min-width: 50%;
+          background: $color-background-secondary;
+        }
+      }
+  
+      .donateForm {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex: 1;
+
+        @include breakpoint(mobile) {
+          margin: 0 2rem;
+        }
+
+        padding: 2.5rem 2.5rem;
+        border: 2px solid #fd72ad;
+
+        .title {
+          padding: 1rem;
+          font-weight: 700;
+        }
+
+        .row {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 1rem;
+          height: 3rem;
+        }
+
+        .select {
+          border: none;
+          border-bottom: 2px solid #fd72ad;
+          text-align: right;
+          font-family: inherit;
+        }
+        
+        .select:focus{
+          outline: none;
+        }
+
+        .input {
+          width: 50%;
+          border: none;
+          border-bottom: 2px solid #fd72ad;
+          text-align: right;
+          font-family: inherit;
+        }
+
+        .input:focus{
+          outline: none;
+        }
+
+        .small {
+          margin-top: 2rem;
+          font-size: 1.2rem;
+          font-family: inherit;
+          color: dimgray;
+          text-align: center;
+        }
+      }
+
+      .poap {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        flex: 1;
+
+        padding: 2.5rem 2.5rem;
+        border: 2px solid #fd72ad;
+
+        @include breakpoint(mobile) {
+          margin: 0 2rem;
+        }
+
+        // @include breakpoint(tablet) {
+        //   margin: 0 5rem;
+        // }
+
+        .title {
+          font-weight: 700;
+        }
+        
+        .row {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .innerWrapper {
+          align-items: center;
+          text-align: center;
+          padding: 1rem;
+        }
+
+        .poapPrompt {
+          font-size: 1.5rem;
+          padding: 1rem;
+        }
+
+        .donateImg {
+          text-align: center;
+          width: auto;
+          height: auto;
+          max-width: 50px;
+        }
+
+        .poapImg {
+          width: auto;
+          height: auto;
+          max-width: 125px;
+          padding: 1rem;
+        }
+      }
+    }
+  }
+}

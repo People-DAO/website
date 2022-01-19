@@ -13,6 +13,7 @@ import FaqSection from "../sections/index/faq/Faq"
 import SupportSection from "../sections/index/support/Support"
 import { Provider } from 'react-redux';
 import store from '../store/index';
+import DonationSection from "../sections/index/donation/donation"
 
 const IndexPage = () => (
   <Provider store={store}>
@@ -23,6 +24,7 @@ const IndexPage = () => (
       <TokenSection />
       <PurchaseSection />
       <ProjectsSection />
+      <DonationSection />
       <ProposalsSection />
       <FaqSection />
       <SupportSection />
