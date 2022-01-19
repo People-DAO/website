@@ -9,6 +9,8 @@ import * as donationStyle from "./donation.module.scss"
 import content from "../../../../content/index/donation.yml"
 import tokens from "../../../../content/index/tokens.yml"
 
+const poap = '/assets/images/donate.svg';
+
 const DonationSection = () => {
   // Form states
   const [tokenToDonate, setToken] = useState(tokens.length ? tokens[0].ticker : "");
@@ -59,52 +61,89 @@ const DonationSection = () => {
 
   return (
     <Section name="donation" className={donationStyle.donation}>
-    <div className={donationStyle.wrapper}>
-      <Fade distance="25%">
-        <div className={donationStyle.content}>
-          <div className={donationStyle.title}>
-            <h3>Donate to People<strong>DAO</strong></h3>
-            <p dangerouslySetInnerHTML={{ __html: content.pitch }} />
-          </div>
-          <div className={donationStyle.form}>
-            <form>
+      <div className={donationStyle.wrapper}>
+        <Fade distance="25%">
+          <div className={donationStyle.content}>
+            <div className={donationStyle.donationPrompt}>
+              <h3>
+                Donate to People<strong>DAO</strong>
+              </h3>
+              <p dangerouslySetInnerHTML={{ __html: content.pitch }} />
+            </div>
+
+            <div className={donationStyle.donateForm}>
+              <span className={donationStyle.title}>Donation</span>
+              <form>
+                <div className={donationStyle.row}>
+                  <label for="selectToken">Select token</label>
+                  <select
+                    id="selectToken"
+                    className={donationStyle.select}
+                    value={tokenToDonate}
+                    onChange={(e) => setToken(e.target.value)}
+                  >
+                    {tokens?.length &&
+                      tokens.map((item, index) => (
+                        <option key={index} value={item?.ticker}>
+                          {item?.ticker}
+                        </option>
+                      ))}
+                  </select>
+                </div>
+                <div className={donationStyle.row}>
+                  <label for="donationAmount">Amount</label>
+                  <input
+                    className={donationStyle.input}
+                    type="number"
+                    min={0}
+                    value={amountToDonate}
+                    onChange={(e) => handleInput(e.target.value)}
+                  ></input>
+                </div>
+                <p className={donationStyle.small}>
+                  Donations are sent to our Gnosis Multi-sig wallet via the
+                  Ethereum network.
+                </p>
+                <div className={donationStyle.actions}>
+                  <FormButton />
+                </div>
+              </form>
+            </div>
+
+            <div className={donationStyle.poap}>
               <div className={donationStyle.row}>
-                <label for="selectToken">Select token</label>
-                <select 
-                  id="selectToken" 
-                  className={donationStyle.select}
-                  value={tokenToDonate}
-                  onChange={e => setToken(e.target.value)}
-                >
-                  {tokens?.length &&
-                    tokens.map((item, index) => (
-                      <option key={index} value={item?.ticker}>
-                        {item?.ticker}
-                      </option>
-                    ))}
-                </select>
+                <span className={donationStyle.title}>I donated POAP</span>
+                <Fade right distance="25%">
+                  <img
+                    className={donationStyle.donateImg}
+                    src="/assets/images/donate.svg"
+                    alt="invite to donate"
+                  />
+                </Fade>
               </div>
-              <div className={donationStyle.row}>
-                <label for="donationAmount">Amount</label>
-                <input 
-                  className={donationStyle.input} 
-                  type="number" 
-                  min={0}
-                  value={amountToDonate}
-                  onChange={e => handleInput(e.target.value)}>
-                </input>
+              <div className={donationStyle.innerWrapper}>
+                <p className={donationStyle.poapPrompt}>
+                  Donate to get this POAP
+                </p>
+                <Fade right distance="25%">
+                  <img
+                    className={donationStyle.poapImg}
+                    src="/assets/images/donation-to-peoople-dao-poap.png"
+                    alt="donated to peopledao poap"
+                  />
+                </Fade>
               </div>
-              <p className={donationStyle.small}>Donations are sent to our Gnosis Multi-sig wallet via the Ethereum network.</p>
               <div className={donationStyle.actions}>
-                <FormButton />
+                <Button type="primary" className={donationStyle.button}>
+                  <span>Mint</span>
+                </Button>
               </div>
-            </form>
+            </div>
           </div>
-        </div>
-      </Fade>
-    </div>
-  </Section>
-  )
+        </Fade>
+      </div>
+    </Section>
+  );
 };
 
 export default DonationSection

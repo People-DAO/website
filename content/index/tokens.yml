@@ -1,12 +1,4 @@
 - people:
   ticker: "PEOPLE"
-- usdt:
-  ticker: "USDT"
-- BNB:
-  ticker: "BNB"
-- USDC:
-  ticker: "USDC"
-- BTCB:
-  ticker: "BTCB"
-- BUSD:
-  ticker: "BUSD"
+- eth:
+  ticker: "ETH"

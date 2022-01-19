@@ -13,8 +13,9 @@
       column-gap: 4rem;
       row-gap: 4rem;
 
-      .title {
-        flex: 50%;
+      .donationPrompt {
+        // flex: 50%;
+        flex: 2;
 
         @include breakpoint(mobile) {
           flex: 100%
@@ -46,31 +47,38 @@
           display: flex;
           justify-content: center;
           margin-top: 5rem;
+          
         }
   
         .button {
-          // background: $color-brand-purple;
+          min-width: 50%;
           background: $color-background-secondary;
         }
       }
   
-      .form {
+      .donateForm {
         position: relative;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        flex: 10%;
+        justify-content: space-between;
+        flex: 1;
 
         @include breakpoint(mobile) {
-          flex: 100%;
+          margin: 0 2rem;
         }
 
         padding: 2.5rem 2.5rem;
         border: 2px solid #fd72ad;
 
+        .title {
+          padding: 1rem;
+          font-weight: 700;
+        }
+
         .row {
           display: flex;
           justify-content: space-between;
+          align-items: center;
           padding: 1rem;
           height: 3rem;
         }
@@ -104,6 +112,59 @@
           font-family: inherit;
           color: dimgray;
           text-align: center;
+        }
+      }
+
+      .poap {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        flex: 1;
+
+        padding: 2.5rem 2.5rem;
+        border: 2px solid #fd72ad;
+
+        @include breakpoint(mobile) {
+          margin: 0 2rem;
+        }
+
+        // @include breakpoint(tablet) {
+        //   margin: 0 5rem;
+        // }
+
+        .title {
+          font-weight: 700;
+        }
+        
+        .row {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .innerWrapper {
+          align-items: center;
+          text-align: center;
+          padding: 1rem;
+        }
+
+        .poapPrompt {
+          font-size: 1.5rem;
+          padding: 1rem;
+        }
+
+        .donateImg {
+          text-align: center;
+          width: auto;
+          height: auto;
+          max-width: 50px;
+        }
+
+        .poapImg {
+          width: auto;
+          height: auto;
+          max-width: 125px;
+          padding: 1rem;
         }
       }
     }
