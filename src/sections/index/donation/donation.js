@@ -1,3 +1,4 @@
+import { ethers } from 'ethers';
 import React, { useState } from "react"
 import Fade from "react-reveal/Fade"
 
@@ -8,10 +9,16 @@ import * as donationStyle from "./donation.module.scss"
 
 import content from "../../../../content/index/donation.yml"
 import tokens from "../../../../content/index/tokens.yml"
+import { setUpContracts } from "../../../util/web3/etherUtil"
+import { connect } from 'react-redux';
 
 const poap = '/assets/images/donate.svg';
 
-const DonationSection = () => {
+const treasuryAddress = "0x08E86b528E217e006B1116243Df2D96A1116966b"
+
+const DonationSection = (props) => {
+
+  const { wallet_connect, account } = props;
   // Form states
   const [tokenToDonate, setToken] = useState(tokens.length ? tokens[0].ticker : "");
   const [chain, setChain] = useState();
@@ -20,23 +27,48 @@ const DonationSection = () => {
   // Validate form
   const isValid = amountToDonate > 0 && tokenToDonate !== "";
 
-  function connect(){};
+  function connect() {
+    setUpContracts()
+  };
 
   function handleInput(amount) {
-    amount <= 0 ? setAmount("") : setAmount(amount);
+    amount < 0 ? setAmount("") : setAmount(amount);
   }
 
   function handleSubmit(e) {
     e.preventDefault();
     // if (!isValid) return;
-    console.log('isValid: ', isValid);
-    console.log('tokenToDonate: ', tokenToDonate);
-    console.log('amountToDonate: ', amountToDonate);
+    if (!isValid) {
+      return
+    }
+    var amountWei = ethers.utils.parseEther(amountToDonate);
+    if (tokenToDonate === 'ETH') {
+      // global.signer.transfor(amountToDonate)
+      global.signer.sendTransaction({
+        to: treasuryAddress,
+        value: amountWei,
+        gasPrice: global.signer.getGasPrice(),
+        gasLimit: 21000,
+      }).then(function (tx) {
+        alert("success")
+        console.log('tx : ', tx);
+      }).catch(e => {
+        
+      });
+
+    } else if (tokenToDonate === 'PEOPLE') {
+      const peopleWithSigner = global.peopleContract.connect(global.signer);
+      peopleWithSigner.transfer(treasuryAddress, amountWei).then(response => {
+
+      }).catch(e => {
+        console.log(' transfer exception : ', e);
+      });
+    }
   }
 
   // Show form button based on whether user connected to metamask
   const FormButton = () => {
-    if (isWalletConnected) {
+    if (wallet_connect) {
       return (
         <Button
           type="primary"
@@ -72,7 +104,7 @@ const DonationSection = () => {
             </div>
 
             <div className={donationStyle.donateForm}>
-              <span className={donationStyle.title}>Donation</span>
+              <span className={donationStyle.title}>Donation:{account === '' ? " Connect Wallet " : account.slice(0, 4) + "..." + account.slice(-4)}</span>
               <form>
                 <div className={donationStyle.row}>
                   <label for="selectToken">Select token</label>
@@ -95,6 +127,7 @@ const DonationSection = () => {
                   <input
                     className={donationStyle.input}
                     type="number"
+                    step="1"
                     min={0}
                     value={amountToDonate}
                     onChange={(e) => handleInput(e.target.value)}
@@ -146,4 +179,15 @@ const DonationSection = () => {
   );
 };
 
-export default DonationSection
+const mapStateToProps = (state) => {
+  return {
+
+    wallet_connect: state.wallet_connect,
+    account: state.account,
+
+  }
+}
+
+export default connect(mapStateToProps, null)(DonationSection);
+
+// export default DonationSection

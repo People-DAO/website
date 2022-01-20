@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "axios": "^0.24.0",
+    "ethers": "^5.5.3",
     "gatsby": "^4.4.0",
     "gatsby-plugin-manifest": "^4.4.0",
     "gatsby-plugin-react-helmet": "^5.4.0",
