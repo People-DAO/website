@@ -20,8 +20,8 @@ const Head = ({title}) => {
       <meta property="og:image:height" content={meta.ogImageHeight} />
       <meta property="og:url" content={meta.url} />
       <link rel="apple-touch-icon" sizes="180x180" href={`/meta/apple-touch-icon.png?v=${meta.version}`} />
-      <link rel="icon" type="image/png" sizes="32x32" href={`/meta/favicon-32x32.png?v=${meta.version}`} />
-      <link rel="icon" type="image/png" sizes="16x16" href={`/meta/favicon-16x16.png?v=${meta.version}`} />
+      <link rel="icon" type="image/svg+xml" href={`/meta/favicon.svg?v=${meta.version}`} />
+      <link rel="icon" type="image/png" href={`/meta/favicon.png?v=${meta.version}`} />
       <link rel="manifest" href={`/meta/site.webmanifest?v=${meta.version}`} />
       <link rel="mask-icon" href={`/meta/safari-pinned-tab.svg?v=${meta.version}`} color={meta.appleAppColor} />
       <link rel="shortcut icon" href={`/meta/favicon.ico?v=${meta.version}`} />
