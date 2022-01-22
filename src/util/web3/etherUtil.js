@@ -62,7 +62,8 @@ async function handleNewChain(chainId) {
 
     } else {
         console.log("handleNewChain : switch")
-        alert("please change to ETH MainNet!")
+        // alert("please change to ETH MainNet!")
+        return "wrong_chain";
         // switchToBinanceSmartChain()
     }
 }
@@ -72,11 +73,15 @@ async function getNetworkAndChainId() {
         const chainId = await ethereum.request({
             method: 'eth_chainId',
         })
-        await handleNewChain(chainId)
+        let result = await handleNewChain(chainId)
         const networkId = await ethereum.request({
             method: 'net_version',
         })
         console.log("network id", networkId)
+
+        if (result==="wrong_chain") {
+            return "wrong_chain";
+        }
     } catch (err) {
         console.error(err)
     }
@@ -122,6 +127,8 @@ export async function setUpContracts() {
     }
     // load local contract
     await loadContracts();
-    await getNetworkAndChainId();
-
+    let result = await getNetworkAndChainId();
+    if(result==="wrong_chain") {
+        return "wrong_chain";
+    }
 }

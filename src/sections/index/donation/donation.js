@@ -24,11 +24,19 @@ const DonationSection = (props) => {
   const [chain, setChain] = useState();
   const [amountToDonate, setAmount] = useState("");
   const [isWalletConnected, setWalletConnect] = useState(false);
+  const [alertMsg, setAlertMsg] = useState("");
   // Validate form
   const isValid = amountToDonate > 0 && tokenToDonate !== "";
 
-  function connect() {
-    setUpContracts()
+  async function connect() {
+    let result = await setUpContracts();
+    console.log('result0: ', result);
+    if(result === "wrong_chain") {
+      console.log('result999: ', result);
+      setAlertMsg("Please switch wallet to Ethereum MainNet.")
+    } else {
+      setAlertMsg("");
+    }
   };
 
   function handleInput(amount) {
@@ -50,20 +58,27 @@ const DonationSection = (props) => {
         gasPrice: global.signer.getGasPrice(),
         gasLimit: 21000,
       }).then(function (tx) {
-        alert("success")
+        // alert("success")
+        setAlertMsg("Thank you for your donation. You can now mint a donation POAP.")
         console.log('tx : ', tx);
       }).catch(e => {
-        
+        console.log('e : ', e.message);
+        setAlertMsg(e.message);
       });
 
     } else if (tokenToDonate === 'PEOPLE') {
       const peopleWithSigner = global.peopleContract.connect(global.signer);
       peopleWithSigner.transfer(treasuryAddress, amountWei).then(response => {
-
+        setAlertMsg("Thank you for your donation. You can now mint a donation POAP.")
       }).catch(e => {
-        console.log(' transfer exception : ', e);
+        console.log(' transfer exception : ', e.message);
+        setAlertMsg(e.error.message);
       });
     }
+  }
+
+  function close() {
+    setAlertMsg("");
   }
 
   // Show form button based on whether user connected to metamask
@@ -91,8 +106,22 @@ const DonationSection = (props) => {
     }
   }
 
+  const AlertBox = () => {
+    if(alertMsg === "") {
+      return <div></div>
+    } else {
+      return (
+        <div className={donationStyle.alert}>
+          <h3>{alertMsg}</h3>
+          <a className="close" onClick={close}>&times;</a>
+        </div>
+      );
+    }
+  }
+
   return (
     <Section name="donation" className={donationStyle.donation}>
+      <AlertBox />
       <div className={donationStyle.wrapper}>
         <Fade distance="25%">
           <div className={donationStyle.content}>
@@ -104,7 +133,12 @@ const DonationSection = (props) => {
             </div>
 
             <div className={donationStyle.donateForm}>
-              <span className={donationStyle.title}>Donation:{account === '' ? " Connect Wallet " : account.slice(0, 4) + "..." + account.slice(-4)}</span>
+              <span className={donationStyle.title}>
+                Donation:
+                {account === ""
+                  ? " Connect Wallet "
+                  : account.slice(0, 4) + "..." + account.slice(-4)}
+              </span>
               <form>
                 <div className={donationStyle.row}>
                   <label for="selectToken">Select token</label>

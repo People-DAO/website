@@ -30,6 +30,9 @@ const Header = () => (
             <ScrollLink to="projects" smooth>
               <span>Projects</span>
             </ScrollLink>
+            <ScrollLink to="donation" smooth>
+              <span>Donate</span>
+            </ScrollLink>
             <ScrollLink to="proposals" smooth>
               <span>Proposals</span>
             </ScrollLink>
