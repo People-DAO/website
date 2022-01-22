@@ -22,10 +22,14 @@ var mainChainInfo = {
 const PEOPLE_TOKEN_ADDRESS = "0x7a58c0be72be218b41c608b7fe7c5bb630736c71"
 
 const chainInfo = mainChainInfo
+var ethereum = {}
 
-const { ethereum } = window
 
 const isWalletInstalled = () => {
+    const isBrowser = typeof window !== "undefined"
+    if (!isBrowser) {
+        return isBrowser
+    }
     const { ethereum } = window
     //console.log('MetaMask', ethereum.isMetaMask)
     return Boolean(ethereum)
@@ -87,23 +91,23 @@ async function getNetworkAndChainId() {
     }
 }
 
-async function switchToBinanceSmartChain() {
-    try {
-        await ethereum.request({
-            method: 'wallet_addEthereumChain',
-            params: [{
-                chainId: chainInfo.chainId, //'0x38', 
-                chainName: chainInfo.name,  //Rinkeby
-                nativeCurrency: { name: 'ETH', symbol: 'ETH', decimals: 18 },
-                rpcUrls: chainInfo.rpcUrls,  //https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161, https://rinkey.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161
-                blockExplorerUrls: chainInfo.blockExplorerUrls //https://etherscan.io, https://rinkey.etherscan.io
-            }]
-        })
-        window.location.reload()
-    } catch (err) {
-        console.error(err)
-    }
-}
+// async function switchToBinanceSmartChain() {
+//     try {
+//         await ethereum.request({
+//             method: 'wallet_addEthereumChain',
+//             params: [{
+//                 chainId: chainInfo.chainId, //'0x38', 
+//                 chainName: chainInfo.name,  //Rinkeby
+//                 nativeCurrency: { name: 'ETH', symbol: 'ETH', decimals: 18 },
+//                 rpcUrls: chainInfo.rpcUrls,  //https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161, https://rinkey.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161
+//                 blockExplorerUrls: chainInfo.blockExplorerUrls //https://etherscan.io, https://rinkey.etherscan.io
+//             }]
+//         })
+//         window.location.reload()
+//     } catch (err) {
+//         console.error(err)
+//     }
+// }
 
 async function loadContracts() {
     const peopleFile = () => import("../../../static/assets/contracts/Tickets.json")

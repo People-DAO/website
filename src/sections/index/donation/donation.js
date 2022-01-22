@@ -14,7 +14,7 @@ import { connect } from 'react-redux';
 
 const poap = '/assets/images/donate.svg';
 
-const treasuryAddress = "0x08E86b528E217e006B1116243Df2D96A1116966b"
+const treasuryAddress = "0xf41aab66e7771BdfcCf43953b7843873d9bB74f4"
 
 const DonationSection = (props) => {
 
