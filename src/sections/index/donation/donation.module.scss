@@ -167,6 +167,19 @@
           padding: 1rem;
         }
       }
+      
     }
   }
+}
+
+.alert{
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  margin-bottom: -5rem;
+  position:relative;
+  border-radius:5px;
+  box-shadow:0 0 15px 5px #ccc;
+  background-color: $color-brand-pink;
+  opacity: 85%;
 }
