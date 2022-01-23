@@ -165,3 +165,23 @@
     }
   }
 }
+
+.alert{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  padding: 2rem;
+  border-radius:5px;
+  color: $color-text-secondary;
+  box-shadow:0 0 15px 5px #ccc;
+  background-color: $color-text-primary;
+  opacity: 85%;
+  z-index: 99;
+  .close {
+    position: absolute;
+    right: 1rem;
+    top: 0.2rem;
+    font-size: large;
+    cursor: pointer;
+  }
+}

@@ -66,7 +66,6 @@ const TokenSection = (props) => {
               <div className={tokenStyle.item}>
                 <span className={tokenStyle.label}>Total Circulating</span>
                 <span className={tokenStyle.value}>
-                  {"$"}
                   {countupReady && (
                     <CountUp
                       start={volume.start}

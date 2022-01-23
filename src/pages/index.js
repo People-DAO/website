@@ -24,7 +24,7 @@ const IndexPage = () => (
       <TokenSection />
       <PurchaseSection />
       <ProjectsSection />
-      <DonationSection />
+      {/* <DonationSection /> */}
       <ProposalsSection />
       <FaqSection />
       <SupportSection />
