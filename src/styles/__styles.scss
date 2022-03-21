@@ -1,0 +1,7 @@
+@use "./reset.scss" as *;
+@use "./general.scss" as *;
+
+@forward "./breakpoints.scss";
+@forward "./colors.scss";
+@forward "./fonts.scss";
+@forward "./typography.scss";

@@ -1,49 +1,40 @@
-<p align="center">
-  <a href="https://people-dao.com" target="_blank"><img height="96" src="static/assets/icons/peopledao/logo.svg" alt="PeopleDAO logo" /></a>
-</p>
-<h1 align="center">
-  PeopleDAO Website
-</h1>
+# create-svelte
 
-<p align="center">
-The official <a href="https://people-dao.com" target="_blank">PeopleDAO</a> website built with <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby</a>
-</p>
+Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
-## Requirements
+## Creating a project
 
-- [Node.js](https://nodejs.org/en/)
+If you're seeing this, you've probably already done this step. Congrats!
 
-## Development
+```bash
+# create a new project in the current directory
+npm init svelte@next
 
-#### Project initialization
+# create a new project in my-app
+npm init svelte@next my-app
+```
 
-1. Install project dependencies:
-   ```sh
-   yarn
-   ```
+> Note: the `@next` is temporary
 
-#### Local server
+## Developing
 
-To start developing or managing content on local machine:
-1. Start up the application in development environment:
-    ```sh
-    npm run develop
-    ```
-2. The site will be running at `http://localhost:8000` with hot-reloading enabled.
-   
-## Deployment
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
-1. If not done during development, install project dependencies:
-   ```sh
-   yarn
-   ```
-2. Generate an optimalized production build:
-   ```sh
-   npm run build
-   ```
-3. Using the web server of your preference, host the contents of the generated `public` directory.
+```bash
+npm run dev
 
-## Resources
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
 
-- [Gatsby documentation](https://www.gatsbyjs.com/docs)
-- [Figma design](https://www.figma.com/file/hEjM8xRQchHZHcqRpkjtE6/Website)
+## Building
+
+To create a production version of your app:
+
+```bash
+npm run build
+```
+
+You can preview the production build with `npm run preview`.
+
+> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.

@@ -1,74 +1,338 @@
-$font-family-primary: "Brown";
+$font-family--primary: 'Source Serif Pro';
+$font-family--secondary: 'Aileron';
 
 @font-face {
-    font-family: $font-family-primary;
-    src: url('../../static/fonts/BrownLight.eot');
-    src: url('../../static/fonts/BrownLight.eot?#iefix') format('embedded-opentype'),
-        url('../../static/fonts/BrownLight.woff2') format('woff2'),
-        url('../../static/fonts/BrownLight.woff') format('woff'),
-        url('../../static/fonts/BrownLight.ttf') format('truetype');
+    font-family: $font-family--primary;
+    src: url('/fonts/SourceSerifPro-ExtraLight.eot');
+    src: url('/fonts/SourceSerifPro-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/SourceSerifPro-ExtraLight.woff2') format('woff2'),
+        url('/fonts/SourceSerifPro-ExtraLight.woff') format('woff'),
+        url('/fonts/SourceSerifPro-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $font-family--primary;
+    src: url('/fonts/SourceSerifPro-ExtraLightIt.eot');
+    src: url('/fonts/SourceSerifPro-ExtraLightIt.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/SourceSerifPro-ExtraLightIt.woff2') format('woff2'),
+        url('/fonts/SourceSerifPro-ExtraLightIt.woff') format('woff'),
+        url('/fonts/SourceSerifPro-ExtraLightIt.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $font-family--primary;
+    src: url('/fonts/SourceSerifPro-Light.eot');
+    src: url('/fonts/SourceSerifPro-Light.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/SourceSerifPro-Light.woff2') format('woff2'),
+        url('/fonts/SourceSerifPro-Light.woff') format('woff'),
+        url('/fonts/SourceSerifPro-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: $font-family-primary;
-    src: url('../../static/fonts/Brown.eot');
-    src: url('../../static/fonts/Brown.eot?#iefix') format('embedded-opentype'),
-        url('../../static/fonts/Brown.woff2') format('woff2'),
-        url('../../static/fonts/Brown.woff') format('woff'),
-        url('../../static/fonts/Brown.ttf') format('truetype');
-    font-weight: 400;
+    font-family: $font-family--primary;
+    src: url('/fonts/SourceSerifPro-LightIt.eot');
+    src: url('/fonts/SourceSerifPro-LightIt.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/SourceSerifPro-LightIt.woff2') format('woff2'),
+        url('/fonts/SourceSerifPro-LightIt.woff') format('woff'),
+        url('/fonts/SourceSerifPro-LightIt.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $font-family--primary;
+    src: url('/fonts/SourceSerifPro-Regular.eot');
+    src: url('/fonts/SourceSerifPro-Regular.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/SourceSerifPro-Regular.woff2') format('woff2'),
+        url('/fonts/SourceSerifPro-Regular.woff') format('woff'),
+        url('/fonts/SourceSerifPro-Regular.ttf') format('truetype');
+    font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: $font-family-primary;
-    src: url('../../static/fonts/BrownMedium.eot');
-    src: url('../../static/fonts/BrownMedium.eot?#iefix') format('embedded-opentype'),
-        url('../../static/fonts/BrownMedium.woff2') format('woff2'),
-        url('../../static/fonts/BrownMedium.woff') format('woff'),
-        url('../../static/fonts/BrownMedium.ttf') format('truetype');
-    font-weight: 500;
+    font-family: $font-family--primary;
+    src: url('/fonts/SourceSerifPro-It.eot');
+    src: url('/fonts/SourceSerifPro-It.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/SourceSerifPro-It.woff2') format('woff2'),
+        url('/fonts/SourceSerifPro-It.woff') format('woff'),
+        url('/fonts/SourceSerifPro-It.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $font-family--primary;
+    src: url('/fonts/SourceSerifPro-SemiBold.eot');
+    src: url('/fonts/SourceSerifPro-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/SourceSerifPro-SemiBold.woff2') format('woff2'),
+        url('/fonts/SourceSerifPro-SemiBold.woff') format('woff'),
+        url('/fonts/SourceSerifPro-SemiBold.ttf') format('truetype');
+    font-weight: 600;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: $font-family-primary;
-    src: url('../../static/fonts/BrownBold.eot');
-    src: url('../../static/fonts/BrownBold.eot?#iefix') format('embedded-opentype'),
-        url('../../static/fonts/BrownBold.woff2') format('woff2'),
-        url('../../static/fonts/BrownBold.woff') format('woff'),
-        url('../../static/fonts/BrownBold.ttf') format('truetype');
-    font-weight: 700;
+    font-family: $font-family--primary;
+    src: url('/fonts/SourceSerifPro-SemiBoldIt.eot');
+    src: url('/fonts/SourceSerifPro-SemiBoldIt.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/SourceSerifPro-SemiBoldIt.woff2') format('woff2'),
+        url('/fonts/SourceSerifPro-SemiBoldIt.woff') format('woff'),
+        url('/fonts/SourceSerifPro-SemiBoldIt.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $font-family--primary;
+    src: url('/fonts/SourceSerifPro-Bold.eot');
+    src: url('/fonts/SourceSerifPro-Bold.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/SourceSerifPro-Bold.woff2') format('woff2'),
+        url('/fonts/SourceSerifPro-Bold.woff') format('woff'),
+        url('/fonts/SourceSerifPro-Bold.ttf') format('truetype');
+    font-weight: bold;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: $font-family-primary;
-    src: url('../../static/fonts/BrownExtraBold.eot');
-    src: url('../../static/fonts/BrownExtraBold.eot?#iefix') format('embedded-opentype'),
-        url('../../static/fonts/BrownExtraBold.woff2') format('woff2'),
-        url('../../static/fonts/BrownExtraBold.woff') format('woff'),
-        url('../../static/fonts/BrownExtraBold.ttf') format('truetype');
+    font-family: $font-family--primary;
+    src: url('/fonts/SourceSerifPro-BoldIt.eot');
+    src: url('/fonts/SourceSerifPro-BoldIt.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/SourceSerifPro-BoldIt.woff2') format('woff2'),
+        url('/fonts/SourceSerifPro-BoldIt.woff') format('woff'),
+        url('/fonts/SourceSerifPro-BoldIt.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $font-family--primary;
+    src: url('/fonts/SourceSerifPro-Black.eot');
+    src: url('/fonts/SourceSerifPro-Black.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/SourceSerifPro-Black.woff2') format('woff2'),
+        url('/fonts/SourceSerifPro-Black.woff') format('woff'),
+        url('/fonts/SourceSerifPro-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $font-family--primary;
+    src: url('/fonts/SourceSerifPro-BlackIt.eot');
+    src: url('/fonts/SourceSerifPro-BlackIt.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/SourceSerifPro-BlackIt.woff2') format('woff2'),
+        url('/fonts/SourceSerifPro-BlackIt.woff') format('woff'),
+        url('/fonts/SourceSerifPro-BlackIt.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $font-family--secondary;
+    src: url('/fonts/Aileron-Thin.eot');
+    src: url('/fonts/Aileron-Thin.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Aileron-Thin.woff2') format('woff2'),
+        url('/fonts/Aileron-Thin.woff') format('woff'),
+        url('/fonts/Aileron-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $font-family--secondary;
+    src: url('/fonts/Aileron-ThinItalic.eot');
+    src: url('/fonts/Aileron-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Aileron-ThinItalic.woff2') format('woff2'),
+        url('/fonts/Aileron-ThinItalic.woff') format('woff'),
+        url('/fonts/Aileron-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $font-family--secondary;
+    src: url('/fonts/Aileron-UltraLight.eot');
+    src: url('/fonts/Aileron-UltraLight.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Aileron-UltraLight.woff2') format('woff2'),
+        url('/fonts/Aileron-UltraLight.woff') format('woff'),
+        url('/fonts/Aileron-UltraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $font-family--secondary;
+    src: url('/fonts/Aileron-UltraLightItalic.eot');
+    src: url('/fonts/Aileron-UltraLightItalic.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Aileron-UltraLightItalic.woff2') format('woff2'),
+        url('/fonts/Aileron-UltraLightItalic.woff') format('woff'),
+        url('/fonts/Aileron-UltraLightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $font-family--secondary;
+    src: url('/fonts/Aileron-Light.eot');
+    src: url('/fonts/Aileron-Light.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Aileron-Light.woff2') format('woff2'),
+        url('/fonts/Aileron-Light.woff') format('woff'),
+        url('/fonts/Aileron-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $font-family--secondary;
+    src: url('/fonts/Aileron-LightItalic.eot');
+    src: url('/fonts/Aileron-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Aileron-LightItalic.woff2') format('woff2'),
+        url('/fonts/Aileron-LightItalic.woff') format('woff'),
+        url('/fonts/Aileron-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $font-family--secondary;
+    src: url('/fonts/Aileron-Regular.eot');
+    src: url('/fonts/Aileron-Regular.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Aileron-Regular.woff2') format('woff2'),
+        url('/fonts/Aileron-Regular.woff') format('woff'),
+        url('/fonts/Aileron-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $font-family--secondary;
+    src: url('/fonts/Aileron-Italic.eot');
+    src: url('/fonts/Aileron-Italic.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Aileron-Italic.woff2') format('woff2'),
+        url('/fonts/Aileron-Italic.woff') format('woff'),
+        url('/fonts/Aileron-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $font-family--secondary;
+    src: url('/fonts/Aileron-SemiBoldItalic.eot');
+    src: url('/fonts/Aileron-SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Aileron-SemiBoldItalic.woff2') format('woff2'),
+        url('/fonts/Aileron-SemiBoldItalic.woff') format('woff'),
+        url('/fonts/Aileron-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $font-family--secondary;
+    src: url('/fonts/Aileron-SemiBold.eot');
+    src: url('/fonts/Aileron-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Aileron-SemiBold.woff2') format('woff2'),
+        url('/fonts/Aileron-SemiBold.woff') format('woff'),
+        url('/fonts/Aileron-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $font-family--secondary;
+    src: url('/fonts/Aileron-Bold.eot');
+    src: url('/fonts/Aileron-Bold.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Aileron-Bold.woff2') format('woff2'),
+        url('/fonts/Aileron-Bold.woff') format('woff'),
+        url('/fonts/Aileron-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $font-family--secondary;
+    src: url('/fonts/Aileron-BoldItalic.eot');
+    src: url('/fonts/Aileron-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Aileron-BoldItalic.woff2') format('woff2'),
+        url('/fonts/Aileron-BoldItalic.woff') format('woff'),
+        url('/fonts/Aileron-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $font-family--secondary;
+    src: url('/fonts/Aileron-Heavy.eot');
+    src: url('/fonts/Aileron-Heavy.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Aileron-Heavy.woff2') format('woff2'),
+        url('/fonts/Aileron-Heavy.woff') format('woff'),
+        url('/fonts/Aileron-Heavy.ttf') format('truetype');
     font-weight: 800;
     font-style: normal;
     font-display: swap;
 }
 
+@font-face {
+    font-family: $font-family--secondary;
+    src: url('/fonts/Aileron-HeavyItalic.eot');
+    src: url('/fonts/Aileron-HeavyItalic.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Aileron-HeavyItalic.woff2') format('woff2'),
+        url('/fonts/Aileron-HeavyItalic.woff') format('woff'),
+        url('/fonts/Aileron-HeavyItalic.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+}
 
 @font-face {
-    font-family: $font-family-primary;
-    src: url('../../static/fonts/BrownHeavy.eot');
-    src: url('../../static/fonts/BrownHeavy.eot?#iefix') format('embedded-opentype'),
-        url('../../static/fonts/BrownHeavy.woff2') format('woff2'),
-        url('../../static/fonts/BrownHeavy.woff') format('woff'),
-        url('../../static/fonts/BrownHeavy.ttf') format('truetype');
+    font-family: $font-family--secondary;
+    src: url('/fonts/Aileron-Black.eot');
+    src: url('/fonts/Aileron-Black.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Aileron-Black.woff2') format('woff2'),
+        url('/fonts/Aileron-Black.woff') format('woff'),
+        url('/fonts/Aileron-Black.ttf') format('truetype');
     font-weight: 900;
     font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $font-family--secondary;
+    src: url('/fonts/Aileron-BlackItalic.eot');
+    src: url('/fonts/Aileron-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Aileron-BlackItalic.woff2') format('woff2'),
+        url('/fonts/Aileron-BlackItalic.woff') format('woff'),
+        url('/fonts/Aileron-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
     font-display: swap;
 }
