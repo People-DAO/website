@@ -3,37 +3,37 @@
 	"compilerOptions": {
 		"paths": {
 			"$lib": [
-				"/src/lib"
+				"src/lib"
 			],
 			"$lib/*": [
-				"/src/lib/*"
+				"src/lib/*"
 			],
 			"$assets/*": [
-				"/static/assets/*"
+				"static/assets/*"
 			],
 			"$components/*": [
-				"/src/components/*"
+				"src/components/*"
 			],
 			"$constants/*": [
-				"/src/constants/*"
+				"src/constants/*"
 			],
 			"$helpers/*": [
-				"/src/helpers/*"
+				"src/helpers/*"
 			],
 			"$layout/*": [
-				"/src/layout/*"
+				"src/layout/*"
 			],
 			"$services/*": [
-				"/src/services/*"
+				"src/services/*"
 			],
 			"$stores/*": [
-				"/src/stores/*"
+				"src/stores/*"
 			],
 			"$types/*": [
-				"/src/types/*"
+				"src/types/*"
 			],
 			"$util/*": [
-				"/src/util/*"
+				"src/util/*"
 			]
 		}
 	}

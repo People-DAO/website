@@ -26,3 +26,7 @@
     text-decoration: none;
   }
 }
+
+::selection {
+  background: rgba($color-brand--blue, 0.2);
+}

@@ -1,0 +1,13 @@
+@mixin transition($type, $props...) {
+  $result: ();
+  @each $prop in $props {
+    @if length($result) > 0 {
+      $result: append($result, unquote(",") #{$prop} $type);
+    } @else {
+      $result: append($result, #{$prop} $type);
+    }
+  }
+  transition: $result;
+}
+
+$transition--primary: 150ms ease-out;
