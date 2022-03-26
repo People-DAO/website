@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { PageMeta } from '$util/meta';
 	import { Section, SectionTitle } from '$layout/section';
 	import { WrapperWide } from '$layout/wrapper';
 	import { Text } from '$components/text';
@@ -8,6 +9,7 @@
 	import ConstitutioDaoIcon from '$assets/icons/daos/constitution-dao.svg';
 </script>
 
+<PageMeta />
 <section class="hero" id="top">
 	<WrapperWide>
 		<div class="container">
@@ -20,7 +22,6 @@
 		</div>
 	</WrapperWide>
 </section>
-
 <Section id="vision" cropped="bottom">
 	<SectionTitle>Vision</SectionTitle>
 	<Text size="large" width={80}>
@@ -38,7 +39,6 @@
 		<Button>Active projects</Button>
 	</ButtonGroup>
 </Section>
-
 <Section id="origins">
 	<SectionTitle>Origins</SectionTitle>
 	<Text size="large">
