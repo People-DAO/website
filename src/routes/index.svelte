@@ -1,12 +1,23 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+
 	import { PageMeta } from '$util/meta';
 	import { Section, SectionTitle } from '$layout/section';
-	import { WrapperWide } from '$layout/wrapper';
+	import { Wrapper, WrapperWide } from '$layout/wrapper';
 	import { Text } from '$components/text';
 	import { Button, ButtonGroup } from '$components/button';
 	import { Timeline, TimelineItem } from '$components/timeline';
 
 	import ConstitutioDaoIcon from '$assets/icons/daos/constitution-dao.svg';
+
+	import getTokenData, { type TokenData } from '$services/getTokenData';
+	import formatPrice from '$helpers/formatPrice';
+
+	let tokenData: TokenData;
+
+	onMount(async () => {
+		tokenData = await getTokenData();
+	});
 </script>
 
 <PageMeta />
@@ -85,6 +96,30 @@
 		/>
 	</Timeline>
 </Section>
+<Section id="token">
+	<Wrapper>
+		<SectionTitle>Token</SectionTitle>
+		<Text size="large" class="description">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pharetra lacinia lacus,
+			non viverra tellus tempor sit amet <span>$PEOPLE</span>. Vestibulum elementum elit sed ligula
+			gravida, vel congue risus faucibus.
+		</Text>
+		<ul class="stats">
+			<li>
+				<span class="label">Price</span>
+				<span class="value">${tokenData?.price ? formatPrice(tokenData.price) : '-'}</span>
+			</li>
+			<li>
+				<span class="label">Market cap</span>
+				<span class="value">${tokenData?.marketCap ? formatPrice(tokenData.marketCap) : '-'}</span>
+			</li>
+			<li>
+				<span class="label">24h volume</span>
+				<span class="value">${tokenData?.volume24h ? formatPrice(tokenData.volume24h) : '-'}</span>
+			</li>
+		</ul>
+	</Wrapper>
+</Section>
 
 <style lang="scss">
 	.hero {
@@ -153,6 +188,49 @@
 						width: 60%;
 						height: auto;
 					}
+				}
+			}
+		}
+	}
+
+	:global(#token) {
+		background: $color-background--secondary;
+
+		:global(.description span) {
+			@include typography-family--secondary;
+			font-weight: $font-weight--semi-bold;
+			background: linear-gradient(to right, $color-brand--blue, $color-brand--purple);
+			color: $color-text--tertiary;
+			padding: 2px 10px;
+			border-radius: 8px;
+		}
+
+		.stats {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+
+			@include breakpoint($breakpoint--md) {
+				grid-template-columns: 1fr;
+				@include spacing--base(row-gap);
+			}
+
+			li {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+
+				.label {
+					@include typography-family--secondary;
+					@include typography-size--base;
+					font-weight: $font-weight--semi-bold;
+					color: $color-text--secondary;
+					@include fluid(margin-bottom, 2, 4);
+				}
+
+				.value {
+					@include typography-family--secondary;
+					@include typography-size--max;
+					font-weight: $font-weight--semi-bold;
 				}
 			}
 		}
