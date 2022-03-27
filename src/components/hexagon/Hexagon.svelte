@@ -51,6 +51,11 @@
 			margin: calc(var(--hexagon-height) * 0.175);
 			overflow: hidden;
 			z-index: 1;
+
+			:global(svg) {
+				height: 100%;
+				width: 100%;
+			}
 		}
 	}
 </style>
