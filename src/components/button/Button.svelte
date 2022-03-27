@@ -28,6 +28,7 @@
 		position: relative;
 		display: inline-flex;
 		align-items: center;
+		color: $color-text--primary;
 		@include spacing--nano(padding-top, padding-bottom);
 		@include spacing--base(padding-left, padding-right);
 		--button-border-width: 2px;
@@ -62,6 +63,7 @@
 
 		:global(svg) {
 			width: auto;
+			// stroke: currentColor;
 			@include fluid(height, 19, 22);
 			@include fluid(margin-left, 8, 10);
 		}

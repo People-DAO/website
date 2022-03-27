@@ -1,9 +1,9 @@
-<div class:button-group={true} {...$$restProps}>
+<div class:hexagon-group={true} {...$$restProps}>
 	<slot />
 </div>
 
 <style lang="scss">
-	.button-group {
+	.hexagon-group {
 		@include spacing--max(margin-top);
 
 		:global(a) {

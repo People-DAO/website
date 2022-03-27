@@ -7,6 +7,9 @@
 	import GithubIcon from '$assets/icons/socials/github.svg';
 	import EtherscanIcon from '$assets/icons/socials/etherscan.svg';
 	import CoinMarketCapIcon from '$assets/icons/socials/coinmarketcap.svg';
+
+	import { SOCIAL_DISCORD, SOCIAL_TWITTER, SOCIAL_GITHUB } from '$constants/socials';
+	import { TOKEN_ETHERSCAN, TOKEN_COINMARKETCAP } from '$constants/tokens';
 </script>
 
 <footer>
@@ -24,27 +27,19 @@
 				</div>
 			</a>
 			<div class="socials">
-				<a name="discord" href="https://discord.gg/peopledao" target="_blank">
+				<a name="discord" href={SOCIAL_DISCORD} target="_blank">
 					<DiscordIcon />
 				</a>
-				<a name="twitter" href="https://twitter.com/The_PeopleDAO" target="_blank">
+				<a name="twitter" href={SOCIAL_TWITTER} target="_blank">
 					<TwitterIcon />
 				</a>
-				<a name="github" href="https://github.com/People-DAO" target="_blank">
+				<a name="github" href={SOCIAL_GITHUB} target="_blank">
 					<GithubIcon />
 				</a>
-				<a
-					name="etherscan"
-					href="https://etherscan.io/token/0x7a58c0be72be218b41c608b7fe7c5bb630736c71"
-					target="_blank"
-				>
+				<a name="etherscan" href={TOKEN_ETHERSCAN} target="_blank">
 					<EtherscanIcon />
 				</a>
-				<a
-					name="coinmarketcap"
-					href="https://coinmarketcap.com/currencies/constitutiondao/"
-					target="_blank"
-				>
+				<a name="coinmarketcap" href={TOKEN_COINMARKETCAP} target="_blank">
 					<CoinMarketCapIcon />
 				</a>
 			</div>

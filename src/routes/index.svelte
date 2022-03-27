@@ -1,23 +1,18 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-
 	import { PageMeta } from '$util/meta';
 	import { Section, SectionTitle } from '$layout/section';
 	import { Wrapper, WrapperWide } from '$layout/wrapper';
 	import { Text } from '$components/text';
 	import { Button, ButtonGroup } from '$components/button';
 	import { Timeline, TimelineItem } from '$components/timeline';
+	import { TokenStats } from '$components/token-stats';
+	import { Hexagon, HexagonGroup } from '$components/hexagon';
 
 	import ConstitutioDaoIcon from '$assets/icons/daos/constitution-dao.svg';
+	import PandaDaoIcon from '$assets/icons/daos/panda-dao.svg';
 
-	import getTokenData, { type TokenData } from '$services/getTokenData';
-	import formatPrice from '$helpers/formatPrice';
-
-	let tokenData: TokenData;
-
-	onMount(async () => {
-		tokenData = await getTokenData();
-	});
+	import { SOCIAL_DISCORD } from '$constants/socials';
+	import { TOKEN_OKEX, TOKEN_UNISWAP } from '$constants/tokens';
 </script>
 
 <PageMeta />
@@ -36,9 +31,9 @@
 <Section id="vision" cropped="bottom">
 	<SectionTitle>Vision</SectionTitle>
 	<Text size="large" width={80}>
-		$PEOPLE Dao Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-		incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-		ullamco laboris nisi ut aliquip ex ea commodo consequat.
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+		labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+		laboris nisi ut aliquip ex ea commodo consequat.
 	</Text>
 	<Text size="large" width={80}>
 		Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
@@ -46,7 +41,7 @@
 		mollit anim id est laborum.
 	</Text>
 	<ButtonGroup>
-		<Button target="_blank">Join Discord</Button>
+		<Button href={SOCIAL_DISCORD} target="_blank">Join Discord</Button>
 		<Button>Active projects</Button>
 	</ButtonGroup>
 </Section>
@@ -101,24 +96,37 @@
 		<SectionTitle>Token</SectionTitle>
 		<Text size="large" class="description">
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pharetra lacinia lacus,
-			non viverra tellus tempor sit amet <span>$PEOPLE</span>. Vestibulum elementum elit sed ligula
+			non viverra tellus tempor sit amet <span>$PEOPLE</span> token. Vestibulum elementum elit sed ligula
 			gravida, vel congue risus faucibus.
 		</Text>
-		<ul class="stats">
-			<li>
-				<span class="label">Price</span>
-				<span class="value">${tokenData?.price ? formatPrice(tokenData.price) : '-'}</span>
-			</li>
-			<li>
-				<span class="label">Market cap</span>
-				<span class="value">${tokenData?.marketCap ? formatPrice(tokenData.marketCap) : '-'}</span>
-			</li>
-			<li>
-				<span class="label">24h volume</span>
-				<span class="value">${tokenData?.volume24h ? formatPrice(tokenData.volume24h) : '-'}</span>
-			</li>
-		</ul>
+		<TokenStats />
+		<ButtonGroup>
+			<Button href={TOKEN_OKEX} target="_blank">Buy on OKEx</Button>
+			<Button href={TOKEN_UNISWAP} target="_blank">Exchange on Uniswap</Button>
+		</ButtonGroup>
 	</Wrapper>
+</Section>
+<Section id="projects">
+	<SectionTitle>Projects</SectionTitle>
+	<Text size="large">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+		labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+		laboris nisi ut aliquip ex ea commodo consequat.
+	</Text>
+	<HexagonGroup>
+		<Hexagon href="https://www.pandadao.info/" target="_blank">
+			<PandaDaoIcon />
+		</Hexagon>
+		<Hexagon href="https://www.pandadao.info/" target="_blank">
+			<PandaDaoIcon />
+		</Hexagon>
+		<Hexagon href="https://www.pandadao.info/" target="_blank">
+			<PandaDaoIcon />
+		</Hexagon>
+		<Hexagon href="https://www.pandadao.info/" target="_blank">
+			<PandaDaoIcon />
+		</Hexagon>
+	</HexagonGroup>
 </Section>
 
 <style lang="scss">
@@ -149,6 +157,7 @@
 					span {
 						background: linear-gradient(to right, $color-brand--blue, $color-brand--purple);
 						background-clip: text;
+						-webkit-background-clip: text;
 						-webkit-text-fill-color: transparent;
 					}
 				}
@@ -203,36 +212,6 @@
 			color: $color-text--tertiary;
 			padding: 2px 10px;
 			border-radius: 8px;
-		}
-
-		.stats {
-			display: grid;
-			grid-template-columns: 1fr 1fr 1fr;
-
-			@include breakpoint($breakpoint--md) {
-				grid-template-columns: 1fr;
-				@include spacing--base(row-gap);
-			}
-
-			li {
-				display: flex;
-				flex-direction: column;
-				align-items: flex-start;
-
-				.label {
-					@include typography-family--secondary;
-					@include typography-size--base;
-					font-weight: $font-weight--semi-bold;
-					color: $color-text--secondary;
-					@include fluid(margin-bottom, 2, 4);
-				}
-
-				.value {
-					@include typography-family--secondary;
-					@include typography-size--max;
-					font-weight: $font-weight--semi-bold;
-				}
-			}
 		}
 	}
 </style>

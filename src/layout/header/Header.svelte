@@ -3,6 +3,8 @@
 	import { Button } from '$components/button';
 
 	import PeopleDaoLogo from '$assets/icons/daos/people-dao.svg';
+
+	import { SOCIAL_DISCORD } from '$constants/socials';
 </script>
 
 <header>
@@ -14,9 +16,7 @@
 			<nav>
 				<a href="#vision">Vision</a>
 				<a href="#origins">Origins</a>
-				<Button href="https://discord.gg/peopledao" target="_blank" class="button--discord">
-					Join Discord
-				</Button>
+				<Button href={SOCIAL_DISCORD} target="_blank" class="button--discord">Join Discord</Button>
 			</nav>
 		</div>
 	</WrapperWide>
