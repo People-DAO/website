@@ -30,27 +30,27 @@
 		align-items: center;
 		@include spacing--nano(padding-top, padding-bottom);
 		@include spacing--base(padding-left, padding-right);
-		background: transparent;
 		--button-border-width: 2px;
+		--button-border-radius: 26px;
 		border: var(--button-border-width) solid $color-background--tertiary;
-		border-radius: 26px;
-		@include transition($transition--primary, border-color);
+		border-radius: var(--button-border-radius);
+		@include transition($transition--primary, background, border-color);
 		cursor: pointer;
+		z-index: 0;
 
-		&::after {
+		&::before {
 			content: '';
 			position: absolute;
-			top: calc(var(--button-border-width) * -1);
-			bottom: calc(var(--button-border-width) * -1);
-			left: calc(var(--button-border-width) * -1);
-			right: calc(var(--button-border-width) * -1);
-			background: linear-gradient($color-background--secondary, $color-background--secondary)
-					padding-box,
-				linear-gradient(to right, $color-brand--blue, $color-brand--purple) border-box;
-			border: var(--button-border-width) solid transparent;
-			border-radius: inherit;
-			z-index: -1;
+			inset: calc(var(--button-border-width) * -1);
+			padding: var(--button-border-width);
+			border-radius: var(--button-border-radius);
+			background: linear-gradient(to right, $color-brand--blue, $color-brand--purple);
+			mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+			-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+			-webkit-mask-composite: xor;
+			mask-composite: exclude;
 			opacity: 0;
+			z-index: -1;
 			@include transition($transition--primary, opacity);
 		}
 
@@ -68,8 +68,9 @@
 
 		&:hover {
 			border-color: transparent;
+			background: $color-background--secondary;
 
-			&::after {
+			&::before {
 				opacity: 1;
 			}
 		}

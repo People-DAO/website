@@ -63,11 +63,10 @@
 
 				:global(a.button--discord) {
 					position: relative;
-					background: linear-gradient($color-background--tertiary, $color-background--tertiary)
-							padding-box,
-						linear-gradient(to right, $color-brand--blue, $color-brand--purple) border-box;
-					border-color: transparent;
-					@include transition($transition--primary, border-color);
+
+					&::before {
+						opacity: 1;
+					}
 
 					:global(span),
 					:global(svg) {
@@ -75,8 +74,10 @@
 					}
 
 					&:hover {
-						background: linear-gradient(to right, $color-brand--blue, $color-brand--purple);
-						border-color: $color-background--secondary;
+						:global(span),
+						:global(svg) {
+							color: $color-text--primary;
+						}
 					}
 				}
 			}
