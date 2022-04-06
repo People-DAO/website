@@ -28,7 +28,7 @@
 		</div>
 	</WrapperWide>
 </section>
-<Section id="vision" cropped="bottom">
+<Section scrollHref="vision" cropped="bottom">
 	<SectionTitle>Vision</SectionTitle>
 	<Text size="large" width={80}>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -45,7 +45,7 @@
 		<Button>Active projects</Button>
 	</ButtonGroup>
 </Section>
-<Section id="origins">
+<Section scrollHref="origins">
 	<SectionTitle>Origins</SectionTitle>
 	<Text size="large">
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pharetra lacinia lacus, non
@@ -91,7 +91,7 @@
 		/>
 	</Timeline>
 </Section>
-<Section id="token">
+<Section scrollHref="token">
 	<Wrapper>
 		<SectionTitle>Token</SectionTitle>
 		<Text size="large" class="description">

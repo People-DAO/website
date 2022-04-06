@@ -1,23 +1,19 @@
 <script lang="ts">
 	import { WrapperWide } from '$layout/wrapper';
-	import { Button } from '$components/button';
+	import { Navigation } from '$layout/navigation';
 
 	import PeopleDaoLogo from '$assets/icons/daos/people-dao.svg';
 
-	import { SOCIAL_DISCORD } from '$constants/socials';
+	import { scrollToTop } from '$stores/layout/navigation';
 </script>
 
 <header>
 	<WrapperWide>
 		<div class="container">
-			<a class="logo" href="/">
+			<a class="logo" href="/" on:click={scrollToTop}>
 				<PeopleDaoLogo />
 			</a>
-			<nav>
-				<a href="#vision">Vision</a>
-				<a href="#origins">Origins</a>
-				<Button href={SOCIAL_DISCORD} target="_blank" class="button--discord">Join Discord</Button>
-			</nav>
+			<Navigation />
 		</div>
 	</WrapperWide>
 </header>
@@ -38,47 +34,13 @@
 			align-items: center;
 
 			.logo {
+				display: flex;
+				z-index: 1001;
+
 				:global(svg) {
 					@include spacing--max(height);
 					width: auto;
 					fill: $color-text--tertiary;
-				}
-			}
-
-			nav {
-				display: flex;
-				align-items: center;
-
-				a {
-					@include typography-family--secondary;
-					@include typography-size--base;
-					font-weight: $font-weight--semi-bold;
-					color: $color-text--tertiary;
-					@include spacing--max(margin-right);
-
-					&:last-of-type {
-						margin-right: 0;
-					}
-				}
-
-				:global(a.button--discord) {
-					position: relative;
-
-					&::before {
-						opacity: 1;
-					}
-
-					:global(span),
-					:global(svg) {
-						color: $color-text--tertiary;
-					}
-
-					&:hover {
-						:global(span),
-						:global(svg) {
-							color: $color-text--primary;
-						}
-					}
 				}
 			}
 		}

@@ -10,12 +10,14 @@
 
 	import { SOCIAL_DISCORD, SOCIAL_TWITTER, SOCIAL_GITHUB } from '$constants/socials';
 	import { TOKEN_ETHERSCAN, TOKEN_COINMARKETCAP } from '$constants/tokens';
+
+	import { scrollToTop } from '$stores/layout/navigation';
 </script>
 
 <footer>
 	<WrapperWide>
 		<div class="container">
-			<a class="about" href="/">
+			<a class="about" href="/" on:click={scrollToTop}>
 				<div class="logo">
 					<PeopleDaoLogo />
 				</div>

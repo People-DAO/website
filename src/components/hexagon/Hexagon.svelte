@@ -48,7 +48,7 @@
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			margin: calc(var(--hexagon-height) * 0.175);
+			margin: calc(var(--hexagon-height) * 0.2);
 			overflow: hidden;
 			z-index: 1;
 

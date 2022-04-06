@@ -1,10 +1,15 @@
 <script lang="ts">
+	import { scrollRef } from 'svelte-scrolling';
+
 	import { Wrapper } from '$layout/wrapper';
 
 	export let cropped: 'top' | 'bottom' = null;
+	export let scrollHref: string = null;
 </script>
 
 <section
+	id={scrollHref}
+	use:scrollRef={scrollHref || Math.random().toString()}
 	class:section={true}
 	class:section-cropped--top={cropped === 'top'}
 	class:section-cropped--bottom={cropped === 'bottom'}
