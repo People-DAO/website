@@ -5,7 +5,8 @@
 <style lang="scss">
 	.wrapper {
 		max-width: #{$breakpoint--xlg}px;
-		padding: 0 20px;
+		@include fluid(padding-left, 20, 40);
+		@include fluid(padding-right, 20, 40);
 		margin: 0 auto;
 	}
 </style>

@@ -68,7 +68,7 @@
 				align-items: center;
 
 				@include breakpoint($breakpoint--sm) {
-					@include spacing--base(margin-bottom);
+					@include spacing--medium(margin-bottom);
 				}
 
 				.logo {

@@ -29,27 +29,6 @@
 				grid-template-columns: 1fr;
 				@include spacing--base(row-gap);
 			}
-
-			li {
-				display: flex;
-				flex-direction: column;
-				align-items: flex-start;
-
-				.label {
-					@include typography-family--secondary;
-					@include typography-size--base;
-					font-weight: $font-weight--semi-bold;
-					color: $color-text--secondary;
-					@include fluid(margin-bottom, 2, 4);
-				}
-
-				.value {
-					@include typography-family--secondary;
-					@include typography-size--max;
-					font-weight: $font-weight--semi-bold;
-					cursor: default;
-				}
-			}
 		}
 	}
 </style>

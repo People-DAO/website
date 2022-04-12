@@ -1,5 +1,6 @@
 import { writable } from "svelte/store"
-import numbro from "numbro"
+
+import { formatPrice } from "$helpers/formatPrice"
 
 import type { Writable } from "svelte/store"
 
@@ -35,17 +36,6 @@ export const getTokenData = async (): Promise<void> => {
   } catch (err) {
     error.set(true)
   }
-}
-
-const formatPrice = (number: number): string => {
-  return numbro(number)
-    .format({
-      // optionalMantissa: true,
-      mantissa: number > 10 ? 2 : 5,
-      average: true,
-      lowPrecision: false,
-    })
-    .toUpperCase()
 }
 
 type TokenData = {

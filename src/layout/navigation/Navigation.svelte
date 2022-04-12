@@ -20,7 +20,7 @@
 
 	$: if (browser && !mobileButton) {
 		document.body.classList.toggle('scroll-lock', false);
-		closeMobileNavigation;
+		closeMobileNavigation();
 	}
 </script>
 
@@ -35,9 +35,10 @@
 
 <div class="navigation" class:navigation--active={$mobileNavigationOpen}>
 	<nav>
-		<NavigationItem scrollHref="#vision">Vision</NavigationItem>
-		<NavigationItem scrollHref="#origins">Origins</NavigationItem>
-		<NavigationItem scrollHref="#token">$PEOPLE</NavigationItem>
+		<NavigationItem scrollHref="mission">Mission</NavigationItem>
+		<NavigationItem scrollHref="origins">Origins</NavigationItem>
+		<NavigationItem scrollHref="token">Token</NavigationItem>
+		<NavigationItem scrollHref="projects">Projects</NavigationItem>
 		<Button href={SOCIAL_DISCORD} target="_blank" class="button--discord">Join Discord</Button>
 	</nav>
 </div>
@@ -48,11 +49,13 @@
 		overflow-y: hidden;
 	}
 
+	$navigation-breakpoint--mobile: $breakpoint--md;
+
 	.navigation-button {
 		width: 0;
 		height: 0;
 
-		@include breakpoint($breakpoint--sm) {
+		@include breakpoint($navigation-breakpoint--mobile) {
 			position: relative;
 			display: flex;
 			flex-direction: column;
@@ -117,7 +120,7 @@
 	.navigation {
 		display: flex;
 
-		@include breakpoint($breakpoint--sm) {
+		@include breakpoint($navigation-breakpoint--mobile) {
 			position: fixed;
 			top: 0;
 			bottom: 0;
@@ -132,7 +135,7 @@
 			display: flex;
 			align-items: center;
 
-			@include breakpoint($breakpoint--sm) {
+			@include breakpoint($navigation-breakpoint--mobile) {
 				position: absolute;
 				top: 0;
 				bottom: 0;
@@ -169,7 +172,7 @@
 		}
 
 		&.navigation--active {
-			@include breakpoint($breakpoint--sm) {
+			@include breakpoint($navigation-breakpoint--mobile) {
 				visibility: visible;
 				pointer-events: all;
 

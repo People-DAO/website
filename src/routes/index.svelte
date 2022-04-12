@@ -1,18 +1,19 @@
 <script lang="ts">
 	import { PageMeta } from '$util/meta';
 	import { Section, SectionTitle } from '$layout/section';
-	import { Wrapper, WrapperWide } from '$layout/wrapper';
+	import { WrapperWide } from '$layout/wrapper';
 	import { Text } from '$components/text';
 	import { Button, ButtonGroup } from '$components/button';
 	import { Timeline, TimelineItem } from '$components/timeline';
 	import { TokenStats } from '$components/token-stats';
+	import { Label } from '$components/label';
 	import { Hexagon, HexagonGroup } from '$components/hexagon';
 
 	import ConstitutioDaoIcon from '$assets/icons/daos/constitution-dao.svg';
 	import PandaDaoIcon from '$assets/icons/daos/panda-dao.svg';
 
 	import { SOCIAL_DISCORD } from '$constants/socials';
-	import { TOKEN_OKEX, TOKEN_UNISWAP } from '$constants/tokens';
+	import { TOKEN_ETHERSCAN, TOKEN_OKEX, TOKEN_UNISWAP } from '$constants/tokens';
 </script>
 
 <PageMeta />
@@ -28,8 +29,8 @@
 		</div>
 	</WrapperWide>
 </section>
-<Section scrollHref="vision" cropped="bottom">
-	<SectionTitle>Vision</SectionTitle>
+<Section scrollHref="mission" cropped="bottom">
+	<SectionTitle>Mission</SectionTitle>
 	<Text size="large" width={80}>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
 		labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -92,21 +93,20 @@
 	</Timeline>
 </Section>
 <Section scrollHref="token">
-	<Wrapper>
-		<SectionTitle>Token</SectionTitle>
-		<Text size="large" class="description">
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pharetra lacinia lacus,
-			non viverra tellus tempor sit amet <span>$PEOPLE</span> token. Vestibulum elementum elit sed ligula
-			gravida, vel congue risus faucibus.
-		</Text>
-		<TokenStats />
-		<ButtonGroup>
-			<Button href={TOKEN_OKEX} target="_blank">Buy on OKEx</Button>
-			<Button href={TOKEN_UNISWAP} target="_blank">Exchange on Uniswap</Button>
-		</ButtonGroup>
-	</Wrapper>
+	<SectionTitle>Token</SectionTitle>
+	<Text size="large" class="description">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pharetra lacinia lacus, non
+		viverra tellus tempor sit amet <Label>$PEOPLE</Label> token. Vestibulum elementum elit sed ligula
+		gravida, vel congue risus faucibus.
+	</Text>
+	<TokenStats />
+	<ButtonGroup>
+		<Button href={TOKEN_ETHERSCAN} target="_blank">View on Etherscan</Button>
+		<Button href={TOKEN_OKEX} target="_blank">Buy on OKEx</Button>
+		<Button href={TOKEN_UNISWAP} target="_blank">Exchange on Uniswap</Button>
+	</ButtonGroup>
 </Section>
-<Section id="projects">
+<Section scrollHref="projects">
 	<SectionTitle>Projects</SectionTitle>
 	<Text size="large">
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -204,14 +204,5 @@
 
 	:global(#token) {
 		background: $color-background--secondary;
-
-		:global(.description span) {
-			@include typography-family--secondary;
-			font-weight: $font-weight--semi-bold;
-			background: linear-gradient(to right, $color-brand--blue, $color-brand--purple);
-			color: $color-text--tertiary;
-			padding: 2px 10px;
-			border-radius: 8px;
-		}
 	}
 </style>

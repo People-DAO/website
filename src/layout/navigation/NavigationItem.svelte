@@ -13,12 +13,12 @@
 	};
 </script>
 
-<a class:navigation-button={true} {href} {target} on:click={handleClick} {...$$restProps}>
+<a class:navigation-item={true} {href} {target} on:click={handleClick} {...$$restProps}>
 	<slot />
 </a>
 
 <style lang="scss">
-	.navigation-button {
+	.navigation-item {
 		@include typography-family--secondary;
 		@include typography-size--base;
 		font-weight: $font-weight--semi-bold;
@@ -30,7 +30,7 @@
 			margin-right: 0;
 		}
 
-		@include breakpoint($breakpoint--sm) {
+		@include breakpoint($breakpoint--md) {
 			@include typography-size--large;
 			@include spacing--medium(margin-bottom);
 
