@@ -2,6 +2,7 @@ title: PeopleDAO
 description: "A meta DAO for Web3 to unite $PEOPLE across the globe and deliver positive impact"
 url: "https://people-dao.com"
 repository: "https://github.com/People-DAO/website"
+newsroomlink: "https://peopledao.notion.site/Newsroom-b5b3644d80ca408d9a514ed5102e3c83"
 
 version: "p8ty9jj7vml3gcd8" # Generate random string when updating meta assets
 ogImageWidth: 420
