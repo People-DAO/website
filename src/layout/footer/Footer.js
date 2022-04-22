@@ -31,7 +31,7 @@ const Footer = () => (
           <div className={footerStyle.items}>
             {/* <Link to="/@TODO">Privacy</Link>
             <Link to="/@TODO">Terms</Link> */}
-            <a href={meta.repository} target="_blank" rel="noreferrer noopener">Open source</a>
+            <a href={meta.newsroomlink} target="_blank" rel="noreferrer noopener">Newsroom</a>
           </div>
         </div>
         <div className={footerStyle.actions}>
