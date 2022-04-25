@@ -39,6 +39,7 @@
 		<NavigationItem scrollHref="origins">Origins</NavigationItem>
 		<NavigationItem scrollHref="token">Token</NavigationItem>
 		<NavigationItem scrollHref="projects">Projects</NavigationItem>
+		<NavigationItem scrollHref="faq">FAQ</NavigationItem>
 		<Button href={SOCIAL_DISCORD} target="_blank" class="button--discord">Join Discord</Button>
 	</nav>
 </div>

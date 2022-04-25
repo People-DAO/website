@@ -8,6 +8,7 @@
 	import { TokenStats } from '$components/token-stats';
 	import { Label } from '$components/label';
 	import { Hexagon, HexagonGroup } from '$components/hexagon';
+	import { Accordion, AccordionItem } from '$components/accordion';
 
 	import ConstitutioDaoIcon from '$assets/icons/daos/constitution-dao.svg';
 	import PandaDaoIcon from '$assets/icons/daos/panda-dao.svg';
@@ -106,7 +107,7 @@
 		<Button href={TOKEN_UNISWAP} target="_blank">Exchange on Uniswap</Button>
 	</ButtonGroup>
 </Section>
-<Section scrollHref="projects">
+<Section scrollHref="projects" cropped="bottom">
 	<SectionTitle>Projects</SectionTitle>
 	<Text size="large">
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -128,6 +129,32 @@
 		</Hexagon>
 	</HexagonGroup>
 </Section>
+<Section scrollHref="faq">
+	<SectionTitle>FAQ</SectionTitle>
+	<Text size="large">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+		labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+		laboris nisi ut aliquip ex ea commodo consequat.
+	</Text>
+	<Accordion>
+		<AccordionItem
+			title="Phasellus rutrum nibh vel sem eleifend scelerisque?"
+			description="Aenean sollicitudin nunc ultrices, aliquet ante eget, blandit sem. Maecenas rhoncus faucibus gravida. Sed at magna vitae orci posuere convallis et vitae neque. Ut elit est, dapibus quis dapibus at, aliquam nec orci. Praesent eu volutpat libero, ac lacinia est. Sed auctor nec magna quis convallis."
+		/>
+		<AccordionItem
+			title="Cras fermentum mattis nunc?"
+			description="Curabitur eleifend, quam sit amet blandit dictum, urna libero convallis leo, id tempus diam nisl ac nulla. Duis volutpat rhoncus magna, sit amet mattis nibh. Nulla facilisi. Donec scelerisque tincidunt feugiat. Quisque id diam aliquam, bibendum justo at, mattis nunc."
+		/>
+		<AccordionItem
+			title="Vivamus a nisl quis erat?"
+			description="Vivamus dapibus quam nec libero sodales vestibulum. Nulla rhoncus ex in turpis commodo, quis maximus augue lobortis. Proin vel pretium nunc, ac luctus nisi. Morbi vitae massa vel libero ornare molestie."
+		/>
+		<AccordionItem
+			title="Fusce sit amet arcu in magna porttitor?"
+			description="Morbi porttitor suscipit augue, ut semper lectus consectetur a. Aenean consequat pharetra ultricies. Quisque vitae enim nulla. Morbi erat justo, dictum sit amet metus eu, pretium venenatis velit. Nulla molestie sem dui, vel eleifend nibh varius congue. Quisque metus nunc."
+		/>
+	</Accordion>
+</Section>
 
 <style lang="scss">
 	.hero {
@@ -141,8 +168,12 @@
 			background-position: right bottom;
 			background-size: 50%;
 
+			@include breakpoint($breakpoint--sm) {
+				background-size: 75%;
+			}
+
 			.title {
-				max-width: 70%;
+				@include fluid(max-width, 655, 1110);
 
 				@include breakpoint($breakpoint--sm) {
 					max-width: 100%;
@@ -155,10 +186,27 @@
 					color: $color-text--tertiary;
 
 					span {
-						background: linear-gradient(to right, $color-brand--blue, $color-brand--purple);
+						background: linear-gradient(
+							to right,
+							$color-brand--blue 0%,
+							$color-brand--purple 50%,
+							$color-brand--blue 100%
+						);
+						background-size: 200%;
 						background-clip: text;
 						-webkit-background-clip: text;
 						-webkit-text-fill-color: transparent;
+						animation: hero-text 5s ease infinite;
+
+						@keyframes hero-text {
+							0% {
+								background-position: 0% center;
+							}
+
+							100% {
+								background-position: 200% center;
+							}
+						}
 					}
 				}
 			}
