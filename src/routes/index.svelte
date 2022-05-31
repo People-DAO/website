@@ -19,6 +19,12 @@
 
 <PageMeta />
 <section class="hero" id="top">
+	<div class="background">
+		<div class="overlay" />
+		<video autoPlay loop muted playsInline>
+			<source src="/assets/videos/hero.mp4" type="video/mp4" />
+		</video>
+	</div>
 	<WrapperWide>
 		<div class="container">
 			<div class="title">
@@ -159,18 +165,38 @@
 <style lang="scss">
 	.hero {
 		background: $color-background--tertiary;
+		position: relative;
+
+		.background {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			overflow: hidden;
+
+			.overlay {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background: rgba($color-background--tertiary, 0.75);
+			}
+
+			video {
+				margin-top: 70px;
+				min-width: 100%;
+			}
+		}
 
 		.container {
+			position: relative;
 			@include fluid(padding-top, 128, 256);
 			@include fluid(padding-bottom, 128, 256);
-			background-image: url('/assets/images/globe.png');
-			background-repeat: no-repeat;
-			background-position: right bottom;
-			background-size: 50%;
-
-			@include breakpoint($breakpoint--sm) {
-				background-size: 75%;
-			}
+			z-index: 1;
 
 			.title {
 				@include fluid(max-width, 655, 1110);
