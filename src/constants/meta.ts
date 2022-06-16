@@ -10,7 +10,7 @@ export const META_MICROSOFT_COLOR = "#ffffff"
 
 export const META_OG_URL = `https://${PLATFORM_DOMAIN}`
 export const META_OG_IMAGE_URL = `${META_OG_URL}/meta/og-image.jpg`
-export const META_OG_IMAGE_HEIGHT = 1920
-export const META_OG_IMAGE_WIDTH = 1280
+export const META_OG_IMAGE_WIDTH = 1648
+export const META_OG_IMAGE_HEIGHT = 863
 
-export const META_VERSION = "jhk4g1fkhl"
+export const META_VERSION = "byht0g4i7m"
