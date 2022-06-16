@@ -4,6 +4,7 @@
 	import { WrapperWide } from '$layout/wrapper';
 	import { Text } from '$components/text';
 	import { Button, ButtonGroup } from '$components/button';
+	import { VideoSequencer } from '$components/video-sequencer';
 	import { Timeline, TimelineItem } from '$components/timeline';
 	import { TokenStats } from '$components/token-stats';
 	import { Label } from '$components/label';
@@ -21,9 +22,15 @@
 <section class="hero" id="top">
 	<div class="background">
 		<div class="overlay" />
-		<video autoPlay loop muted playsInline>
-			<source src="/assets/videos/hero.mp4" type="video/mp4" />
-		</video>
+		<VideoSequencer
+			videoUrls={[
+				'/assets/videos/hero1.mp4',
+				'/assets/videos/hero2.mp4',
+				'/assets/videos/hero3.mp4',
+				'/assets/videos/hero4.mp4'
+			]}
+			order="random"
+		/>
 	</div>
 	<WrapperWide>
 		<div class="container">
@@ -184,11 +191,46 @@
 				left: 0;
 				right: 0;
 				background: rgba($color-background--tertiary, 0.75);
+				z-index: 1;
 			}
 
-			video {
+			:global(.video-sequencer) {
+				position: relative;
 				margin-top: 70px;
-				min-width: 100%;
+				max-width: 1920px;
+
+				:global(video) {
+					position: relative;
+					left: 50%;
+					transform: translateX(-50%);
+				}
+
+				&::after,
+				&::before {
+					content: '';
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					width: 150px;
+					background: linear-gradient(to right, $color-background--tertiary, transparent);
+					z-index: 1;
+				}
+
+				&::before {
+					left: 0;
+				}
+
+				&::after {
+					right: 0;
+					transform: rotate(180deg);
+				}
+
+				@include breakpoint($breakpoint--md) {
+					&::after,
+					&::before {
+						display: none;
+					}
+				}
 			}
 		}
 

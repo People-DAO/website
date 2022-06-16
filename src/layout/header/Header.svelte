@@ -4,10 +4,11 @@
 
 	import PeopleDaoLogo from '$assets/icons/daos/people-dao.svg';
 
+	import { headerHeight } from '$stores/layout/header';
 	import { scrollToTop } from '$stores/layout/navigation';
 </script>
 
-<header>
+<header bind:clientHeight={$headerHeight}>
 	<WrapperWide>
 		<div class="container">
 			<a class="logo" href="/" on:click={scrollToTop}>
