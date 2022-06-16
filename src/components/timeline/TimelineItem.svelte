@@ -15,7 +15,7 @@
 		<h5>{title}</h5>
 	</div>
 	<div class="description">
-		<p>{description}</p>
+		<p>{@html description}</p>
 	</div>
 </li>
 

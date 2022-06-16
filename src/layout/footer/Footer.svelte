@@ -23,8 +23,8 @@
 				</div>
 				<div class="tagline">
 					<h5>
-						A meta-DAO uniting $PEOPLE and<br />
-						<span>supporting mission-driven projects</span>
+						Incubate Public Good<br />
+						<span>For The People</span>
 					</h5>
 				</div>
 			</a>

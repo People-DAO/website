@@ -13,9 +13,25 @@
 
 	import ConstitutioDaoIcon from '$assets/icons/daos/constitution-dao.svg';
 	import PandaDaoIcon from '$assets/icons/daos/panda-dao.svg';
+	import LanguageDaoIcon from '$assets/icons/daos/language-dao.svg';
 
+	import { PLATFORM_DOMAIN } from '$constants/platform';
 	import { SOCIAL_DISCORD } from '$constants/socials';
-	import { TOKEN_ETHERSCAN, TOKEN_OKEX, TOKEN_UNISWAP } from '$constants/tokens';
+	import {
+		TOKEN_COINMARKETCAP,
+		TOKEN_ETHERSCAN,
+		TOKEN_OKEX,
+		TOKEN_UNISWAP
+	} from '$constants/tokens';
+	import {
+		LINK_HACKEN_AUDIT,
+		LINK_TRUSTLOOK_AUDIT,
+		LINK_JUICEBOX,
+		LINK_DEWORK,
+		LINK_PANDADAO,
+		LINK_LANGUAGEDAO,
+		LINK_CFRAG
+	} from '$constants/links';
 </script>
 
 <PageMeta />
@@ -36,8 +52,8 @@
 		<div class="container">
 			<div class="title">
 				<h1>
-					A meta-DAO uniting $PEOPLE and<br />
-					<span>supporting mission-driven projects</span>
+					Incubate Public Good<br />
+					<span>For The People</span>
 				</h1>
 			</div>
 		</div>
@@ -46,14 +62,17 @@
 <Section scrollHref="mission" cropped="bottom">
 	<SectionTitle>Mission</SectionTitle>
 	<Text size="large" width={80}>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-		laboris nisi ut aliquip ex ea commodo consequat.
+		PeopleDAO incubates subDAOs and&nbsp;projects that further web3 and&nbsp;social good because we
+		believe blockchain technology can promote a&nbsp;freer, more prosperous, and&nbsp;vibrant world.
 	</Text>
 	<Text size="large" width={80}>
-		Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-		pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-		mollit anim id est laborum.
+		Market activity around the <Label>$PEOPLE</Label> token acts like an&nbsp;engine for&nbsp;spreading
+		our&nbsp;message.
+	</Text>
+	<Text size="large" width={80}>
+		With every new incubation we build out a&nbsp;constellation of communities and&nbsp;protocols
+		aligned around the same mission: let's invest in&nbsp;the&nbsp;alpha that will preserve our
+		planet and&nbsp;advance humanity.
 	</Text>
 	<ButtonGroup>
 		<Button href={SOCIAL_DISCORD} target="_blank">Join Discord</Button>
@@ -63,12 +82,22 @@
 <Section scrollHref="origins">
 	<SectionTitle>Origins</SectionTitle>
 	<Text size="large">
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pharetra lacinia lacus, non
-		viverra tellus tempor sit amet. Vestibulum elementum elit sed ligula gravida, vel congue risus
-		faucibus.
+		PeopleDAO was born from a&nbsp;web3 movement to buy a&nbsp;private copy of the US Constitution.
+		When the project failed in its mission the&nbsp;developers burned control of the
+		<Label>$PEOPLE</Label> token contract,
+		<a
+			href={`https://twitter.com/ConstitutionDAO/status/1470970371025293317?ref=${PLATFORM_DOMAIN}`}
+			target="_blank">sunsetting their involvement</a
+		>. A&nbsp;group of community members formed PeopleDAO and&nbsp;adopter
+		<Label>$PEOPLE</Label> as its governance token, impressed by the meme coin's decentralization, capped
+		supply, and&nbsp;inspiring history.
 	</Text>
 	<div class="banner">
-		<div class="container">
+		<a
+			class="container"
+			href={`https://www.constitutiondao.com?ref=${PLATFORM_DOMAIN}`}
+			target="_blank"
+		>
 			<img
 				src="/assets/images/constitutiondao/constitution-signing.jpg"
 				alt="Signing of the Constitution of the United States"
@@ -76,95 +105,103 @@
 			<div class="overlay">
 				<ConstitutioDaoIcon />
 			</div>
-		</div>
+		</a>
 	</div>
 	<Timeline>
 		<TimelineItem
 			date="Nov '21"
-			title="The Birth"
-			description="An internet group decides to buy a copy of the US Constitution. They raise $45M but lose the auction. Many People DAO members were contributors to the effort."
+			title="The Cultural Event"
+			description="An internet group rallies web3 to buy a copy of the US Constitution, garnering widespread support and media coverage. The movement raises $45M but loses the auction. Many PeopleDAO members contributed to the effort."
 		/>
 		<TimelineItem
 			date="Nov '21"
 			title="The Token"
-			description="Constitution DAO announces it will shutter. While some donators redeem their $PEOPLE others keep the token. The price moons 40x amid speculation. People DAO hosts its 1st Twitter Spaces."
+			description="ConstitutionDAO announces it will shutter. Some donators redeem their $PEOPLE but others keep the token, enchanted by the meme's values of liberty and altruism. The price moons 40x amid speculation. PeopleDAO hosts its 1st Twitter Spaces."
 		/>
 		<TimelineItem
 			date="Dec '21"
-			title="People DAO"
-			description="People DAO forms after a Snapshot vote on Dec 6th. Our Discord grows to almost 7,000 members as talent gathers and begins building the DAO's next chapter."
+			title="PeopleDAO"
+			description="PeopleDAO forms after a Snapshot vote on Dec 6th, gathering together individuals from across the world. Members have many visions for the $PEOPLE token oriented around further social good and web3. We agree to use a metaDAO structure and incubate DAOs addressing different causes."
 		/>
 		<TimelineItem
 			date="Dec '21"
 			title="Decentralization"
-			description="Constitution DAO reliquishes ownership of the $PEOPLE token contract. They close down their Discord, closing the chapter."
+			description={`ConstitutionDAO relinquishes ownership of the $PEOPLE token contract (confirmed in later audits by <a href="${LINK_HACKEN_AUDIT}?ref=${PLATFORM_DOMAIN}" target='_blank'>Hacken</a> and <a href="${LINK_TRUSTLOOK_AUDIT}?ref=${PLATFORM_DOMAIN}" target='_blank'>TRUSTLOOK</a>). ConstitutionDAO shuts down its Discord, closing the first chapter of the $PEOPLE token.`}
 		/>
 		<TimelineItem
 			date="Now"
-			title="The Current"
-			description="The future is still being written. Current plans include issueing POAPs to the community, launching our treasury, and beginning collaboation with other DAOs."
+			title="MetaDAO"
+			description="As of June 2022 PeopleDAO has incubated two subDAOS, PandaDAO and LanguageDAO, and one community project, Constitution Fractionalizes. We continue to strengthen the structure and operations of the DAO while also incubating new opportunities. Our Discord has grown to over 17k members and our Twitter has grown to over 34k followers."
 		/>
 	</Timeline>
 </Section>
 <Section scrollHref="token">
 	<SectionTitle>Token</SectionTitle>
 	<Text size="large" class="description">
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pharetra lacinia lacus, non
-		viverra tellus tempor sit amet <Label>$PEOPLE</Label> token. Vestibulum elementum elit sed ligula
-		gravida, vel congue risus faucibus.
+		We use the <Label>$PEOPLE</Label> token for&nbsp;voting in&nbsp;DAO decision-making process. The&nbsp;token
+		has a&nbsp;capped supply and&nbsp;will be slightly deflationary so long as holders continue to redeem
+		the&nbsp;token on
+		<a href={`${LINK_JUICEBOX}?ref=${PLATFORM_DOMAIN}`} target="_blank">Juicebox</a>, in return for
+		the underlying ETH. The original conversion rate of 1 ETH per 1M <Label>$PEOPLE</Label> thus acts
+		like a&nbsp;floor price. PeopleDAO and&nbsp;its subDAOs are committed to building an&nbsp;ecosystem
+		around this token. In&nbsp;practice this has looked like offering a&nbsp;<a
+			href={`${LINK_CFRAG}?ref=${PLATFORM_DOMAIN}`}
+			target="_blank">free NFT</a
+		> to token holders, or airdropping $PANDA token to wallets holding the&nbsp;token.
 	</Text>
 	<TokenStats />
 	<ButtonGroup>
-		<Button href={TOKEN_ETHERSCAN} target="_blank">View on Etherscan</Button>
-		<Button href={TOKEN_OKEX} target="_blank">Buy on OKEx</Button>
-		<Button href={TOKEN_UNISWAP} target="_blank">Exchange on Uniswap</Button>
+		<Button href={`${TOKEN_ETHERSCAN}?ref=${PLATFORM_DOMAIN}`} target="_blank"
+			>View on Etherscan</Button
+		>
+		<Button href={`${TOKEN_OKEX}?ref=${PLATFORM_DOMAIN}`} target="_blank">Buy on OKEx</Button>
+		<Button href={`${TOKEN_UNISWAP}&ref=${PLATFORM_DOMAIN}`} target="_blank"
+			>Exchange on Uniswap</Button
+		>
 	</ButtonGroup>
 </Section>
 <Section scrollHref="projects" cropped="bottom">
 	<SectionTitle>Projects</SectionTitle>
 	<Text size="large">
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-		laboris nisi ut aliquip ex ea commodo consequat.
+		PeopleDAO is an&nbsp;incubator for subDAOs and&nbsp;community projects. We&nbsp;provide seed
+		funding, product development, strategic direction, marketing boosts, and&nbsp;consulting around
+		governance.
 	</Text>
 	<HexagonGroup>
-		<Hexagon href="https://www.pandadao.info/" target="_blank">
+		<Hexagon href={`${LINK_PANDADAO}?ref=${PLATFORM_DOMAIN}`} target="_blank">
 			<PandaDaoIcon />
 		</Hexagon>
-		<Hexagon href="https://www.pandadao.info/" target="_blank">
-			<PandaDaoIcon />
-		</Hexagon>
-		<Hexagon href="https://www.pandadao.info/" target="_blank">
-			<PandaDaoIcon />
-		</Hexagon>
-		<Hexagon href="https://www.pandadao.info/" target="_blank">
-			<PandaDaoIcon />
+		<Hexagon href={`${LINK_LANGUAGEDAO}?ref=${PLATFORM_DOMAIN}`} target="_blank">
+			<LanguageDaoIcon />
 		</Hexagon>
 	</HexagonGroup>
 </Section>
 <Section scrollHref="faq">
 	<SectionTitle>FAQ</SectionTitle>
-	<Text size="large">
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-		laboris nisi ut aliquip ex ea commodo consequat.
-	</Text>
 	<Accordion>
 		<AccordionItem
-			title="Phasellus rutrum nibh vel sem eleifend scelerisque?"
-			description="Aenean sollicitudin nunc ultrices, aliquet ante eget, blandit sem. Maecenas rhoncus faucibus gravida. Sed at magna vitae orci posuere convallis et vitae neque. Ut elit est, dapibus quis dapibus at, aliquam nec orci. Praesent eu volutpat libero, ac lacinia est. Sed auctor nec magna quis convallis."
+			title="What is a metaDAO and subDAO?"
+			description="We conceptualize them as similar to a&nbsp;corporation and subsidiaries. Or, like a&nbsp;coalition with shared purpose, and&nbsp;the&nbsp;metaDAO acts as a&nbsp;backbone entity, providing coordination across the group. In&nbsp;our case that purpose is building an&nbsp;ecosystem around the&nbsp;$PEOPLE token! Our&nbsp;subDAOs are autonomous in terms of governance, but may contribute revenue or in-kind service to PeopleDAO. We're still developing our model!"
 		/>
 		<AccordionItem
-			title="Cras fermentum mattis nunc?"
-			description="Curabitur eleifend, quam sit amet blandit dictum, urna libero convallis leo, id tempus diam nisl ac nulla. Duis volutpat rhoncus magna, sit amet mattis nibh. Nulla facilisi. Donec scelerisque tincidunt feugiat. Quisque id diam aliquam, bibendum justo at, mattis nunc."
+			title="Do I need to own $PEOPLE to join PeopleDAO?"
+			description="Anyone can join PeopleDAO's Discord and&nbsp;start contributing, but&nbsp;holding $PEOPLE token unlocks two key advantages. $PEOPLE grants you the&nbsp;option to vote in our Snapshot proposal and&nbsp;therefore shape the&nbsp;governance of the DAO. Two, holding $PEOPLE enables you to attain Verified Member status in our Discord, which&nbsp;confers benefits such as access to activities, POAPs, or&nbsp;whitelist spots."
 		/>
 		<AccordionItem
-			title="Vivamus a nisl quis erat?"
-			description="Vivamus dapibus quam nec libero sodales vestibulum. Nulla rhoncus ex in turpis commodo, quis maximus augue lobortis. Proin vel pretium nunc, ac luctus nisi. Morbi vitae massa vel libero ornare molestie."
+			title="How can I contribute to PeopleDAO?"
+			description={`Start with joining the <a href=${`${SOCIAL_DISCORD}`} target="_blank">Discord</a> and&nbsp;conducting the&nbsp;onboarding process described in&nbsp;the&nbsp;#onboarding channel. From&nbsp;there check out the&nbsp;#bounty-board channel or&nbsp;our&nbsp;<a href=${`${LINK_DEWORK}?ref=${PLATFORM_DOMAIN}`} target="_blank">Dework</a> page for tasks that need completing! We&nbsp;pay contributors for their work.`}
 		/>
 		<AccordionItem
-			title="Fusce sit amet arcu in magna porttitor?"
-			description="Morbi porttitor suscipit augue, ut semper lectus consectetur a. Aenean consequat pharetra ultricies. Quisque vitae enim nulla. Morbi erat justo, dictum sit amet metus eu, pretium venenatis velit. Nulla molestie sem dui, vel eleifend nibh varius congue. Quisque metus nunc."
+			title="What market gap do you intend to close?"
+			description="Economists have long recognized that funding public goods is an&nbsp;ongoing challenge. Simply put, because&nbsp;no one is excluded from using a&nbsp;public good many individuals avoid paying for them, giving rise to the&nbsp;free-rider problem. Web3 needs its&nbsp;roads, utilities, and&nbsp;non-profits just like the real world does. PeopleDAO fills the market gap by not only funding public goods, but&nbsp;by providing incubation services to ensure projects are on a&nbsp;road to growth and&nbsp;sustainability."
+		/>
+		<AccordionItem
+			title="How can PeopleDAO help with my project?"
+			description="Projects seeking incubation should meet at least two criteria: (1)&nbsp;an&nbsp;interest in joining a&nbsp;family of DAOs and&nbsp;projects united in the&nbsp;mission to build an&nbsp;ecosystem around the&nbsp;$PEOPLE token, and (2)&nbsp;a&nbsp;focus on making public goods in web3, or&nbsp;leveraging the blockchain for social impact."
+		/>
+		<AccordionItem
+			title="How many wallet addresses hold $PEOPLE?"
+			description={`You can browse statistics on the $PEOPLE token holder count and other data on the <a href=${`${TOKEN_COINMARKETCAP}/holders?ref=${PLATFORM_DOMAIN}`} target="_blank">dedicated CoinMarketCap page</a>.`}
 		/>
 	</Accordion>
 </Section>

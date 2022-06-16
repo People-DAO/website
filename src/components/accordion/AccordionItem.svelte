@@ -23,7 +23,7 @@
 	</div>
 	{#if open}
 		<div class="description" transition:slide={{ duration: TRANSITION_DURATION }}>
-			<p>{description}</p>
+			<p>{@html description}</p>
 		</div>
 	{/if}
 </li>
