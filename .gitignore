@@ -1,23 +1,13 @@
-# dependencies
-node_modules/
+node_modules
 
-# gatsby
-.cache/
-public
+/build
+/.svelte-kit
+/package
 
-# environment
+.vercel
+
 .env
-.env.local
+.env.*
+!.env.example
 
-# yarn
-yarn-error.log
-.pnp/
-.pnp.js
-.yarn-integrity
-
-# logs
-*.log
-
-# other
 .DS_Store
-.directory

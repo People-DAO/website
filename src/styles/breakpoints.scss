@@ -1,17 +1,11 @@
-$breakpoint-tablet: 1120;
-$breakpoint-mobile: 864;
-
-$breakpoint-fluid-min: 375;
-$breakpoint-fluid-max: 1920;
+$breakpoint--sm: 672;
+$breakpoint--md: 1056;
+$breakpoint--lg: 1312;
+$breakpoint--xlg: 1584;
+// $breakpoint-max: >1584;
 
 @mixin breakpoint($size) {
-  @if $size == tablet {
-    @media only screen and (max-width: #{$breakpoint-tablet}px) {
-      @content;
-    }
-  } @else if $size == mobile {
-    @media only screen and (max-width: #{$breakpoint-mobile}px) {
-      @content;
-    }
+  @media only screen and (max-width: #{$size}px) {
+    @content;
   }
-}
+};

@@ -1,15 +1,16 @@
-@import "./breakpoints.scss";
+$displayWide: 1920;
+$displayNarrow: 375;
 
 @mixin fluid($property, $minValue, $maxValue) {
-  $x: calc(($maxValue - $minValue)/($breakpoint-fluid-max - $breakpoint-fluid-min));
-  $y: $maxValue - $breakpoint-fluid-max * $x;
+  $x: calc(($maxValue - $minValue) / ($displayWide - $displayNarrow));
+  $y: $maxValue - $displayWide * $x;
   #{$property}: calc(#{100*$x}vw + #{$y}px);
 
-  @media screen and (max-width: ($breakpoint-fluid-min - 1px)) {
+  @media screen and (max-width: ($displayNarrow - 1px)) {
     #{$property}: #{$minValue}px
   };
 
-  @media screen and (min-width: ($breakpoint-fluid-max + 1px)) {
+  @media screen and (min-width: ($displayWide + 1px)) {
     #{$property}: #{$maxValue}px
   };
 }

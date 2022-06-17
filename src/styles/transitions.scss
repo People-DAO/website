@@ -1,20 +1,13 @@
-@mixin transition($type, $properties...) {
-  $prefixes: -webkit- -moz- -ms- -o-;
-  $style: null;
-  
-  @if ($type == primary) {
-    $style: 150ms ease-out;
+@mixin transition($type, $props...) {
+  $result: ();
+  @each $prop in $props {
+    @if length($result) > 0 {
+      $result: append($result, unquote(",") #{$prop} $type);
+    } @else {
+      $result: append($result, #{$prop} $type);
+    }
   }
-
-  @each $prefix in $prefixes {
-    $result: ();
-      @each $prop in $properties {
-        @if length($result) > 0 {
-          $result: append($result, unquote(",") #{$prop} $style);
-        } @else {
-          $result: append($result, #{$prop} $style);
-        }
-      }
-    #{$prefix}transition: $result;
-  }
+  transition: $result;
 }
+
+$transition--primary: 150ms ease-out;

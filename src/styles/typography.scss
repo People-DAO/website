@@ -1,0 +1,36 @@
+@use "./fluid.scss" as *;
+@use "./fonts.scss" as *;
+
+@mixin typography-family--primary {
+  font-family: $font-family--primary;
+  line-height: 1.4;
+}
+
+@mixin typography-family--secondary {
+  font-family: $font-family--secondary;
+  line-height: 1.2;
+}
+
+@mixin typography-size--micro {
+  @include fluid(font-size, 14, 16);
+}
+
+@mixin typography-size--base {
+  @include fluid(font-size, 16, 19);
+}
+
+@mixin typography-size--small {
+  @include fluid(font-size, 18, 22);
+}
+
+@mixin typography-size--medium {
+  @include fluid(font-size, 20, 24);
+}
+
+@mixin typography-size--large {
+  @include fluid(font-size, 24, 33);
+}
+
+@mixin typography-size--max {
+  @include fluid(font-size, 42, 60);
+}
