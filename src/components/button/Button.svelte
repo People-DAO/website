@@ -6,6 +6,11 @@
 	export let href: string = null;
 	export let target: '_blank' = null;
 	export let icon: typeof SvelteComponent = null;
+	export let onClick: () => void = null;
+
+	const handleClick = () => {
+		if (!!onClick) onClick();
+	};
 </script>
 
 <a
@@ -13,6 +18,7 @@
 	{href}
 	{target}
 	rel={target === '_blank' ? 'noopener noreferrer' : null}
+	on:click={handleClick}
 	{...$$restProps}
 >
 	<span><slot /></span>
@@ -63,7 +69,6 @@
 
 		:global(svg) {
 			width: auto;
-			// stroke: currentColor;
 			@include fluid(height, 19, 22);
 			@include fluid(margin-left, 8, 10);
 		}

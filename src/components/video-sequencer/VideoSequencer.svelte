@@ -19,7 +19,6 @@
 		}
 
 		updateVideoQueue();
-		console.log('[@DEBUG] videosOrderedUrls: ', videosOrderedUrls);
 	});
 
 	const updateVideoQueue = (currentVideoIndex: number = 0) => {

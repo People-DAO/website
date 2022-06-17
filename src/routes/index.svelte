@@ -15,6 +15,8 @@
 	import PandaDaoIcon from '$assets/icons/daos/panda-dao.svg';
 	import LanguageDaoIcon from '$assets/icons/daos/language-dao.svg';
 
+	import { scrollToRef } from '$stores/layout/navigation';
+
 	import { PLATFORM_DOMAIN } from '$constants/platform';
 	import { SOCIAL_DISCORD } from '$constants/socials';
 	import {
@@ -76,7 +78,7 @@
 	</Text>
 	<ButtonGroup>
 		<Button href={SOCIAL_DISCORD} target="_blank">Join Discord</Button>
-		<Button>Active projects</Button>
+		<Button onClick={() => scrollToRef('projects')}>Active projects</Button>
 	</ButtonGroup>
 </Section>
 <Section scrollHref="origins">

@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { slide } from 'svelte/transition';
 
+	import { Text } from '$components/text';
+
 	import ChevronDownIcon from '$assets/icons/general/chevron-down.svg';
 
 	export let title: string;
@@ -23,7 +25,7 @@
 	</div>
 	{#if open}
 		<div class="description" transition:slide={{ duration: TRANSITION_DURATION }}>
-			<p>{@html description}</p>
+			<Text>{@html description}</Text>
 		</div>
 	{/if}
 </li>
@@ -75,7 +77,7 @@
 			@include fluid(padding-left, 34, 44);
 			@include transition($transition--primary, background);
 
-			p {
+			:global(p) {
 				@include typography-size--medium;
 			}
 		}

@@ -24,7 +24,12 @@
 		font-weight: $font-weight--semi-bold;
 		color: $color-text--tertiary;
 		@include spacing--max(margin-right);
+		@include transition($transition--primary, color);
 		cursor: pointer;
+
+		&:hover {
+			color: rgba($color-text--tertiary, 0.66);
+		}
 
 		&:last-of-type {
 			margin-right: 0;
