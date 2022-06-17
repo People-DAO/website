@@ -1,40 +1,40 @@
-# create-svelte
+<p align="center">
+  <a href="https://people-dao.com" target="_blank"><img height="96" src="static/assets/icons/daos/people-dao.svg" alt="PeopleDAO logo" /></a>
+</p>
+<h1 align="center">
+  PeopleDAO Website
+</h1>
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+<p align="center">
+The official <a href="https://people-dao.com" target="_blank">PeopleDAO</a> website built with <a href="https://kit.svelte.dev/" target="_blank">SvelteKit</a>
+</p>
 
-## Creating a project
+<hr />
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Requirements
 
-```bash
-# create a new project in the current directory
-npm init svelte@next
+- [Node.js](https://nodejs.org/en/) >v16
 
-# create a new project in my-app
-npm init svelte@next my-app
-```
+## Development
 
-> Note: the `@next` is temporary
+1. Install project dependencies:
+   ```
+   npm install
+   ```
+2. Run the application in development mode:
+   ```
+   npm run dev:vercel
+   ```
+   - You will be ask to sign-in into the [Vercel](https://vercel.com) platform (free), you can use your GitHub account. This utility is important in order to simulate deployment of [serverless functions](https://vercel.com/docs/concepts/functions/serverless-functions), which solves the potential [CORS errors](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors) while requesting data from external services.
 
-## Developing
+## Deployment
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+#### Vercel
 
-```bash
-npm run dev
+1. Deploy the application at [Vercel](https://vercel.com):
+   - If you haven't created a project for this application yet, navigate to your [dashboard](https://vercel.com/dashboard), import this repository and follow the provided instructions.
+   - In case you have created the project before, the latest commit in the `main` branch will be deployed upon push.
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+#### Other providers
 
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+For deployment at any different provider solution, a custom API endpoint has to be developed first. It has to replicate the functionality of the `/api` folder and the application might will have to be modified as well in order to reflect such updates. The application can be built by following the [SvelteKit documentation](https://kit.svelte.dev/docs/cli#svelte-kit-build).
