@@ -117,6 +117,7 @@
 
 			:global(p) {
 				@include typography-size--small;
+				margin-bottom: 0;
 			}
 		}
 
@@ -127,6 +128,8 @@
 		}
 
 		&:last-of-type {
+			padding-bottom: 0;
+
 			.dot::after {
 				bottom: 50%;
 			}

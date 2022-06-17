@@ -90,7 +90,7 @@
 		<a
 			href={`https://twitter.com/ConstitutionDAO/status/1470970371025293317?ref=${PLATFORM_DOMAIN}`}
 			target="_blank">sunsetting their involvement</a
-		>. A&nbsp;group of community members formed PeopleDAO and&nbsp;adopter
+		>. A&nbsp;group of community members formed PeopleDAO and&nbsp;adopted
 		<Label>$PEOPLE</Label> as its governance token, impressed by the meme coin's decentralization, capped
 		supply, and&nbsp;inspiring history.
 	</Text>
@@ -123,7 +123,7 @@
 		<TimelineItem
 			date="Dec '21"
 			title="PeopleDAO"
-			description="PeopleDAO forms after a Snapshot vote on Dec 6th, gathering together individuals from across the world. Members have many visions for the $PEOPLE token oriented around further social good and web3. We agree to use a metaDAO structure and incubate DAOs addressing different causes."
+			description="PeopleDAO forms after a Snapshot vote on Dec 6th, gathering together individuals from across the world. Members have many visions for the $PEOPLE token oriented around furthering social good and web3. We agree to use a metaDAO structure and incubate DAOs addressing different causes."
 		/>
 		<TimelineItem
 			date="Dec '21"
@@ -133,14 +133,14 @@
 		<TimelineItem
 			date="Now"
 			title="MetaDAO"
-			description="As of June 2022 PeopleDAO has incubated two subDAOS, PandaDAO and LanguageDAO, and one community project, Constitution Fractionalizes. We continue to strengthen the structure and operations of the DAO while also incubating new opportunities. Our Discord has grown to over 17k members and our Twitter has grown to over 34k followers."
+			description="As of June 2022 PeopleDAO has incubated two subDAOS, PandaDAO and LanguageDAO, and one community project, Constitution Fractionalized. We continue to strengthen the structure and operations of the DAO while also incubating new opportunities."
 		/>
 	</Timeline>
 </Section>
 <Section scrollHref="token">
 	<SectionTitle>Token</SectionTitle>
 	<Text size="large" class="description">
-		We use the <Label>$PEOPLE</Label> token for&nbsp;voting in&nbsp;DAO decision-making process. The&nbsp;token
+		We use the <Label>$PEOPLE</Label> token for&nbsp;voting in&nbsp;DAO decision-making. The&nbsp;token
 		has a&nbsp;capped supply and&nbsp;will be slightly deflationary so long as holders continue to redeem
 		the&nbsp;token on
 		<a href={`${LINK_JUICEBOX}?ref=${PLATFORM_DOMAIN}`} target="_blank">Juicebox</a>, in return for
@@ -183,11 +183,11 @@
 	<Accordion>
 		<AccordionItem
 			title="What is a metaDAO and subDAO?"
-			description="We conceptualize them as similar to a&nbsp;corporation and subsidiaries. Or, like a&nbsp;coalition with shared purpose, and&nbsp;the&nbsp;metaDAO acts as a&nbsp;backbone entity, providing coordination across the group. In&nbsp;our case that purpose is building an&nbsp;ecosystem around the&nbsp;$PEOPLE token! Our&nbsp;subDAOs are autonomous in terms of governance, but may contribute revenue or in-kind service to PeopleDAO. We're still developing our model!"
+			description="We conceptualize them as similar to a&nbsp;corporation and subsidiaries. Or, like a&nbsp;coalition with shared purpose, and&nbsp;the&nbsp;metaDAO acts as a&nbsp;backbone entity, providing coordination across the group. In&nbsp;our case that purpose is building an&nbsp;ecosystem around the&nbsp;$PEOPLE token! Our&nbsp;subDAOs are autonomous in terms of governance, but may contribute revenue or in-kind services to PeopleDAO. We're still developing our model!"
 		/>
 		<AccordionItem
 			title="Do I need to own $PEOPLE to join PeopleDAO?"
-			description="Anyone can join PeopleDAO's Discord and&nbsp;start contributing, but&nbsp;holding $PEOPLE token unlocks two key advantages. $PEOPLE grants you the&nbsp;option to vote in our Snapshot proposal and&nbsp;therefore shape the&nbsp;governance of the DAO. Two, holding $PEOPLE enables you to attain Verified Member status in our Discord, which&nbsp;confers benefits such as access to activities, POAPs, or&nbsp;whitelist spots."
+			description="Anyone can join PeopleDAO's Discord and&nbsp;start contributing, but&nbsp;holding $PEOPLE token unlocks two key advantages. $PEOPLE grants you the&nbsp;option to vote in our Snapshot proposals and&nbsp;therefore shape the&nbsp;governance of the DAO. Two, holding $PEOPLE enables you to attain Verified Member status in our Discord, which&nbsp;confers benefits such as access to activities, POAPs, or&nbsp;whitelist spots."
 		/>
 		<AccordionItem
 			title="How can I contribute to PeopleDAO?"
@@ -195,7 +195,7 @@
 		/>
 		<AccordionItem
 			title="What market gap do you intend to close?"
-			description="Economists have long recognized that funding public goods is an&nbsp;ongoing challenge. Simply put, because&nbsp;no one is excluded from using a&nbsp;public good many individuals avoid paying for them, giving rise to the&nbsp;free-rider problem. Web3 needs its&nbsp;roads, utilities, and&nbsp;non-profits just like the real world does. PeopleDAO fills the market gap by not only funding public goods, but&nbsp;by providing incubation services to ensure projects are on a&nbsp;road to growth and&nbsp;sustainability."
+			description="Economists have long recognized that funding public goods is an&nbsp;ongoing challenge. Simply put, because&nbsp;no one is excluded from using a&nbsp;public good many individuals avoid paying for them, giving rise to the&nbsp;free-rider problem. Web3 needs its&nbsp;roads, utilities, and&nbsp;non-profits just like the real world does. PeopleDAO fills the market gap by not only funding public goods, but&nbsp;by providing incubation services to ensure projects are on a&nbsp;path to growth and&nbsp;sustainability."
 		/>
 		<AccordionItem
 			title="How can PeopleDAO help with my project?"
