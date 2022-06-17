@@ -10,19 +10,22 @@
 
 	import { SOCIAL_DISCORD, SOCIAL_TWITTER, SOCIAL_GITHUB } from '$constants/socials';
 	import { TOKEN_ETHERSCAN, TOKEN_COINMARKETCAP } from '$constants/tokens';
+
+	import { footerHeight } from '$stores/layout/layout';
+	import { scrollToTop } from '$stores/layout/navigation';
 </script>
 
-<footer>
+<footer bind:clientHeight={$footerHeight}>
 	<WrapperWide>
 		<div class="container">
-			<a class="about" href="/">
+			<a class="about" href="/" on:click={scrollToTop}>
 				<div class="logo">
 					<PeopleDaoLogo />
 				</div>
 				<div class="tagline">
 					<h5>
-						A meta-DAO uniting $PEOPLE and<br />
-						<span>supporting mission-driven projects</span>
+						Incubate Public Good<br />
+						<span>For The People</span>
 					</h5>
 				</div>
 			</a>
@@ -66,7 +69,7 @@
 				align-items: center;
 
 				@include breakpoint($breakpoint--sm) {
-					@include spacing--base(margin-bottom);
+					@include spacing--medium(margin-bottom);
 				}
 
 				.logo {

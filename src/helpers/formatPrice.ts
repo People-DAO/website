@@ -1,6 +1,6 @@
 import numbro from "numbro"
 
-const formatPrice = (number: number): string => {
+export const formatPrice = (number: number): string => {
   return numbro(number)
     .format({
       // optionalMantissa: true,

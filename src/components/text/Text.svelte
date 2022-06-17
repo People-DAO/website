@@ -31,5 +31,27 @@
 		&.width--80 {
 			max-width: #{$breakpoint--md}px;
 		}
+
+		:global(a) {
+			position: relative;
+			color: inherit;
+			@include transition($transition--primary, opacity);
+
+			background: linear-gradient(
+				to right,
+				$color-brand--blue 0px,
+				$color-brand--purple 8px,
+				transparent 8px,
+				transparent 16px
+			);
+			background-size: 12px 1px;
+			background-repeat: repeat-x;
+			background-position: 100% 90%;
+			@include transition($transition--primary, opacity);
+
+			&:hover {
+				opacity: 0.66;
+			}
+		}
 	}
 </style>

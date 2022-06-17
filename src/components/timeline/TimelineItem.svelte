@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { Text } from '$components/text';
+
 	export let date: string;
 	export let title: string;
 	export let description: string;
@@ -15,7 +17,7 @@
 		<h5>{title}</h5>
 	</div>
 	<div class="description">
-		<p>{description}</p>
+		<Text>{@html description}</Text>
 	</div>
 </li>
 
@@ -113,7 +115,7 @@
 				grid-row: 3/4;
 			}
 
-			p {
+			:global(p) {
 				@include typography-size--small;
 			}
 		}

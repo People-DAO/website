@@ -6,7 +6,7 @@
 	.hexagon-group {
 		@include spacing--max(margin-top);
 
-		:global(a) {
+		:global(.hexagon) {
 			@include spacing--small(margin-right, margin-bottom);
 
 			&:last-of-type {

@@ -5,9 +5,9 @@
 	font-size: 62.5%;
 }
 
-:global(html, body) {
-  height: 100%;
-}
+// :global(html, body) {
+//   height: 100%;
+// }
 
 :global(body) {
   font-family: $font-family--primary, sans-serif;
@@ -19,7 +19,6 @@
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   -webkit-tap-highlight-color: transparent;
-  overscroll-behavior-y: none;
   
   :global(a) {
     outline: 0;

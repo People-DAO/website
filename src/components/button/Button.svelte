@@ -6,6 +6,11 @@
 	export let href: string = null;
 	export let target: '_blank' = null;
 	export let icon: typeof SvelteComponent = null;
+	export let onClick: () => void = null;
+
+	const handleClick = () => {
+		if (!!onClick) onClick();
+	};
 </script>
 
 <a
@@ -13,6 +18,7 @@
 	{href}
 	{target}
 	rel={target === '_blank' ? 'noopener noreferrer' : null}
+	on:click={handleClick}
 	{...$$restProps}
 >
 	<span><slot /></span>
@@ -31,10 +37,10 @@
 		color: $color-text--primary;
 		@include spacing--nano(padding-top, padding-bottom);
 		@include spacing--base(padding-left, padding-right);
-		--button-border-width: 2px;
-		--button-border-radius: 26px;
-		border: var(--button-border-width) solid $color-background--tertiary;
-		border-radius: var(--button-border-radius);
+		$button-border-width: 2px;
+		$button-border-radius: 26px;
+		border: $button-border-width solid $color-background--tertiary;
+		border-radius: $button-border-radius;
 		@include transition($transition--primary, background, border-color);
 		cursor: pointer;
 		z-index: 0;
@@ -42,9 +48,9 @@
 		&::before {
 			content: '';
 			position: absolute;
-			inset: calc(var(--button-border-width) * -1);
-			padding: var(--button-border-width);
-			border-radius: var(--button-border-radius);
+			inset: $button-border-width * -1;
+			padding: $button-border-width;
+			border-radius: $button-border-radius;
 			background: linear-gradient(to right, $color-brand--blue, $color-brand--purple);
 			mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
 			-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -63,7 +69,6 @@
 
 		:global(svg) {
 			width: auto;
-			// stroke: currentColor;
 			@include fluid(height, 19, 22);
 			@include fluid(margin-left, 8, 10);
 		}
