@@ -4,7 +4,7 @@
 
 	import PeopleDaoLogo from '$assets/icons/daos/people-dao.svg';
 
-	import { headerHeight } from '$stores/layout/header';
+	import { headerHeight } from '$stores/layout/layout';
 	import { scrollToTop } from '$stores/layout/navigation';
 </script>
 

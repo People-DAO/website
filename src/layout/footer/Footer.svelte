@@ -11,10 +11,11 @@
 	import { SOCIAL_DISCORD, SOCIAL_TWITTER, SOCIAL_GITHUB } from '$constants/socials';
 	import { TOKEN_ETHERSCAN, TOKEN_COINMARKETCAP } from '$constants/tokens';
 
+	import { footerHeight } from '$stores/layout/layout';
 	import { scrollToTop } from '$stores/layout/navigation';
 </script>
 
-<footer>
+<footer bind:clientHeight={$footerHeight}>
 	<WrapperWide>
 		<div class="container">
 			<a class="about" href="/" on:click={scrollToTop}>
