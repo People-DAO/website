@@ -1,9 +1,12 @@
 <script lang="ts">
+	import { Analytics } from '$util/analytics';
 	import { Header } from '$layout/header';
 	import { Footer } from '$layout/footer';
 
 	import { headerHeight, footerHeight } from '$stores/layout/layout';
 </script>
+
+<Analytics />
 
 <Header />
 <main

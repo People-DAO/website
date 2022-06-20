@@ -30,6 +30,7 @@
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-svelte3": "^3.2.1",
+    "fathom-client": "^3.5.0",
     "isomorphic-unfetch": "^3.1.0",
     "prettier": "^2.5.1",
     "prettier-plugin-svelte": "^2.5.0",
