@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { WrapperWide } from '$layout/wrapper';
 
-	import PeopleDaoLogo from '$assets/icons/daos/people-dao.svg';
+	import PeopleDaoLogo from '$assets/icons/brand/logo.svg';
 	import DiscordIcon from '$assets/icons/socials/discord.svg';
 	import TwitterIcon from '$assets/icons/socials/twitter.svg';
 	import GithubIcon from '$assets/icons/socials/github.svg';

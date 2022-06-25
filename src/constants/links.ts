@@ -5,3 +5,5 @@ export const LINK_JUICEBOX = "https://juicebox.money/#/p/constitutiondao";
 export const LINK_CFRAG = "https://constitution.y4000.xyz";
 export const LINK_PANDADAO = "https://www.pandadao.info";
 export const LINK_LANGUAGEDAO = "https://languagedao.com";
+export const LINK_LOSTCHILDREN = "https://twitter.com/ExtZoomer/status/1536956530624499712";
+export const LINK_CONSTITUTION = "https://peopledao.mirror.xyz/nPEAVJ7NPKwrFKwNQ1A960LyrU_Nh2etT02lLvORCcg";

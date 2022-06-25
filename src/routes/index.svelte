@@ -11,9 +11,10 @@
 	import { Hexagon, HexagonGroup } from '$components/hexagon';
 	import { Accordion, AccordionItem } from '$components/accordion';
 
-	import ConstitutioDaoIcon from '$assets/icons/daos/constitution-dao.svg';
-	import PandaDaoIcon from '$assets/icons/daos/panda-dao.svg';
-	import LanguageDaoIcon from '$assets/icons/daos/language-dao.svg';
+	import ConstitutioDaoIcon from '$assets/icons/projects/constitutiondao.svg';
+	import PandaDaoIcon from '$assets/icons/projects/pandadao.svg';
+	import LanguageDaoIcon from '$assets/icons/projects/languagedao.svg';
+	import LostChildrenIcon from '$assets/icons/projects/lost-children.svg';
 
 	import { scrollToRef } from '$stores/layout/navigation';
 
@@ -26,12 +27,14 @@
 		TOKEN_UNISWAP
 	} from '$constants/tokens';
 	import {
+		LINK_CONSTITUTION,
 		LINK_HACKEN_AUDIT,
 		LINK_TRUSTLOOK_AUDIT,
 		LINK_JUICEBOX,
 		LINK_DEWORK,
 		LINK_PANDADAO,
 		LINK_LANGUAGEDAO,
+		LINK_LOSTCHILDREN,
 		LINK_CFRAG
 	} from '$constants/links';
 </script>
@@ -78,7 +81,10 @@
 	</Text>
 	<ButtonGroup>
 		<Button href={SOCIAL_DISCORD} target="_blank">Join Discord</Button>
-		<Button onClick={() => scrollToRef('projects')}>Active projects</Button>
+		<Button href={`${LINK_CONSTITUTION}?ref=${PLATFORM_DOMAIN}`} target="_blank">
+			View Constitution
+		</Button>
+		<Button onClick={() => scrollToRef('projects')}>Browse incubated projects</Button>
 	</ButtonGroup>
 </Section>
 <Section scrollHref="origins">
@@ -175,6 +181,9 @@
 		</Hexagon>
 		<Hexagon href={`${LINK_LANGUAGEDAO}?ref=${PLATFORM_DOMAIN}`} target="_blank">
 			<LanguageDaoIcon />
+		</Hexagon>
+		<Hexagon href={`${LINK_LOSTCHILDREN}?ref=${PLATFORM_DOMAIN}`} target="_blank">
+			<LostChildrenIcon />
 		</Hexagon>
 	</HexagonGroup>
 </Section>

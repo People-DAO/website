@@ -10,12 +10,16 @@
 </script>
 
 <script lang="ts">
+	import env from '$util/environment/variables';
+
 	import { PageMeta } from '$util/meta';
 	import { Section } from '$layout/section';
 	import { Button } from '$components/button';
 	import { Text } from '$components/text';
 
 	export let statusCode: number;
+	export let error: any;
+
 	let title: string;
 	if (statusCode === 404) {
 		title = 'Page not found';
@@ -39,6 +43,15 @@
 	<div class="actions">
 		<Button href="/">Go to homepage</Button>
 	</div>
+	{#if env.develop}
+		<div class="detail">
+			<pre>
+			<code>
+				{error}
+			</code>
+		</pre>
+		</div>
+	{/if}
 </Section>
 
 <style lang="scss">
@@ -66,6 +79,17 @@
 		:global(.actions) {
 			display: flex;
 			justify-content: center;
+		}
+
+		:global(.detail) {
+			display: flex;
+			flex-direction: column;
+
+			:global(pre) {
+				background: $color-background--secondary;
+				border: 1px solid red;
+				@include spacing--max(margin-top);
+			}
 		}
 	}
 </style>

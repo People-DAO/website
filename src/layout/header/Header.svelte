@@ -2,7 +2,7 @@
 	import { WrapperWide } from '$layout/wrapper';
 	import { Navigation } from '$layout/navigation';
 
-	import PeopleDaoLogo from '$assets/icons/daos/people-dao.svg';
+	import PeopleDaoLogo from '$assets/icons/brand/logo.svg';
 
 	import { headerHeight } from '$stores/layout/layout';
 	import { scrollToTop } from '$stores/layout/navigation';
