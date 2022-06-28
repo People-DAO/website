@@ -185,6 +185,12 @@
 		<Hexagon href={`${LINK_LOSTCHILDREN}?ref=${PLATFORM_DOMAIN}`} target="_blank">
 			<LostChildrenIcon />
 		</Hexagon>
+		<Hexagon href={`${LINK_CFRAG}?ref=${PLATFORM_DOMAIN}`} target="_blank">
+			<img
+				src="/assets/icons/projects/constitution-fractionalized.png"
+				alt="Constitution Fractionalized logo"
+			/>
+		</Hexagon>
 	</HexagonGroup>
 </Section>
 <Section scrollHref="faq">

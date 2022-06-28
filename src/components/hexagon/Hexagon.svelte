@@ -88,7 +88,8 @@
 			overflow: hidden;
 			z-index: 1;
 
-			:global(svg) {
+			:global(svg),
+			:global(img) {
 				height: 100%;
 				width: 100%;
 			}
