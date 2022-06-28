@@ -35,7 +35,7 @@
 		LINK_PANDADAO,
 		LINK_LANGUAGEDAO,
 		LINK_LOSTCHILDREN,
-		LINK_CFRAG
+		LINK_CFRAC
 	} from '$constants/links';
 </script>
 
@@ -153,7 +153,7 @@
 		the underlying ETH. The original conversion rate of 1 ETH per 1M <Label>$PEOPLE</Label> thus acts
 		like a&nbsp;floor price. PeopleDAO and&nbsp;its subDAOs are committed to building an&nbsp;ecosystem
 		around this token. In&nbsp;practice this has looked like offering a&nbsp;<a
-			href={`${LINK_CFRAG}?ref=${PLATFORM_DOMAIN}`}
+			href={`${LINK_CFRAC}?ref=${PLATFORM_DOMAIN}`}
 			target="_blank">free NFT</a
 		> to token holders, or airdropping $PANDA token to wallets holding the&nbsp;token.
 	</Text>
@@ -185,11 +185,8 @@
 		<Hexagon href={`${LINK_LOSTCHILDREN}?ref=${PLATFORM_DOMAIN}`} target="_blank">
 			<LostChildrenIcon />
 		</Hexagon>
-		<Hexagon href={`${LINK_CFRAG}?ref=${PLATFORM_DOMAIN}`} target="_blank">
-			<img
-				src="/assets/icons/projects/constitution-fractionalized.png"
-				alt="Constitution Fractionalized logo"
-			/>
+		<Hexagon href={`${LINK_CFRAC}?ref=${PLATFORM_DOMAIN}`} target="_blank">
+			<img src="/assets/icons/projects/cfrac.png" alt="Constitution Fractionalized logo" />
 		</Hexagon>
 	</HexagonGroup>
 </Section>
