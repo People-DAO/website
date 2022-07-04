@@ -4,11 +4,12 @@
 	import PeopleDaoLogo from '$assets/icons/brand/logo.svg';
 	import DiscordIcon from '$assets/icons/socials/discord.svg';
 	import TwitterIcon from '$assets/icons/socials/twitter.svg';
+	import MirrorIcon from '$assets/icons/socials/mirror.svg';
 	import GithubIcon from '$assets/icons/socials/github.svg';
 	import EtherscanIcon from '$assets/icons/socials/etherscan.svg';
 	import CoinMarketCapIcon from '$assets/icons/socials/coinmarketcap.svg';
 
-	import { SOCIAL_DISCORD, SOCIAL_TWITTER, SOCIAL_GITHUB } from '$constants/socials';
+	import { SOCIAL_DISCORD, SOCIAL_TWITTER, SOCIAL_MIRROR, SOCIAL_GITHUB } from '$constants/socials';
 	import { TOKEN_ETHERSCAN, TOKEN_COINMARKETCAP } from '$constants/tokens';
 
 	import { footerHeight } from '$stores/layout/layout';
@@ -35,6 +36,9 @@
 				</a>
 				<a name="twitter" href={SOCIAL_TWITTER} target="_blank">
 					<TwitterIcon />
+				</a>
+				<a name="mirror" href={SOCIAL_MIRROR} target="_blank">
+					<MirrorIcon />
 				</a>
 				<a name="github" href={SOCIAL_GITHUB} target="_blank">
 					<GithubIcon />
@@ -123,6 +127,10 @@
 
 						&[name='twitter'] {
 							color: #1da1f2;
+						}
+
+						&[name='mirror'] {
+							color: #007aff;
 						}
 
 						&[name='github'] {
