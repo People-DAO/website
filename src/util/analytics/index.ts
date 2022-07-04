@@ -1,1 +1,1 @@
-export { default as Analytics } from "./Analytics.svelte";
+export { default as Analytics } from './Analytics.svelte';

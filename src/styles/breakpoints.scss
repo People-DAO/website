@@ -5,7 +5,7 @@ $breakpoint--xlg: 1584;
 // $breakpoint-max: >1584;
 
 @mixin breakpoint($size) {
-  @media only screen and (max-width: #{$size}px) {
-    @content;
-  }
-};
+	@media only screen and (max-width: #{$size}px) {
+		@content;
+	}
+} ;

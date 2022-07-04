@@ -1,1 +1,1 @@
-export {default as VideoSequencer} from "./VideoSequencer.svelte";
+export { default as VideoSequencer } from './VideoSequencer.svelte';

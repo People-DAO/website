@@ -3,7 +3,7 @@
 
 	import { Text } from '$components/text';
 
-	import ChevronDownIcon from '$assets/icons/general/chevron-down.svg';
+	import ChevronDownIcon from '$assets/icons/general/chevron-down.svg?raw';
 
 	export let title: string;
 	export let description: string;
@@ -19,7 +19,7 @@
 <li class:accordion-item={true} {...$$restProps}>
 	<div class="title" on:click={handleClick}>
 		<div class="icon" class:icon--open={open}>
-			<ChevronDownIcon />
+			{@html ChevronDownIcon}
 		</div>
 		<span>{title}</span>
 	</div>

@@ -1,1 +1,1 @@
-export const PLATFORM_DOMAIN = "people-dao.com";
+export const PLATFORM_DOMAIN = 'people-dao.com';

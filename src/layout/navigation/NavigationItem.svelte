@@ -6,7 +6,7 @@
 	export let scrollHref: string = null;
 
 	const handleClick = () => {
-		if (!!scrollHref) {
+		if (scrollHref) {
 			return scrollToRef(scrollHref);
 		}
 		closeMobileNavigation();

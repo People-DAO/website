@@ -1,53 +1,32 @@
-<script context="module">
-	export function load({ error, status }) {
-		return {
-			props: {
-				statusCode: status,
-				error
-			}
-		};
-	}
-</script>
-
 <script lang="ts">
-	import env from '$util/environment/variables';
+	import { page } from '$app/stores';
 
 	import { PageMeta } from '$util/meta';
 	import { Section } from '$layout/section';
 	import { Button } from '$components/button';
 	import { Text } from '$components/text';
-
-	export let statusCode: number;
-	export let error: any;
-
-	let title: string;
-	if (statusCode === 404) {
-		title = 'Page not found';
-	} else {
-		title = 'An error has occured';
-	}
 </script>
 
-<PageMeta nofollow noindex {title} />
+<PageMeta nofollow noindex title={$page.status === 404 ? 'Not found' : 'Error'} />
 <Section class="error-page">
 	<div class="title">
 		<h1>
-			{statusCode === 404 ? 'Page not found' : 'An error has occured'}
+			{$page.status === 404 ? 'Page not found' : 'An error has occured'}
 		</h1>
 	</div>
 	<Text size="medium" class="description">
-		{statusCode === 404
+		{$page.status === 404
 			? "The link may be misspelled or the page you're looking for is no longer available."
 			: 'There was an error processing your request. Sorry for the inconvenience.'}
 	</Text>
 	<div class="actions">
 		<Button href="/">Go to homepage</Button>
 	</div>
-	{#if env.develop}
+	{#if import.meta.env.DEV}
 		<div class="detail">
 			<pre>
 			<code>
-				{error}
+				{JSON.stringify($page.error, null, 2)}
 			</code>
 		</pre>
 		</div>
@@ -89,6 +68,10 @@
 				background: $color-background--secondary;
 				border: 1px solid red;
 				@include spacing--max(margin-top);
+
+				:global(code) {
+					white-space: pre-wrap;
+				}
 			}
 		}
 	}

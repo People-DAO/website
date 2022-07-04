@@ -13,7 +13,7 @@ The official <a href="https://people-dao.com" target="_blank">PeopleDAO</a> webs
 
 ## Requirements
 
-- [Node.js](https://nodejs.org/en/) >v16
+- [Node.js](https://nodejs.org/en/) >=v16
 
 ## Development
 

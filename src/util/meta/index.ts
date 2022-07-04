@@ -1,1 +1,1 @@
-export { default as PageMeta } from "./PageMeta.svelte"
+export { default as PageMeta } from './PageMeta.svelte';
