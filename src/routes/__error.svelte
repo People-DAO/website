@@ -47,7 +47,7 @@
 		<div class="detail">
 			<pre>
 			<code>
-				{error}
+				{JSON.stringify(error, null, 2)}
 			</code>
 		</pre>
 		</div>
@@ -89,6 +89,10 @@
 				background: $color-background--secondary;
 				border: 1px solid red;
 				@include spacing--max(margin-top);
+
+				:global(code) {
+					white-space: pre-wrap;
+				}
 			}
 		}
 	}
