@@ -3,39 +3,17 @@
 	"compilerOptions": {
 		"preserveValueImports": false,
 		"paths": {
-			"$lib": [
-				"src/lib"
-			],
-			"$lib/*": [
-				"src/lib/*"
-			],
-			"$assets/*": [
-				"static/assets/*"
-			],
-			"$components/*": [
-				"src/components/*"
-			],
-			"$constants/*": [
-				"src/constants/*"
-			],
-			"$helpers/*": [
-				"src/helpers/*"
-			],
-			"$layout/*": [
-				"src/layout/*"
-			],
-			"$services/*": [
-				"src/services/*"
-			],
-			"$stores/*": [
-				"src/stores/*"
-			],
-			"$types/*": [
-				"src/types/*"
-			],
-			"$util/*": [
-				"src/util/*"
-			]
+			"$lib": ["src/lib"],
+			"$lib/*": ["src/lib/*"],
+			"$assets/*": ["static/assets/*"],
+			"$components/*": ["src/components/*"],
+			"$constants/*": ["src/constants/*"],
+			"$helpers/*": ["src/helpers/*"],
+			"$layout/*": ["src/layout/*"],
+			"$services/*": ["src/services/*"],
+			"$stores/*": ["src/stores/*"],
+			"$types/*": ["src/types/*"],
+			"$util/*": ["src/util/*"]
 		}
 	}
 }

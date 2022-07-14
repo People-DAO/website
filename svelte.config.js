@@ -1,6 +1,6 @@
 import adapter from '@sveltejs/adapter-auto';
 import preprocess from 'svelte-preprocess';
-import {resolve} from 'path';
+import { resolve } from 'path';
 import svg from '@poppanator/sveltekit-svg';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -10,9 +10,9 @@ const config = {
 	preprocess: [
 		preprocess({
 			scss: {
-				prependData: `@use 'src/styles/__styles.scss' as *;`,
+				prependData: `@use 'src/styles/__styles.scss' as *;`
 			}
-		}),
+		})
 	],
 
 	kit: {
@@ -25,9 +25,7 @@ const config = {
 					}
 				}
 			},
-			plugins: [
-				svg()
-			],
+			plugins: [svg()],
 			resolve: {
 				alias: {
 					$assets: resolve('./static/assets'),
@@ -39,7 +37,7 @@ const config = {
 					$stores: resolve('./src/stores'),
 					$types: resolve('./src/types'),
 					$util: resolve('./src/util')
-				},
+				}
 			}
 		}
 	}

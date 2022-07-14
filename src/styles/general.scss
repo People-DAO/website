@@ -1,5 +1,5 @@
-@use "./colors.scss" as *;
-@use "./fonts.scss" as *;
+@use './colors.scss' as *;
+@use './fonts.scss' as *;
 
 :root {
 	font-size: 62.5%;
@@ -10,22 +10,22 @@
 // }
 
 :global(body) {
-  font-family: $font-family--primary, sans-serif;
-  font-size: 1.6rem;
-  line-height: 1.4;
-  color: $color-text--primary;
-  background-color: $color-background--primary;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  -webkit-tap-highlight-color: transparent;
-  
-  :global(a) {
-    outline: 0;
-    text-decoration: none;
-  }
+	font-family: $font-family--primary, sans-serif;
+	font-size: 1.6rem;
+	line-height: 1.4;
+	color: $color-text--primary;
+	background-color: $color-background--primary;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+	-webkit-tap-highlight-color: transparent;
+
+	:global(a) {
+		outline: 0;
+		text-decoration: none;
+	}
 }
 
 ::selection {
-  background: rgba($color-brand--blue, 0.2);
+	background: rgba($color-brand--blue, 0.2);
 }
