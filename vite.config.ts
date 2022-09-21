@@ -1,20 +1,18 @@
-import adapter from '@sveltejs/adapter-auto';
-import preprocess from 'svelte-preprocess';
+import { sveltekit } from '@sveltejs/kit/vite';
 import { resolve } from 'path';
 
-/** @type {import('@sveltejs/kit').Config} */
-const config = {
-	// Consult https://github.com/sveltejs/svelte-preprocess
-	// for more information about preprocessors
-	preprocess: [
-		preprocess({
+import type { UserConfig } from 'vite';
+
+const config: UserConfig = {
+	plugins: [sveltekit()],
+	css: {
+		preprocessorOptions: {
 			scss: {
-				prependData: `@use 'src/styles/__styles.scss' as *;`
+				additionalData: '@use "src/styles/__styles.scss" as *;'
 			}
-		})
-	],
-	kit: {
-		adapter: adapter(),
+		}
+	},
+	resolve: {
 		alias: {
 			$assets: resolve('./static/assets'),
 			$components: resolve('./src/components'),

@@ -11,10 +11,10 @@
 	import { Hexagon, HexagonGroup } from '$components/hexagon';
 	import { Accordion, AccordionItem } from '$components/accordion';
 
-	import ConstitutioDaoIcon from '$assets/icons/projects/constitutiondao.svg';
-	import PandaDaoIcon from '$assets/icons/projects/pandadao.svg';
-	import LanguageDaoIcon from '$assets/icons/projects/languagedao.svg';
-	import LostChildrenIcon from '$assets/icons/projects/lost-children.svg';
+	import ConstitutioDaoIcon from '$assets/icons/projects/constitutiondao.svg?raw';
+	import PandaDaoIcon from '$assets/icons/projects/pandadao.svg?raw';
+	import LanguageDaoIcon from '$assets/icons/projects/languagedao.svg?raw';
+	import LostChildrenIcon from '$assets/icons/projects/lost-children.svg?raw';
 
 	import { scrollToRef } from '$stores/layout/navigation';
 
@@ -111,7 +111,7 @@
 				alt="Signing of the Constitution of the United States"
 			/>
 			<div class="overlay">
-				<ConstitutioDaoIcon />
+				{@html ConstitutioDaoIcon}
 			</div>
 		</a>
 	</div>
@@ -177,13 +177,13 @@
 	</Text>
 	<HexagonGroup>
 		<Hexagon href={`${LINK_PANDADAO}?ref=${PLATFORM_DOMAIN}`} target="_blank">
-			<PandaDaoIcon />
+			{@html PandaDaoIcon}
 		</Hexagon>
 		<Hexagon href={`${LINK_LANGUAGEDAO}?ref=${PLATFORM_DOMAIN}`} target="_blank">
-			<LanguageDaoIcon />
+			{@html LanguageDaoIcon}
 		</Hexagon>
 		<Hexagon href={`${LINK_LOSTCHILDREN}?ref=${PLATFORM_DOMAIN}`} target="_blank">
-			<LostChildrenIcon />
+			{@html LostChildrenIcon}
 		</Hexagon>
 		<Hexagon href={`${LINK_CFRAC}?ref=${PLATFORM_DOMAIN}`} target="_blank">
 			<img src="/assets/icons/projects/cfrac.png" alt="Constitution Fractionalized logo" />

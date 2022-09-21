@@ -14,7 +14,7 @@
 	} from '$constants/meta';
 	import type { OpenGraph, Twitter } from './PageMeta.types';
 
-	export let title: string = '';
+	export let title = '';
 	export let description: string = META_DESCRIPTION;
 	export let keywords: string[] = META_KEYWORDS;
 

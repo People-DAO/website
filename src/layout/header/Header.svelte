@@ -2,7 +2,7 @@
 	import { WrapperWide } from '$layout/wrapper';
 	import { Navigation } from '$layout/navigation';
 
-	import PeopleDaoLogo from '$assets/icons/brand/logo.svg';
+	import PeopleDaoLogo from '$assets/icons/brand/logo.svg?raw';
 
 	import { headerHeight } from '$stores/layout/layout';
 	import { scrollToTop } from '$stores/layout/navigation';
@@ -12,7 +12,7 @@
 	<WrapperWide>
 		<div class="container">
 			<a class="logo" href="/" on:click={scrollToTop}>
-				<PeopleDaoLogo />
+				{@html PeopleDaoLogo}
 			</a>
 			<Navigation />
 		</div>

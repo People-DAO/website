@@ -1,5 +1,5 @@
 <script lang="ts">
-	import HexagonShape from '$assets/icons/general/hexagon.svg';
+	import HexagonShape from '$assets/icons/general/hexagon.svg?raw';
 
 	export let href: string = null;
 	export let target: '_blank' = null;
@@ -7,7 +7,7 @@
 
 <div class:hexagon={true} {...$$restProps}>
 	<div class="shape">
-		<HexagonShape />
+		{@html HexagonShape}
 	</div>
 	<div class="link">
 		<svg viewBox="0 0 244 278" fill="transparent" xmlns="http://www.w3.org/2000/svg">

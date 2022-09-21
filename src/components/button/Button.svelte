@@ -1,5 +1,5 @@
 <script lang="ts">
-	import IconArrowUpRight from '$assets/icons/general/arrow-up-right.svg';
+	import IconArrowUpRight from '$assets/icons/general/arrow-up-right.svg?raw';
 
 	import type { SvelteComponent } from 'svelte';
 
@@ -9,7 +9,7 @@
 	export let onClick: () => void = null;
 
 	const handleClick = () => {
-		if (!!onClick) onClick();
+		if (onClick) onClick();
 	};
 </script>
 
@@ -25,7 +25,7 @@
 	{#if icon}
 		<svelte:component this={icon} />
 	{:else if target}
-		<IconArrowUpRight />
+		{@html IconArrowUpRight}
 	{/if}
 </a>
 

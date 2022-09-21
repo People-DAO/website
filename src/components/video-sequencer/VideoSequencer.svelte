@@ -21,7 +21,7 @@
 		updateVideoQueue();
 	});
 
-	const updateVideoQueue = (currentVideoIndex: number = 0) => {
+	const updateVideoQueue = (currentVideoIndex = 0) => {
 		let nextVideoIndex = currentVideoIndex + 1;
 		if (nextVideoIndex >= videosOrderedUrls.length) {
 			nextVideoIndex = 0;
