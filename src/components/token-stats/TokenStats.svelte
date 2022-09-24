@@ -23,7 +23,6 @@
 		.stats {
 			display: grid;
 			grid-template-columns: 1fr 1fr 1fr;
-			@include spacing--large(margin-bottom);
 
 			@include breakpoint($breakpoint--md) {
 				grid-template-columns: 1fr;

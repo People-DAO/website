@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { slide } from 'svelte/transition';
 
-	import { Text } from '$components/text';
+	import { Text } from '$components/typography';
 
 	import ChevronDownIcon from '$assets/icons/general/chevron-down.svg?raw';
 
@@ -21,11 +21,11 @@
 		<div class="icon" class:icon--open={open}>
 			{@html ChevronDownIcon}
 		</div>
-		<span>{title}</span>
+		<Text size="medium">{title}</Text>
 	</div>
 	{#if open}
 		<div class="description" transition:slide={{ duration: TRANSITION_DURATION }}>
-			<Text>{@html description}</Text>
+			<Text size="medium">{@html description}</Text>
 		</div>
 	{/if}
 </li>
@@ -37,14 +37,14 @@
 		.title {
 			display: flex;
 			align-items: center;
-			@include spacing--small(padding-top, padding-bottom);
-			@include fluid(margin-top, -20, -24);
+			@include spacing--small(padding-top, padding-bottom); // @TODO
+			@include fluid(margin-top, -20, -24); // @TODO
 			@include transition($transition--primary, background);
 			cursor: pointer;
 
 			.icon {
 				display: flex;
-				@include spacing--nano(margin-right);
+				@include spacing--nano(margin-right); // @TODO
 				@include transition($transition--primary, transform);
 
 				&.icon--open {
@@ -58,8 +58,6 @@
 			}
 
 			span {
-				@include typography-family--secondary;
-				@include typography-size--base;
 				font-weight: $font-weight--semi-bold;
 				@include transition($transition--primary, color);
 			}
@@ -72,9 +70,9 @@
 		}
 
 		.description {
-			@include fluid(margin-top, -10, -14);
-			@include spacing--small(padding-bottom);
-			@include fluid(padding-left, 34, 44);
+			@include fluid(margin-top, -10, -14); // @TODO
+			@include spacing--small(padding-bottom); // @TODO
+			@include fluid(padding-left, 34, 44); // @TODO
 			@include transition($transition--primary, background);
 
 			:global(p) {

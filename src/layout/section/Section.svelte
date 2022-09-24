@@ -3,13 +3,13 @@
 
 	import { Wrapper } from '$layout/wrapper';
 
-	export let cropped: 'top' | 'bottom' = null;
-	export let scrollHref: string = null;
+	export let cropped: 'top' | 'bottom' | undefined = undefined; // @TODO
+	export let id: string | undefined = undefined;
 </script>
 
 <section
-	id={scrollHref}
-	use:scrollRef={scrollHref || Math.random().toString()}
+	{id}
+	use:scrollRef={id || Math.random().toString()}
 	class:section={true}
 	class:section-cropped--top={cropped === 'top'}
 	class:section-cropped--bottom={cropped === 'bottom'}

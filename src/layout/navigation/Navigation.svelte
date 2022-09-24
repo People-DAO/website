@@ -4,7 +4,7 @@
 	import NavigationItem from './NavigationItem.svelte';
 	import { Button } from '$components/button';
 
-	import { SOCIAL_DISCORD } from '$constants/socials';
+	import { LINK_SOCIAL_DISCORD } from '$constants/links/socials';
 
 	import {
 		mobileNavigationOpen,
@@ -35,12 +35,14 @@
 
 <div class="navigation" class:navigation--active={$mobileNavigationOpen}>
 	<nav>
-		<NavigationItem scrollHref="mission">Mission</NavigationItem>
-		<NavigationItem scrollHref="origins">Origins</NavigationItem>
-		<NavigationItem scrollHref="token">Token</NavigationItem>
-		<NavigationItem scrollHref="projects">Projects</NavigationItem>
-		<NavigationItem scrollHref="faq">FAQ</NavigationItem>
-		<Button href={SOCIAL_DISCORD} target="_blank" class="button--discord">Join Discord</Button>
+		<NavigationItem scrollHrefId="mission">Mission</NavigationItem>
+		<NavigationItem scrollHrefId="origin">Origin</NavigationItem>
+		<NavigationItem scrollHrefId="token">Token</NavigationItem>
+		<NavigationItem scrollHrefId="projects">Projects</NavigationItem>
+		<NavigationItem scrollHrefId="frequently-asked-questions">FAQ</NavigationItem>
+		<Button variant="gold/navy" href={LINK_SOCIAL_DISCORD} target="_blank" class="button--discord">
+			Join Discord
+		</Button>
 	</nav>
 </div>
 

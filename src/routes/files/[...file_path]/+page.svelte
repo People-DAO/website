@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
 
-	import { FILES_BASE_URL } from '$constants/files';
+	import { FILES_BASE_URL } from '$constants/api/external';
 
 	export let data;
 

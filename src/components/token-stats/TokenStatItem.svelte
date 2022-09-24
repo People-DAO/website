@@ -1,27 +1,32 @@
 <script lang="ts">
+	import { Title, Text } from '$components/typography';
+
 	import { loading, error } from './store';
 
-	import WarningIcon from '$assets/icons/general/warning.svg';
+	import WarningIcon from '$assets/icons/general/warning.svg?raw';
 
 	export let label: string;
 	export let value: string | unknown = null;
 </script>
 
 <li class="item">
-	<span class="label">{label}</span>
-	<span class="value">
-		{#if $loading}
+	<Text tag="span" size="small">{label}</Text>
+	<!-- <span class="label">{label}</span> -->
+	<Title tag="span" size="medium">
+		<!-- @DEBUG -->
+		<!-- {#if $loading}
 			<div class="icon-container">
 				<span class="spinner" />
 			</div>
 		{:else if $error}
 			<div class="icon-container">
-				<WarningIcon />
+				{@html WarningIcon}
 			</div>
 		{:else}
 			${value || '-'}
-		{/if}
-	</span>
+		{/if} -->
+		$123.45K
+	</Title>
 </li>
 
 <style lang="scss">
@@ -30,18 +35,15 @@
 		flex-direction: column;
 		align-items: flex-start;
 
-		.label {
-			@include typography-family--secondary;
-			@include typography-size--base;
-			font-weight: $font-weight--semi-bold;
-			color: $color-text--secondary;
-			@include fluid(margin-bottom, 2, 4);
+		:global(.typography-text) {
+			line-height: 1;
+			color: $color-white;
+			margin-bottom: 8px !important; // @TODO
 		}
 
-		.value {
-			@include typography-family--secondary;
-			@include typography-size--max;
-			font-weight: $font-weight--semi-bold;
+		:global(.typography-title) {
+			@include typography-family--primary;
+			color: $color-white !important;
 			cursor: default;
 		}
 
@@ -56,7 +58,7 @@
 			.spinner {
 				border-width: calc(var(--token-stats-icon-size) / 5 * 0.75);
 				border-style: solid;
-				border-color: $color-text--primary;
+				border-color: $color-white;
 				border-top-color: transparent;
 				border-radius: 50%;
 				width: var(--token-stats-icon-size);

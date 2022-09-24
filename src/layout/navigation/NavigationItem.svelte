@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { closeMobileNavigation, scrollToRef } from '$stores/layout/navigation';
+	import { closeMobileNavigation, scrollToId } from '$stores/layout/navigation';
 
-	export let href: string = null;
-	export let target: '_blank' = null;
-	export let scrollHref: string = null;
+	export let href: string | undefined = undefined;
+	export let target: '_blank' | undefined = undefined;
+	export let scrollHrefId: string | undefined = undefined;
 
 	const handleClick = () => {
-		if (scrollHref) {
-			return scrollToRef(scrollHref);
+		if (scrollHrefId) {
+			return scrollToId(scrollHrefId);
 		}
 		closeMobileNavigation();
 	};
@@ -19,29 +19,14 @@
 
 <style lang="scss">
 	.navigation-item {
-		@include typography-family--secondary;
-		@include typography-size--base;
-		font-weight: $font-weight--semi-bold;
+		font-size: 16px;
+		text-transform: uppercase;
 		color: $color-text--tertiary;
-		@include spacing--max(margin-right);
-		@include transition($transition--primary, color);
+		margin-right: 64px; // @TODO
 		cursor: pointer;
-
-		&:hover {
-			color: rgba($color-text--tertiary, 0.66);
-		}
 
 		&:last-of-type {
 			margin-right: 0;
-		}
-
-		@include breakpoint($breakpoint--md) {
-			@include typography-size--large;
-			@include spacing--medium(margin-bottom);
-
-			&:last-of-type {
-				margin-bottom: 0;
-			}
 		}
 	}
 </style>

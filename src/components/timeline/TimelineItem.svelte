@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Text } from '$components/text';
+	import { Title, Text } from '$components/typography';
 
 	export let date: string;
 	export let title: string;
@@ -11,127 +11,112 @@
 		<span />
 	</div>
 	<div class="date">
-		<span>{date}</span>
+		<Title tag="span" size="medium">{date}</Title>
 	</div>
-	<div class="title">
-		<h5>{title}</h5>
-	</div>
-	<div class="description">
-		<Text>{@html description}</Text>
+	<div class="content">
+		<Title tag="span" size="small">{title}</Title>
+		<Text size="small">{@html description}</Text>
 	</div>
 </li>
 
 <style lang="scss">
 	.timeline-item {
 		display: grid;
-		grid-template-columns: 100px 12px 1fr;
-		grid-template-rows: auto 1fr;
-		@include spacing--nano(row-gap);
-		@include spacing--medium(column-gap);
-		@include spacing--large(padding-bottom);
+		grid-template-columns: 1fr auto 1fr;
+		grid-template-areas: 'date dot content';
+		column-gap: 110px; // @TODO
+		padding: 50px; // @TODO
 		overflow: hidden;
 
-		@include breakpoint($breakpoint--sm) {
-			grid-template-columns: 12px 1fr;
-			grid-template-rows: auto auto 1fr;
-		}
-
 		.dot {
+			grid-area: dot;
 			position: relative;
-			grid-column: 2/3;
-			grid-row: 1/2;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 
-			@include breakpoint($breakpoint--sm) {
-				grid-column: 1/2;
+			span {
+				position: relative;
+				display: block;
+				width: 20px;
+				height: 20px;
+				border-radius: 50%;
+				background: $color-navy--primary;
+				z-index: 1;
 			}
 
-			&::after {
+			&:after {
 				content: '';
 				position: absolute;
 				top: -100vh;
 				bottom: -100vh;
-				left: 5px;
-				width: 2px;
-				background-color: rgba($color-text--secondary, 0.25);
-			}
-
-			span {
-				display: block;
-				width: 12px;
-				height: 12px;
-				background: $color-text--secondary;
-				border-radius: 50%;
-				z-index: 1;
+				width: 1px;
+				left: 50%;
+				transform: translateX(-50%);
+				background: $color-black--primary;
 			}
 		}
 
 		.date {
-			grid-column: 1/2;
-			grid-row: 1/2;
+			grid-area: date;
 			display: flex;
-			justify-content: flex-end;
-			margin-right: -20px;
+			flex-direction: column;
+			justify-content: center;
 
-			@include breakpoint($breakpoint--sm) {
-				grid-column: 2/3;
-				justify-content: flex-start;
-				margin-right: 0;
-			}
-
-			span {
-				@include typography-size--medium;
-				font-weight: $font-weight--semi-bold;
+			:global(.typography-title) {
+				text-transform: none;
+				text-align: right;
+				color: $color-navy--primary;
 			}
 		}
 
-		.title {
-			grid-column: 3/4;
-			grid-row: 1/2;
-			display: flex;
-			align-items: center;
+		.content {
+			grid-area: content;
 
-			@include breakpoint($breakpoint--sm) {
-				grid-column: 2/3;
-				grid-row: 2/3;
-			}
-
-			h5 {
-				@include typography-family--secondary;
-				@include typography-size--base;
-				font-weight: $font-weight--semi-bold;
-				color: $color-text--secondary;
+			:global(.typography-title) {
+				text-transform: none;
+				color: $color-navy--primary;
 			}
 		}
 
-		.description {
-			grid-column: 3/4;
-			grid-row: 2/3;
+		&:nth-of-type(2n) {
+			grid-template-areas: 'content dot date';
 
-			@include breakpoint($breakpoint--sm) {
-				grid-column: 2/3;
-				grid-row: 3/4;
-			}
-
-			:global(p) {
-				@include typography-size--small;
-				margin-bottom: 0;
-			}
-		}
-
-		&:first-of-type {
-			.dot::after {
-				top: 50%;
+			.date {
+				:global(.typography-title) {
+					text-align: left;
+				}
 			}
 		}
 
 		&:last-of-type {
 			padding-bottom: 0;
 
-			.dot::after {
-				bottom: 50%;
+			.dot {
+				span {
+					&:before,
+					&:after {
+						content: '';
+						position: absolute;
+						display: block;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+						width: 30px;
+						height: 30px;
+						border: 1px solid $color-navy--primary;
+						border-radius: 50%;
+					}
+
+					&:after {
+						width: 46px;
+						height: 46px;
+					}
+				}
+
+				&:after {
+					bottom: 50%;
+				}
 			}
 		}
 	}

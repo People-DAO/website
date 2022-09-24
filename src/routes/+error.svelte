@@ -3,8 +3,8 @@
 
 	import { PageMeta } from '$util/meta';
 	import { Section } from '$layout/section';
+	import { Text } from '$components/typography';
 	import { Button } from '$components/button';
-	import { Text } from '$components/text';
 </script>
 
 <PageMeta nofollow noindex title={$page.status === 404 ? 'Not found' : 'Error'} />
