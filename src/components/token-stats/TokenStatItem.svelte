@@ -11,10 +11,8 @@
 
 <li class="item">
 	<Text tag="span" size="small">{label}</Text>
-	<!-- <span class="label">{label}</span> -->
 	<Title tag="span" size="medium">
-		<!-- @DEBUG -->
-		<!-- {#if $loading}
+		{#if $loading}
 			<div class="icon-container">
 				<span class="spinner" />
 			</div>
@@ -24,8 +22,7 @@
 			</div>
 		{:else}
 			${value || '-'}
-		{/if} -->
-		$123.45K
+		{/if}
 	</Title>
 </li>
 
@@ -38,7 +35,7 @@
 		:global(.typography-text) {
 			line-height: 1;
 			color: $color-white;
-			margin-bottom: 8px !important; // @TODO
+			margin-bottom: 8px !important;
 		}
 
 		:global(.typography-title) {

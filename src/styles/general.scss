@@ -5,16 +5,12 @@
 	font-size: 62.5%;
 }
 
-// :global(html, body) {
-//   height: 100%;
-// }
-
 :global(body) {
 	font-family: $font-family--primary, sans-serif;
 	font-size: 1.6rem;
 	line-height: 1.4;
-	color: $color-text--primary;
-	background-color: $color-background--primary;
+	color: $color-black--primary;
+	background-color: $color-white;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-rendering: optimizeLegibility;
@@ -27,5 +23,5 @@
 }
 
 ::selection {
-	background: rgba($color-brand--blue, 0.2);
+	background: rgba($color-gold--secondary, 0.2);
 }
