@@ -60,12 +60,15 @@
 	}
 
 	:global(#constitution-dao) {
+		background: $color-white;
+
 		.container {
 			display: grid;
 			grid-template-rows: auto 1fr;
 			grid-template-areas:
 				'content'
 				'timeline';
+			@include fluid(row-gap, 30, 30);
 
 			.content {
 				grid-area: content;

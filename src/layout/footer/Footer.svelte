@@ -21,7 +21,6 @@
 </script>
 
 <footer bind:clientHeight={$footerHeight}>
-	<!-- @TODO: Wrapper? -->
 	<Wrapper>
 		<div class="container">
 			<div class="navigation">
@@ -109,26 +108,45 @@
 <style lang="scss">
 	footer {
 		.container {
+			$breakpoint--mobile: $breakpoint--medium;
+
 			display: grid;
-			grid-template-columns: 1fr auto;
+			grid-template-columns: auto auto;
 			grid-template-rows: auto auto;
 			grid-template-areas:
 				'navigation brand'
 				'navigation socials';
-			padding: 64px 0; // @TODO
+			row-gap: 16px;
+			@include fluid(padding-top, 48, 64);
+			@include fluid(padding-bottom, 48, 64);
+
+			@include breakpoint($breakpoint--mobile) {
+				grid-template-rows: auto;
+				grid-template-rows: auto auto auto;
+				grid-template-areas:
+					'brand'
+					'navigation'
+					'socials';
+			}
 
 			.navigation {
 				grid-area: navigation;
 				display: grid;
 				grid-template-columns: 1fr 1fr 1fr;
 
+				@include breakpoint($breakpoint--mobile) {
+					grid-template-columns: auto;
+					grid-template-rows: auto auto auto;
+				}
+
 				.category {
 					span {
+						display: flex;
 						@include typography-family--secondary;
-						font-size: 24px; // @TODO
+						@include fluid(font-size, 20, 24);
 						line-height: 1.5;
 						color: $color-navy--primary;
-						margin-bottom: 8px; // @TODO
+						@include fluid(margin-bottom, 6, 8);
 					}
 
 					ul {
@@ -136,16 +154,24 @@
 						flex-direction: column;
 
 						li {
-							margin-bottom: 16px; // @TODO
+							@include fluid(margin-bottom, 12, 16);
 
 							a {
-								font-size: 18px; // @TODO
+								@include fluid(font-size, 16, 18);
 								color: $color-black--primary;
 							}
 
 							&:last-of-type {
 								margin-bottom: 0;
 							}
+						}
+					}
+
+					@include breakpoint($breakpoint--mobile) {
+						@include fluid(margin-bottom, 14, 16);
+
+						&:last-of-type {
+							margin-bottom: 0;
 						}
 					}
 				}
@@ -157,9 +183,13 @@
 				flex-direction: column;
 				align-items: flex-end;
 
+				@include breakpoint($breakpoint--mobile) {
+					align-items: flex-start;
+				}
+
 				.logo {
 					:global(svg) {
-						height: 128px;
+						@include fluid(height, 96, 128);
 						width: auto;
 					}
 				}
@@ -167,8 +197,12 @@
 				.tagline {
 					span {
 						display: inline-flex;
-						font-size: 24px;
+						@include fluid(font-size, 20, 24);
 						text-align: right;
+
+						@include breakpoint($breakpoint--mobile) {
+							text-align: left;
+						}
 					}
 				}
 			}
@@ -177,15 +211,19 @@
 				grid-area: socials;
 				display: flex;
 				justify-content: flex-end;
-				margin-top: 18px; // @TODO
+
+				@include breakpoint($breakpoint--mobile) {
+					justify-content: flex-start;
+				}
 
 				a {
 					display: flex;
-					padding: 4px; // @TODO
-					margin-right: 16px; // @TODO
+					padding: 4px;
+					margin-right: 16px;
+					@include transition($transition--primary, fill);
 
 					:global(svg) {
-						height: 24px;
+						@include fluid(height, 22, 24);
 						width: auto;
 					}
 

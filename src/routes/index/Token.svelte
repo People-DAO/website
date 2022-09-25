@@ -2,7 +2,7 @@
 	import { Section } from '$layout/section';
 	import { Title, Text } from '$components/typography';
 	import { TokenStats } from '$components/token-stats';
-	import { Button } from '$components/button';
+	import { ButtonGroup, Button } from '$components/button';
 
 	import { PLATFORM_DOMAIN } from '$constants/util/platform';
 	import {
@@ -30,28 +30,32 @@
 			<img src="/assets/images/index_token.png" alt="" />
 		</div>
 		<div class="actions">
-			<Button
-				variant="white/navy"
-				href={`${LINK_TOKEN_ETHERSCAN}?ref=${PLATFORM_DOMAIN}`}
-				target="_blank">View on Etherscan</Button
-			>
-			<Button
-				variant="white/navy"
-				href={`${LINK_TOKEN_OKEX}?ref=${PLATFORM_DOMAIN}`}
-				target="_blank">Buy on OKX</Button
-			>
-			<Button
-				variant="white/navy"
-				href={`${LINK_TOKEN_UNISWAP}?ref=${PLATFORM_DOMAIN}`}
-				target="_blank">Exchange on Uniswap</Button
-			>
+			<ButtonGroup>
+				<Button
+					variant="white/navy"
+					href={`${LINK_TOKEN_ETHERSCAN}?ref=${PLATFORM_DOMAIN}`}
+					target="_blank">View on Etherscan</Button
+				>
+				<Button
+					variant="white/navy"
+					href={`${LINK_TOKEN_OKEX}?ref=${PLATFORM_DOMAIN}`}
+					target="_blank">Buy on OKX</Button
+				>
+				<Button
+					variant="white/navy"
+					href={`${LINK_TOKEN_UNISWAP}?ref=${PLATFORM_DOMAIN}`}
+					target="_blank">Exchange on Uniswap</Button
+				>
+			</ButtonGroup>
 		</div>
 	</div>
 </Section>
 
 <style lang="scss">
 	:global(#token) {
-		background-color: $color-navy--primary;
+		$breakpoint--mobile: $breakpoint--medium;
+
+		background: $color-navy--primary;
 
 		.container {
 			display: grid;
@@ -59,8 +63,16 @@
 			grid-template-areas:
 				'content media'
 				'actions actions';
-			column-gap: 80px; // @TODO
-			row-gap: 80px; // @TODO
+			@include fluid(column-gap, 60, 80);
+			@include fluid(row-gap, 40, 80);
+
+			@include breakpoint($breakpoint--mobile) {
+				grid-template-columns: auto;
+				grid-template-rows: auto auto;
+				grid-template-areas:
+					'content'
+					'actions';
+			}
 
 			.content {
 				grid-area: content;
@@ -71,16 +83,23 @@
 
 				:global(.typography-text) {
 					color: $color-white;
-					@include fluid(margin-bottom, 24, 24); //@TODO
 
 					&:last-of-type {
 						margin-bottom: 0;
 					}
 				}
+
+				:global(.token-stats) {
+					@include fluid(margin-top, 42, 64);
+				}
 			}
 
 			.media {
 				grid-area: media;
+
+				@include breakpoint($breakpoint--mobile) {
+					display: none;
+				}
 
 				img {
 					display: block;

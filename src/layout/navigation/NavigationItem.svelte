@@ -21,12 +21,18 @@
 	.navigation-item {
 		font-size: 16px;
 		text-transform: uppercase;
-		color: $color-text--tertiary;
-		margin-right: 64px; // @TODO
+		color: $color-white;
+		@include fluid(margin-right, 32, 64);
 		cursor: pointer;
 
 		&:last-of-type {
 			margin-right: 0;
+		}
+
+		@include breakpoint($breakpoint--medium) {
+			@include typography-size--base;
+			margin-right: 0;
+			@include fluid(margin-bottom, 16, 20);
 		}
 	}
 </style>

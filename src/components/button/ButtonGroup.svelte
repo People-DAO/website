@@ -4,13 +4,28 @@
 
 <style lang="scss">
 	.button-group {
-		@include spacing--max(margin-top);
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
 
-		:global(a) {
-			@include spacing--small(margin-right, margin-bottom);
+		:global(a),
+		:global(button) {
+			@include fluid(margin-right, 20, 24);
+			@include fluid(margin-bottom, 20, 24);
 
-			&:last-of-type {
+			&:last-child {
 				margin-right: 0;
+			}
+		}
+
+		@include breakpoint($breakpoint--small) {
+			flex-direction: column;
+			align-items: flex-start;
+
+			:global(a),
+			:global(button) {
+				margin-right: 0;
+				margin-bottom: 12px;
 			}
 		}
 	}

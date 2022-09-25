@@ -13,12 +13,16 @@
 				governance.
 			</Text>
 		</div>
-		<div class="showcase">showcase</div>
+		<div class="showcase">
+			<span style="background: red;">@TODO: showcase carousel</span>
+		</div>
 	</div>
 </Section>
 
 <style lang="scss">
 	:global(#projects) {
+		background: $color-white;
+
 		.container {
 			display: grid;
 			grid-template-rows: auto auto;
@@ -29,9 +33,10 @@
 			.content {
 				grid-area: content;
 				margin: 0 auto;
-				max-width: 720px; // @TODO
+				max-width: 720px;
 
 				:global(.typography-title) {
+					color: $color-gold--primary;
 					text-align: center;
 				}
 

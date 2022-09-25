@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Wrapper } from '$layout/wrapper';
-	import { Button } from '$components/button';
+	import { ButtonGroup, Button } from '$components/button';
 
 	import { PLATFORM_DOMAIN } from '$constants/util/platform';
 	import { LINK_SOCIAL_DISCORD } from '$constants/links/socials';
@@ -14,14 +14,18 @@
 				<h1>Incubate public good<br />for the people</h1>
 			</div>
 			<div class="actions">
-				<Button variant="gold/navy" href={LINK_SOCIAL_DISCORD} target="_blank">Join Discord</Button>
-				<Button
-					variant="transparent/white"
-					href={`${LINK_DOCUMENT_CONSTITUTION}?ref=${PLATFORM_DOMAIN}`}
-					target="_blank"
-				>
-					View Constitution
-				</Button>
+				<ButtonGroup>
+					<Button variant="gold/navy" href={LINK_SOCIAL_DISCORD} target="_blank">
+						Join Discord
+					</Button>
+					<Button
+						variant="transparent/white"
+						href={`${LINK_DOCUMENT_CONSTITUTION}?ref=${PLATFORM_DOMAIN}`}
+						target="_blank"
+					>
+						View Constitution
+					</Button>
+				</ButtonGroup>
 			</div>
 		</div>
 	</Wrapper>
@@ -42,7 +46,9 @@
 			grid-template-areas:
 				'title'
 				'actions';
-			padding: 160px 0 380px; // @TODO
+			@include fluid(row-gap, 24, 24);
+			@include fluid(padding-top, 160, 160);
+			@include fluid(padding-bottom, 160, 380);
 
 			.title {
 				grid-area: title;
@@ -51,7 +57,7 @@
 
 				h1 {
 					@include typography-family--secondary;
-					font-size: 96px; // @TODO
+					@include typography-size--max;
 					line-height: 1.2;
 					text-align: center;
 					color: $color-gold--secondary;
@@ -63,14 +69,25 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
+
+				@include breakpoint($breakpoint--medium) {
+					:global(.button-group) {
+						align-items: center;
+					}
+				}
 			}
 		}
 
 		.background {
 			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
+			// top: 50%;
+			// left: 50%;
+			// transform: translate(-50%, -50%);
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			display: flex;
 			z-index: -2;
 			overflow: hidden;
 
@@ -86,9 +103,14 @@
 			}
 
 			img {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
 				display: block;
-				width: 100%;
+				// width: 100%;
 				min-width: 100vw;
+				min-height: 100%;
 			}
 		}
 	}

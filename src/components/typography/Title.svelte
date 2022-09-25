@@ -20,15 +20,18 @@
 		text-transform: uppercase;
 
 		&.--large {
-			@include fluid(font-size, 40, 40); // @TODO
+			@include typography-size--large;
+			@include fluid(margin-bottom, 20, 24);
 		}
 
 		&.--medium {
-			@include fluid(font-size, 34, 34); // @TODO
+			@include typography-size--medium;
+			@include fluid(margin-bottom, 16, 20);
 		}
 
 		&.--small {
-			@include fluid(font-size, 30, 30); // @TODO
+			@include typography-size--small;
+			@include fluid(margin-bottom, 14, 16);
 		}
 	}
 </style>

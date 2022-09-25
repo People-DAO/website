@@ -21,12 +21,23 @@
 
 <style lang="scss">
 	.timeline-item {
+		$breakpoint--mobile: $breakpoint--small;
+
 		display: grid;
 		grid-template-columns: 1fr auto 1fr;
 		grid-template-areas: 'date dot content';
-		column-gap: 110px; // @TODO
-		padding: 50px; // @TODO
+		@include fluid(column-gap, 30, 120);
+		@include fluid(padding-top, 50, 50);
+		@include fluid(padding-bottom, 50, 50);
 		overflow: hidden;
+
+		@include breakpoint($breakpoint--mobile) {
+			grid-template-columns: auto 1fr;
+			grid-template-rows: auto 1fr;
+			grid-template-areas:
+				'dot date'
+				'dot content';
+		}
 
 		.dot {
 			grid-area: dot;
@@ -67,6 +78,11 @@
 				text-transform: none;
 				text-align: right;
 				color: $color-navy--primary;
+
+				@include breakpoint($breakpoint--mobile) {
+					@include typography-size--base;
+					text-align: left;
+				}
 			}
 		}
 
@@ -86,6 +102,12 @@
 				:global(.typography-title) {
 					text-align: left;
 				}
+			}
+
+			@include breakpoint($breakpoint--mobile) {
+				grid-template-areas:
+					'dot date'
+					'dot content';
 			}
 		}
 
@@ -117,6 +139,10 @@
 				&:after {
 					bottom: 50%;
 				}
+			}
+
+			@include breakpoint($breakpoint--mobile) {
+				overflow: initial;
 			}
 		}
 	}

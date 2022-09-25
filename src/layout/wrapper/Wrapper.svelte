@@ -4,12 +4,12 @@
 
 <style lang="scss">
 	.wrapper {
-		max-width: #{$breakpoint--lg}px;
+		max-width: #{$breakpoint--large}px;
 		@include fluid(padding-left, 100, 20);
 		@include fluid(padding-right, 100, 20);
 		margin: 0 auto;
 
-		@include breakpoint($breakpoint--md) {
+		@include breakpoint($breakpoint--medium) {
 			@include fluid(padding-left, 20, 120);
 			@include fluid(padding-right, 20, 120);
 		}

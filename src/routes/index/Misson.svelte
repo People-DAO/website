@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Section } from '$layout/section';
 	import { Title, Text } from '$components/typography';
-	import { Button } from '$components/button';
+	import { ButtonGroup, Button } from '$components/button';
 
 	import { PLATFORM_DOMAIN } from '$constants/util/platform';
 	import { LINK_SOCIAL_DISCORD } from '$constants/links/socials';
@@ -31,25 +31,41 @@
 			<img src="/assets/images/index_mission.png" alt="" />
 		</div>
 		<div class="actions">
-			<Button variant="navy/white" href={LINK_SOCIAL_DISCORD} target="_blank">Join Discord</Button>
-			<Button href={`${LINK_DOCUMENT_CONSTITUTION}?ref=${PLATFORM_DOMAIN}`} target="_blank">
-				View Constitution
-			</Button>
-			<Button onClick={() => scrollToId('projects')}>Browse incubated projects</Button>
+			<ButtonGroup>
+				<Button variant="navy/white" href={LINK_SOCIAL_DISCORD} target="_blank">
+					Join Discord
+				</Button>
+				<Button href={`${LINK_DOCUMENT_CONSTITUTION}?ref=${PLATFORM_DOMAIN}`} target="_blank">
+					View Constitution
+				</Button>
+				<Button onClick={() => scrollToId('projects')}>Browse incubated projects</Button>
+			</ButtonGroup>
 		</div>
 	</div>
 </Section>
 
 <style lang="scss">
 	:global(#mission) {
+		$breakpoint--mobile: $breakpoint--medium;
+
+		background: $color-white;
+
 		.container {
 			display: grid;
 			grid-template-columns: 3fr 2fr;
 			grid-template-areas:
 				'content media'
 				'actions actions';
-			column-gap: 80px; // @TODO
-			row-gap: 80px; // @TODO
+			@include fluid(column-gap, 60, 80);
+			@include fluid(row-gap, 40, 80);
+
+			@include breakpoint($breakpoint--mobile) {
+				grid-template-columns: auto;
+				grid-template-rows: auto auto;
+				grid-template-areas:
+					'content'
+					'actions';
+			}
 
 			.content {
 				grid-area: content;
@@ -60,7 +76,6 @@
 
 				:global(.typography-text) {
 					color: $color-black--primary;
-					@include fluid(margin-bottom, 24, 24); //@TODO
 
 					&:last-of-type {
 						margin-bottom: 0;
@@ -70,6 +85,10 @@
 
 			.media {
 				grid-area: media;
+
+				@include breakpoint($breakpoint--mobile) {
+					display: none;
+				}
 
 				img {
 					display: block;

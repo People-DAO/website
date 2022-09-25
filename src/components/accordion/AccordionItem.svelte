@@ -21,7 +21,7 @@
 		<div class="icon" class:icon--open={open}>
 			{@html ChevronDownIcon}
 		</div>
-		<Text size="medium">{title}</Text>
+		<Text tag="span" size="medium">{title}</Text>
 	</div>
 	{#if open}
 		<div class="description" transition:slide={{ duration: TRANSITION_DURATION }}>
@@ -32,19 +32,20 @@
 
 <style lang="scss">
 	.accordion-item {
-		@include spacing--small(padding-top);
+		@include fluid(padding-top, 20, 24);
 
 		.title {
 			display: flex;
 			align-items: center;
-			@include spacing--small(padding-top, padding-bottom); // @TODO
-			@include fluid(margin-top, -20, -24); // @TODO
+			@include fluid(padding-top, 20, 24);
+			@include fluid(padding-bottom, 20, 24);
+			@include fluid(margin-top, -20, -24);
 			@include transition($transition--primary, background);
 			cursor: pointer;
 
 			.icon {
 				display: flex;
-				@include spacing--nano(margin-right); // @TODO
+				@include fluid(margin-right, 8, 12);
 				@include transition($transition--primary, transform);
 
 				&.icon--open {
@@ -57,27 +58,16 @@
 				}
 			}
 
-			span {
-				font-weight: $font-weight--semi-bold;
+			:global(span) {
 				@include transition($transition--primary, color);
-			}
-
-			&:hover {
-				span {
-					color: $color-text--secondary;
-				}
 			}
 		}
 
 		.description {
-			@include fluid(margin-top, -10, -14); // @TODO
-			@include spacing--small(padding-bottom); // @TODO
-			@include fluid(padding-left, 34, 44); // @TODO
+			@include fluid(margin-top, -10, -14);
+			@include fluid(padding-bottom, 20, 24);
+			@include fluid(padding-left, 34, 44);
 			@include transition($transition--primary, background);
-
-			:global(p) {
-				@include typography-size--medium;
-			}
 		}
 	}
 </style>

@@ -12,7 +12,7 @@
 <main
 	style={`
 		margin-top: ${$headerHeight - 1}px; 
-		min-height: calc(100vh - ${$headerHeight}px - ${$footerHeight - 1}px);
+		min-height: calc(100vh - ${$headerHeight}px - ${$footerHeight}px);
 	`}
 >
 	<slot />

@@ -23,13 +23,21 @@
 
 <style lang="scss">
 	:global(#origin) {
-		background-color: $color-navy--primary;
+		$breakpoint--mobile: $breakpoint--medium;
+
+		background: $color-navy--primary;
 
 		.container {
 			display: grid;
 			grid-template-columns: 2fr 3fr;
 			grid-template-areas: 'media content';
-			column-gap: 80px; // @TODO
+			@include fluid(column-gap, 60, 80);
+
+			@include breakpoint($breakpoint--mobile) {
+				grid-template-columns: auto;
+				grid-template-rows: auto;
+				grid-template-areas: 'content';
+			}
 
 			.content {
 				grid-area: content;
@@ -40,7 +48,6 @@
 
 				:global(.typography-text) {
 					color: $color-white;
-					@include fluid(margin-bottom, 24, 24); //@TODO
 
 					&:last-of-type {
 						margin-bottom: 0;
@@ -50,6 +57,10 @@
 
 			.media {
 				grid-area: media;
+
+				@include breakpoint($breakpoint--mobile) {
+					display: none;
+				}
 
 				img {
 					display: block;

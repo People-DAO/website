@@ -46,7 +46,7 @@
 
 <style lang="scss">
 	:global(#frequently-asked-questions) {
-		background-color: $color-navy--primary;
+		background: $color-navy--primary;
 
 		.container {
 			display: grid;
@@ -60,6 +60,7 @@
 
 				:global(.typography-title) {
 					color: $color-white;
+					@include fluid(margin-bottom, 16, 24);
 				}
 			}
 

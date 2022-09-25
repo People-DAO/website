@@ -19,16 +19,23 @@
 		@include typography-family--primary;
 
 		&.--large {
-			@include fluid(font-size, 24, 24); // @TODO
+			@include typography-size--base;
 			line-height: 1.8;
+			@include fluid(margin-bottom, 18, 22);
 		}
 
 		&.--medium {
-			@include fluid(font-size, 22, 22); // @TODO
+			@include typography-size--micro;
+			@include fluid(margin-bottom, 16, 20);
 		}
 
 		&.--small {
-			@include fluid(font-size, 16, 16); // @TODO
+			@include typography-size--nano;
+			@include fluid(margin-bottom, 12, 14);
+		}
+
+		&:last-of-type {
+			margin-bottom: 0;
 		}
 	}
 </style>

@@ -19,7 +19,8 @@
 	};
 </script>
 
-<a
+<svelte:element
+	this={href ? 'a' : 'button'}
 	class:button={true}
 	class:--transparent-white={variant === 'transparent/white'}
 	class:--navy-white={variant === 'navy/white'}
@@ -39,18 +40,20 @@
 	{:else if target}
 		{@html IconArrowUpRight}
 	{/if}
-</a>
+</svelte:element>
 
 <style lang="scss">
 	.button {
 		position: relative;
 		display: inline-flex;
 		align-items: center;
-		padding: 12px 24px; // @TODO
+		@include fluid(padding-top, 10, 12);
+		@include fluid(padding-bottom, 10, 12);
+		@include fluid(padding-left, 20, 24);
+		@include fluid(padding-right, 20, 24);
 		color: $color-navy--primary;
 		background: transparent;
 		border: 1px solid $color-navy--primary;
-		margin-right: 24px; // @TODO
 		@include transition($transition--primary, color, background, border-color);
 		cursor: pointer;
 
@@ -60,8 +63,8 @@
 
 		:global(svg) {
 			width: auto;
-			@include fluid(height, 24, 24); // @TODO
-			@include fluid(margin-left, 8, 8); // @TODO
+			@include fluid(height, 20, 24);
+			@include fluid(margin-left, 6, 8);
 		}
 
 		&.--transparent-white {
@@ -85,14 +88,6 @@
 			color: $color-navy--primary;
 			background: $color-gold--secondary;
 			border-color: $color-gold--secondary;
-		}
-
-		&:last-of-type {
-			margin-right: 0;
-		}
-
-		&:hover {
-			// @TODO
 		}
 	}
 </style>
