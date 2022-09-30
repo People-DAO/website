@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { PageMeta } from '$util/meta';
 
-	import Hero from "./index/Hero.svelte"
+	import Hero from './index/Hero.svelte';
 	import Misson from './index/Misson.svelte';
 	import Origin from './index/Origin.svelte';
 	import ConstitutionDaoRoadmap from './index/ConstitutionDAORoadmap.svelte';

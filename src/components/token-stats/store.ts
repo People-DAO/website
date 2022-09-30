@@ -2,7 +2,7 @@ import { writable } from 'svelte/store';
 
 import { formatPrice } from '$helpers/formatPrice';
 
-import { ENDPOINT_TOKEN_STATS } from "$constants/api/endpoints"
+import { ENDPOINT_TOKEN_STATS } from '$constants/api/endpoints';
 
 import type { Writable } from 'svelte/store';
 
