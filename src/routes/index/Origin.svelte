@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { Section } from '$layout/section';
 	import { Title, Text } from '$components/typography';
+
+	import { PLATFORM_DOMAIN } from '$constants/util/platform';
 </script>
 
 <Section id="origin">
@@ -10,9 +12,14 @@
 			<Text>
 				PeopleDAO was born from a web3 movement to buy a private copy of the US Constitution. When
 				the project failed in its mission the developers burned control of the $PEOPLE token
-				contract, sunsetting their involvement. A group of community members formed PeopleDAO and
-				adopted $PEOPLE as its governance token, impressed by the meme coin's decentralization,
-				capped supply, and inspiring history.
+				contract,
+				<a
+					href={`https://twitter.com/ConstitutionDAO/status/1470970371025293317?ref=${PLATFORM_DOMAIN}`}
+					target="_blank"
+				>
+					sunsetting their involvement
+				</a>. A group of community members formed PeopleDAO and adopted $PEOPLE as its governance
+				token, impressed by the meme coin's decentralization, capped supply, and inspiring history.
 			</Text>
 		</div>
 		<div class="media">

@@ -5,6 +5,8 @@
 	import { ButtonGroup, Button } from '$components/button';
 
 	import { PLATFORM_DOMAIN } from '$constants/util/platform';
+	import { LINK_TOKEN_JUICEBOX } from '$constants/links/tokens';
+	import { LINK_PROJECT_CFAC } from '$constants/links/projects';
 	import {
 		LINK_TOKEN_ETHERSCAN,
 		LINK_TOKEN_OKEX,
@@ -19,9 +21,11 @@
 			<Text>
 				We use the $PEOPLE token for voting in DAO decision-making. The token has a capped supply
 				and will be slightly deflationary so long as holders continue to redeem the token on
-				Juicebox, in return for the underlying ETH. The original conversion rate of 1 ETH per 1M
-				$PEOPLE thus acts like a floor price. PeopleDAO and its subDAOs are committed to building an
-				ecosystem around this token. In practice this has looked like offering a free NFT to token
+				<a href={`${LINK_TOKEN_JUICEBOX}?ref=${PLATFORM_DOMAIN}`} target="_blank">Juicebox</a>, in
+				return for the underlying ETH. The original conversion rate of 1 ETH per 1M $PEOPLE thus
+				acts like a floor price. PeopleDAO and its subDAOs are committed to building an ecosystem
+				around this token. In practice this has looked like offering a
+				<a href={`${LINK_PROJECT_CFAC}?ref=${PLATFORM_DOMAIN}`} target="_blank">free NFT</a> to token
 				holders, or airdropping $PANDA token to wallets holding the token.
 			</Text>
 			<TokenStats />

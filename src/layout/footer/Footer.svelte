@@ -14,9 +14,12 @@
 	import {
 		LINK_SOCIAL_DISCORD,
 		LINK_SOCIAL_TWITTER,
+		LINK_SOCIAL_NOTION,
 		LINK_SOCIAL_MIRROR,
 		LINK_SOCIAL_DEWORK,
-		LINK_SOCIAL_GITHUB
+		LINK_SOCIAL_GITHUB,
+		LINK_SOCIAL_SNAPSHOT,
+		LINK_SOCIAL_GNOSISSAFE
 	} from '$constants/links/socials';
 </script>
 
@@ -25,53 +28,47 @@
 		<div class="container">
 			<div class="navigation">
 				<div class="category">
-					<span>Category 1</span>
+					<span>Socials</span>
 					<ul>
 						<li>
-							<a href="" target=""> Item 1 </a>
+							<a href={`${LINK_SOCIAL_DISCORD}`} target="_blank"> Discord </a>
 						</li>
 						<li>
-							<a href="" target=""> Item 2 </a>
+							<a href={`${LINK_SOCIAL_TWITTER}?ref=${PLATFORM_DOMAIN}`} target="_blank">
+								Twitter
+							</a>
 						</li>
 						<li>
-							<a href="" target=""> Item 3 </a>
-						</li>
-						<li>
-							<a href="" target=""> Item 4 </a>
+							<a href={`${LINK_SOCIAL_DEWORK}?ref=${PLATFORM_DOMAIN}`} target="_blank"> Dework </a>
 						</li>
 					</ul>
 				</div>
 				<div class="category">
-					<span>Category 2</span>
+					<span>Resources</span>
 					<ul>
 						<li>
-							<a href="" target=""> Item 1 </a>
+							<a href={`${LINK_SOCIAL_NOTION}?ref=${PLATFORM_DOMAIN}`} target="_blank"> Notion </a>
 						</li>
 						<li>
-							<a href="" target=""> Item 2 </a>
+							<a href={`${LINK_SOCIAL_MIRROR}?ref=${PLATFORM_DOMAIN}`} target="_blank"> Mirror </a>
 						</li>
 						<li>
-							<a href="" target=""> Item 3 </a>
-						</li>
-						<li>
-							<a href="" target=""> Item 4 </a>
+							<a href={`${LINK_SOCIAL_GITHUB}?ref=${PLATFORM_DOMAIN}`} target="_blank"> Github </a>
 						</li>
 					</ul>
 				</div>
 				<div class="category">
-					<span>Category 3</span>
+					<span>Governance</span>
 					<ul>
 						<li>
-							<a href="" target=""> Item 1 </a>
+							<a href={`${LINK_SOCIAL_SNAPSHOT}?ref=${PLATFORM_DOMAIN}`} target="_blank">
+								Snapshot
+							</a>
 						</li>
 						<li>
-							<a href="" target=""> Item 2 </a>
-						</li>
-						<li>
-							<a href="" target=""> Item 3 </a>
-						</li>
-						<li>
-							<a href="" target=""> Item 4 </a>
+							<a href={`${LINK_SOCIAL_GNOSISSAFE}?ref=${PLATFORM_DOMAIN}`} target="_blank">
+								Gnosis Safe
+							</a>
 						</li>
 					</ul>
 				</div>
