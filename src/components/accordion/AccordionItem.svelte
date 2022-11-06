@@ -40,8 +40,12 @@
 			@include fluid(padding-top, 20, 24);
 			@include fluid(padding-bottom, 20, 24);
 			@include fluid(margin-top, -20, -24);
-			@include transition($transition--primary, background);
+			@include transition($transition--primary, background, opacity);
 			cursor: pointer;
+
+			&:hover {
+				opacity: 0.6;
+			}
 
 			.icon {
 				display: flex;

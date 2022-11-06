@@ -19,14 +19,24 @@
 
 <style lang="scss">
 	.navigation-item {
+		$padding--small: 4;
+		$padding--max: 8;
+
 		font-size: 16px;
 		text-transform: uppercase;
 		color: $color-white;
-		@include fluid(margin-right, 32, 64);
+		@include fluid(padding, $padding--small, $padding--max);
+		@include fluid(margin, -$padding--small, -$padding--max);
+		@include fluid(margin-right, 32 - $padding--small, 64 - $padding--max);
+		@include transition($transition--primary, color);
 		cursor: pointer;
 
+		&:hover {
+			color: $color-gold--secondary;
+		}
+
 		&:last-of-type {
-			margin-right: 0;
+			@include fluid(margin, -$padding--small, -$padding--max);
 		}
 
 		@include breakpoint($breakpoint--medium) {

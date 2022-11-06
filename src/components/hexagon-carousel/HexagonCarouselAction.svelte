@@ -25,7 +25,12 @@
 		display: inline-flex;
 		height: var(--hexagon-height);
 		width: calc(var(--hexagon-height) * 1.125);
+		@include transition($transition--primary, opacity);
 		cursor: pointer;
+
+		&:hover {
+			opacity: 0.6;
+		}
 
 		.shape {
 			position: absolute;
@@ -46,6 +51,7 @@
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
+			width: 100%;
 			margin: calc(var(--hexagon-height) * 0.2);
 			overflow: hidden;
 			pointer-events: none;

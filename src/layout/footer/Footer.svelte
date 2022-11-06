@@ -159,6 +159,11 @@
 							a {
 								@include fluid(font-size, 16, 18);
 								color: $color-black--primary;
+								@include transition($transition--primary, opacity);
+
+								&:hover {
+									opacity: 0.6;
+								}
 							}
 
 							&:last-of-type {

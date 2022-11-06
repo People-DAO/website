@@ -37,5 +37,17 @@
 		&:last-of-type {
 			margin-bottom: 0;
 		}
+
+		:global(a) {
+			@include typography-family--secondary;
+			font-style: italic;
+			text-decoration: underline;
+			color: $color-gold--secondary;
+			@include transition($transition--primary, opacity);
+
+			&:hover {
+				opacity: 0.6;
+			}
+		}
 	}
 </style>

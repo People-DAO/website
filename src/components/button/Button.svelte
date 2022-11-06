@@ -54,8 +54,12 @@
 		color: $color-navy--primary;
 		background: transparent;
 		border: 1px solid $color-navy--primary;
-		@include transition($transition--primary, color, background, border-color);
+		@include transition($transition--primary, color, background, border-color, opacity);
 		cursor: pointer;
+
+		&:hover {
+			opacity: 0.6;
+		}
 
 		:global(.typography-text) {
 			line-height: 1;
