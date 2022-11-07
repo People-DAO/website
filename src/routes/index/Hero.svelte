@@ -59,6 +59,7 @@
 					@include typography-family--secondary;
 					@include typography-size--max;
 					line-height: 1.2;
+					text-transform: capitalize;
 					text-align: center;
 					color: $color-gold--secondary;
 				}

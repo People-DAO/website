@@ -67,12 +67,6 @@
 				justify-content: flex-end;
 				align-items: center;
 			}
-
-			.actions {
-				grid-area: actions;
-				display: flex;
-				align-items: center;
-			}
 		}
 
 		&.--compact {
