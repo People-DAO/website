@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { slide } from 'svelte/transition';
 
-	import { Text } from '$components/text';
+	import { Text } from '$components/typography';
 
 	import ChevronDownIcon from '$assets/icons/general/chevron-down.svg?raw';
 
@@ -21,30 +21,35 @@
 		<div class="icon" class:icon--open={open}>
 			{@html ChevronDownIcon}
 		</div>
-		<span>{title}</span>
+		<Text tag="span" size="medium">{title}</Text>
 	</div>
 	{#if open}
 		<div class="description" transition:slide={{ duration: TRANSITION_DURATION }}>
-			<Text>{@html description}</Text>
+			<Text size="medium">{@html description}</Text>
 		</div>
 	{/if}
 </li>
 
 <style lang="scss">
 	.accordion-item {
-		@include spacing--small(padding-top);
+		@include fluid(padding-top, 20, 24);
 
 		.title {
 			display: flex;
 			align-items: center;
-			@include spacing--small(padding-top, padding-bottom);
+			@include fluid(padding-top, 20, 24);
+			@include fluid(padding-bottom, 20, 24);
 			@include fluid(margin-top, -20, -24);
-			@include transition($transition--primary, background);
+			@include transition($transition--primary, background, opacity);
 			cursor: pointer;
+
+			&:hover {
+				opacity: 0.6;
+			}
 
 			.icon {
 				display: flex;
-				@include spacing--nano(margin-right);
+				@include fluid(margin-right, 8, 12);
 				@include transition($transition--primary, transform);
 
 				&.icon--open {
@@ -57,29 +62,16 @@
 				}
 			}
 
-			span {
-				@include typography-family--secondary;
-				@include typography-size--base;
-				font-weight: $font-weight--semi-bold;
+			:global(span) {
 				@include transition($transition--primary, color);
-			}
-
-			&:hover {
-				span {
-					color: $color-text--secondary;
-				}
 			}
 		}
 
 		.description {
 			@include fluid(margin-top, -10, -14);
-			@include spacing--small(padding-bottom);
+			@include fluid(padding-bottom, 20, 24);
 			@include fluid(padding-left, 34, 44);
 			@include transition($transition--primary, background);
-
-			:global(p) {
-				@include typography-size--medium;
-			}
 		}
 	}
 </style>

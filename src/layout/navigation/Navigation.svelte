@@ -4,7 +4,7 @@
 	import NavigationItem from './NavigationItem.svelte';
 	import { Button } from '$components/button';
 
-	import { SOCIAL_DISCORD } from '$constants/socials';
+	import { LINK_SOCIAL_DISCORD } from '$constants/links/socials';
 
 	import {
 		mobileNavigationOpen,
@@ -35,12 +35,14 @@
 
 <div class="navigation" class:navigation--active={$mobileNavigationOpen}>
 	<nav>
-		<NavigationItem scrollHref="mission">Mission</NavigationItem>
-		<NavigationItem scrollHref="origins">Origins</NavigationItem>
-		<NavigationItem scrollHref="token">Token</NavigationItem>
-		<NavigationItem scrollHref="projects">Projects</NavigationItem>
-		<NavigationItem scrollHref="faq">FAQ</NavigationItem>
-		<Button href={SOCIAL_DISCORD} target="_blank" class="button--discord">Join Discord</Button>
+		<NavigationItem scrollHrefId="mission">Mission</NavigationItem>
+		<NavigationItem scrollHrefId="origin">Origin</NavigationItem>
+		<NavigationItem scrollHrefId="token">Token</NavigationItem>
+		<NavigationItem scrollHrefId="projects">Projects</NavigationItem>
+		<NavigationItem scrollHrefId="frequently-asked-questions">FAQ</NavigationItem>
+		<Button variant="gold/navy" href={LINK_SOCIAL_DISCORD} target="_blank" class="button--discord">
+			Join Discord
+		</Button>
 	</nav>
 </div>
 
@@ -50,7 +52,7 @@
 		overflow-y: hidden;
 	}
 
-	$navigation-breakpoint--mobile: $breakpoint--md;
+	$navigation-breakpoint--mobile: $breakpoint--medium;
 
 	.navigation-button {
 		width: 0;
@@ -146,29 +148,11 @@
 				justify-content: center;
 				align-items: flex-start;
 				opacity: 0;
-				@include spacing--max(padding-top, padding-bottom);
-				@include spacing--large(padding-left, padding-right);
+				@include fluid(padding-top, 42, 64);
+				@include fluid(padding-bottom, 42, 64);
+				@include fluid(padding-left, 20, 120);
+				@include fluid(padding-right, 20, 120);
 				@include transition($transition--primary, opacity, background);
-			}
-
-			:global(a.button--discord) {
-				position: relative;
-
-				&::before {
-					opacity: 1;
-				}
-
-				:global(span),
-				:global(svg) {
-					color: $color-text--tertiary;
-				}
-
-				&:hover {
-					:global(span),
-					:global(svg) {
-						color: $color-text--primary;
-					}
-				}
 			}
 		}
 
@@ -179,7 +163,7 @@
 
 				nav {
 					opacity: 1;
-					background: $color-background--tertiary;
+					background: $color-navy--primary;
 				}
 			}
 		}

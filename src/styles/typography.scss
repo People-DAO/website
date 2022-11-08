@@ -8,29 +8,33 @@
 
 @mixin typography-family--secondary {
 	font-family: $font-family--secondary;
-	line-height: 1.2;
+	line-height: 1.6;
 }
 
-@mixin typography-size--micro {
+@mixin typography-size--nano {
 	@include fluid(font-size, 14, 16);
 }
 
-@mixin typography-size--base {
-	@include fluid(font-size, 16, 19);
-}
-
-@mixin typography-size--small {
+@mixin typography-size--micro {
 	@include fluid(font-size, 18, 22);
 }
 
-@mixin typography-size--medium {
+@mixin typography-size--base {
 	@include fluid(font-size, 20, 24);
 }
 
+@mixin typography-size--small {
+	@include fluid(font-size, 26, 30);
+}
+
+@mixin typography-size--medium {
+	@include fluid(font-size, 32, 34);
+}
+
 @mixin typography-size--large {
-	@include fluid(font-size, 24, 33);
+	@include fluid(font-size, 36, 40);
 }
 
 @mixin typography-size--max {
-	@include fluid(font-size, 42, 60);
+	@include fluid(font-size, 48, 96);
 }

@@ -11,9 +11,9 @@ export const closeMobileNavigation = () => {
 	mobileNavigationOpen.set(false);
 };
 
-export const scrollToRef = (ref: string) => {
+export const scrollToId = (id: string) => {
 	closeMobileNavigation();
-	scrollElement(ref, { offset: -50 });
+	scrollElement(id, { offset: -50 });
 };
 
 export const scrollToTop = () => {

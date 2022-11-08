@@ -2,6 +2,8 @@ import { writable } from 'svelte/store';
 
 import { formatPrice } from '$helpers/formatPrice';
 
+import { ENDPOINT_TOKEN_STATS } from '$constants/api/endpoints';
+
 import type { Writable } from 'svelte/store';
 
 export const loading = writable(true);
@@ -12,7 +14,7 @@ export const getTokenData = async (): Promise<void> => {
 	loading.set(true);
 
 	try {
-		const response = await fetch('/api/token');
+		const response = await fetch(ENDPOINT_TOKEN_STATS);
 		const data = await response.json();
 
 		if (response.status !== 200) {
