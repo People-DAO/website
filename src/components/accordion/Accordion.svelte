@@ -8,7 +8,7 @@
 		flex-direction: column;
 
 		:global(li) {
-			border-bottom: 2px solid rgba($color-text--secondary, 0.25);
+			border-bottom: 1px solid $color-white;
 
 			&:last-of-type {
 				border-bottom: none;

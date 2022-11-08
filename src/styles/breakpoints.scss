@@ -1,8 +1,7 @@
-$breakpoint--sm: 672;
-$breakpoint--md: 1056;
-$breakpoint--lg: 1312;
-$breakpoint--xlg: 1584;
-// $breakpoint-max: >1584;
+$breakpoint--small: 672;
+$breakpoint--medium: 1056;
+$breakpoint--large: 1312;
+$breakpoint--max: 1584;
 
 @mixin breakpoint($size) {
 	@media only screen and (max-width: #{$size}px) {

@@ -18,16 +18,13 @@
 
 <style lang="scss">
 	.token-stats {
-		@include spacing--max(margin-top);
-
 		.stats {
 			display: grid;
 			grid-template-columns: 1fr 1fr 1fr;
-			@include spacing--large(margin-bottom);
 
-			@include breakpoint($breakpoint--md) {
+			@include breakpoint($breakpoint--medium) {
 				grid-template-columns: 1fr;
-				@include spacing--base(row-gap);
+				@include fluid(row-gap, 16, 20);
 			}
 		}
 	}

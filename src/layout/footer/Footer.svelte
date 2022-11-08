@@ -1,148 +1,257 @@
 <script lang="ts">
-	import { WrapperWide } from '$layout/wrapper';
-
-	import PeopleDaoLogo from '$assets/icons/brand/logo.svg';
-	import DiscordIcon from '$assets/icons/socials/discord.svg';
-	import TwitterIcon from '$assets/icons/socials/twitter.svg';
-	import MirrorIcon from '$assets/icons/socials/mirror.svg';
-	import GithubIcon from '$assets/icons/socials/github.svg';
-	import EtherscanIcon from '$assets/icons/socials/etherscan.svg';
-	import CoinMarketCapIcon from '$assets/icons/socials/coinmarketcap.svg';
-
-	import { SOCIAL_DISCORD, SOCIAL_TWITTER, SOCIAL_MIRROR, SOCIAL_GITHUB } from '$constants/socials';
-	import { TOKEN_ETHERSCAN, TOKEN_COINMARKETCAP } from '$constants/tokens';
+	import { Wrapper } from '$layout/wrapper';
 
 	import { footerHeight } from '$stores/layout/layout';
-	import { scrollToTop } from '$stores/layout/navigation';
+
+	import PeopleDAOLogo from '$assets/icons/brand/logo.svg?raw';
+	import DiscordIcon from '$assets/icons/socials/discord.svg?raw';
+	import TwitterIcon from '$assets/icons/socials/twitter.svg?raw';
+	import MirrorIcon from '$assets/icons/socials/mirror.svg?raw';
+	import DeworkIcon from '$assets/icons/socials/dework.svg?raw';
+	import GithubIcon from '$assets/icons/socials/github.svg?raw';
+
+	import { PLATFORM_DOMAIN } from '$constants/util/platform';
+	import {
+		LINK_SOCIAL_DISCORD,
+		LINK_SOCIAL_TWITTER,
+		LINK_SOCIAL_NOTION,
+		LINK_SOCIAL_MIRROR,
+		LINK_SOCIAL_DEWORK,
+		LINK_SOCIAL_GITHUB,
+		LINK_SOCIAL_SNAPSHOT,
+		LINK_SOCIAL_GNOSISSAFE
+	} from '$constants/links/socials';
 </script>
 
 <footer bind:clientHeight={$footerHeight}>
-	<WrapperWide>
+	<Wrapper>
 		<div class="container">
-			<a class="about" href="/" on:click={scrollToTop}>
+			<div class="navigation">
+				<div class="category">
+					<span>Socials</span>
+					<ul>
+						<li>
+							<a href={`${LINK_SOCIAL_DISCORD}`} target="_blank"> Discord </a>
+						</li>
+						<li>
+							<a href={`${LINK_SOCIAL_TWITTER}?ref=${PLATFORM_DOMAIN}`} target="_blank">
+								Twitter
+							</a>
+						</li>
+						<li>
+							<a href={`${LINK_SOCIAL_DEWORK}?ref=${PLATFORM_DOMAIN}`} target="_blank"> Dework </a>
+						</li>
+					</ul>
+				</div>
+				<div class="category">
+					<span>Resources</span>
+					<ul>
+						<li>
+							<a href={`${LINK_SOCIAL_NOTION}?ref=${PLATFORM_DOMAIN}`} target="_blank"> Notion </a>
+						</li>
+						<li>
+							<a href={`${LINK_SOCIAL_MIRROR}?ref=${PLATFORM_DOMAIN}`} target="_blank"> Mirror </a>
+						</li>
+						<li>
+							<a href={`${LINK_SOCIAL_GITHUB}?ref=${PLATFORM_DOMAIN}`} target="_blank"> Github </a>
+						</li>
+					</ul>
+				</div>
+				<div class="category">
+					<span>Governance</span>
+					<ul>
+						<li>
+							<a href={`${LINK_SOCIAL_SNAPSHOT}?ref=${PLATFORM_DOMAIN}`} target="_blank">
+								Snapshot
+							</a>
+						</li>
+						<li>
+							<a href={`${LINK_SOCIAL_GNOSISSAFE}?ref=${PLATFORM_DOMAIN}`} target="_blank">
+								Gnosis Safe
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="brand">
 				<div class="logo">
-					<PeopleDaoLogo />
+					{@html PeopleDAOLogo}
 				</div>
 				<div class="tagline">
-					<h5>
-						Incubate Public Good<br />
-						<span>For The People</span>
-					</h5>
+					<span>Incubate public good<br />for the people</span>
 				</div>
-			</a>
+			</div>
 			<div class="socials">
-				<a name="discord" href={SOCIAL_DISCORD} target="_blank">
-					<DiscordIcon />
+				<a name="discord" href={LINK_SOCIAL_DISCORD} target="_blank">
+					{@html DiscordIcon}
 				</a>
-				<a name="twitter" href={SOCIAL_TWITTER} target="_blank">
-					<TwitterIcon />
+				<a name="twitter" href={`${LINK_SOCIAL_TWITTER}?ref=${PLATFORM_DOMAIN}`} target="_blank">
+					{@html TwitterIcon}
 				</a>
-				<a name="mirror" href={SOCIAL_MIRROR} target="_blank">
-					<MirrorIcon />
+				<a name="mirror" href={`${LINK_SOCIAL_MIRROR}?ref=${PLATFORM_DOMAIN}`} target="_blank">
+					{@html MirrorIcon}
 				</a>
-				<a name="github" href={SOCIAL_GITHUB} target="_blank">
-					<GithubIcon />
+				<a name="dework" href={`${LINK_SOCIAL_DEWORK}?ref=${PLATFORM_DOMAIN}`} target="_blank">
+					{@html DeworkIcon}
 				</a>
-				<a name="etherscan" href={TOKEN_ETHERSCAN} target="_blank">
-					<EtherscanIcon />
-				</a>
-				<a name="coinmarketcap" href={TOKEN_COINMARKETCAP} target="_blank">
-					<CoinMarketCapIcon />
+				<a name="github" href={`${LINK_SOCIAL_GITHUB}?ref=${PLATFORM_DOMAIN}`} target="_blank">
+					{@html GithubIcon}
 				</a>
 			</div>
 		</div>
-	</WrapperWide>
+	</Wrapper>
 </footer>
 
 <style lang="scss">
 	footer {
-		background: $color-background--tertiary;
-		@include spacing--max(padding-top, padding-bottom);
-
 		.container {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
+			$breakpoint--mobile: $breakpoint--medium;
 
-			@include breakpoint($breakpoint--sm) {
-				flex-direction: column;
+			display: grid;
+			grid-template-columns: auto auto;
+			grid-template-rows: auto auto;
+			grid-template-areas:
+				'navigation brand'
+				'navigation socials';
+			row-gap: 16px;
+			@include fluid(padding-top, 48, 64);
+			@include fluid(padding-bottom, 48, 64);
+
+			@include breakpoint($breakpoint--mobile) {
+				grid-template-rows: auto;
+				grid-template-rows: auto auto auto;
+				grid-template-areas:
+					'brand'
+					'navigation'
+					'socials';
 			}
 
-			.about {
-				display: flex;
-				align-items: center;
+			.navigation {
+				grid-area: navigation;
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
 
-				@include breakpoint($breakpoint--sm) {
-					@include spacing--medium(margin-bottom);
+				@include breakpoint($breakpoint--mobile) {
+					grid-template-columns: auto;
+					grid-template-rows: auto auto auto;
+				}
+
+				.category {
+					span {
+						display: flex;
+						@include typography-family--secondary;
+						@include fluid(font-size, 20, 24);
+						line-height: 1.5;
+						color: $color-navy--primary;
+						@include fluid(margin-bottom, 6, 8);
+					}
+
+					ul {
+						display: flex;
+						flex-direction: column;
+
+						li {
+							@include fluid(margin-bottom, 12, 16);
+
+							a {
+								@include fluid(font-size, 16, 18);
+								color: $color-black--primary;
+								@include transition($transition--primary, opacity);
+
+								&:hover {
+									opacity: 0.6;
+								}
+							}
+
+							&:last-of-type {
+								margin-bottom: 0;
+							}
+						}
+					}
+
+					@include breakpoint($breakpoint--mobile) {
+						@include fluid(margin-bottom, 14, 16);
+
+						&:last-of-type {
+							margin-bottom: 0;
+						}
+					}
+				}
+			}
+
+			.brand {
+				grid-area: brand;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-end;
+
+				@include breakpoint($breakpoint--mobile) {
+					align-items: flex-start;
 				}
 
 				.logo {
 					:global(svg) {
-						@include spacing--max(height);
+						@include fluid(height, 96, 128);
 						width: auto;
-						fill: $color-text--tertiary;
 					}
 				}
 
 				.tagline {
-					@include spacing--small(margin-left);
+					span {
+						display: inline-flex;
+						@include fluid(font-size, 20, 24);
+						text-align: right;
 
-					h5 {
-						@include typography-family--secondary;
-						@include typography-size--micro;
-						font-weight: $font-weight--semi-bold;
-						color: $color-text--tertiary;
-
-						span {
-							background: linear-gradient(to right, $color-brand--blue, $color-brand--purple);
-							background-clip: text;
-							-webkit-background-clip: text;
-							-webkit-text-fill-color: transparent;
+						@include breakpoint($breakpoint--mobile) {
+							text-align: left;
 						}
 					}
 				}
 			}
 
 			.socials {
+				grid-area: socials;
+				display: flex;
+				justify-content: flex-end;
+
+				@include breakpoint($breakpoint--mobile) {
+					justify-content: flex-start;
+				}
+
 				a {
-					display: inline-block;
-					color: $color-text--tertiary;
-					@include spacing--medium(margin-right);
-					transition: color 0.125s ease-in;
+					display: flex;
+					padding: 4px;
+					margin-right: 16px;
+					@include transition($transition--primary, fill);
+
+					:global(svg) {
+						@include fluid(height, 22, 24);
+						width: auto;
+					}
 
 					&:last-of-type {
 						margin-right: 0;
 					}
 
-					:global(svg) {
-						@include spacing--small(height);
-						width: auto;
-						fill: currentColor;
-					}
-
 					&:hover {
 						&[name='discord'] {
-							color: #7289da;
+							fill: #7289da;
 						}
 
 						&[name='twitter'] {
-							color: #1da1f2;
+							fill: #1da1f2;
 						}
 
 						&[name='mirror'] {
-							color: #007aff;
+							fill: #007aff;
+						}
+
+						&[name='dework'] {
+							fill: #b161c4;
 						}
 
 						&[name='github'] {
-							color: #24292e;
-						}
-
-						&[name='etherscan'] {
-							color: #21325b;
-						}
-
-						&[name='coinmarketcap'] {
-							color: #1c51ff;
+							fill: #24292e;
 						}
 					}
 				}

@@ -11,16 +11,16 @@
 		META_APPLE_COLOR,
 		META_MICROSOFT_COLOR,
 		META_VERSION
-	} from '$constants/meta';
+	} from '$constants/util/meta';
 	import type { OpenGraph, Twitter } from './PageMeta.types';
 
-	export let title: string = '';
+	export let title = '';
 	export let description: string = META_DESCRIPTION;
 	export let keywords: string[] = META_KEYWORDS;
 
-	export let canonical: string = null;
-	export let openGraph: OpenGraph = undefined;
-	export let twitter: Twitter = undefined;
+	export let canonical: string | undefined = undefined;
+	export let openGraph: OpenGraph | undefined = undefined;
+	export let twitter: Twitter | undefined = undefined;
 
 	export let noindex = false;
 	export let nofollow = false;
