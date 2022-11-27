@@ -1,8 +1,6 @@
 <script lang="ts">
 	import { Wrapper } from '$layout/wrapper';
 
-	import { footerHeight } from '$stores/layout/layout';
-
 	import PeopleDAOLogo from '$assets/icons/brand/logo.svg?raw';
 	import DiscordIcon from '$assets/icons/socials/discord.svg?raw';
 	import TwitterIcon from '$assets/icons/socials/twitter.svg?raw';
@@ -23,7 +21,7 @@
 	} from '$constants/links/socials';
 </script>
 
-<footer bind:clientHeight={$footerHeight}>
+<footer>
 	<Wrapper>
 		<div class="container">
 			<div class="navigation">

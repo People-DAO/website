@@ -1,18 +1,18 @@
 <script lang="ts">
 	import { Wrapper } from '$layout/wrapper';
-
 	import { Navigation } from '$layout/navigation';
+
+	import { AnnouncementBanner } from '$components/announcement-banner';
 
 	import PeopleDAOLogo from '$assets/icons/brand/logo.svg?raw';
 
-	import { headerHeight } from '$stores/layout/layout';
 	import { scrollToTop } from '$stores/layout/navigation';
 
 	let scrollY: number;
 </script>
 
 <svelte:window bind:scrollY />
-<header bind:clientHeight={$headerHeight} class:--compact={scrollY >= 100}>
+<header class:--compact={scrollY >= 100}>
 	<Wrapper>
 		<div class="container">
 			<div class="logo">
@@ -25,6 +25,13 @@
 			</div>
 		</div>
 	</Wrapper>
+	<AnnouncementBanner>
+		<span>
+			We&nbsp;are&nbsp;going to&nbsp;buy the&nbsp;Constitution - get&nbsp;involved by joining
+			the&nbsp;dedicated
+			<a href="https://discord.gg/btfc" target="_blank">Discord&nbsp;server</a>!
+		</span>
+	</AnnouncementBanner>
 </header>
 
 <style lang="scss">
