@@ -2,19 +2,27 @@
 	import { Analytics } from '$util/analytics';
 	import { Header } from '$layout/header';
 	import { Footer } from '$layout/footer';
-
-	import { headerHeight, footerHeight } from '$stores/layout/layout';
 </script>
 
 <Analytics />
 
 <Header />
-<main
-	style={`
-		margin-top: ${$headerHeight - 1}px; 
-		min-height: calc(100vh - ${$headerHeight}px - ${$footerHeight}px);
-	`}
->
+<main>
 	<slot />
 </main>
 <Footer />
+
+<style lang="scss">
+	:global(.sx-k7Y5vJkiso) {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		min-height: 100vh;
+	}
+
+	:global(main) {
+		flex-grow: 1;
+		@include fluid(margin-top, 96, 168);
+		overflow-x: hidden;
+	}
+</style>
