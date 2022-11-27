@@ -5,14 +5,13 @@
 
 	import PeopleDAOLogo from '$assets/icons/brand/logo.svg?raw';
 
-	import { headerHeight } from '$stores/layout/layout';
 	import { scrollToTop } from '$stores/layout/navigation';
 
 	let scrollY: number;
 </script>
 
 <svelte:window bind:scrollY />
-<header bind:clientHeight={$headerHeight} class:--compact={scrollY >= 100}>
+<header class:--compact={scrollY >= 100}>
 	<Wrapper>
 		<div class="container">
 			<div class="logo">
