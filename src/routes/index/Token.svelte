@@ -1,17 +1,17 @@
 <script lang="ts">
-	import { Section } from '$layout/section';
-	import { Title, Text } from '$components/typography';
-	import { TokenStats } from '$components/token-stats';
-	import { ButtonGroup, Button } from '$components/button';
+	import { Section } from '$lib/section/components';
+	import { Title, Text } from '$lib/typography/components';
+	import { TokenStatsSimple } from '$apps/token-stats/components';
+	import { ButtonGroup, Button } from '$lib/button/components';
 
-	import { PLATFORM_DOMAIN } from '$constants/util/platform';
-	import { LINK_TOKEN_JUICEBOX } from '$constants/links/tokens';
-	import { LINK_PROJECT_CFAC } from '$constants/links/projects';
+	import { PLATFORM_DOMAIN } from '$util/platform';
+	import { LINK_PROJECT_CFAC } from '$lib/navigation/constants/projectLinks.constants';
 	import {
+		LINK_TOKEN_JUICEBOX,
 		LINK_TOKEN_ETHERSCAN,
 		LINK_TOKEN_OKEX,
 		LINK_TOKEN_UNISWAP
-	} from '$constants/links/tokens';
+	} from '$lib/navigation/constants/tokenLinks.constants';
 </script>
 
 <Section id="token">
@@ -21,14 +21,16 @@
 			<Text>
 				We use the $PEOPLE token for voting in DAO decision-making. The token has a capped supply
 				and will be slightly deflationary so long as holders continue to redeem the token on
-				<a href={`${LINK_TOKEN_JUICEBOX}?ref=${PLATFORM_DOMAIN}`} target="_blank">Juicebox</a>, in
-				return for the underlying ETH. The original conversion rate of 1 ETH per 1M $PEOPLE thus
-				acts like a floor price. PeopleDAO and its subDAOs are committed to building an ecosystem
-				around this token. In practice this has looked like offering a
-				<a href={`${LINK_PROJECT_CFAC}?ref=${PLATFORM_DOMAIN}`} target="_blank">free NFT</a> to token
-				holders, or airdropping $PANDA token to wallets holding the token.
+				<a href={`${LINK_TOKEN_JUICEBOX}?ref=${PLATFORM_DOMAIN}`} target="_blank" rel="noreferrer"
+					>Juicebox</a
+				>, in return for the underlying ETH. The original conversion rate of 1 ETH per 1M $PEOPLE
+				thus acts like a floor price. PeopleDAO and its subDAOs are committed to building an
+				ecosystem around this token. In practice this has looked like offering a
+				<a href={`${LINK_PROJECT_CFAC}?ref=${PLATFORM_DOMAIN}`} target="_blank" rel="noreferrer"
+					>free NFT</a
+				> to token holders, or airdropping $PANDA token to wallets holding the token.
 			</Text>
-			<TokenStats />
+			<TokenStatsSimple />
 		</div>
 		<div class="media">
 			<img src="/assets/images/index_token.png" alt="" />

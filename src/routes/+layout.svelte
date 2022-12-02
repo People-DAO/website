@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Analytics } from '$util/analytics';
-	import { Header } from '$layout/header';
-	import { Footer } from '$layout/footer';
+	import { Header } from '$lib/header/components';
+	import { Footer } from '$lib/footer/components';
 </script>
 
 <Analytics />

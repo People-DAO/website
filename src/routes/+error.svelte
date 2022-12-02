@@ -2,9 +2,9 @@
 	import { page } from '$app/stores';
 
 	import { PageMeta } from '$util/meta';
-	import { Section } from '$layout/section';
-	import { Title, Text } from '$components/typography';
-	import { Button } from '$components/button';
+	import { Section } from '$lib/section/components';
+	import { Title, Text } from '$lib/typography/components';
+	import { Button } from '$lib/button/components';
 </script>
 
 <PageMeta nofollow noindex title={$page.status === 404 ? 'Not found' : 'Error'} />

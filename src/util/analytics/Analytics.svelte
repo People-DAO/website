@@ -6,7 +6,7 @@
 
 	import * as Fathom from 'fathom-client';
 
-	import { ANALYTICS_SCRIPT_URL } from '$constants/util/analytics';
+	import { ANALYTICS_SCRIPT_URL } from './analytics.config';
 
 	const trackingId = env.PUBLIC_FATHOM_ID;
 

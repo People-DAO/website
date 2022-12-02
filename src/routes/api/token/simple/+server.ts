@@ -2,11 +2,11 @@ import fetch from 'isomorphic-unfetch';
 import { json, error } from '@sveltejs/kit';
 import type { RequestHandler } from '@sveltejs/kit';
 
-import { TOKEN_STATS_URL } from '$constants/api/external';
+import { API_TOKEN_STATS_SIMPLE } from '$apps/token-stats/constants/apis.constants';
 
 export const GET: RequestHandler = async () => {
 	try {
-		const response = await fetch(TOKEN_STATS_URL);
+		const response = await fetch(API_TOKEN_STATS_SIMPLE);
 		const data = await response.json();
 
 		const tokenData = {
@@ -18,8 +18,8 @@ export const GET: RequestHandler = async () => {
 
 		return json(tokenData, {
 			status: 200
-		})
+		});
 	} catch (err) {
-		return error(500, err)
+		return error(500, err);
 	}
-}
+};

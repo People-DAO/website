@@ -12,14 +12,9 @@
 		"baseUrl": "./",
 		"paths": {
 			"$assets/*": ["static/assets/*"],
-			"$components/*": ["src/components/*"],
-			"$constants/*": ["src/constants/*"],
+			"$apps/*": ["src/apps/*"],
 			"$content/*": ["src/content/*"],
-			"$helpers/*": ["src/helpers/*"],
-			"$layout/*": ["src/layout/*"],
-			"$services/*": ["src/services/*"],
-			"$stores/*": ["src/stores/*"],
-			"$types/*": ["src/types/*"],
+			"$lib/*": ["src/lib/*"],
 			"$util/*": ["src/util/*"]
 		}
 	}

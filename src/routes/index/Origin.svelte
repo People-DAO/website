@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { Section } from '$layout/section';
-	import { Title, Text } from '$components/typography';
+	import { Section } from '$lib/section/components';
+	import { Title, Text } from '$lib/typography/components';
 
-	import { PLATFORM_DOMAIN } from '$constants/util/platform';
+	import { PLATFORM_DOMAIN } from '$util/platform';
 </script>
 
 <Section id="origin">
@@ -16,6 +16,7 @@
 				<a
 					href={`https://twitter.com/ConstitutionDAO/status/1470970371025293317?ref=${PLATFORM_DOMAIN}`}
 					target="_blank"
+					rel="noreferrer"
 				>
 					sunsetting their involvement
 				</a>. A group of community members formed PeopleDAO and adopted $PEOPLE as its governance

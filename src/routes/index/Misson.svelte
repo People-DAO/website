@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { Section } from '$layout/section';
-	import { Title, Text } from '$components/typography';
-	import { ButtonGroup, Button } from '$components/button';
+	import { Section } from '$lib/section/components';
+	import { Title, Text } from '$lib/typography/components';
+	import { ButtonGroup, Button } from '$lib/button/components';
 
-	import { PLATFORM_DOMAIN } from '$constants/util/platform';
-	import { LINK_SOCIAL_DISCORD } from '$constants/links/socials';
-	import { LINK_DOCUMENT_CONSTITUTION } from '$constants/links/documents';
+	import { PLATFORM_DOMAIN } from '$util/platform';
+	import { LINK_SOCIAL_DISCORD } from '$lib/navigation/constants/socialLinks.constants';
+	import { LINK_DOCUMENT_CONSTITUTION } from '$lib/navigation/constants/documentLinks.constants';
 
-	import { scrollToId } from '$stores/layout/navigation';
+	import { scrollToId } from '$lib/navigation/stores/navigation.store';
 </script>
 
 <Section id="mission">

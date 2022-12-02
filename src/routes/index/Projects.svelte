@@ -1,19 +1,19 @@
 <script lang="ts">
-	import { Section } from '$layout/section';
-	import { Title, Text } from '$components/typography';
-	import { HexagonCarousel } from '$components/hexagon-carousel';
+	import { Section } from '$lib/section/components';
+	import { Title, Text } from '$lib/typography/components';
+	import { HexagonCarousel } from '$lib/hexagon-carousel/components';
 
 	import LanguageDAOLogo from '$assets/icons/projects/languagedao.svg?raw';
 	import PandaDAOLogo from '$assets/icons/projects/pandadao.svg?raw';
 
-	import { PLATFORM_DOMAIN } from '$constants/util/platform';
+	import { PLATFORM_DOMAIN } from '$util/platform';
 	import {
 		LINK_PROJECT_CFAC,
 		LINK_PROJECT_PANDADAO,
 		LINK_PROJECT_LANGUAGEDAO,
 		LINK_PROJECT_LOSTCHILDREN,
 		LINK_PROJECT_AFROPIECE
-	} from '$constants/links/projects';
+	} from '$lib/navigation/constants/projectLinks.constants';
 </script>
 
 <Section id="projects">

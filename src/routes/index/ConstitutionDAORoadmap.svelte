@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { Section } from '$layout/section';
-	import { Title } from '$components/typography';
-	import { Timeline, TimelineItem } from '$components/timeline';
+	import { Section } from '$lib/section/components';
+	import { Title } from '$lib/typography/components';
+	import { Timeline, TimelineItem } from '$lib/timeline/components';
 
-	import { PLATFORM_DOMAIN } from '$constants/util/platform';
+	import { PLATFORM_DOMAIN } from '$util/platform';
 	import {
 		LINK_DOCUMENT_HACKEN_AUDIT,
 		LINK_DOCUMENT_TRUSTLOOK_AUDIT
-	} from '$constants/links/documents';
+	} from '$lib/navigation/constants/documentLinks.constants';
 </script>
 
 <div class="constitutiondao-banner">
