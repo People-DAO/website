@@ -32,7 +32,7 @@ export const GET: RequestHandler = async ({ url }) => {
 								}
 							], 
 							sort:HEIGHT_DESC,
-							after: $afterCursor
+							after: $afterCursor,
 						) {
 							edges {
 								cursor
@@ -89,7 +89,7 @@ export const GET: RequestHandler = async ({ url }) => {
 				id: post.node?.id,
 				timestamp: postData?.content?.timestamp,
 				title: postData?.content?.title,
-				mirrorxyzUrl: mirrrorId ? `${DOMAIN_MIRROXYZ_PEOPLEDAO}/${mirrrorId}` : null
+				url: mirrrorId ? `${DOMAIN_MIRROXYZ_PEOPLEDAO}/${mirrrorId}` : null
 			});
 		}
 

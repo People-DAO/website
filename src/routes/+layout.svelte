@@ -1,16 +1,19 @@
 <script lang="ts">
 	import { Analytics } from '$util/analytics';
+	import { SvelteQueryProvider } from '$util/svelte-query';
 	import { Header } from '$lib/header/components';
 	import { Footer } from '$lib/footer/components';
 </script>
 
 <Analytics />
 
-<Header />
-<main>
-	<slot />
-</main>
-<Footer />
+<SvelteQueryProvider>
+	<Header />
+	<main>
+		<slot />
+	</main>
+	<Footer />
+</SvelteQueryProvider>
 
 <style lang="scss">
 	:global(.sx-k7Y5vJkiso) {
