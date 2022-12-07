@@ -5,8 +5,11 @@
 	import { AnnouncementBanner } from '$apps/announcements/components';
 
 	import PeopleDAOLogo from '$assets/icons/brand/logo.svg?raw';
+	import ScrollIcon from '$assets/icons/emoji/scroll.svg?raw';
 
 	import { scrollToTop } from '$lib/navigation/stores/navigation.store';
+
+	import { PLATFORM_DOMAIN } from '$util/platform';
 
 	let scrollY: number;
 </script>
@@ -27,9 +30,16 @@
 	</Wrapper>
 	<AnnouncementBanner>
 		<span>
-			We&nbsp;are&nbsp;going to&nbsp;buy the&nbsp;Constitution - get&nbsp;involved by joining
-			the&nbsp;dedicated
-			<a href="https://discord.gg/btfc" target="_blank" rel="noreferrer">Discord&nbsp;server</a>!
+			({@html ScrollIcon}, {@html ScrollIcon}) We&nbsp;are&nbsp;gonna&nbsp;buy the&nbsp;Constitution
+			- join us at
+			<a
+				href={`https://constitutiondao2.com//?ref=${PLATFORM_DOMAIN}`}
+				target="_blank"
+				rel="noreferrer"
+			>
+				ConstitutionDAO2
+			</a>! ({@html ScrollIcon},
+			{@html ScrollIcon})
 		</span>
 	</AnnouncementBanner>
 </header>
@@ -92,6 +102,17 @@
 						}
 					}
 				}
+			}
+		}
+
+		:global(.announcement-banner) {
+			text-transform: capitalize;
+
+			:global(svg) {
+				position: relative;
+				@include fluid(top, 2, 4);
+				display: inline-block;
+				@include fluid(height, 20, 24);
 			}
 		}
 	}
