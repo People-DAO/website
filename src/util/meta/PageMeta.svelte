@@ -11,7 +11,7 @@
 		META_APPLE_COLOR,
 		META_MICROSOFT_COLOR,
 		META_VERSION
-	} from '$constants/util/meta';
+	} from './meta.config';
 	import type { OpenGraph, Twitter } from './PageMeta.types';
 
 	export let title = '';

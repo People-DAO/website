@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
 
-	import { FILES_BASE_URL } from '$constants/api/external';
-
 	export let data;
+
+	const FILES_BASE_URL = 'https://raw.githubusercontent.com/people-DAO/files/main';
 
 	const filePath = data?.params?.file_path;
 

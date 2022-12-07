@@ -16,14 +16,10 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		alias: {
+			$apps: resolve('./src/apps'),
 			$assets: resolve('./static/assets'),
-			$components: resolve('./src/components'),
-			$constants: resolve('./src/constants'),
-			$helpers: resolve('./src/helpers'),
-			$layout: resolve('./src/layout'),
-			$services: resolve('./src/services'),
-			$stores: resolve('./src/stores'),
-			$types: resolve('./src/types'),
+			$content: resolve('./src/content'),
+			$lib: resolve('./src/lib'),
 			$util: resolve('./src/util')
 		}
 	}

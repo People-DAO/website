@@ -1,11 +1,14 @@
 <script lang="ts">
-	import { Section } from '$layout/section';
-	import { Title } from '$components/typography';
-	import { Accordion, AccordionItem } from '$components/accordion';
+	import { Section } from '$lib/section/components';
+	import { Title } from '$lib/typography/components';
+	import { Accordion, AccordionItem } from '$lib/accordion/components';
 
-	import { PLATFORM_DOMAIN } from '$constants/util/platform';
-	import { LINK_SOCIAL_DISCORD, LINK_SOCIAL_DEWORK } from '$constants/links/socials';
-	import { LINK_TOKEN_COINMARKETCAP } from '$constants/links/tokens';
+	import { PLATFORM_DOMAIN } from '$util/platform';
+	import {
+		LINK_SOCIAL_DISCORD,
+		LINK_SOCIAL_DEWORK
+	} from '$lib/navigation/constants/socialLinks.constants';
+	import { LINK_TOKEN_COINMARKETCAP } from '$lib/navigation/constants/tokenLinks.constants';
 </script>
 
 <Section id="frequently-asked-questions">
