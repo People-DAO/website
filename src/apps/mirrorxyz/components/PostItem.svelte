@@ -4,6 +4,8 @@
 
 	import { dayjs } from '$util/dayjs';
 
+	import { DOMAIN_MIRROXYZ_PEOPLEDAO } from '$apps/mirrorxyz/constants/domain.constants';
+
 	import type { MirrorPost } from '../types/post.type';
 
 	export let post: MirrorPost;
@@ -21,7 +23,9 @@
 		<Text tag="span" size="small">{formattedTimestamp}</Text>
 	</div>
 	<div class="link">
-		<Button href={post.url} target="_blank">Read on Mirror.xyz</Button>
+		<Button href={`${DOMAIN_MIRROXYZ_PEOPLEDAO}/${post.id}`} target="_blank">
+			Read on Mirror.xyz
+		</Button>
 	</div>
 </div>
 

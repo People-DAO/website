@@ -9,9 +9,15 @@
 
 	import { getPosts } from '$apps/mirrorxyz/services/getPosts';
 
-	$: postsQuery = useInfiniteQuery(
+	let postIds: string[];
+
+	const postsQuery = useInfiniteQuery(
 		'mirrroxyz-posts',
-		({ pageParam = undefined }) => getPosts({ after: pageParam }),
+		({ pageParam = undefined }) =>
+			getPosts({
+				after: pageParam,
+				ignoredIds: postIds?.length ? postIds : undefined
+			}),
 		{
 			getNextPageParam: (lastBatch) => {
 				return lastBatch?.meta?.hasNextPage
@@ -20,6 +26,23 @@
 			}
 		}
 	);
+
+	$: if ($postsQuery?.data?.pages) {
+		const itemIds = [];
+
+		for (const page of $postsQuery?.data?.pages) {
+			for (const post of page?.items) {
+				itemIds.push(post.id);
+			}
+		}
+
+		if (itemIds.length) {
+			postIds = itemIds;
+		}
+	}
+
+	// @TODO: No results
+	// @TODO: Error
 </script>
 
 <PageMeta title="Posts" />

@@ -1,11 +1,13 @@
 <div class="posts-list-loader">
 	<span class="spinner" />
+	<p>Fetching data from Arweave blockchain...</p>
 </div>
 
 <style lang="scss">
 	.posts-list-loader {
 		display: flex;
 		justify-content: center;
+		align-items: center;
 		@include spacing--large(padding-top, padding-bottom);
 
 		.spinner {
@@ -27,6 +29,11 @@
 					transform: rotate(360deg);
 				}
 			}
+		}
+
+		p {
+			@include spacing--small(margin-left);
+			@include typography-size--base;
 		}
 	}
 </style>

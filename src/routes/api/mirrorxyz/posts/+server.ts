@@ -7,31 +7,44 @@ import {
 	API_ARWEAVE_GRAPHQL,
 	API_ARWEAVE_TRANSACTION
 } from '$apps/mirrorxyz/constants/apis.constants';
-import { WALLET_MIRRORXYZ_PEOPLEDAO } from '$apps/mirrorxyz/constants/wallets.constants';
-import { DOMAIN_MIRROXYZ_PEOPLEDAO } from '$apps/mirrorxyz/constants/domain.constants';
+import {
+	WALLETS_MIRRORXYZ_AUTHORS,
+	WALLET_MIRRORXYZ_PEOPLEDAO
+} from '$apps/mirrorxyz/constants/wallets.constants';
 
-export const GET: RequestHandler = async ({ url }) => {
+const getMirrorTransactions = async ({ after = '', limit = 25, ignoredMirrorIds = [''] }) => {
 	try {
-		const postsList = await fetch(API_ARWEAVE_GRAPHQL, {
+		const transactions = await fetch(API_ARWEAVE_GRAPHQL, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
 			},
 			body: JSON.stringify({
 				query: `
-					query GetMirrorTransactions($ownerAddress: String!, $afterCursor: String!) {
+					query GetMirrorTransactions(
+						$authorsAddresses: [String!]!, 
+						$limit: Int!, 
+						$afterCursor: String!, 
+						$ignoredMirrorIds: [String!]!
+					) {
 						transactions(
 							tags:[
 								{
-									name:\"App-Name\",
-									values:[\"MirrorXYZ\"]
+									name: "App-Name",
+									values: ["MirrorXYZ"]
 								},
 								{
-									name:\"Contributor\",
-									values:[$ownerAddress]
+									name: "Contributor",
+									values: $authorsAddresses
+								},
+								{
+									name: "Original-Content-Digest"
+									values: $ignoredMirrorIds
+									op: NEQ
 								}
 							], 
 							sort:HEIGHT_DESC,
+							first: $limit,
 							after: $afterCursor,
 						) {
 							edges {
@@ -52,58 +65,127 @@ export const GET: RequestHandler = async ({ url }) => {
 				`,
 				operationName: 'GetMirrorTransactions',
 				variables: {
-					ownerAddress: WALLET_MIRRORXYZ_PEOPLEDAO,
-					afterCursor: url?.searchParams?.get('after') ?? ''
+					authorsAddresses: WALLETS_MIRRORXYZ_AUTHORS,
+					limit,
+					afterCursor: after,
+					ignoredMirrorIds
 				}
 			})
 		});
 
-		const postsListData = await postsList.json();
+		const result = await transactions.json();
 
-		if (!postsListData?.data?.transactions?.edges?.length) {
-			return json(
-				{
-					items: [],
-					meta: {
-						hasNextPage: false
-					}
-				},
-				{
-					status: 200
-				}
-			);
+		if (result?.errors?.length) {
+			console.log('[@DEBUG] getMirrorTransactions - result.errors: ', result.errors);
+			return { error: true };
 		}
 
-		const posts = [];
+		return result;
+	} catch (err) {
+		console.log('[@DEBUG] getMirrorTransactions - err: ', err);
+		return { error: true };
+	}
+};
 
-		for (const post of postsListData.data.transactions.edges) {
-			const postTransaction = await fetch(`${API_ARWEAVE_TRANSACTION}/${post.node?.id}`);
-			const postData = await postTransaction.json();
+const getTransactionData = async (nodeId: string) => {
+	try {
+		const postTransaction = await fetch(`${API_ARWEAVE_TRANSACTION}/${nodeId}`);
 
-			const mirrrorId = post.node?.tags?.find(
-				(t: { name: string; value: string }) => t.name === 'Original-Content-Digest'
-			)?.value;
-
-			posts.push({
-				cursor: post.cursor,
-				id: post.node?.id,
-				timestamp: postData?.content?.timestamp,
-				title: postData?.content?.title,
-				url: mirrrorId ? `${DOMAIN_MIRROXYZ_PEOPLEDAO}/${mirrrorId}` : null
-			});
+		if (postTransaction.status === 200) {
+			return await postTransaction.json();
 		}
 
-		return json(
-			{
-				items: posts,
-				meta: {
-					hasNextPage: postsListData?.data?.transactions?.pageInfo?.hasNextPage
-				}
-			},
-			{
-				status: 200
+		return {};
+	} catch (err) {
+		console.log('[@DEBUG] getTransactionData - err: ', err);
+		return { error: true };
+	}
+};
+
+const returnPosts = ({ posts, hasNextPage }: { posts: any[]; hasNextPage: boolean }) => {
+	return json(
+		{
+			items: posts,
+			meta: {
+				hasNextPage
 			}
-		);
+		},
+		{
+			status: 200
+		}
+	);
+};
+
+export const GET: RequestHandler = async ({ url }) => {
+	try {
+		const afterCursor = url?.searchParams?.get('after') || undefined;
+		const limit = Math.min(Number(url?.searchParams?.get('take') || 10), 25);
+		const ignoredMirrorIds = url?.searchParams?.get('ignoredIds') || undefined;
+
+		let lastCursor = afterCursor;
+		let hasNextPage = true;
+		const postsIdCache: string[] = [];
+		const posts: any[] = [];
+
+		while (posts.length < limit) {
+			if (!hasNextPage) break;
+
+			const transactionsQuery = await getMirrorTransactions({
+				after: lastCursor,
+				limit: limit * 3,
+				ignoredMirrorIds:
+					ignoredMirrorIds != undefined
+						? decodeURIComponent(ignoredMirrorIds).split(',')
+						: undefined
+			});
+
+			if (transactionsQuery?.error) {
+				return error(500);
+			}
+			if (!transactionsQuery?.data?.transactions?.edges?.length) {
+				return returnPosts({ posts, hasNextPage: false });
+			}
+			hasNextPage = transactionsQuery.data?.transactions?.pageInfo?.hasNextPage; // @TODO: improve
+
+			for (const transaction of transactionsQuery.data.transactions.edges) {
+				if (posts.length >= limit) {
+					break;
+				}
+
+				const postId = transaction.node?.tags?.find(
+					(t: { name: string; value: string }) => t.name === 'Original-Content-Digest'
+				)?.value;
+
+				if (postsIdCache.indexOf(postId) > -1) {
+					continue;
+				}
+
+				const postData = await getTransactionData(transaction.node?.id);
+
+				if (postData.error) {
+					return error(500);
+				}
+
+				lastCursor = transaction.cursor;
+
+				if (postData?.wnft?.fundingRecipient !== WALLET_MIRRORXYZ_PEOPLEDAO) {
+					continue;
+				}
+
+				postsIdCache.push(postId);
+				posts.push({
+					cursor: transaction.cursor,
+					id: postId,
+					timestamp: postData?.content?.timestamp,
+					title: postData?.content?.title
+				});
+			}
+		}
+
+		return returnPosts({
+			posts,
+			hasNextPage
+		});
 	} catch (err) {
 		console.log('[@DEBUG] err: ', err);
 		return error(500);
