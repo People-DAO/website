@@ -1,1 +1,1 @@
-export { default as SvelteQueryProvider } from "./SvelteQueryProvider.svelte"
+export { default as SvelteQueryProvider } from './SvelteQueryProvider.svelte';

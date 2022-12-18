@@ -1,4 +1,4 @@
-import { PLATFORM_DOMAIN } from "$util/platform";
+import { PLATFORM_DOMAIN } from '$util/platform';
 
 export const META_TITLE = 'PeopleDAO';
 export const META_DESCRIPTION = 'Incubate Public Good For The People';

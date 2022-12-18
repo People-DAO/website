@@ -12,7 +12,7 @@
 <ViewportListener />
 <SvelteQueryProvider>
 	<Header />
-	<main class="flex-1 mt-[60px] bg-beige-tertiary">
+	<main class="flex-1 mt-16 bg-beige-tertiary">
 		<slot />
 	</main>
 	<Footer />
