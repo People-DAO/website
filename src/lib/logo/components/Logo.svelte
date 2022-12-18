@@ -26,7 +26,7 @@
 			{/if}
 		</div>
 		{#if variant === 'full'}
-			<span class="relative top-[0.075em] ml-[0.3em] text-[1.05em]">PeopleDAO</span>
+			<span class="relative top-[0.075em] ml-[0.35em] text-[1.05em]">PeopleDAO</span>
 		{/if}
 	</div>
 </div>
