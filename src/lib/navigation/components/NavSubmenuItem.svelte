@@ -16,7 +16,7 @@
 	<div class="h-6 w-6 shrink-0 text-gold-primary">
 		<slot name="icon" />
 	</div>
-	<div class="font-medium text-white ml-4">
+	<div class="font-medium text-white-primary ml-4">
 		<slot />
 	</div>
 </a>

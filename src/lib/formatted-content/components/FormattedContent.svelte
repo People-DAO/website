@@ -6,7 +6,7 @@
 
 <div
 	class="
-		max-w-7xl w-full px-4 sm:px-6 mx-auto
+		formatted-content formatted-content-xl max-w-none
 		{$$restProps.class || ''}
 	"
 	{...restProps}

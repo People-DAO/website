@@ -24,7 +24,7 @@
 		this={hasSubItems ? 'button' : 'a'}
 		class="
 			group inline-flex items-center text-base font-medium 
-			{!disabled ? 'text-white' : 'text-gray-200'} 
+			{!disabled ? 'text-white-primary' : 'text-gray-200'} 
 			-my-3 py-3 rounded-md focus:outline-none
 		"
 		class:text-gold-primary={isSubmenuOpen}
@@ -33,7 +33,7 @@
 	>
 		<slot />
 		{#if hasSubItems}
-			<NavArrowDownIcon class="ml-2" />
+			<NavArrowDownIcon class="ml-1" />
 		{/if}
 	</svelte:element>
 	{#if isSubmenuOpen}

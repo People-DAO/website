@@ -18,7 +18,7 @@
 			${$$restProps.style || ''}
 		`}
 	>
-		<div class="logo h-full flex">
+		<div class:logo={true} class="h-full flex">
 			{#if variant === 'text'}
 				{@html PeopleDAOTextLogo}
 			{:else}

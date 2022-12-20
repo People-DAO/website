@@ -8,7 +8,8 @@
 		NavSubmenu,
 		NavSubmenuItem,
 		MobileNavItem,
-		MobileNavSubmenuItem
+		MobileNavSubmenuItem,
+		SocialsMenu
 	} from '$lib/navigation/components';
 
 	import { viewport, isViewportGTE } from '$lib/layout/stores/viewport.store';
@@ -78,7 +79,7 @@
 			in:fly={{ y: 5, duration: 250 }}
 			out:fly={{ y: 5, duration: 250 }}
 		>
-			<nav class="p-2">
+			<nav class="flex flex-col h-full px-3 py-2">
 				<MobileNavItem href="/" target={undefined}>
 					<span>Homepage</span>
 					<svelte:fragment slot="icon">
@@ -113,6 +114,9 @@
 						</svelte:fragment>
 					</MobileNavItem>
 				{/each}
+				<div class="mt-auto">
+					<SocialsMenu />
+				</div>
 			</nav>
 		</div>
 	{/if}

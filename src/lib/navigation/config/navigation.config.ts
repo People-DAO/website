@@ -59,7 +59,8 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
 			{
 				label: 'Teams',
 				icon: PackagesIcon,
-				href: '/teams'
+				href: '/teams',
+				disabled: true
 			},
 			{
 				label: 'Proposals',

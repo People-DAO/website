@@ -13,7 +13,7 @@
 	href={!disabled ? href : undefined}
 	{target}
 >
-	<div class="font-medium text-white ml-4 ">
+	<div class="font-medium text-white-primary ml-4 ">
 		<slot />
 	</div>
 </a>

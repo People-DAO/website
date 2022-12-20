@@ -14,7 +14,7 @@
 		class="
 			flex items-start p-3 -m-3 rounded-lg
 			{!hasSubItems ? 'hover:bg-navy-secondary/25' : ''}
-			{!disabled ? 'text-white' : 'text-gray-200'} 
+			{!disabled ? 'text-white-primary' : 'text-gray-200'} 
 		"
 		{href}
 		{target}
@@ -22,7 +22,7 @@
 		<div class="h-6 w-6 shrink-0 text-gold-primary">
 			<slot name="icon" />
 		</div>
-		<div class="font-medium text-white ml-4">
+		<div class="font-medium text-white-primary ml-4">
 			<slot />
 		</div>
 		{#if hasSubItems}
