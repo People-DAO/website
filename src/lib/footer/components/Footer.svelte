@@ -25,15 +25,15 @@
 <footer
 	class="w-full mt-auto pt-16 pb-6 bg-navy-primary text-white-primary  border-t border-gold-primary"
 >
-	<Wrapper class="container">
-		<div class="brand flex flex-col space-y-4">
+	<Wrapper class="footer-container">
+		<div class:brand={true} class="flex flex-col space-y-4">
 			<a class="flex mr-auto" href="/">
 				<Logo class="h-10 text-white-primary" />
 			</a>
 			<span class="font-medium italic capitalize">Incubate public good<br />for the people</span>
 		</div>
 		<SocialsMenu class="socials text-white-primary" />
-		<div class="nav font-medium">
+		<div class:nav={true} class="font-medium">
 			<div class="grid gap-3 mb-auto">
 				<span class="font-medium text-gold-primary">Resources</span>
 				<Link
@@ -93,7 +93,7 @@
 </footer>
 
 <style lang="scss">
-	:global(.container) {
+	:global(.footer-container) {
 		display: grid;
 		grid-template-areas:
 			'brand'

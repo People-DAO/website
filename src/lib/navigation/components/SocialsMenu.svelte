@@ -20,7 +20,7 @@
 
 <div
 	class="
-		flex items-center space-x-4
+		grid auto-cols-fr grid-flow-col gap-x-6 mr-auto
 		{$$restProps.class || ''}
 	"
 	{...restProps}
@@ -30,7 +30,7 @@
 		href={LINK_SOCIAL_TWITTER}
 		target="_blank"
 	>
-		<div class="icon h5 w-5">
+		<div class:icon={true} class="h-5 w-5">
 			{@html TwitterIcon}
 		</div>
 	</Link>
@@ -39,7 +39,7 @@
 		href={LINK_SOCIAL_DISCORD}
 		target="_blank"
 	>
-		<div class="icon h5 w-5">
+		<div class:icon={true} class="h-5 w-5">
 			{@html DiscordIcon}
 		</div>
 	</Link>
@@ -48,7 +48,7 @@
 		href={LINK_SOCIAL_GITHUB}
 		target="_blank"
 	>
-		<div class="icon h5 w-5">
+		<div class:icon={true} class="h-5 w-5">
 			{@html GithubIcon}
 		</div>
 	</Link>
@@ -57,7 +57,7 @@
 		href={LINK_SOCIAL_MIRROR}
 		target="_blank"
 	>
-		<div class="icon h5 w-5">
+		<div class:icon={true} class="h-5 w-5">
 			{@html MirrorIcon}
 		</div>
 	</Link>

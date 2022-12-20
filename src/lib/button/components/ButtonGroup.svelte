@@ -4,7 +4,7 @@
 	const restProps = rest;
 </script>
 
-<div class={$$restProps.class || ''} class:button-group={true} {...restProps}>
+<div class:button-group={true} class={$$restProps.class || ''} {...restProps}>
 	<slot />
 </div>
 

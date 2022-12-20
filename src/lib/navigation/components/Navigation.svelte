@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { browser } from '$app/environment';
 	import { fly } from 'svelte/transition';
 	import { navigating } from '$app/stores';
 	import { MenuIcon, CancelIcon, HomeIcon } from '@indaco/svelte-iconoir';
@@ -16,14 +17,14 @@
 
 	import { NAVIGATION_ITEMS } from '../config/navigation.config';
 
-	$: isViewportGTEmd = isViewportGTE($viewport, 'md');
 	let isMobileMenuOpen = false;
-
-	$: if (!isViewportGTEmd) {
+	$: if (browser) document.body.classList.toggle('scroll-lock', isMobileMenuOpen);
+	$: if (isMobileMenuOpen && $navigating) {
 		isMobileMenuOpen = false;
 	}
 
-	$: if (isMobileMenuOpen && $navigating) {
+	$: isViewportGTEmd = isViewportGTE($viewport, 'md');
+	$: if (!isViewportGTEmd) {
 		isMobileMenuOpen = false;
 	}
 </script>
@@ -114,10 +115,16 @@
 						</svelte:fragment>
 					</MobileNavItem>
 				{/each}
-				<div class="mt-auto">
+				<div class="flex mt-auto">
 					<SocialsMenu />
 				</div>
 			</nav>
 		</div>
 	{/if}
 {/if}
+
+<style lang="scss">
+	:global(.scroll-lock) {
+		overflow-y: hidden;
+	}
+</style>

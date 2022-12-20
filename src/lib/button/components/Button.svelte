@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { scrollElement } from 'svelte-scrolling';
 	import { ArrowRightIcon } from '@indaco/svelte-iconoir';
 
 	export let variant: 'white/gold' | 'navy/gold' = 'white/gold';
@@ -6,7 +7,14 @@
 	export let target: '_blank' | undefined = undefined;
 	export let disabled = false;
 
-	let defaultSlot: HTMLElement;
+	const handleScrollClick = (e: MouseEvent) => {
+		if (href?.startsWith('#')) {
+			e.preventDefault();
+			scrollElement(href, { offset: -64 });
+		}
+	};
+
+	let iconSlot: HTMLElement;
 
 	const { class: _, ...rest } = $$restProps;
 	const restProps = rest;
@@ -14,9 +22,9 @@
 
 <a
 	class:button={true}
-	class:--icon-only={!defaultSlot?.clientWidth}
+	class:--with-icon={iconSlot?.clientWidth}
 	class="
-		grid grid-cols-[auto_auto] gap-x-3
+		grid grid-flow-col
 		text-lg rounded-lg
 		font-medium 
 		py-2 px-6 border
@@ -29,19 +37,18 @@
 		: ''}
 		{$$restProps.class || ''}
 	"
+	on:click={handleScrollClick}
 	href={!disabled ? href : undefined}
 	{target}
 	{...restProps}
 >
-	<div bind:this={defaultSlot}>
-		<slot />
-	</div>
+	<slot />
 	{#if $$slots.icon}
-		<div class:icon={true}>
+		<div bind:this={iconSlot} class:icon={true}>
 			<slot name="icon" />
 		</div>
 	{:else if target}
-		<div class:icon={true} class="-rotate-45">
+		<div bind:this={iconSlot} class:icon={true} class="-rotate-45">
 			<ArrowRightIcon />
 		</div>
 	{/if}
@@ -49,13 +56,12 @@
 
 <style lang="scss">
 	.button {
-		&.--icon-only {
-			column-gap: 0;
+		&.--with-icon {
+			column-gap: 0.75rem;
 		}
 
 		.icon {
 			display: flex;
-
 			width: 1.5rem;
 
 			:global(svg) {
