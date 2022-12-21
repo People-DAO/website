@@ -45,14 +45,16 @@
 	>
 		<Wrapper class="flex flex-col justify-center items-center">
 			<div class="flex flex-col items-center space-y-8">
-				<Logo class="h-48 text-white-primary" variant="text" />
+				<Logo class="h-24 sm:h-36 lg:h-48 text-white-primary" variant="text" />
 				<h1
 					class="font-secondary font-bold text-2xl sm:text-4xl lg:text-6xl text-white-primary text-gold-primary uppercase"
 				>
 					Incubating public good<br />for the people
 				</h1>
 				<div class="absolute bottom-12 text-gold-primary mt-auto">
-					<FastArrowDownIcon size="3rem" />
+					<FastArrowDownIcon
+						class="h-10 w-10 sm:h-11 sm:w-11 lg:h-12 lg:w-12 animate--scroll-down"
+					/>
 				</div>
 			</div>
 		</Wrapper>
@@ -257,3 +259,24 @@
 		/>
 	</Accordion>
 </Section>
+
+<style lang="scss">
+	:global(.animate--scroll-down) {
+		position: relative;
+		animation: 2.5s scrollDown infinite;
+
+		@keyframes scrollDown {
+			0% {
+				opacity: 0;
+				top: -75%;
+			}
+			50% {
+				opacity: 1;
+			}
+			100% {
+				opacity: 0;
+				top: 0;
+			}
+		}
+	}
+</style>
