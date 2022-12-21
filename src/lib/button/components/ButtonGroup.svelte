@@ -1,31 +1,38 @@
-<div class:button-group={true} {...$$restProps}>
+<script lang="ts">
+	export const _ = undefined;
+	const { class: a, ...rest } = $$restProps;
+	const restProps = rest;
+</script>
+
+<div class:button-group={true} class={$$restProps.class || ''} {...restProps}>
 	<slot />
 </div>
 
 <style lang="scss">
 	.button-group {
 		display: flex;
-		align-items: center;
-		flex-wrap: wrap;
+		flex-direction: column;
+		align-items: flex-start;
 
 		:global(a),
 		:global(button) {
-			@include fluid(margin-right, 20, 24);
-			@include fluid(margin-bottom, 20, 24);
-
-			&:last-child {
-				margin-right: 0;
-			}
+			display: flex;
+			margin-right: 0;
+			margin-bottom: 0.5rem;
 		}
 
-		@include breakpoint($breakpoint--small) {
-			flex-direction: column;
-			align-items: flex-start;
+		@include breakpoint($breakpoint--md) {
+			flex-direction: row;
+			align-items: center;
+			flex-wrap: wrap;
 
 			:global(a),
 			:global(button) {
-				margin-right: 0;
-				margin-bottom: 12px;
+				margin-right: 0.5rem;
+
+				&:last-child {
+					margin-right: 0;
+				}
 			}
 		}
 	}

@@ -1,172 +1,130 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
-
-	import NavigationItem from './NavigationItem.svelte';
-	import { Button } from '$lib/button/components';
-
-	import { LINK_SOCIAL_DISCORD } from '$lib/navigation/constants/socialLinks.constants';
+	import { fly } from 'svelte/transition';
+	import { navigating } from '$app/stores';
+	import { MenuIcon, CancelIcon, HomeIcon } from '@indaco/svelte-iconoir';
 
 	import {
-		mobileNavigationOpen,
-		toggleMobileNavigation,
-		closeMobileNavigation
-	} from '$lib/navigation/stores/navigation.store';
+		NavItem,
+		NavSubmenu,
+		NavSubmenuItem,
+		MobileNavItem,
+		MobileNavSubmenuItem,
+		SocialsMenu
+	} from '$lib/navigation/components';
 
-	let mobileButton: HTMLElement['offsetWidth'];
+	import { viewport, isViewportGTE } from '$lib/layout/stores/viewport.store';
 
-	$: if (browser) {
-		document.body.classList.toggle('scroll-lock', $mobileNavigationOpen);
+	import { NAVIGATION_ITEMS } from '../config/navigation.config';
+
+	let isMobileMenuOpen = false;
+	$: if (browser) document.body.classList.toggle('scroll-lock', isMobileMenuOpen);
+	$: if (isMobileMenuOpen && $navigating) {
+		isMobileMenuOpen = false;
 	}
 
-	$: if (browser && !mobileButton) {
-		document.body.classList.toggle('scroll-lock', false);
-		closeMobileNavigation();
+	$: isViewportGTEmd = isViewportGTE($viewport, 'md');
+	$: if (!isViewportGTEmd) {
+		isMobileMenuOpen = false;
 	}
 </script>
 
-<!-- svelte-ignore a11y-click-events-have-key-events -->
-<div
-	bind:clientWidth={mobileButton}
-	class="navigation-button"
-	class:navigation-button--open={$mobileNavigationOpen}
-	on:click={toggleMobileNavigation}
->
-	<span />
-</div>
-
-<div class="navigation" class:navigation--active={$mobileNavigationOpen}>
-	<nav>
-		<NavigationItem scrollHrefId="mission">Mission</NavigationItem>
-		<NavigationItem scrollHrefId="origin">Origin</NavigationItem>
-		<NavigationItem scrollHrefId="token">Token</NavigationItem>
-		<NavigationItem scrollHrefId="projects">Projects</NavigationItem>
-		<NavigationItem scrollHrefId="frequently-asked-questions">FAQ</NavigationItem>
-		<Button variant="gold/navy" href={LINK_SOCIAL_DISCORD} target="_blank" class="button--discord">
-			Join Discord
-		</Button>
+{#if isViewportGTEmd}
+	<nav class="flex items-center justify-center space-x-10 !ml-0">
+		{#each NAVIGATION_ITEMS as item}
+			<NavItem
+				href={item.href || undefined}
+				target={item.target || undefined}
+				disabled={item.disabled}
+				hasSubItems={!!item.subItems?.length}
+			>
+				<span>{item.label}</span>
+				<svelte:fragment slot="submenu">
+					{#if item.subItems?.length}
+						<NavSubmenu>
+							{#each item.subItems as subItem}
+								<NavSubmenuItem
+									href={subItem.href}
+									target={subItem.target}
+									disabled={subItem.disabled}
+								>
+									<svelte:fragment slot="icon">
+										{#if subItem.icon}
+											<svelte:component this={subItem.icon} />
+										{/if}
+									</svelte:fragment>
+									<span>{subItem.label}</span>
+								</NavSubmenuItem>
+							{/each}
+						</NavSubmenu>
+					{/if}
+				</svelte:fragment>
+			</NavItem>
+		{/each}
 	</nav>
-</div>
+{:else}
+	<button
+		type="button"
+		class="inline-flex items-center my-auto !ml-auto p-2 ml-3 rounded-lg hover:text-gold-primary"
+		on:click={() => (isMobileMenuOpen = !isMobileMenuOpen)}
+	>
+		{#if !isMobileMenuOpen}
+			<MenuIcon />
+		{:else}
+			<CancelIcon />
+		{/if}
+	</button>
+	{#if isMobileMenuOpen}
+		<div
+			class="fixed top-14 left-0 right-0 bottom-0 bg-navy-primary !m-0 p-4 overflow-y-scroll rounded-bl-lg rounded-br-lg shadow-lg border border-t-0 border-gold-primary z-[1001]"
+			in:fly={{ y: 5, duration: 250 }}
+			out:fly={{ y: 5, duration: 250 }}
+		>
+			<nav class="flex flex-col h-full px-3 py-2">
+				<MobileNavItem href="/" target={undefined}>
+					<span>Homepage</span>
+					<svelte:fragment slot="icon">
+						<HomeIcon />
+					</svelte:fragment>
+				</MobileNavItem>
+				{#each NAVIGATION_ITEMS as item}
+					<MobileNavItem
+						href={item.href || undefined}
+						target={item.target || undefined}
+						disabled={item.disabled}
+						hasSubItems={!!item.subItems?.length}
+					>
+						<svelte:fragment slot="icon">
+							{#if item.icon}
+								<svelte:component this={item.icon} />
+							{/if}
+						</svelte:fragment>
+						<span>{item.label}</span>
+						<svelte:fragment slot="submenu">
+							{#if item.subItems?.length}
+								{#each item.subItems as subItem}
+									<MobileNavSubmenuItem
+										href={subItem.href}
+										target={subItem.target}
+										disabled={subItem.disabled}
+									>
+										<span>{subItem.label}</span>
+									</MobileNavSubmenuItem>
+								{/each}
+							{/if}
+						</svelte:fragment>
+					</MobileNavItem>
+				{/each}
+				<div class="flex mt-auto">
+					<SocialsMenu />
+				</div>
+			</nav>
+		</div>
+	{/if}
+{/if}
 
 <style lang="scss">
 	:global(.scroll-lock) {
-		height: 100vh;
 		overflow-y: hidden;
-	}
-
-	$navigation-breakpoint--mobile: $breakpoint--medium;
-
-	.navigation-button {
-		width: 0;
-		height: 0;
-
-		@include breakpoint($navigation-breakpoint--mobile) {
-			position: relative;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			$navigation-button-gap: 10px;
-			$navigation-button-line: 2px;
-			height: $navigation-button-line * 3 + $navigation-button-gap * 2;
-			padding: 10px;
-			cursor: pointer;
-			z-index: 1001;
-			display: flex;
-			width: auto;
-
-			:global(span) {
-				position: relative;
-
-				&,
-				&::before,
-				&::after {
-					display: block;
-					width: 3rem;
-					height: $navigation-button-line;
-					background: $color-background--secondary;
-					@include transition($transition--primary, top, transform, background);
-				}
-
-				&::before,
-				&::after {
-					content: '';
-					position: absolute;
-				}
-
-				&::before {
-					top: $navigation-button-gap;
-				}
-
-				&::after {
-					top: $navigation-button-gap * -1;
-				}
-			}
-
-			&.navigation-button--open {
-				:global(span) {
-					background: transparent;
-
-					&::before {
-						top: 0;
-						transform: rotate(45deg);
-						opacity: 1;
-					}
-
-					&::after {
-						top: 0;
-						transform: rotate(-45deg);
-						opacity: 1;
-					}
-				}
-			}
-		}
-	}
-
-	.navigation {
-		display: flex;
-
-		@include breakpoint($navigation-breakpoint--mobile) {
-			position: fixed;
-			top: 0;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			pointer-events: none;
-			visibility: hidden;
-			transition: visibility 0.5s linear;
-		}
-
-		nav {
-			display: flex;
-			align-items: center;
-
-			@include breakpoint($navigation-breakpoint--mobile) {
-				position: absolute;
-				top: 0;
-				bottom: 0;
-				left: 0;
-				right: 0;
-				flex-direction: column;
-				justify-content: center;
-				align-items: flex-start;
-				opacity: 0;
-				@include fluid(padding-top, 42, 64);
-				@include fluid(padding-bottom, 42, 64);
-				@include fluid(padding-left, 20, 120);
-				@include fluid(padding-right, 20, 120);
-				@include transition($transition--primary, opacity, background);
-			}
-		}
-
-		&.navigation--active {
-			@include breakpoint($navigation-breakpoint--mobile) {
-				visibility: visible;
-				pointer-events: all;
-
-				nav {
-					opacity: 1;
-					background: $color-navy--primary;
-				}
-			}
-		}
 	}
 </style>

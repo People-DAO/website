@@ -11,13 +11,13 @@ export const META_KEYWORDS = [
 	'ConstitutionDAO'
 ];
 
-export const META_THEME_COLOR = '#ffffff';
-export const META_APPLE_COLOR = '#000000';
-export const META_MICROSOFT_COLOR = '#ffffff';
+export const META_THEME_COLOR = '#0B3451';
+export const META_APPLE_COLOR = '#0B3451';
+export const META_MICROSOFT_COLOR = '#0B3451';
 
 export const META_OG_URL = `https://${PLATFORM_DOMAIN}`;
 export const META_OG_IMAGE_URL = `${META_OG_URL}/meta/og-image.jpg`;
-export const META_OG_IMAGE_WIDTH = 603;
-export const META_OG_IMAGE_HEIGHT = 904;
+export const META_OG_IMAGE_WIDTH = 1275;
+export const META_OG_IMAGE_HEIGHT = 668;
 
-export const META_VERSION = '68w8ym676a';
+export const META_VERSION = '7t8oesfiph';

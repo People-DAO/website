@@ -1,78 +1,72 @@
 <script lang="ts">
 	import { slide } from 'svelte/transition';
+	import { NavArrowDownIcon } from '@indaco/svelte-iconoir';
 
-	import { Text } from '$lib/typography/components';
-
-	import ChevronDownIcon from '$assets/icons/general/chevron-down.svg?raw';
+	import { FormattedContent } from '$lib/formatted-content/components';
 
 	export let title: string;
 	export let description: string;
 	export let open = false;
 
-	const TRANSITION_DURATION = 500;
+	const { class: _, ...rest } = $$restProps;
+	const restProps = rest;
 
 	const handleClick = () => {
 		open = !open;
 	};
 </script>
 
-<li class:accordion-item={true} {...$$restProps}>
+<li
+	class:accordion-item={true}
+	class="
+		py-4 border-b border-black-tertiary !first:border-t
+		{$$restProps.class || ''}
+	"
+	{...restProps}
+>
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
-	<div class="title" on:click={handleClick}>
-		<div class="icon" class:icon--open={open}>
-			{@html ChevronDownIcon}
+	<div class:title={true} class="flex center cursor-pointer font-medium" on:click={handleClick}>
+		<div class:icon={true} class="flex flex-col justify-center ml-1 mr-1" class:icon--open={open}>
+			<NavArrowDownIcon />
 		</div>
-		<Text tag="span" size="medium">{title}</Text>
+		<FormattedContent>
+			{@html title}
+		</FormattedContent>
 	</div>
 	{#if open}
-		<div class="description" transition:slide={{ duration: TRANSITION_DURATION }}>
-			<Text size="medium">{@html description}</Text>
-		</div>
+		<FormattedContent>
+			<div class="ml-10 mt-2" transition:slide={{ duration: 250 }}>
+				{@html description}
+			</div>
+		</FormattedContent>
 	{/if}
 </li>
 
 <style lang="scss">
 	.accordion-item {
-		@include fluid(padding-top, 20, 24);
-
 		.title {
-			display: flex;
-			align-items: center;
-			@include fluid(padding-top, 20, 24);
-			@include fluid(padding-bottom, 20, 24);
-			@include fluid(margin-top, -20, -24);
-			@include transition($transition--primary, background, opacity);
-			cursor: pointer;
-
-			&:hover {
-				opacity: 0.6;
-			}
-
 			.icon {
-				display: flex;
-				@include fluid(margin-right, 8, 12);
-				@include transition($transition--primary, transform);
+				color: $color-navy--primary;
+				transition: transform 250ms ease-out;
 
 				&.icon--open {
 					transform: rotate(-180deg);
 				}
 
 				:global(svg) {
-					@include fluid(height, 26, 32);
 					width: auto;
 				}
 			}
 
-			:global(span) {
-				@include transition($transition--primary, color);
-			}
-		}
+			&:hover {
+				:global(.formatted-content) {
+					color: $color-bronze--primary;
+				}
 
-		.description {
-			@include fluid(margin-top, -10, -14);
-			@include fluid(padding-bottom, 20, 24);
-			@include fluid(padding-left, 34, 44);
-			@include transition($transition--primary, background);
+				.icon {
+					color: $color-bronze--primary;
+				}
+			}
 		}
 	}
 </style>

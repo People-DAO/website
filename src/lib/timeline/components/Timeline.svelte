@@ -1,12 +1,15 @@
-<ul class:timeline={true} {...$$restProps}>
+<script lang="ts">
+	export const _ = undefined;
+	const { class: a, ...rest } = $$restProps;
+	const restProps = rest;
+</script>
+
+<ul
+	class="
+		max-w-4xl flex flex-col mx-auto
+		{$$restProps.class || ''}
+	"
+	{...restProps}
+>
 	<slot />
 </ul>
-
-<style lang="scss">
-	.timeline {
-		max-width: 1080px;
-		margin: 0 auto;
-		display: flex;
-		flex-direction: column;
-	}
-</style>
