@@ -1,5 +1,5 @@
 export type MdsvexDocument = {
-	metadata?: {
+	metadata: {
 		[key: string]: unknown;
 	};
 	default: unknown;

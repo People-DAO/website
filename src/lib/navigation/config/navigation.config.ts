@@ -15,6 +15,14 @@ import {
 
 import type { SvelteComponentTyped } from 'svelte/internal';
 
+import { LINK_SOCIAL_MIRROR } from '$lib/link/constants/socialLinks.constants';
+import { LINK_TOOL_SNAPSHOT } from '$lib/link/constants/toolLinks.constants';
+import {
+	LINK_INCUBATOR_ABOUT,
+	LINK_INCUBATOR_HOWTOAPPLY,
+	LINK_INCUBATOR_PROJECTS
+} from '$lib/link/constants/incubatorLinks.constants';
+
 type NavigationItem = {
 	label: string;
 	icon: new (...args: any) => SvelteComponentTyped;
@@ -37,7 +45,7 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
 			{
 				label: 'Posts',
 				icon: PageIcon,
-				href: 'https://peopledao.mirror.xyz',
+				href: LINK_SOCIAL_MIRROR,
 				target: '_blank'
 			},
 			{
@@ -59,13 +67,12 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
 			{
 				label: 'Teams',
 				icon: PackagesIcon,
-				href: '/teams',
-				disabled: true
+				href: '/teams'
 			},
 			{
 				label: 'Proposals',
 				icon: PageFlipIcon,
-				href: 'https://snapshot.org/#/people-dao.eth',
+				href: LINK_TOOL_SNAPSHOT,
 				target: '_blank'
 			},
 			{
@@ -82,19 +89,19 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
 			{
 				label: 'About',
 				icon: InfoEmptyIcon,
-				href: 'https://bip.so/peopledao/incubator-v2.0-31153c',
+				href: LINK_INCUBATOR_ABOUT,
 				target: '_blank'
 			},
 			{
 				label: 'How to apply',
 				icon: MailOutIcon,
-				href: 'https://bip.so/peopledao/proposal-template-31160c',
+				href: LINK_INCUBATOR_HOWTOAPPLY,
 				target: '_blank'
 			},
 			{
 				label: 'Incubatees',
 				icon: LeaderboardStarIcon,
-				href: 'https://bip.so/peopledao/incubatees-33397c',
+				href: LINK_INCUBATOR_PROJECTS,
 				target: '_blank'
 			}
 		]

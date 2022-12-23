@@ -13,7 +13,7 @@
 	const restProps = rest;
 </script>
 
-<div class="flex justify-center {$$restProps.class}" {...restProps}>
+<div class="flex justify-center {$$restProps.class || ''}" {...restProps}>
 	<div class:hexagon-avatar={true}>
 		<div class:border={true} style="color: {borderColor};">
 			{@html HexagonOutlineIcon}
@@ -22,7 +22,7 @@
 			<div class:shape={true} style="color: {backgroundColor};">
 				{@html HexagonIcon}
 			</div>
-			<div style="color: {color};">
+			<div class:content-inner={true} style="color: {color};">
 				<slot />
 			</div>
 		</div>

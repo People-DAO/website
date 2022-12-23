@@ -35,7 +35,7 @@ export const fetchData = async ({
 			return await res.json();
 		} catch (err) {
 			if (import.meta.env.DEV) {
-				console.log('[@DEBUG] fetchData - error: ', err);
+				console.error('[@DEBUG] fetchData - error: ', err);
 			}
 			throw err;
 		}

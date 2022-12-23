@@ -61,7 +61,8 @@ module.exports = {
 			},
 			'--tw-prose-counters': colorsConfig.navy.primary,
 			'--tw-prose-bullets': colorsConfig.navy.primary,
-			'--tw-prose-th-borders': colorsConfig.black.tertiary
+			'--tw-prose-th-borders': colorsConfig.black.tertiary,
+			'--tw-prose-hr': colorsConfig.navy.primary
 		}
 	}
 };
