@@ -209,20 +209,19 @@
 		</HexagonAvatar>
 		<HexagonAvatar
 			class="h-[192px]"
-			href={LINK_PROJECT_PANDADAO}
-			target="_blank"
+			href="/incubator/project/pandadao"
 			color="#000000"
 			backgroundColor="transparent"
 		>
 			{@html PandaDAOLogo}
 		</HexagonAvatar>
-		<HexagonAvatar class="h-[192px]" href={LINK_PROJECT_LANGUAGEDAO} target="_blank">
+		<HexagonAvatar class="h-[192px]" href="/incubator/project/languagedao">
 			{@html LanguageDAOLogo}
 		</HexagonAvatar>
-		<HexagonAvatar class="h-[192px]" href={LINK_PROJECT_LOSTCHILDREN} target="_blank">
-			<img src="/assets/icons/projects/lost-children.png" alt="" />
+		<HexagonAvatar class="h-[192px]" href="/incubator/project/the-lost-children-of-benin-city">
+			<img src="/assets/icons/projects/the-lost-children-of-benin-city.png" alt="" />
 		</HexagonAvatar>
-		<HexagonAvatar class="h-[192px]" href={LINK_PROJECT_AFROPIECE} target="_blank">
+		<HexagonAvatar class="h-[192px]" href="/incubator/project/afro-piece">
 			<img src="/assets/icons/projects/afro-piece.png" alt="" />
 		</HexagonAvatar>
 	</div>

@@ -19,8 +19,7 @@ import { LINK_SOCIAL_MIRROR } from '$lib/link/constants/socialLinks.constants';
 import { LINK_TOOL_SNAPSHOT } from '$lib/link/constants/toolLinks.constants';
 import {
 	LINK_INCUBATOR_ABOUT,
-	LINK_INCUBATOR_HOWTOAPPLY,
-	LINK_INCUBATOR_PROJECTS
+	LINK_INCUBATOR_HOWTOAPPLY
 } from '$lib/link/constants/incubatorLinks.constants';
 
 type NavigationItem = {
@@ -99,10 +98,9 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
 				target: '_blank'
 			},
 			{
-				label: 'Incubatees',
+				label: 'Incubated projects',
 				icon: LeaderboardStarIcon,
-				href: LINK_INCUBATOR_PROJECTS,
-				target: '_blank'
+				href: '/incubator/projects'
 			}
 		]
 	}
