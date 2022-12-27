@@ -9,7 +9,7 @@
 	import { Link } from '$lib/link/components';
 	import { Timeline, TimelineItem } from '$lib/timeline/components';
 	import { TokenSimpleStats, TokenSimpleStatItem } from '$apps/token/components';
-	import { HexagonAvatar } from '$lib/avatars/components';
+	import { HexagonAvatar } from '$lib/avatar/components';
 	import { Accordion, AccordionItem } from '$lib/accordion/components';
 
 	import { tokenData, isLoading as tokenDataIsLoading } from '$apps/token/stores/simpleStats.store';
@@ -38,7 +38,7 @@
 
 <section
 	name="hero"
-	class="w-full bg-[url('/assets/images/constitution1.png')] bg-cover bg-no-repeat bg-center h-screen -mt-16"
+	class="h-screen w-full bg-[url('/assets/images/constitution1.png')] bg-cover bg-no-repeat bg-center -mt-16"
 >
 	<div
 		class="relative w-full h-full flex flex-col justify-center items-center bg-navy-primary/90 text-center"
@@ -75,7 +75,7 @@
 					our&nbsp;message.
 				</p>
 				<p>
-					With every new incubation we&nbsp;build out a &nbsp;onstellation of communities
+					With every new incubation we&nbsp;build out a &nbsp;constellation of communities
 					and&nbsp;protocols aligned around the&nbsp;same mission: let's&nbsp;invest
 					in&nbsp;the&nbsp;alpha that will preserve our&nbsp;planet and&nbsp;advance humanity.
 				</p>
@@ -139,7 +139,7 @@
 		<TimelineItem
 			date="Dec '21"
 			title="Decentralization"
-			description={`<p>ConstitutionDAO relinquishes ownership of the $PEOPLE token contract (confirmed in later audits by <a href="https://github.com/People-DAO/Audit-Reports/blob/main/1_[Juice%20Protocol_06012022]Audit_Report.pdf?ref=people-dao.com" target='_blank'>Hacken</a> and <a href="https://smart-contract-audit-reports.s3.us-west-1.amazonaws.com/Smart+Contract+Audit+Report+for+PEOPLE.pdf?ref=people-dao.com" target='_blank'>TRUSTLOOK</a>). ConstitutionDAO shuts down its Discord, closing the first chapter of the $PEOPLE token.</p>`}
+			description={`<p>ConstitutionDAO relinquishes ownership of the $PEOPLE token contract (confirmed in later audits by <a href="https://github.com/People-DAO/files/blob/main/governance/audits/PEOPLE-Token-Audit-Hacken.pdf?ref=people-dao.com" target='_blank'>Hacken</a> and <a href="https://github.com/People-DAO/files/blob/main/governance/audits/PEOPLE-Token-Audit-Trustlook.pdf?ref=people-dao.com" target='_blank'>TRUSTLOOK</a>). ConstitutionDAO shuts down its Discord, closing the first chapter of the $PEOPLE token.</p>`}
 		/>
 		<TimelineItem
 			date="Now"
