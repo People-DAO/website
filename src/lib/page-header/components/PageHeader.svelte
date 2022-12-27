@@ -24,7 +24,12 @@
 	.page-header {
 		:global(.title) {
 			:global(h1) {
+				font-size: 1.8em;
 				color: $color-gold--primary;
+
+				@include breakpoint($breakpoint--md) {
+					font-size: 2.8em;
+				}
 			}
 		}
 	}

@@ -7,7 +7,7 @@
 	export let items: Breadcrumb[];
 </script>
 
-<div class="flex font-medium text-white-primary mb-4 space-x-2">
+<div class="flex text-base md:text-lg font-medium text-white-primary mb-4 space-x-2">
 	{#each items as item}
 		<div class="flex space-x-2">
 			<span>{'/'}</span>

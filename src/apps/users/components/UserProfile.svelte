@@ -22,7 +22,7 @@
 		fetchData({ url: '/api/users/discord', params: { id: user.discordId } })
 	);
 
-	$: if ($userDiscordDataQuery?.isSuccess && $userDiscordDataQuery?.data) {
+	$: if ($userDiscordDataQuery?.isSuccess && $userDiscordDataQuery?.data?.username) {
 		discordHandle = `${$userDiscordDataQuery.data.username}#${$userDiscordDataQuery.data.discriminator}`;
 		discordAvatarUrl = `https://cdn.discordapp.com/avatars/${$userDiscordDataQuery.data.id}/${$userDiscordDataQuery.data.avatar}`;
 		isLoading = false;

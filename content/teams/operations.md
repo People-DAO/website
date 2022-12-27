@@ -3,8 +3,6 @@ title: Operations team
 slug: operations
 priority: 10
 logoUrl: '/assets/icons/teams/operations.svg'
-leads:
-  - Ifun
 ---
 
 _“Only through operational excellence can any organization capture and materialize its true and full potential.”_

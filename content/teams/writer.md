@@ -13,7 +13,7 @@ leads:
 	import { LINK_SOCIAL_DISCORD } from "$lib/link/constants/socialLinks.constants.ts";
 </script>
 
-The Writer Team is tasked with eductating the wider public through engaging written content on web3 related topics, such as DAOs, governance models and tools, and impact of web3 technologies. In the published content, team members conduct extensive research on each topic and provide examples of specific use-cases.
+The Writer Team is tasked with educating the wider public through engaging written content on web3 related topics, such as DAOs, governance models and tools, and impact of web3 technologies. In the published content, team members conduct extensive research on each topic and provide examples of specific use-cases.
 
 In addition to that, the Writer Team provides editorial support to all other PeopleDAO teams, i.e. creating requested publications or providing content review feedback.
 

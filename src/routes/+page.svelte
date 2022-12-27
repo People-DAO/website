@@ -139,7 +139,7 @@
 		<TimelineItem
 			date="Dec '21"
 			title="Decentralization"
-			description={`<p>ConstitutionDAO relinquishes ownership of the $PEOPLE token contract (confirmed in later audits by <a href="https://github.com/People-DAO/Audit-Reports/blob/main/1_[Juice%20Protocol_06012022]Audit_Report.pdf?ref=people-dao.com" target='_blank'>Hacken</a> and <a href="https://smart-contract-audit-reports.s3.us-west-1.amazonaws.com/Smart+Contract+Audit+Report+for+PEOPLE.pdf?ref=people-dao.com" target='_blank'>TRUSTLOOK</a>). ConstitutionDAO shuts down its Discord, closing the first chapter of the $PEOPLE token.</p>`}
+			description={`<p>ConstitutionDAO relinquishes ownership of the $PEOPLE token contract (confirmed in later audits by <a href="https://github.com/People-DAO/files/blob/main/governance/audits/PEOPLE-Token-Audit-Hacken.pdf?ref=people-dao.com" target='_blank'>Hacken</a> and <a href="https://github.com/People-DAO/files/blob/main/governance/audits/PEOPLE-Token-Audit-Trustlook.pdf?ref=people-dao.com" target='_blank'>TRUSTLOOK</a>). ConstitutionDAO shuts down its Discord, closing the first chapter of the $PEOPLE token.</p>`}
 		/>
 		<TimelineItem
 			date="Now"

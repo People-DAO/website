@@ -5,6 +5,13 @@ import { env } from '$env/dynamic/private';
 
 export const GET: RequestHandler = async ({ url }) => {
 	try {
+		if (!env.PRIVATE_DISCORD_BOT_TOKEN) {
+			console.error(
+				'[@DEBUG] /api/users/discord/+server - error: PRIVATE_DISCORD_BOT_TOKEN is missing'
+			);
+			throw error(500);
+		}
+
 		const userId = url?.searchParams?.get('id') || undefined;
 		if (!userId) {
 			throw error(400, "Parameter 'id' for Discord User's ID is required");

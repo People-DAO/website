@@ -13,7 +13,7 @@ leads:
 
 The PeopleDAO Incubator team is a group of contributors helping startup projects to grow from its early-stage to a self-sustaining one. What does this mean? It simply means that they act as a catalyst for newly developed projects. The PeopleDAO Incubator invests in and advises projects that further social good and seek to join the $PEOPLE ecosystem. These can be divided into groups by their structure:
 
-**Community projects:** A smaller-scale operations aimed at achieving certain objectives and goals. They are often requiring lesser human resource and financial contribution from PeopleDAO.
+**Community projects:** Smaller-scale operations aimed at achieving certain objectives and goals. They are often requiring lesser human resource and financial contribution from PeopleDAO.
 
 **SubDAOs:** DAOs incubated with the help of PeopleDAO resources. They are given absolute autonomy with no interference from the PeopleDAO community.
 Upon acceptance and validation of projects by PeopleDAO Snapshot votes, projects receive an investment seedfund of about 200,000 $PEOPLE tokens.

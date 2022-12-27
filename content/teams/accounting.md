@@ -23,7 +23,6 @@ Since the inception of the team, different goals have been attained in a stretch
 - Creating monthly reviews and tracking of each team’s task board to ensure a correct and corresponding payout
 - Preparing reports and research that contain seasonal accounting information such as total cash flow(inflow-outflow), and financial insights
 - Creating monthly infographics where the DAO’s monthly expenditures are displayed and broken down according to each team’s spending
-- Creating a weekly calendar that entails all activities in the DAO
 
 ## How to join
 

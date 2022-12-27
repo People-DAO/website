@@ -29,7 +29,7 @@
 				class="flex flex-col justify-center space-y-1 {index === 0 ? 'ml-3 mt-3' : ''}"
 			>
 				<HexagonAvatar class="h-[192px]" color="#000000" href={`/team/${team.metadata.slug}`}>
-					<img class="flex h-[96px] w-[96px]" src={team.metadata.logoUrl} alt="" />
+					<img class="flex" src={team.metadata.logoUrl} alt="" />
 					<span class="font-semibold text-base text-navy-primary text-center uppercase mt-1">
 						{team.metadata.slug}
 					</span>
@@ -49,8 +49,8 @@
 				align-items: center;
 
 				:global(img) {
-					height: 64px;
-					width: 64px;
+					height: 64px !important;
+					width: 64px !important;
 				}
 
 				:global(span) {
