@@ -115,7 +115,7 @@
 						</svelte:fragment>
 					</MobileNavItem>
 				{/each}
-				<div class="flex mt-auto">
+				<div class="flex mt-6">
 					<SocialsMenu />
 				</div>
 			</nav>
