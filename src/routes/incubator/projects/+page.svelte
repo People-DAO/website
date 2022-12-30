@@ -5,34 +5,37 @@
 	import { FormattedContent } from '$lib/formatted-content/components';
 	import { HexagonAvatar } from '$lib/avatar/components';
 
-	import type { TeamData } from '$apps/teams/types/teamData.type';
+	import type { ProjectData } from '$apps/projects/types/projectData.type';
 
-	export let data: { teams: TeamData[] };
+	export let data: { projects: ProjectData[] };
 </script>
 
-<PageMeta title="Teams" />
+<PageMeta title="Incubated projects" />
 <PageHeader>
-	<h1 class="text-center">Teams</h1>
+	<h1 class="text-center">Incubated projects</h1>
 </PageHeader>
 <Section id="list">
 	<FormattedContent class="text-center">
 		<p>
-			PeopleDAO is operated by&nbsp;variety of&nbsp;contributors distributed among&nbsp;multiple
-			teams according to&nbsp;their&nbsp;skills and&nbsp;expertise. Most&nbsp;of these teams
-			are&nbsp;open to&nbsp;join and&nbsp;you&nbsp;can find their&nbsp;detailed profiles below.
+			PeopleDAO incubates and&nbsp;supports projects that&nbsp;advance Web3 and&nbsp;social good.
+			We&nbsp;also support projects that&nbsp;build an&nbsp;ecosystem around the&nbsp;$PEOPLE token
+			and&nbsp;they constitute our&nbsp;subDAOs. Below&nbsp;are&nbsp;profiles of&nbsp;incubated
+			projects and&nbsp;subDAOs which&nbsp;are being incubated&nbsp;now or&nbsp;have&nbsp;been
+			incubated in&nbsp;the&nbsp;past.
 		</p>
 	</FormattedContent>
 	<div class="max-w-3xl flex flex-wrap justify-center space-x-3 space-y-3 mt-16 mx-auto">
-		{#each data.teams as team, index}
+		{#each data.projects as project, index}
 			<div
 				class:team-icon={true}
 				class="flex flex-col justify-center space-y-1 {index === 0 ? 'ml-3 mt-3' : ''}"
 			>
-				<HexagonAvatar class="h-[192px]" color="#000000" href={`/team/${team.metadata.slug}`}>
-					<img class="flex" src={team.metadata.logoUrl} alt="" />
-					<span class="font-semibold text-base text-navy-primary text-center uppercase mt-1">
-						{team.metadata.slug}
-					</span>
+				<HexagonAvatar
+					class="h-[192px]"
+					color="#000000"
+					href={`/incubator/project/${project.metadata.slug}`}
+				>
+					<img src={project.metadata.logoUrl} alt="" />
 				</HexagonAvatar>
 			</div>
 		{/each}
@@ -49,12 +52,8 @@
 				align-items: center;
 
 				:global(img) {
-					height: 64px !important;
-					width: 64px !important;
-				}
-
-				:global(span) {
-					text-align: center;
+					height: 96px !important;
+					width: 96px !important;
 				}
 			}
 		}

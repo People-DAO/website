@@ -50,12 +50,6 @@
 		<span>{user.username}</span>
 	</div>
 	<div class:socials={true}>
-		{#if discordHandle}
-			<div class:social-item={true}>
-				{@html DiscordIcon}
-				<span>{discordHandle}</span>
-			</div>
-		{/if}
 		{#if user.twitterHandle}
 			<a
 				class:social-item={true}
@@ -67,6 +61,12 @@
 				{@html TwitterIcon}
 				<span>{user.twitterHandle}</span>
 			</a>
+		{/if}
+		{#if discordHandle}
+			<div class:social-item={true}>
+				{@html DiscordIcon}
+				<span>{discordHandle}</span>
+			</div>
 		{/if}
 	</div>
 </div>
