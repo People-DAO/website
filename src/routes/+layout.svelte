@@ -1,16 +1,22 @@
-<script lang="ts">
+<script>
+	import '../styles/__styles.postcss';
+
 	import { Analytics } from '$util/analytics';
+	import { SvelteQueryProvider } from '$util/svelte-query';
+	import { ViewportListener } from '$lib/layout/components';
 	import { Header } from '$lib/header/components';
 	import { Footer } from '$lib/footer/components';
 </script>
 
 <Analytics />
-
-<Header />
-<main>
-	<slot />
-</main>
-<Footer />
+<ViewportListener />
+<SvelteQueryProvider>
+	<Header />
+	<main id="top" class="flex-1 mt-16 text-xl text-black-primary bg-beige-tertiary">
+		<slot />
+	</main>
+	<Footer />
+</SvelteQueryProvider>
 
 <style lang="scss">
 	:global(.sx-k7Y5vJkiso) {
@@ -18,11 +24,5 @@
 		flex-direction: column;
 		height: 100%;
 		min-height: 100vh;
-	}
-
-	:global(main) {
-		flex-grow: 1;
-		@include fluid(margin-top, 96, 168);
-		overflow-x: hidden;
 	}
 </style>

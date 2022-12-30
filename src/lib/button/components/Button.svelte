@@ -1,97 +1,74 @@
 <script lang="ts">
-	import { Text } from '$lib/typography/components';
+	import { scrollElement } from 'svelte-scrolling';
+	import { ArrowRightIcon } from '@indaco/svelte-iconoir';
 
-	import IconArrowUpRight from '$assets/icons/general/arrow-up-right.svg?raw';
-
-	export let variant:
-		| 'transparent/navy'
-		| 'transparent/white'
-		| 'navy/white'
-		| 'white/navy'
-		| 'gold/navy' = 'transparent/navy';
-	export let href: string | undefined = undefined;
+	export let variant: 'white/gold' | 'navy/gold' = 'white/gold';
+	export let href: string | undefined;
 	export let target: '_blank' | undefined = undefined;
-	export let iconData: string | undefined = undefined;
-	export let onClick: (() => void) | undefined = undefined;
+	export let disabled = false;
 
-	const handleClick = () => {
-		if (onClick) onClick();
+	const handleScrollClick = (e: MouseEvent) => {
+		if (href?.startsWith('#')) {
+			e.preventDefault();
+			scrollElement(href, { offset: -64 });
+		}
 	};
+
+	let iconSlot: HTMLElement;
+
+	const { class: _, ...rest } = $$restProps;
+	const restProps = rest;
 </script>
 
-<svelte:element
-	this={href ? 'a' : 'button'}
+<a
 	class:button={true}
-	class:--transparent-white={variant === 'transparent/white'}
-	class:--navy-white={variant === 'navy/white'}
-	class:--white-navy={variant === 'white/navy'}
-	class:--gold-navy={variant === 'gold/navy'}
-	{href}
+	class:--with-icon={iconSlot?.clientWidth}
+	class="
+		grid grid-flow-col
+		text-lg rounded-lg
+		font-medium 
+		py-2 px-6 border
+		transition-colors duration-150
+		{variant === 'white/gold'
+		? 'text-black-primary bg-white-primary border-gold-primary hover:text-bronze-primary hover:bg-white-hover'
+		: ''}
+		{variant === 'navy/gold'
+		? 'text-white-primary bg-navy-primary border-gold-primary hover:text-gold-primary hover:bg-navy-hover'
+		: ''}
+		{$$restProps.class || ''}
+	"
+	on:click={handleScrollClick}
+	href={!disabled ? href : undefined}
 	{target}
-	rel={target === '_blank' ? 'noopener noreferrer' : null}
-	on:click={handleClick}
-	{...$$restProps}
+	{...restProps}
 >
-	<Text tag="span">
-		<slot />
-	</Text>
-	{#if iconData}
-		{@html iconData}
+	<slot />
+	{#if $$slots.icon}
+		<div bind:this={iconSlot} class:icon={true}>
+			<slot name="icon" />
+		</div>
 	{:else if target}
-		{@html IconArrowUpRight}
+		<div bind:this={iconSlot} class:icon={true} class="-rotate-45">
+			<ArrowRightIcon />
+		</div>
 	{/if}
-</svelte:element>
+</a>
 
 <style lang="scss">
 	.button {
-		position: relative;
-		display: inline-flex;
-		align-items: center;
-		@include fluid(padding-top, 10, 12);
-		@include fluid(padding-bottom, 10, 12);
-		@include fluid(padding-left, 20, 24);
-		@include fluid(padding-right, 20, 24);
-		color: $color-navy--primary;
-		background: transparent;
-		border: 1px solid $color-navy--primary;
-		@include transition($transition--primary, color, background, border-color, opacity);
-		cursor: pointer;
-
-		&:hover {
-			opacity: 0.6;
+		&.--with-icon {
+			column-gap: 0.75rem;
 		}
 
-		:global(.typography-text) {
-			line-height: 1;
-		}
+		.icon {
+			display: flex;
+			width: 1.5rem;
 
-		:global(svg) {
-			width: auto;
-			@include fluid(height, 20, 24);
-			@include fluid(margin-left, 6, 8);
-		}
-
-		&.--transparent-white {
-			color: $color-white;
-			border-color: $color-white;
-		}
-
-		&.--navy-white {
-			color: $color-white;
-			background: $color-navy--primary;
-			border-color: $color-navy--primary;
-		}
-
-		&.--white-navy {
-			color: $color-navy--primary;
-			background: $color-white;
-			border-color: $color-white;
-		}
-
-		&.--gold-navy {
-			color: $color-navy--primary;
-			background: $color-gold--secondary;
-			border-color: $color-gold--secondary;
+			:global(svg) {
+				height: 100%;
+				width: auto;
+				fill: currentColor;
+			}
 		}
 	}
 </style>

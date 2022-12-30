@@ -12,7 +12,7 @@
 		META_MICROSOFT_COLOR,
 		META_VERSION
 	} from './meta.config';
-	import type { OpenGraph, Twitter } from './PageMeta.types';
+	import type { OpenGraph, Twitter } from './pageMeta.types';
 
 	export let title = '';
 	export let description: string = META_DESCRIPTION;

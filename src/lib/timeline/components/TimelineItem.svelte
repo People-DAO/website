@@ -1,56 +1,59 @@
 <script lang="ts">
-	import { Title, Text } from '$lib/typography/components';
+	import { FormattedContent } from '$lib/formatted-content/components';
 
 	export let date: string;
 	export let title: string;
 	export let description: string;
+
+	const { class: a, ...rest } = $$restProps;
+	const restProps = rest;
 </script>
 
-<li class:timeline-item={true} {...$$restProps}>
-	<div class="dot">
+<li
+	class:timeline-item={true}
+	class="
+		grid grid-cols-[auto_1fr] grid-rows-[auto-1fr] gap-x-4 md:gap-x-6 pb-10 overflow-y-hidden
+		{$$restProps.class || ''}
+	"
+	{...restProps}
+>
+	<div class:dot={true} class="w-12">
 		<span />
 	</div>
-	<div class="date">
-		<Title tag="span" size="medium">{date}</Title>
+	<div class:date={true} class="flex flex-col text-lg">
+		<span>{date}</span>
 	</div>
-	<div class="content">
-		<Title tag="span" size="small">{title}</Title>
-		<Text size="small">{@html description}</Text>
+	<div class:content={true} class="flex flex-col">
+		<FormattedContent>
+			<h4>{title}</h4>
+			{@html description}
+		</FormattedContent>
 	</div>
 </li>
 
 <style lang="scss">
 	.timeline-item {
-		$breakpoint--mobile: $breakpoint--small;
-
 		display: grid;
-		grid-template-columns: 1fr auto 1fr;
-		grid-template-areas: 'date dot content';
-		@include fluid(column-gap, 30, 120);
-		@include fluid(padding-top, 50, 50);
-		@include fluid(padding-bottom, 50, 50);
-		overflow: hidden;
-
-		@include breakpoint($breakpoint--mobile) {
-			grid-template-columns: auto 1fr;
-			grid-template-rows: auto 1fr;
-			grid-template-areas:
-				'dot date'
-				'dot content';
-		}
+		grid-template-areas:
+			'_ date'
+			'dot content';
 
 		.dot {
 			grid-area: dot;
 			position: relative;
 			display: flex;
+			justify-content: flex-start;
 			flex-direction: column;
-			justify-content: center;
+			padding-top: 7px;
+			margin-bottom: auto;
 
 			span {
 				position: relative;
 				display: block;
 				width: 20px;
 				height: 20px;
+				left: 50%;
+				transform: translateX(-50%);
 				border-radius: 50%;
 				background: $color-navy--primary;
 				z-index: 1;
@@ -70,45 +73,10 @@
 
 		.date {
 			grid-area: date;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-
-			:global(.typography-title) {
-				text-transform: none;
-				text-align: right;
-				color: $color-navy--primary;
-
-				@include breakpoint($breakpoint--mobile) {
-					@include typography-size--base;
-					text-align: left;
-				}
-			}
 		}
 
 		.content {
 			grid-area: content;
-
-			:global(.typography-title) {
-				text-transform: none;
-				color: $color-navy--primary;
-			}
-		}
-
-		&:nth-of-type(2n) {
-			grid-template-areas: 'content dot date';
-
-			.date {
-				:global(.typography-title) {
-					text-align: left;
-				}
-			}
-
-			@include breakpoint($breakpoint--mobile) {
-				grid-template-areas:
-					'dot date'
-					'dot content';
-			}
 		}
 
 		&:last-of-type {
@@ -124,8 +92,8 @@
 						top: 50%;
 						left: 50%;
 						transform: translate(-50%, -50%);
-						width: 30px;
-						height: 30px;
+						width: 33px;
+						height: 33px;
 						border: 1px solid $color-navy--primary;
 						border-radius: 50%;
 					}
@@ -139,10 +107,6 @@
 				&:after {
 					bottom: 50%;
 				}
-			}
-
-			@include breakpoint($breakpoint--mobile) {
-				overflow: initial;
 			}
 		}
 	}

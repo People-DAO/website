@@ -1,314 +1,133 @@
 <script lang="ts">
-	import { Wrapper } from '$lib/wrapper/components';
+	import { Wrapper } from '$lib/layout/components';
+	import { Logo } from '$lib/logo/components';
+	import { Link } from '$lib/link/components';
+	import { SocialsMenu } from '$lib/navigation/components';
 
-	import PeopleDAOLogo from '$assets/icons/brand/logo.svg?raw';
-	import DiscordIcon from '$assets/icons/socials/discord.svg?raw';
-	import TwitterIcon from '$assets/icons/socials/twitter.svg?raw';
-	import MirrorIcon from '$assets/icons/socials/mirror.svg?raw';
-	import DeworkIcon from '$assets/icons/socials/dework.svg?raw';
-	import GithubIcon from '$assets/icons/socials/github.svg?raw';
-
-	import { PLATFORM_DOMAIN } from '$util/platform';
 	import {
-		LINK_SOCIAL_DISCORD,
-		LINK_SOCIAL_TWITTER,
-		LINK_SOCIAL_NOTION,
-		LINK_SOCIAL_MIRROR,
-		LINK_SOCIAL_DEWORK,
 		LINK_SOCIAL_GITHUB,
-		LINK_SOCIAL_SNAPSHOT,
-		LINK_SOCIAL_GNOSISSAFE
-	} from '$lib/navigation/constants/socialLinks.constants';
+		LINK_SOCIAL_MIRROR
+	} from '$lib/link/constants/socialLinks.constants';
+	import {
+		LINK_TOOL_DEWORK,
+		LINK_TOOL_NOTION,
+		LINK_TOOL_BIPSO,
+		LINK_TOOL_GNOSISSAFE,
+		LINK_TOOL_SNAPSHOT
+	} from '$lib/link/constants/toolLinks.constants';
+	import {
+		LINK_TOKEN_ETHERSCAN,
+		LINK_TOKEN_COINMARKETCAP,
+		LINK_TOKEN_COINGECKO
+	} from '$lib/link/constants/tokenLinks.constants';
 </script>
 
-<footer>
-	<Wrapper>
-		<div class="container">
-			<div class="navigation">
-				<div class="category">
-					<span>Socials</span>
-					<ul>
-						<li>
-							<a href={`${LINK_SOCIAL_DISCORD}`} target="_blank" rel="noreferrer"> Discord </a>
-						</li>
-						<li>
-							<a
-								href={`${LINK_SOCIAL_TWITTER}?ref=${PLATFORM_DOMAIN}`}
-								target="_blank"
-								rel="noreferrer"
-							>
-								Twitter
-							</a>
-						</li>
-						<li>
-							<a
-								href={`${LINK_SOCIAL_DEWORK}?ref=${PLATFORM_DOMAIN}`}
-								target="_blank"
-								rel="noreferrer"
-							>
-								Dework
-							</a>
-						</li>
-					</ul>
-				</div>
-				<div class="category">
-					<span>Resources</span>
-					<ul>
-						<li>
-							<a
-								href={`${LINK_SOCIAL_NOTION}?ref=${PLATFORM_DOMAIN}`}
-								target="_blank"
-								rel="noreferrer"
-							>
-								Notion
-							</a>
-						</li>
-						<li>
-							<a
-								href={`${LINK_SOCIAL_MIRROR}?ref=${PLATFORM_DOMAIN}`}
-								target="_blank"
-								rel="noreferrer"
-							>
-								Mirror
-							</a>
-						</li>
-						<li>
-							<a
-								href={`${LINK_SOCIAL_GITHUB}?ref=${PLATFORM_DOMAIN}`}
-								target="_blank"
-								rel="noreferrer"
-							>
-								Github
-							</a>
-						</li>
-					</ul>
-				</div>
-				<div class="category">
-					<span>Governance</span>
-					<ul>
-						<li>
-							<a
-								href={`${LINK_SOCIAL_SNAPSHOT}?ref=${PLATFORM_DOMAIN}`}
-								target="_blank"
-								rel="noreferrer"
-							>
-								Snapshot
-							</a>
-						</li>
-						<li>
-							<a
-								href={`${LINK_SOCIAL_GNOSISSAFE}?ref=${PLATFORM_DOMAIN}`}
-								target="_blank"
-								rel="noreferrer"
-							>
-								Gnosis Safe
-							</a>
-						</li>
-					</ul>
-				</div>
+<footer
+	class="w-full mt-auto pt-16 pb-6 bg-navy-primary text-white-primary  border-t border-gold-primary"
+>
+	<Wrapper class="footer-container">
+		<div class:brand={true} class="flex flex-col space-y-4">
+			<a class="flex mr-auto" href="/">
+				<Logo class="h-10 text-white-primary" />
+			</a>
+			<span class="font-medium italic capitalize">Incubate public good<br />for the people</span>
+		</div>
+		<SocialsMenu class="socials text-white-primary" />
+		<div class:nav={true} class="font-medium">
+			<div class="grid gap-3 mb-auto">
+				<span class="font-medium text-gold-primary">Resources</span>
+				<Link
+					class="flex items-start p-2 -m-2 rounded-lg hover:bg-navy-secondary/25"
+					href={LINK_TOOL_NOTION}
+					target="_blank">Notion</Link
+				>
+				<Link
+					class="flex items-start p-2 -m-2 rounded-lg hover:bg-navy-secondary/25"
+					href={LINK_TOOL_BIPSO}
+					target="_blank">Bip.so</Link
+				>
+				<Link
+					class="flex items-start p-2 -m-2 rounded-lg hover:bg-navy-secondary/25"
+					href={LINK_SOCIAL_GITHUB}
+					target="_blank">Github</Link
+				>
+				<Link
+					class="flex items-start p-2 -m-2 rounded-lg hover:bg-navy-secondary/25"
+					href={LINK_SOCIAL_MIRROR}
+					target="_blank">Mirror</Link
+				>
 			</div>
-			<div class="brand">
-				<div class="logo">
-					{@html PeopleDAOLogo}
-				</div>
-				<div class="tagline">
-					<span>Incubate public good<br />for the people</span>
-				</div>
+			<div class="grid gap-3 mb-auto">
+				<span class="font-medium text-gold-primary">Governance</span>
+				<Link
+					class="flex items-start p-2 -m-2 rounded-lg hover:bg-navy-secondary/25"
+					href={LINK_TOOL_GNOSISSAFE}
+					target="_blank">Gnosis Safe</Link
+				>
+				<Link
+					class="flex items-start p-2 -m-2 rounded-lg hover:bg-navy-secondary/25"
+					href={LINK_TOOL_SNAPSHOT}
+					target="_blank">Snapshot</Link
+				>
 			</div>
-			<div class="socials">
-				<a name="discord" href={LINK_SOCIAL_DISCORD} target="_blank" rel="noreferrer">
-					{@html DiscordIcon}
-				</a>
-				<a
-					name="twitter"
-					href={`${LINK_SOCIAL_TWITTER}?ref=${PLATFORM_DOMAIN}`}
-					target="_blank"
-					rel="noreferrer"
+			<div class="grid gap-3 mb-auto">
+				<span class="font-medium text-gold-primary">$PEOPLE</span>
+				<Link
+					class="flex items-start p-2 -m-2 rounded-lg hover:bg-navy-secondary/25"
+					href={LINK_TOKEN_ETHERSCAN}
+					target="_blank">Etherscan</Link
 				>
-					{@html TwitterIcon}
-				</a>
-				<a
-					name="mirror"
-					href={`${LINK_SOCIAL_MIRROR}?ref=${PLATFORM_DOMAIN}`}
-					target="_blank"
-					rel="noreferrer"
+				<Link
+					class="flex items-start p-2 -m-2 rounded-lg hover:bg-navy-secondary/25"
+					href={LINK_TOKEN_COINMARKETCAP}
+					target="_blank">CoinMarketCap</Link
 				>
-					{@html MirrorIcon}
-				</a>
-				<a
-					name="dework"
-					href={`${LINK_SOCIAL_DEWORK}?ref=${PLATFORM_DOMAIN}`}
-					target="_blank"
-					rel="noreferrer"
+				<Link
+					class="flex items-start p-2 -m-2 rounded-lg hover:bg-navy-secondary/25"
+					href={LINK_TOKEN_COINGECKO}
+					target="_blank">CoinGecko</Link
 				>
-					{@html DeworkIcon}
-				</a>
-				<a
-					name="github"
-					href={`${LINK_SOCIAL_GITHUB}?ref=${PLATFORM_DOMAIN}`}
-					target="_blank"
-					rel="noreferrer"
-				>
-					{@html GithubIcon}
-				</a>
 			</div>
 		</div>
 	</Wrapper>
 </footer>
 
 <style lang="scss">
-	footer {
-		.container {
-			$breakpoint--mobile: $breakpoint--medium;
+	:global(.footer-container) {
+		display: grid;
+		grid-template-areas:
+			'brand'
+			'nav'
+			'socials';
+		grid-template-columns: 1fr;
+		grid-row-gap: 3rem;
 
-			display: grid;
-			grid-template-columns: auto auto;
-			grid-template-rows: auto auto;
+		@include breakpoint($breakpoint--lg) {
 			grid-template-areas:
-				'navigation brand'
-				'navigation socials';
-			row-gap: 16px;
-			@include fluid(padding-top, 48, 64);
-			@include fluid(padding-bottom, 48, 64);
+				'brand nav'
+				'socials nav';
+			grid-template-columns: 1fr 1fr;
+			grid-row-gap: 3rem;
+		}
 
-			@include breakpoint($breakpoint--mobile) {
+		.brand {
+			grid-area: brand;
+		}
+
+		:global(.socials) {
+			grid-area: socials;
+		}
+
+		.nav {
+			grid-area: nav;
+			display: grid;
+			grid-template-rows: auto auto auto;
+			row-gap: 2rem;
+
+			@include breakpoint($breakpoint--md) {
 				grid-template-rows: auto;
-				grid-template-rows: auto auto auto;
-				grid-template-areas:
-					'brand'
-					'navigation'
-					'socials';
-			}
-
-			.navigation {
-				grid-area: navigation;
-				display: grid;
 				grid-template-columns: 1fr 1fr 1fr;
-
-				@include breakpoint($breakpoint--mobile) {
-					grid-template-columns: auto;
-					grid-template-rows: auto auto auto;
-				}
-
-				.category {
-					span {
-						display: flex;
-						@include typography-family--secondary;
-						@include fluid(font-size, 20, 24);
-						line-height: 1.5;
-						color: $color-navy--primary;
-						@include fluid(margin-bottom, 6, 8);
-					}
-
-					ul {
-						display: flex;
-						flex-direction: column;
-
-						li {
-							@include fluid(margin-bottom, 12, 16);
-
-							a {
-								@include fluid(font-size, 16, 18);
-								color: $color-black--primary;
-								@include transition($transition--primary, opacity);
-
-								&:hover {
-									opacity: 0.6;
-								}
-							}
-
-							&:last-of-type {
-								margin-bottom: 0;
-							}
-						}
-					}
-
-					@include breakpoint($breakpoint--mobile) {
-						@include fluid(margin-bottom, 14, 16);
-
-						&:last-of-type {
-							margin-bottom: 0;
-						}
-					}
-				}
-			}
-
-			.brand {
-				grid-area: brand;
-				display: flex;
-				flex-direction: column;
-				align-items: flex-end;
-
-				@include breakpoint($breakpoint--mobile) {
-					align-items: flex-start;
-				}
-
-				.logo {
-					:global(svg) {
-						@include fluid(height, 96, 128);
-						width: auto;
-					}
-				}
-
-				.tagline {
-					span {
-						display: inline-flex;
-						@include fluid(font-size, 20, 24);
-						text-align: right;
-
-						@include breakpoint($breakpoint--mobile) {
-							text-align: left;
-						}
-					}
-				}
-			}
-
-			.socials {
-				grid-area: socials;
-				display: flex;
-				justify-content: flex-end;
-
-				@include breakpoint($breakpoint--mobile) {
-					justify-content: flex-start;
-				}
-
-				a {
-					display: flex;
-					padding: 4px;
-					margin-right: 16px;
-					@include transition($transition--primary, fill);
-
-					:global(svg) {
-						@include fluid(height, 22, 24);
-						width: auto;
-					}
-
-					&:last-of-type {
-						margin-right: 0;
-					}
-
-					&:hover {
-						&[name='discord'] {
-							fill: #7289da;
-						}
-
-						&[name='twitter'] {
-							fill: #1da1f2;
-						}
-
-						&[name='mirror'] {
-							fill: #007aff;
-						}
-
-						&[name='dework'] {
-							fill: #b161c4;
-						}
-
-						&[name='github'] {
-							fill: #24292e;
-						}
-					}
-				}
+				column-gap: 3rem;
 			}
 		}
 	}
