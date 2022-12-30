@@ -81,7 +81,7 @@
 				</p>
 			</FormattedContent>
 			<ButtonGroup class="mt-8">
-				<Button href="#projects" variant="navy/gold">Browse incubated projects</Button>
+				<Button href="/incubator/projects" variant="navy/gold">Browse incubated projects</Button>
 				<Button href={LINK_DOCUMENT_CONSTITUTION} target="_blank">View Constitution</Button>
 			</ButtonGroup>
 		</div>
@@ -224,6 +224,9 @@
 		<HexagonAvatar class="h-[192px]" href="/incubator/project/afro-piece">
 			<img src="/assets/icons/projects/afro-piece.png" alt="" />
 		</HexagonAvatar>
+	</div>
+	<div class="flex justify-center mt-16">
+		<Button href="/incubator/projects" variant="white/gold">Browse all incubated projects</Button>
 	</div>
 </Section>
 
