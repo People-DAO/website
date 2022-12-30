@@ -30,7 +30,7 @@ LanguageDAO stands on THREE mandates:
 Some of LanguageDAO previous works include:
 
 - Translation of GreenPilled ebook by Kevin Owocki from GitcoinDAO
-- arious Turkish translations
+- Various Turkish translations
 - Translation of the CultDAO manifesto into Vietnamese
 - Translation of PeopleDAO fireside notes every week as well as snapshot proposals and other important documents.
 

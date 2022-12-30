@@ -17,9 +17,9 @@
 <Section id="list">
 	<FormattedContent class="text-center">
 		<p>
-			PeopleDAO is operated through multiple groups of contributors, distributed among teams by
-			their purpose and responsibilities. Most of these are open to join. You can see a detailed
-			profile of each team on links below.
+			PeopleDAO is operated by&nbsp;variety of&nbsp;contributors distributed among&nbsp;multiple
+			teams according to&nbsp;their&nbsp;skills and&nbsp;expertise. Most&nbsp;of these teams
+			are&nbsp;open to&nbsp;join and&nbsp;you&nbsp;can find their&nbsp;detailed profiles below.
 		</p>
 	</FormattedContent>
 	<div class="max-w-3xl flex flex-wrap justify-center space-x-3 space-y-3 mt-16 mx-auto">

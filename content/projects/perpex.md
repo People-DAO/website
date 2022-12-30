@@ -19,7 +19,7 @@ The key advantage of said platform will be its superior UX/UI design which provi
 A brief feature description can be found below:
 
 - Placing bulk Limit orders through clicking on the order book
-  -Pre-defined Take Profit, Stop Loss with Limit and Market orders
+- Pre-defined Take Profit, Stop Loss with Limit and Market orders
 - Multi-updating of Take Profit and Stop Loss orders
 - Trading directly from the order book
 - Adding widgets on the home screen and free moving

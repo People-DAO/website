@@ -17,10 +17,11 @@
 <Section id="list">
 	<FormattedContent class="text-center">
 		<p>
-			The PeopleDAO's Incubator supports projects that advance web3 and&nbsp;social good,
-			or&nbsp;build an&nbsp;ecosystem around the&nbsp;$PEOPLE token. Below are profiles of
-			individual projects and&nbsp;subDAOs, which are&nbsp;being incubated now or&nbsp;have been
-			in&nbsp;the&nbsp;past.
+			PeopleDAO incubates and&nbsp;supports projects that&nbsp;advance Web3 and&nbsp;social good.
+			We&nbsp;also support projects that&nbsp;build an&nbsp;ecosystem around the&nbsp;$PEOPLE token
+			and&nbsp;they constitute our&nbsp;subDAOs. Below&nbsp;are&nbsp;profiles of&nbsp;incubated
+			projects and&nbsp;subDAOs which&nbsp;are being incubated&nbsp;now or&nbsp;have&nbsp;been
+			incubated in&nbsp;the&nbsp;past.
 		</p>
 	</FormattedContent>
 	<div class="max-w-3xl flex flex-wrap justify-center space-x-3 space-y-3 mt-16 mx-auto">
