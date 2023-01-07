@@ -6,6 +6,7 @@
 	import { ViewportListener } from '$lib/layout/components';
 	import { Header } from '$lib/header/components';
 	import { Footer } from '$lib/footer/components';
+	import { ScamWarningPopup } from '$apps/scam-warning/components';
 </script>
 
 <Analytics />
@@ -17,6 +18,7 @@
 	</main>
 	<Footer />
 </SvelteQueryProvider>
+<ScamWarningPopup />
 
 <style lang="scss">
 	:global(.sx-k7Y5vJkiso) {
