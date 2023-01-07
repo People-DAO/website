@@ -15,12 +15,12 @@
 
 <header class="fixed w-full h-16 bg-navy-primary z-[1000] border-b border-gold-primary">
 	<Wrapper>
-		<div class="h-16 grid grid-cols-[1fr_1fr] md:grid-cols-[1fr_auto_1fr] gap-x-12 py-2 space-x-10">
-			<a class="my-auto mr-auto" href="/">
+		<div class:container={true} class="h-16 gap-x-12 py-2 space-x-10">
+			<a class:logo={true} class="my-auto mr-auto" href="/">
 				<Logo class="h-7 text-white-primary" variant={isViewportGTElg ? 'full' : 'text'} />
 			</a>
 			<Navigation />
-			<div class="hidden md:flex !ml-auto !my-auto">
+			<div class:cta={true} class="hidden md:flex !ml-auto !my-auto">
 				<Button
 					variant="white/gold"
 					iconPosition="leading"
@@ -36,3 +36,27 @@
 		</div>
 	</Wrapper>
 </header>
+
+<style lang="scss">
+	header {
+		.container {
+			min-width: 100%;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-areas: 'logo navigation';
+
+			@include breakpoint($breakpoint--md) {
+				grid-template-columns: 1fr auto 1fr;
+				grid-template-areas: 'logo navigation cta';
+			}
+
+			.logo {
+				grid-area: logo;
+			}
+
+			.cta {
+				grid-area: cta;
+			}
+		}
+	}
+</style>

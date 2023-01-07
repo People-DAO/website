@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://people-dao.com" target="_blank"><img height="96" src="static/assets/icons/brand/logo.svg" alt="PeopleDAO logo" /></a>
+  <a href="https://people-dao.com" target="_blank"><img height="96" src="static/assets/icons/brand/logo-text.svg" alt="PeopleDAO logo" /></a>
 </p>
 <h1 align="center">
   PeopleDAO Website

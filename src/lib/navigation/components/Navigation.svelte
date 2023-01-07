@@ -65,7 +65,7 @@
 {:else}
 	<button
 		type="button"
-		class="inline-flex items-center my-auto !ml-auto p-2 ml-3 rounded-lg hover:text-gold-primary"
+		class="inline-flex md:hidden items-center my-auto !ml-auto p-2 ml-3 rounded-lg hover:text-gold-primary"
 		on:click={() => (isMobileMenuOpen = !isMobileMenuOpen)}
 	>
 		{#if !isMobileMenuOpen}
