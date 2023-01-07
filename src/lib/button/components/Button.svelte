@@ -1,13 +1,17 @@
 <script lang="ts">
+	import { createEventDispatcher } from 'svelte';
 	import { scrollElement } from 'svelte-scrolling';
 	import { ArrowRightIcon } from '@indaco/svelte-iconoir';
 
 	export let variant: 'white/gold' | 'navy/gold' = 'white/gold';
-	export let href: string | undefined;
+	export let href: string | undefined = undefined;
 	export let target: '_blank' | undefined = undefined;
 	export let disabled = false;
 
-	const handleScrollClick = (e: MouseEvent) => {
+	const dispatch = createEventDispatcher();
+
+	const handleClick = (e: MouseEvent) => {
+		dispatch('click', e);
 		if (href?.startsWith('#')) {
 			e.preventDefault();
 			scrollElement(href, { offset: -64 });
@@ -20,7 +24,8 @@
 	const restProps = rest;
 </script>
 
-<a
+<svelte:element
+	this={href ? 'a' : 'button'}
 	class:button={true}
 	class:--with-icon={iconSlot?.clientWidth}
 	class="
@@ -37,7 +42,7 @@
 		: ''}
 		{$$restProps.class || ''}
 	"
-	on:click={handleScrollClick}
+	on:click={handleClick}
 	href={!disabled ? href : undefined}
 	{target}
 	{...restProps}
@@ -52,7 +57,7 @@
 			<ArrowRightIcon />
 		</div>
 	{/if}
-</a>
+</svelte:element>
 
 <style lang="scss">
 	.button {
