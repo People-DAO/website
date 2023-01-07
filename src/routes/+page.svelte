@@ -36,10 +36,15 @@
 
 <PageMeta />
 
-<section
-	name="hero"
-	class="h-screen w-full bg-[url('/assets/images/constitution1.png')] bg-cover bg-no-repeat bg-center -mt-16"
->
+<section name="hero" class="relative h-screen w-full -mt-16 overflow-hidden">
+	<div class="absolute inset-0 flex justify-center items-center">
+		<img
+			class="h-full w-full max-h-none max-w-none object-cover"
+			src="/assets/images/constitution1.png"
+			alt=""
+			loading="lazy"
+		/>
+	</div>
 	<div
 		class="relative w-full h-full flex flex-col justify-center items-center bg-navy-primary/90 text-center"
 	>
@@ -86,14 +91,14 @@
 			</ButtonGroup>
 		</div>
 		<div class="hidden lg:flex">
-			<img class="block object-cover" src="/assets/images/mission1.png" alt="" />
+			<img class="block object-cover" src="/assets/images/mission1.png" alt="" loading="lazy" />
 		</div>
 	</div>
 </Section>
 <Section name="origin" class="bg-bronze-tertiary">
 	<div class="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-x-14">
 		<div class="hidden lg:flex">
-			<img class="block object-cover" src="/assets/images/origin1.png" alt="" />
+			<img class="block object-cover" src="/assets/images/origin1.png" alt="" loading="lazy" />
 		</div>
 		<FormattedContent>
 			<h2>Origin</h2>
@@ -114,7 +119,12 @@
 	</div>
 </Section>
 <div class="w-full flex">
-	<img class="block w-full object-cover" src="/assets/images/constitutiondao1.png" alt="" />
+	<img
+		class="block w-full object-cover"
+		src="/assets/images/constitutiondao1.png"
+		alt=""
+		loading="lazy"
+	/>
 </div>
 <Section name="constitution-dao">
 	<FormattedContent class="text-center">
@@ -191,7 +201,7 @@
 			</ButtonGroup>
 		</div>
 		<div class="hidden lg:flex">
-			<img class="block object-cover" src="/assets/images/token1.png" alt="" />
+			<img class="block object-cover" src="/assets/images/token1.png" alt="" loading="lazy" />
 		</div>
 	</div>
 </Section>
@@ -205,7 +215,7 @@
 	</FormattedContent>
 	<div class="flex flex-wrap justify-center space-x-3 space-y-1 mt-16 mx-auto">
 		<HexagonAvatar class="h-[192px] mt-1 ml-3" href={LINK_PROJECT_CFAC} target="_blank">
-			<img src="/assets/icons/projects/cfrac.png" alt="" />
+			<img src="/assets/icons/projects/cfrac.png" alt="" loading="lazy" />
 		</HexagonAvatar>
 		<HexagonAvatar
 			class="h-[192px]"
@@ -219,10 +229,10 @@
 			{@html LanguageDAOLogo}
 		</HexagonAvatar>
 		<HexagonAvatar class="h-[192px]" href="/incubator/project/the-lost-children-of-benin-city">
-			<img src="/assets/icons/projects/the-lost-children-of-benin-city.png" alt="" />
+			<img src="/assets/icons/projects/the-lost-children-of-benin-city.png" alt="" loading="lazy" />
 		</HexagonAvatar>
 		<HexagonAvatar class="h-[192px]" href="/incubator/project/afro-piece">
-			<img src="/assets/icons/projects/afro-piece.png" alt="" />
+			<img src="/assets/icons/projects/afro-piece.png" alt="" loading="lazy" />
 		</HexagonAvatar>
 	</div>
 	<div class="flex justify-center mt-16">

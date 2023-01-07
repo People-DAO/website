@@ -29,7 +29,7 @@
 				class="flex flex-col justify-center space-y-1 {index === 0 ? 'ml-3 mt-3' : ''}"
 			>
 				<HexagonAvatar class="h-[192px]" color="#000000" href={`/team/${team.metadata.slug}`}>
-					<img class="flex" src={team.metadata.logoUrl} alt="" />
+					<img class="flex" src={team.metadata.logoUrl} alt="" loading="lazy" />
 					<span class="font-semibold text-base text-navy-primary text-center uppercase mt-1">
 						{team.metadata.slug}
 					</span>

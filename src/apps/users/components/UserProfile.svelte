@@ -43,7 +43,7 @@
 >
 	<div class:avatar={true}>
 		<CircleAvatar>
-			<img src={discordAvatarUrl} alt="" />
+			<img src={discordAvatarUrl} alt="" loading="lazy" />
 		</CircleAvatar>
 	</div>
 	<div class:username={true} class="text-lg font-medium">

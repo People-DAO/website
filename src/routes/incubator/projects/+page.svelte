@@ -35,7 +35,7 @@
 					color="#000000"
 					href={`/incubator/project/${project.metadata.slug}`}
 				>
-					<img src={project.metadata.logoUrl} alt="" />
+					<img src={project.metadata.logoUrl} alt="" loading="lazy" />
 				</HexagonAvatar>
 			</div>
 		{/each}
