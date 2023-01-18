@@ -3,8 +3,11 @@
 	import { Logo } from '$lib/logo/components';
 	import { Navigation } from '$lib/navigation/components';
 	import { Button } from '$lib/button/components';
+	import { AnnouncementsBanner } from '$lib/announcements-banner/components';
+	import { ProposalsBannerItem } from '$apps/proposals/components';
 
 	import { viewport, isViewportGTE } from '$lib/layout/stores/viewport.store';
+	import { headerHeight } from '../stores/header.store';
 
 	import { LINK_SOCIAL_DISCORD } from '$lib/link/constants/socialLinks.constants';
 
@@ -13,7 +16,13 @@
 	$: isViewportGTElg = isViewportGTE($viewport, 'lg');
 </script>
 
-<header class="fixed w-full h-16 bg-navy-primary z-[1000] border-b border-gold-primary">
+<header
+	bind:clientHeight={$headerHeight}
+	class="!fixed w-full bg-navy-primary z-[1000] border-b border-gold-primary"
+>
+	<AnnouncementsBanner>
+		<ProposalsBannerItem />
+	</AnnouncementsBanner>
 	<Wrapper>
 		<div class:container={true} class="h-16 gap-x-12 py-2 space-x-10">
 			<a class:logo={true} class="my-auto mr-auto" href="/">
