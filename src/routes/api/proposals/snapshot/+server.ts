@@ -54,7 +54,9 @@ const getSnapshotProposals = async ({ state = null }: { state: ProposalState }) 
 
 		return result;
 	} catch (err) {
-		console.log('[@DEBUG] getSnapshotProposals - err: ', err);
+		if (import.meta.env.DEV) {
+			console.error('[@DEBUG] /api/proposals/snapshot/+server - error: ', err);
+		}
 		return { error: true };
 	}
 };
@@ -73,7 +75,9 @@ export const GET: RequestHandler = async ({ url }) => {
 			status: 200
 		});
 	} catch (err) {
-		console.log('[@DEBUG] err: ', err);
+		if (import.meta.env.DEV) {
+			console.error('[@DEBUG] /api/proposals/snapshot/+server - error: ', err);
+		}
 		return error(500);
 	}
 };

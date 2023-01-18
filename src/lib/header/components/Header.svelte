@@ -4,6 +4,8 @@
 	import { Navigation } from '$lib/navigation/components';
 	import { Button } from '$lib/button/components';
 	import { AnnouncementsBanner } from '$lib/announcements-banner/components';
+
+	import { TwitterSpacesBannerItem } from '$apps/events/components';
 	import { ProposalsBannerItem } from '$apps/proposals/components';
 
 	import { viewport, isViewportGTE } from '$lib/layout/stores/viewport.store';
@@ -21,6 +23,7 @@
 	class="!fixed w-full bg-navy-primary z-[1000] border-b border-gold-primary"
 >
 	<AnnouncementsBanner>
+		<TwitterSpacesBannerItem />
 		<ProposalsBannerItem />
 	</AnnouncementsBanner>
 	<Wrapper>
