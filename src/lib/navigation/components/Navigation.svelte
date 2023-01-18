@@ -14,6 +14,7 @@
 	} from '$lib/navigation/components';
 
 	import { viewport, isViewportGTE } from '$lib/layout/stores/viewport.store';
+	import { headerHeight } from '$lib/header/stores/header.store';
 
 	import { NAVIGATION_ITEMS } from '../config/navigation.config';
 
@@ -77,6 +78,7 @@
 	{#if isMobileMenuOpen}
 		<div
 			class="fixed top-14 left-0 right-0 bottom-0 bg-navy-primary !m-0 p-4 overflow-y-scroll rounded-bl-lg rounded-br-lg shadow-lg border border-t-0 border-gold-primary z-[1001]"
+			style={`top: ${$headerHeight - 1}px;`}
 			in:fly={{ y: 5, duration: 250 }}
 			out:fly={{ y: 5, duration: 250 }}
 		>
@@ -115,7 +117,7 @@
 						</svelte:fragment>
 					</MobileNavItem>
 				{/each}
-				<div class="flex mt-6">
+				<div class="flex mt-6 pb-6">
 					<SocialsMenu />
 				</div>
 			</nav>
