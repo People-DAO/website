@@ -27,7 +27,7 @@
 		`}
 		target="_blank"
 	>
-		<strong>Active Snapshot proposal{proposalsCount > 1 ? 's' : ''}: </strong>
+		<strong>Active Snapshot Proposal{proposalsCount > 1 ? 's' : ''}: </strong>
 		{$proposalsQuery?.data[0].title}
 		<i>
 			{proposalsCount > 1 ? ` + ${proposalsCount - 1} more` : ''}
