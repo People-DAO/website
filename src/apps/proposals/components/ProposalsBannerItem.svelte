@@ -23,7 +23,7 @@
 	<AnnouncementsBannerItem
 		href={`
 			${LINK_TOOL_SNAPSHOT}
-			${proposalsCount > 1 ? '' : `/proposals/${$proposalsQuery?.data[0].id}`}
+			${proposalsCount > 1 ? '' : `/proposal/${$proposalsQuery?.data[0].id}`}
 		`}
 		target="_blank"
 	>
