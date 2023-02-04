@@ -191,13 +191,10 @@
 				/>
 			</TokenSimpleStats>
 			<ButtonGroup class="mt-8">
-				<Button href={LINK_TOKEN_ETHERSCAN} target="_blank">View on Etherscan</Button>
-				<Button
-					href="https://app.uniswap.org/#/swap?&inputCurrency=ETH&outputCurrency=0x7a58c0be72be218b41c608b7fe7c5bb630736c71?ref=people-dao.com"
-					target="_blank"
-				>
-					Exchange on Uniswap
+				<Button href="/governance/people-token" variant="navy/gold">
+					Learn more about $PEOPLE
 				</Button>
+				<Button href={LINK_TOKEN_ETHERSCAN} target="_blank">View on Etherscan</Button>
 			</ButtonGroup>
 		</div>
 		<div class="hidden lg:flex">

@@ -56,7 +56,7 @@ export const GET: RequestHandler = async () => {
 		}
 
 		if (import.meta.env.DEV) {
-			console.error("[@DEBUG] /api/users/discord/+server - error: Couldn't get any Spaces data");
+			console.error("[@DEBUG] /api/events/twitter/+server - error: Couldn't get any Spaces data");
 		}
 		throw error(500);
 	} catch (err) {
