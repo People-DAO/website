@@ -23,7 +23,6 @@ The official <a href="https://people-dao.com" target="_blank">PeopleDAO</a> webs
    ```
 2. Provide required environment variables by copying the `.env.example` file as `.env` and filling in relevant values.
    - You can learn how to obtain Discord bot token (`PRIVATE_DISCORD_BOT_TOKEN`) in this [guide](https://github.com/reactiflux/discord-irc/wiki/Creating-a-discord-bot-&-getting-a-token#fetching-your-bots-token).
-   - You can learn how to obtain Twitter API bearer token (`PRIVATE_TWITTER_API_TOKEN`) [here](https://developer.twitter.com/en/docs/twitter-api/getting-started/getting-access-to-the-twitter-api) and [here](https://developer.twitter.com/en/docs/authentication/oauth-2-0/bearer-tokens).
 3. Run the application in development mode:
    ```
    pnpm run dev
