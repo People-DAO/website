@@ -61,7 +61,7 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
 			{
 				label: '$PEOPLE token',
 				icon: BankIcon,
-				disabled: true
+				href: '/governance/people-token'
 			},
 			{
 				label: 'Teams',
