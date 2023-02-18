@@ -8,6 +8,8 @@ links:
   twitterHandle: 'PerpetualDAO'
 leads:
   - Niffo
+stewards:
+  - Manuel
 ---
 
 Perpetual Decentralized Exchange, PERPEX, is a DeFi platform that is governed by the Perpetual DAO subDAO. Perpetual features act like a contract to buy an asset at a future date, and the blockchain can enable high leverage speculation with this financial instrument. It is a new and intuitive platform where users can buy, sell, hold and speculate in crypto assets, especially perpetual futures.
