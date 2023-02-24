@@ -19,7 +19,7 @@
 	"devDependencies": {
 		"@indaco/svelte-iconoir": "^3.1.0",
 		"@sveltejs/adapter-auto": "^1.0.0",
-		"@sveltejs/kit": "^1.0.0",
+		"@sveltejs/kit": "^1.8.3",
 		"@sveltestack/svelte-query": "^1.6.0",
 		"@tailwindcss/typography": "^0.5.3",
 		"@typescript-eslint/eslint-plugin": "^5.45.0",
