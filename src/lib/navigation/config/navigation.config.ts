@@ -10,7 +10,8 @@ import {
 	PageIcon,
 	PageFlipIcon,
 	PotionIcon,
-	ReportsIcon
+	ReportsIcon,
+	TournamentIcon
 } from '@indaco/svelte-iconoir';
 
 import type { SvelteComponentTyped } from 'svelte/internal';
@@ -59,14 +60,19 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
 		icon: BankIcon,
 		subItems: [
 			{
-				label: '$PEOPLE token',
-				icon: BankIcon,
-				href: '/governance/people-token'
+				label: 'Structure',
+				icon: TournamentIcon,
+				href: '/governance/structure'
 			},
 			{
 				label: 'Teams',
 				icon: PackagesIcon,
 				href: '/teams'
+			},
+			{
+				label: '$PEOPLE token',
+				icon: BankIcon,
+				href: '/governance/people-token'
 			},
 			{
 				label: 'Proposals',
