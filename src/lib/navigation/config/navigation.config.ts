@@ -19,9 +19,9 @@ import type { SvelteComponentTyped } from 'svelte/internal';
 import { LINK_SOCIAL_MIRROR } from '$lib/link/constants/socialLinks.constants';
 import { LINK_TOOL_SNAPSHOT } from '$lib/link/constants/toolLinks.constants';
 import {
-	LINK_INCUBATOR_ABOUT,
-	LINK_INCUBATOR_HOWTOAPPLY
-} from '$lib/link/constants/incubatorLinks.constants';
+	LINK_ACCELERATOR_ABOUT,
+	LINK_ACCELERATOR_HOWTOAPPLY
+} from '$lib/link/constants/acceleratorLinks.constants';
 
 type NavigationItem = {
 	label: string;
@@ -88,25 +88,25 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
 		]
 	},
 	{
-		label: 'Incubator',
+		label: 'Accelerator',
 		icon: PotionIcon,
 		subItems: [
 			{
 				label: 'About',
 				icon: InfoEmptyIcon,
-				href: LINK_INCUBATOR_ABOUT,
+				href: LINK_ACCELERATOR_ABOUT,
 				target: '_blank'
 			},
 			{
 				label: 'How to apply',
 				icon: MailOutIcon,
-				href: LINK_INCUBATOR_HOWTOAPPLY,
+				href: LINK_ACCELERATOR_HOWTOAPPLY,
 				target: '_blank'
 			},
 			{
-				label: 'Incubated projects',
+				label: 'Accelerated projects',
 				icon: LeaderboardStarIcon,
-				href: '/incubator/projects'
+				href: '/accelerator/projects'
 			}
 		]
 	}

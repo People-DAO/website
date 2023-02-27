@@ -41,7 +41,7 @@
 <PageMeta title={data.metadata.title} />
 <PageHeader>
 	<h1>{data.metadata.title}</h1>
-	<Breadcrumbs slot="breadcrumbs" items={[{ label: 'Projects', href: '/incubator/projects' }]} />
+	<Breadcrumbs slot="breadcrumbs" items={[{ label: 'Projects', href: '/accelerator/projects' }]} />
 </PageHeader>
 <Section id="profile">
 	<div class="grid grid-cols-1 lg:grid-cols-[5fr_2fr] gap-x-14">
