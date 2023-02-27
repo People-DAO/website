@@ -22,13 +22,7 @@
 		LINK_TOKEN_COINMARKETCAP
 	} from '$lib/link/constants/tokenLinks.constants';
 	import { LINK_DOCUMENT_CONSTITUTION } from '$lib/link/constants/documentLinks.constants';
-	import {
-		LINK_PROJECT_CFAC,
-		LINK_PROJECT_PANDADAO,
-		LINK_PROJECT_LANGUAGEDAO,
-		LINK_PROJECT_LOSTCHILDREN,
-		LINK_PROJECT_AFROPIECE
-	} from '$lib/link/constants/projectLinks.constants';
+	import { LINK_PROJECT_CFAC } from '$lib/link/constants/projectLinks.constants';
 
 	import LanguageDAOLogo from '$assets/icons/projects/languagedao.svg?raw';
 	import PandaDAOLogo from '$assets/icons/projects/pandadao.svg?raw';
@@ -36,7 +30,7 @@
 
 <PageMeta />
 
-<section name="hero" class="relative h-screen w-full -mt-16 overflow-hidden">
+<section class="relative h-screen w-full -mt-16 overflow-hidden">
 	<div class="absolute inset-0 flex justify-center items-center">
 		<img
 			class="h-full w-full max-h-none max-w-none object-cover"
