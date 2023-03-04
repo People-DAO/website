@@ -9,7 +9,7 @@
 
 <PageMeta title="Governance Structure" />
 <PageHeader>
-	<h1>Governance Structure</h1>
+	<h1 class="text-center">Governance Structure</h1>
 </PageHeader>
 <Section id="structure">
 	<div class="flex flex-col">

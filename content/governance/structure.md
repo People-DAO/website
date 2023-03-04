@@ -14,7 +14,7 @@ Active contributing members in PeopleDAO hold one of the defined roles:
 - **Moderators:** Members taking care of community on the Discord server and enforcing the server's rules. They are knowledgeable about the DAO and actively assist community members with their questions or issues.
 - **Active contributors:** All DAO members that are contributing to DAO's seasonal goals through respective teams that they join. They are the primary building block of PeopleDAO.
 
-All members are able to periodically meet through one of the community-wide events, such as _(1)_ Fireside Chat, which is held weekly through Twitter Spaces or Discord voice chat, and is designed to update the community members with latest updates and address any pending questions, or _(2)_ Contributor Call, where team-related progress on seasonal goals is discussed.
+All members are able to periodically meet through one of the community-wide events, such as _(1)_ Fireside Chat, held on Twitter Spaces or Discord voice chat, designed to update the community members with latest updates and address any pending questions, or _(2)_ Contributor Call, where team-related progress on seasonal goals is discussed.
 
 ## Teams
 

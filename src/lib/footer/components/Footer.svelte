@@ -62,7 +62,7 @@
 				<Link
 					class="flex items-start p-2 -m-2 rounded-lg hover:bg-navy-secondary/25"
 					href={LINK_TOOL_GNOSISSAFE}
-					target="_blank">Gnosis Safe</Link
+					target="_blank">Safe</Link
 				>
 				<Link
 					class="flex items-start p-2 -m-2 rounded-lg hover:bg-navy-secondary/25"
