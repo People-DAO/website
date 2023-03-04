@@ -10,18 +10,18 @@
 	export let data: { projects: ProjectData[] };
 </script>
 
-<PageMeta title="Incubated projects" />
+<PageMeta title="Accelerated projects" />
 <PageHeader>
-	<h1 class="text-center">Incubated projects</h1>
+	<h1 class="text-center">Accelerated projects</h1>
 </PageHeader>
 <Section id="list">
 	<FormattedContent class="text-center">
 		<p>
-			PeopleDAO incubates and&nbsp;supports projects that&nbsp;advance Web3 and&nbsp;social good.
+			PeopleDAO accelerates and&nbsp;supports projects that&nbsp;advance Web3 and&nbsp;social good.
 			We&nbsp;also support projects that&nbsp;build an&nbsp;ecosystem around the&nbsp;$PEOPLE token
-			and&nbsp;they constitute our&nbsp;subDAOs. Below&nbsp;are&nbsp;profiles of&nbsp;incubated
-			projects and&nbsp;subDAOs which&nbsp;are being incubated&nbsp;now or&nbsp;have&nbsp;been
-			incubated in&nbsp;the&nbsp;past.
+			and&nbsp;they constitute our&nbsp;subDAOs. Below&nbsp;are&nbsp;profiles of projects
+			and&nbsp;subDAOs which&nbsp;are being supported&nbsp;now or&nbsp;have&nbsp;been accelerated
+			in&nbsp;the&nbsp;past.
 		</p>
 	</FormattedContent>
 	<div class="max-w-3xl flex flex-wrap justify-center space-x-3 space-y-3 mt-16 mx-auto">
@@ -33,7 +33,7 @@
 				<HexagonAvatar
 					class="h-[192px]"
 					color="#000000"
-					href={`/incubator/project/${project.metadata.slug}`}
+					href={`/accelerator/project/${project.metadata.slug}`}
 				>
 					<img src={project.metadata.logoUrl} alt="" loading="lazy" />
 				</HexagonAvatar>

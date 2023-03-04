@@ -13,7 +13,7 @@
 <ViewportListener />
 <SvelteQueryProvider>
 	<Header />
-	<main id="top" class="flex-1 mt-16 text-xl text-black-primary bg-beige-tertiary">
+	<main id="top" class="flex-1 text-xl text-black-primary bg-beige-tertiary">
 		<slot />
 	</main>
 	<Footer />

@@ -20,7 +20,7 @@
 
 <header
 	bind:clientHeight={$headerHeight}
-	class="!fixed w-full bg-navy-primary z-[1000] border-b border-gold-primary"
+	class="!sticky top-0 w-full bg-navy-primary z-[1000] border-b border-gold-primary"
 >
 	<AnnouncementsBanner>
 		<!-- <TwitterSpacesBannerItem /> -->

@@ -22,13 +22,7 @@
 		LINK_TOKEN_COINMARKETCAP
 	} from '$lib/link/constants/tokenLinks.constants';
 	import { LINK_DOCUMENT_CONSTITUTION } from '$lib/link/constants/documentLinks.constants';
-	import {
-		LINK_PROJECT_CFAC,
-		LINK_PROJECT_PANDADAO,
-		LINK_PROJECT_LANGUAGEDAO,
-		LINK_PROJECT_LOSTCHILDREN,
-		LINK_PROJECT_AFROPIECE
-	} from '$lib/link/constants/projectLinks.constants';
+	import { LINK_PROJECT_CFAC } from '$lib/link/constants/projectLinks.constants';
 
 	import LanguageDAOLogo from '$assets/icons/projects/languagedao.svg?raw';
 	import PandaDAOLogo from '$assets/icons/projects/pandadao.svg?raw';
@@ -36,7 +30,7 @@
 
 <PageMeta />
 
-<section name="hero" class="relative h-screen w-full -mt-16 overflow-hidden">
+<section class="relative h-screen w-full -mt-16 overflow-hidden">
 	<div class="absolute inset-0 flex justify-center items-center">
 		<img
 			class="h-full w-full max-h-none max-w-none object-cover"
@@ -86,7 +80,9 @@
 				</p>
 			</FormattedContent>
 			<ButtonGroup class="mt-8">
-				<Button href="/incubator/projects" variant="navy/gold">Browse incubated projects</Button>
+				<Button href="/accelerator/projects" variant="navy/gold">
+					Browse accelerated projects
+				</Button>
 				<Button href={LINK_DOCUMENT_CONSTITUTION} target="_blank">View Constitution</Button>
 			</ButtonGroup>
 		</div>
@@ -206,8 +202,8 @@
 	<FormattedContent class="text-center">
 		<h2>Projects</h2>
 		<p>
-			PeopleDAO is an incubator for subDAOs and community projects. We provide seed funding, product
-			development, strategic direction, marketing boosts, and consulting around governance.
+			PeopleDAO is an accelerator for subDAOs and community projects. We provide seed funding,
+			product development, strategic direction, marketing boosts, and consulting around governance.
 		</p>
 	</FormattedContent>
 	<div class="flex flex-wrap justify-center space-x-3 space-y-1 mt-16 mx-auto">
@@ -216,24 +212,26 @@
 		</HexagonAvatar>
 		<HexagonAvatar
 			class="h-[192px]"
-			href="/incubator/project/pandadao"
+			href="/accelerator/project/pandadao"
 			color="#000000"
 			backgroundColor="transparent"
 		>
 			{@html PandaDAOLogo}
 		</HexagonAvatar>
-		<HexagonAvatar class="h-[192px]" href="/incubator/project/languagedao">
+		<HexagonAvatar class="h-[192px]" href="/accelerator/project/languagedao">
 			{@html LanguageDAOLogo}
 		</HexagonAvatar>
-		<HexagonAvatar class="h-[192px]" href="/incubator/project/the-lost-children-of-benin-city">
+		<HexagonAvatar class="h-[192px]" href="/accelerator/project/the-lost-children-of-benin-city">
 			<img src="/assets/icons/projects/the-lost-children-of-benin-city.png" alt="" loading="lazy" />
 		</HexagonAvatar>
-		<HexagonAvatar class="h-[192px]" href="/incubator/project/afro-piece">
+		<HexagonAvatar class="h-[192px]" href="/accelerator/project/afro-piece">
 			<img src="/assets/icons/projects/afro-piece.png" alt="" loading="lazy" />
 		</HexagonAvatar>
 	</div>
 	<div class="flex justify-center mt-16">
-		<Button href="/incubator/projects" variant="white/gold">Browse all incubated projects</Button>
+		<Button href="/accelerator/projects" variant="white/gold">
+			Browse all accelerated projects
+		</Button>
 	</div>
 </Section>
 
@@ -256,11 +254,11 @@
 		/>
 		<AccordionItem
 			title="What market gap do you intend to close?"
-			description="Economists have long recognized that funding public goods is an&nbsp;ongoing challenge. Simply put, because&nbsp;no one is excluded from using a&nbsp;public good many individuals avoid paying for them, giving rise to the&nbsp;free-rider problem. Web3 needs its&nbsp;roads, utilities, and&nbsp;non-profits just like the real world does. PeopleDAO fills the market gap by not only funding public goods, but&nbsp;by providing incubation services to ensure projects are on a&nbsp;path to growth and&nbsp;sustainability."
+			description="Economists have long recognized that funding public goods is an&nbsp;ongoing challenge. Simply put, because&nbsp;no one is excluded from using a&nbsp;public good many individuals avoid paying for them, giving rise to the&nbsp;free-rider problem. Web3 needs its&nbsp;roads, utilities, and&nbsp;non-profits just like the real world does. PeopleDAO fills the market gap by not only funding public goods, but&nbsp;by providing accelerator services to ensure projects are on a&nbsp;path to growth and&nbsp;sustainability."
 		/>
 		<AccordionItem
 			title="How can PeopleDAO help with my project?"
-			description="Projects seeking incubation should meet at least two criteria: (1)&nbsp;an&nbsp;interest in joining a&nbsp;family of DAOs and&nbsp;projects united in the&nbsp;mission to build an&nbsp;ecosystem around the&nbsp;$PEOPLE token, and (2)&nbsp;a&nbsp;focus on making public goods in web3, or&nbsp;leveraging the blockchain for social impact."
+			description="Projects seeking acceleration should meet at least two criteria: (1)&nbsp;an&nbsp;interest in joining a&nbsp;family of DAOs and&nbsp;projects united in the&nbsp;mission to build an&nbsp;ecosystem around the&nbsp;$PEOPLE token, and (2)&nbsp;a&nbsp;focus on making public goods in web3, or&nbsp;leveraging the blockchain for social impact."
 		/>
 		<AccordionItem
 			title="How many wallet addresses hold $PEOPLE?"

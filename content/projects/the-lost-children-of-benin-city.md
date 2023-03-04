@@ -8,7 +8,7 @@ links:
 leads:
   - ExistentialZoomer
 stewards:
-  - MatterTurbulent
+  - Ifun
 ---
 
 Human trafficking is defined as the illegal trade of people for exploitation or commercial gain, constituting modern-day slavery. As of 2014, human trafficking represented a $150 billion global industry. Two-thirds of this figure ($99 billion) was generated from commercial sexual exploitation.

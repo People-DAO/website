@@ -10,7 +10,7 @@
 
 <PageMeta title="$PEOPLE token" />
 <PageHeader>
-	<h1>$PEOPLE token</h1>
+	<h1 class="text-center">$PEOPLE token</h1>
 </PageHeader>
 <Section id="profile">
 	<div class="flex flex-col">

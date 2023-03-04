@@ -7,8 +7,6 @@ links:
   twitterHandle: 'PeopleDAOAfricq'
 leads:
   - emmzii
-stewards:
-  - AlanN
 ---
 
 PeopleDAO AFRO PIECE is an NFT project focused on African culture and history. The project is a way of showcasing Africa’s art and history, telling ancient stories of War and Art dating back in centuries.
@@ -23,7 +21,7 @@ Furthermore, 10 free-minted NFTs will be allocated to the PeopleDAO core contrib
 
 The AFRO PIECE will be massively marketed on PeopleDAO Africa Twitter with the support from PeopleDAO marketing team.
 
-# Support provided by PeopleDAO
+## Support provided by PeopleDAO
 
 A total of 200,000 $PEOPLE ($5,700) funding was requested by the team. Detailed breakdown as follows:
 
