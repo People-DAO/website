@@ -4,7 +4,9 @@ slug: afro-piece
 priority: 10
 logoUrl: '/assets/icons/projects/afro-piece.png'
 links:
+  website: 'https://hivemint.xyz/afropiece'
   twitterHandle: 'PeopleDAOAfricq'
+  discordCode: 'afropiece'
 leads:
   - emmzii
 ---

@@ -6,6 +6,7 @@
 	import { AnnouncementsBanner } from '$lib/announcements-banner/components';
 
 	// import { TwitterSpacesBannerItem } from '$apps/events/components';
+	import { AfroPieceBannerItem } from '$apps/events/components';
 	import { ProposalsBannerItem } from '$apps/proposals/components';
 
 	import { viewport, isViewportGTE } from '$lib/layout/stores/viewport.store';
@@ -24,6 +25,7 @@
 >
 	<AnnouncementsBanner>
 		<!-- <TwitterSpacesBannerItem /> -->
+		<AfroPieceBannerItem />
 		<ProposalsBannerItem />
 	</AnnouncementsBanner>
 	<Wrapper>
