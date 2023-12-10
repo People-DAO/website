@@ -7,7 +7,7 @@
 
 	// import { TwitterSpacesBannerItem } from '$apps/events/components';
 	import { ProposalsBannerItem } from '$apps/proposals/components';
-	import { MultisightSurveyBannerItem } from '$apps/events/components';
+	import { ForThePeopleNFTBannerItem } from '$apps/events/components';
 
 	import { viewport, isViewportGTE } from '$lib/layout/stores/viewport.store';
 	import { headerHeight } from '../stores/header.store';
@@ -26,7 +26,7 @@
 	<AnnouncementsBanner>
 		<!-- <TwitterSpacesBannerItem /> -->
 		<ProposalsBannerItem />
-		<MultisightSurveyBannerItem />
+		<ForThePeopleNFTBannerItem />
 	</AnnouncementsBanner>
 	<Wrapper>
 		<div class:container={true} class="h-16 gap-x-12 py-2 space-x-10">

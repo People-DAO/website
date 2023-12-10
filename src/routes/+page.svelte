@@ -60,11 +60,11 @@
 	</div>
 </section>
 <Section name="afro-piece" class="relative !p-0 overflow-hidden bg-[#040404]">
-	<a class="relative w-full flex z-10" href="https://multisight.app/research" target="_blank">
-		<img src="/assets/images/multisight-banner.png" alt="" loading="lazy" />
+	<a class="relative w-full flex z-10" href="https://forthepeoplenft.com" target="_blank">
+		<img src="/assets/images/forthepeoplenft-banner.png" alt="" loading="lazy" />
 	</a>
 	<div
-		class="absolute -inset-10 flex bg-[url('/assets/images/multisight-banner.png')] bg-cover bg-center bg-no-repeat blur-2xl opacity-30"
+		class="absolute -inset-10 flex bg-[url('/assets/images/forthepeoplenft-banner.png')] bg-cover bg-center bg-no-repeat blur-2xl opacity-30"
 	/>
 </Section>
 <Section name="mission">
